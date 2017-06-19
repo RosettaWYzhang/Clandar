@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Together, We make life simpler</h1>
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <div class="login-form">
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                <ion-icon name="person" item-left></ion-icon>
+                <ion-input type="text" placeholder="Email" name="email"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="lock" item-left></ion-icon>
+                <ion-input type="password" placeholder="Password" name="password"></ion-input>
+              </ion-item>
+
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <div class="login-button">
+          <button ion-button outline color="white" class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button outline color="white" class="register-btn" (click)="createAccount()">Forget Password</button>
+          <!--<button ion-button outline color="white" class="oauth-btn"   (click)="oauth()">OAuth2 Login</button>
+          <button ion-button outline color="white" (click)="gotoSearchPatientPage()">Search Patient</button>-->
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

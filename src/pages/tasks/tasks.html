@@ -1,0 +1,52 @@
+<!--
+  Generated template for the Tasks page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Task</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only wound-img>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="time" item-start></ion-icon>
+        Time    
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Due</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar" item-start></ion-icon>
+        Add Note
+      <ion-icon name="add" item-end></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle checked="false"></ion-toggle>
+      <ion-label>Reminder</ion-label>
+      <ion-icon name="alarm" item-start></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="alert" item-start></ion-icon>
+        Urgency
+      <ion-range end></ion-range>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+
