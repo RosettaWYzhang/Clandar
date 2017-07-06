@@ -16,34 +16,40 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
+<ion-content class="content">
+  <ion-list no-lines style="margin-top:4px"> 
     <ion-item>
-      <ion-icon name="time" item-start></ion-icon>
-        Time    
+      <ion-icon name="time" item-start style="color:Salmon"></ion-icon>
+        <h2 class="titles" style="background-color:Salmon">Time</h2>    
     </ion-item>
 
     <ion-item>
-      <ion-label>Due</ion-label>
-      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
+      <ion-label>
+        <h2 style="margin-left:-1px" style="font-weight:bold;color:rgb(40,40,40)">Due</h2>
+      </ion-label>
+      <ion-datetime placeholder="Click to set" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-icon name="calendar" item-start></ion-icon>
-        Add Note
+      <ion-icon name="calendar" item-start style="color:rgb(83,184,229)"></ion-icon>
+        <h2 class="titles" style="background-color:rgb(83,184,229)">Add Note</h2>
       <ion-icon name="add" item-end></ion-icon>
     </ion-item>
 
     <ion-item>
-      <ion-toggle checked="false"></ion-toggle>
-      <ion-label>Reminder</ion-label>
-      <ion-icon name="alarm" item-start></ion-icon>
+      <ion-toggle color="secondary" checked="false" style="margin-left:-10px"></ion-toggle>
+      <ion-label>
+        <h2 class="titles" style="background-color:MediumSeaGreen">Reminder</h2>
+      </ion-label>
+      <ion-icon name="alarm" item-start style="color:MediumSeaGreen"></ion-icon>
     </ion-item>
 
     <ion-item>
-      <ion-icon name="alert" item-start></ion-icon>
-        Urgency
-      <ion-range end></ion-range>
+      <ion-icon name="alert" item-start style="color:red;"></ion-icon>
+      <ion-label>
+        <h2 class="titles" style="background-color:red;padding: 5px">Urgency</h2>
+      </ion-label>
+      <ion-range [(ngModel)]="defValue" color="danger" min="1" max="4" step="1" snaps="true" style="margin-top:-20px"></ion-range>
     </ion-item>
 
   </ion-list>
