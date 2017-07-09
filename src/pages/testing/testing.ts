@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home'; 
 import { Login } from '../login/login';
+import { RegisterPage } from '../register/register';
 import { Events } from '../events/events';
 import { Tasks } from '../tasks/tasks';
 import { Searcher } from '../searcher/searcher';
+
+
 /**
  * Generated class for the Testing page.
  *
@@ -44,5 +47,9 @@ export class Testing {
 
   gotoESPage(){
     this.navCtrl.push(Searcher);
+  }
+
+  gotoREPage(){
+    this.navCtrl.push(RegisterPage);
   }
 }

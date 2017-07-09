@@ -44,6 +44,8 @@
         <ion-col class="signup-col">
           <div class="login-button">
           <button ion-button full color="white" class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button full color="white" (click)="login()">Facebook Login</button>
+          <button ion-button full color="white" (click)="register()">Register</button>
           <button ion-button outline color="white" class="register-btn" (click)="createAccount()" >Forget Password</button>
           <!--<button ion-button outline color="white" class="oauth-btn"   (click)="oauth()">OAuth2 Login</button>
           <button ion-button outline color="white" (click)="gotoSearchPatientPage()">Search Patient</button>-->
