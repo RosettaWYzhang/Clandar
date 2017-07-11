@@ -1,0 +1,30 @@
+page-searcher {
+    font-family:Tahoma,Helvetica,sans-serif;
+
+     .content{
+         ion-list{
+             margin-bottom:20px;
+
+         }
+
+        ion-list-header{
+            background: rgb(240,240,240);
+            font-size: 0.9em;
+            margin-bottom:0px;
+            font-weight: bold;
+        }
+
+        ion-item {
+            font-size: 0.9em;  
+        }
+
+        ion-searchbar {
+            //background: rgb(240,240,240);//#56CA96;
+            //border-radius: 10px !important;
+            padding-top:5px;
+            padding-bottom:5px;
+            margin-bottom:10px;
+            text-align-last: center;
+        }
+     }
+}

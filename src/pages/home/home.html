@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Academic</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-list style="margin-top:4px">
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="http://placehold.it/600x400">
+        </ion-avatar>
+        <h2>SC3101</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="add" class="rSlide"></ion-icon>
+          Add
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="more" class="rSlide"></ion-icon>
+          More
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start >
+          <img src="http://placehold.it/600x400">
+        </ion-avatar>
+        <h2>CS2312</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="add" class="rSlide"></ion-icon>
+          Add
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="more" class="rSlide"></ion-icon>          
+          More
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="http://placehold.it/600x400">
+        </ion-avatar>
+        <h2>EL3000</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="add" class="rSlide"></ion-icon>          
+          Add
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="add" class="rSlide"></ion-icon>
+          More
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+<button ion-button round end color="light" (click)="doLogout()">Log out</button>
+
+</ion-content>
+
