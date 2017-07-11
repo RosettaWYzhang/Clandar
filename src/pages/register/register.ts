@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
+<<<<<<< HEAD
 import { HomePage } from '../home/home';
 import { Login } from '../login/login';
+=======
+import { HomePage } from '../home/home'
+>>>>>>> 6d5bc54c44395de4627585f8c0e5bede08dbb7b2
 
 /**
  * Generated class for the RegisterPage page.
@@ -41,7 +45,10 @@ export class RegisterPage {
     //Log in if register successfully
     this.auth.signup(details).then(() => {
       console.log('ok signup');
+<<<<<<< HEAD
       this.navCtrl.push(Login);
+=======
+>>>>>>> 6d5bc54c44395de4627585f8c0e5bede08dbb7b2
     //Handle error
     }, (err:IDetailedError<string[]>) => {
       //loader.dismissAll();
