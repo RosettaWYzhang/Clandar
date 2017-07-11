@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login/Register</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -21,18 +21,17 @@
   </ion-row>
   <h6 style="text-align:center;color:white">Together, We make life simpler</h6>
   <div class="login-box">
-    <form (ngSubmit)="login()" #registerForm="ngForm">
       <div class="login-form">
         <ion-row>
           <ion-col>
             <ion-list inset>
               <ion-item>
                 <ion-icon name="person" item-left></ion-icon>
-                <ion-input type="text" placeholder="Email" name="email"></ion-input>
+                <ion-input [(ngModel)]="email" type="text" placeholder="Email" name="email"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-icon name="lock" item-left></ion-icon>
-                <ion-input type="password" placeholder="Password" name="password"></ion-input>
+                <ion-input [(ngModel)]="password" type="password" placeholder="Password" name="password"></ion-input>
               </ion-item>
             </ion-list>
           </ion-col>
@@ -43,8 +42,7 @@
       <ion-row>
         <ion-col class="signup-col">
           <div class="login-button">
-          <button ion-button full color="white" class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Login</button>
-          <button ion-button full color="white" (click)="login()">Facebook Login</button>
+          <button ion-button full color="white" (click)="login()" class="submit-btn">Login</button>
           <button ion-button full color="white" (click)="register()">Register</button>
           <button ion-button outline color="white" class="register-btn" (click)="createAccount()" >Forget Password</button>
           <!--<button ion-button outline color="white" class="oauth-btn"   (click)="oauth()">OAuth2 Login</button>
@@ -52,6 +50,5 @@
           </div>
         </ion-col>
       </ion-row>
-    </form>
   </div>
 </ion-content>

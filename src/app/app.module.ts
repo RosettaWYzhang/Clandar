@@ -16,7 +16,7 @@ import { Searcher } from '../pages/searcher/searcher';
 
 const cloudSettings: CloudSettings = {
   'core': {
-    'app_id': 'APP_ID'
+    'app_id': 'a9078208'
   }
 };
 

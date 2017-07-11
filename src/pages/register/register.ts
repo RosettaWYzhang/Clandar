@@ -25,40 +25,24 @@ export class RegisterPage {
               public alertCtrl: AlertController,
               public loadingCtrl: LoadingController) {}
 
-  doRegister() {
+  doRegister(){
     console.log('process register');
-
-    //initial validation
-    if(this.name === '' || this.email === '' || this.password === '') {
-      let alert = this.alertCtrl.create({
-        title:'Register Error', 
-        subTitle:'All fields are rquired',
-        buttons:['OK']
-      });
-      alert.present();
-      return;
-    }
 
     //register information
     let details: UserDetails = {'email': this.email, 'password':this.password, 'name':this.name};
     console.log(details);
 
-    let loader = this.loadingCtrl.create({
+    /*let loader = this.loadingCtrl.create({
       content: "Registering your account..."
     });
-    loader.present();
+    loader.present();*/
     
     //Log in if register successfully
     this.auth.signup(details).then(() => {
       console.log('ok signup');
-      this.auth.login('basic', {'email':details.email, 'password':details.password}).then(() => {
-        loader.dismissAll();
-        this.navCtrl.setRoot(HomePage);
-      });
-      
     //Handle error
     }, (err:IDetailedError<string[]>) => {
-      loader.dismissAll();
+      //loader.dismissAll();
       let errors = '';
       for(let e of err.details) {
         console.log(e);
@@ -74,8 +58,8 @@ export class RegisterPage {
         buttons:['OK']
       });
       alert.present();
-  });
-}
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
