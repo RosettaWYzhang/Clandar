@@ -9,8 +9,12 @@ import { Login } from '../login/login';
 })
 export class HomePage {
 
+  name: string;
   constructor(public navCtrl: NavController,
-              public auth: Auth) {}
+              public auth: Auth,
+              public user: User) {
+    this.name = this.user.details.name;
+  }
   
   doLogout(){
     console.log("Logging out");
