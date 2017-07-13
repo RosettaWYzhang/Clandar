@@ -7,15 +7,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-input [(ngModel)]="name" type="text" placeholder="Name" name="name"></ion-input>
-  <ion-input [(ngModel)]="email" type="text" placeholder="Email" name="email"></ion-input>
-  <ion-input [(ngModel)]="password" type="text" placeholder="Password" name="password"></ion-input>
-  <button ion-button full (click)="doRegister()" color="white" >Register</button>
+<ion-content class="reg-content">
+  <img src="assets/img/regLogo.png" id="bg">
+  <div class="reg-box">
+    <h2 style="margin-bottom:15px">Registration</h2>
+    <!--<ion-col></ion-col>-->
+    <ion-input [(ngModel)]="name" type="text" placeholder="Name" name="name"></ion-input>
+    <ion-input [(ngModel)]="email" type="text" placeholder="Email" name="email"></ion-input>
+    <ion-input [(ngModel)]="password" type="text" placeholder="Password" name="password"></ion-input>
+    <ion-col></ion-col>
+    <button ion-button full (click)="doRegister()" class="reg-btn">Register</button>
+  </div>
 </ion-content>
