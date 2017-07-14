@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es5",
+    "lib": [
+        "dom",
+        "es2015"
+    ]
+  },
+  "files": [
+    "src/calendar.ts",
+    "src/calendar.service.ts",
+    "src/index.ts",
+    "src/calendar.module.ts",
+    "src/monthview.ts",
+    "src/weekview.ts",
+    "src/dayview.ts",
+    "src/init-position-scroll.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

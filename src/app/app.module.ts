@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +14,7 @@ import { RegisterPage } from '../pages/register/register';
 import { Events } from '../pages/events/events';
 import { Tasks } from '../pages/tasks/tasks';
 import { Searcher } from '../pages/searcher/searcher';
+import { Calendar } from '../pages/calendar/calendar';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -29,12 +31,14 @@ const cloudSettings: CloudSettings = {
     RegisterPage,
     Events,
     Tasks,
-    Searcher
+    Searcher,
+    Calendar,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    CloudModule.forRoot(cloudSettings)
+    CloudModule.forRoot(cloudSettings),
+    NgCalendarModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +49,8 @@ const cloudSettings: CloudSettings = {
     RegisterPage,
     Events,
     Tasks,
-    Searcher
+    Searcher,
+    Calendar,
   ],
   providers: [
     StatusBar,

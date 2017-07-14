@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home'; 
+import { HomePage } from '../home/home';
 import { Login } from '../login/login';
-import { RegisterPage } from '../register/register';
 import { Events } from '../events/events';
 import { Tasks } from '../tasks/tasks';
 import { Searcher } from '../searcher/searcher';
-
-
+import { Calendar } from '../calendar/calendar';
 /**
  * Generated class for the Testing page.
  *
@@ -20,36 +18,24 @@ import { Searcher } from '../searcher/searcher';
   templateUrl: 'testing.html',
 })
 export class Testing {
+  homePage: any;
+  loginPage: any;
+  calendarPage: any;
+  eventManagerPage: any;
+  taskManagerPage: any;
+  eventSearchPage: any;
 
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.homePage = HomePage;
+    this.loginPage = Login;
+    this.calendarPage = Calendar;
+    this.eventManagerPage = Events;
+    this.taskManagerPage = Tasks;
+    this.eventSearchPage = Searcher;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Testing');
   }
 
-  gotoHomePage() {
-    this.navCtrl.push(HomePage);
-  }
-
-  gotoLIPage() {
-    this.navCtrl.push(Login);
-  }
-
-  gotoEMPage(){
-    this.navCtrl.push(Events);
-  }
-
-  gotoTMPage(){
-    this.navCtrl.push(Tasks);   
-  }
-
-  gotoESPage(){
-    this.navCtrl.push(Searcher);
-  }
-
-  gotoREPage(){
-    this.navCtrl.push(RegisterPage);
-  }
 }
