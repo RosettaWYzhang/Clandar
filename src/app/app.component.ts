@@ -11,6 +11,8 @@ import { RegisterPage } from '../pages/register/register';
 import { Events } from '../pages/events/events';
 import { Tasks } from '../pages/tasks/tasks';
 import { Searcher } from '../pages/searcher/searcher';
+import { SettingsPage } from '../pages/settings/settings';
+import { TdlistPage } from "../pages/tdlist/tdlist";
 
 @Component({
   templateUrl: 'app.html'

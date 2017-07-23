@@ -1,0 +1,26 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button (click)='gotoHomePage()' ion-button full>Access Contacts</button>
+    <button (click)='gotoHomePage()' ion-button full>Invite Your Friends to Use</button>
+    <button (click)='gotoHomePage()' ion-button full>Sync with System Calendar</button>
+    <ion-toggle color="secondary" checked="false" style="margin-left:-10px"></ion-toggle>
+    <ion-label>
+      <h2 class="titles" style="background-color:MediumSeaGreen">Allow Others to View My Calendar</h2>
+    </ion-label>
+  </ion-list>
+</ion-content>

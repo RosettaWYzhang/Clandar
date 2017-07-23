@@ -15,6 +15,8 @@ import { Events } from '../pages/events/events';
 import { Tasks } from '../pages/tasks/tasks';
 import { Searcher } from '../pages/searcher/searcher';
 import { Calendar } from '../pages/calendar/calendar';
+import { SettingsPage } from '../pages/settings/settings';
+import { TdlistPage } from '../pages/tdlist/tdlist';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -33,6 +35,8 @@ const cloudSettings: CloudSettings = {
     Tasks,
     Searcher,
     Calendar,
+    SettingsPage,
+    TdlistPage
   ],
   imports: [
     BrowserModule,
@@ -51,6 +55,8 @@ const cloudSettings: CloudSettings = {
     Tasks,
     Searcher,
     Calendar,
+    SettingsPage,
+    TdlistPage
   ],
   providers: [
     StatusBar,

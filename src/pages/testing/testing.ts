@@ -6,6 +6,9 @@ import { Events } from '../events/events';
 import { Tasks } from '../tasks/tasks';
 import { Searcher } from '../searcher/searcher';
 import { Calendar } from '../calendar/calendar';
+import { SettingsPage } from "../settings/settings";
+import { TdlistPage } from '../tdlist/tdlist';
+
 /**
  * Generated class for the Testing page.
  *
@@ -24,6 +27,8 @@ export class Testing {
   eventManagerPage: any;
   taskManagerPage: any;
   eventSearchPage: any;
+  settingsPage: any;
+  tdListPage: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.homePage = HomePage;
@@ -32,6 +37,8 @@ export class Testing {
     this.eventManagerPage = Events;
     this.taskManagerPage = Tasks;
     this.eventSearchPage = Searcher;
+    this.settingsPage = SettingsPage;
+    this.tdListPage = TdlistPage;
   }
 
   ionViewDidLoad() {
