@@ -27,7 +27,7 @@ export class Calendar{
    viewTitle;
    isToday: boolean;
    calendar = {
-       mode: 'week',
+       mode: 'month',
        currentDate: new Date()
    }; // these are the variable used by the calendar.
    loadEvents() {

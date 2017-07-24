@@ -13,26 +13,27 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="content">
+<ion-item class="head">
+  <h1 style="color:RGB(255,120,82)">{{myDate | date:'EEEE, d'}}</h1>
+  <span>{{myDate | date:'MMMM'}}</span><span style="float:right">(麻烦加个counter) task(s)</span>
+</ion-item>
   <ion-card>
     <ion-card-content>
       <ion-card-title>
-        Task 1
+        Finish CS1102 Assignment 1
       </ion-card-title>
       <p>
-        Finish CS1102 Assignment 1
+        17：00
       </p>
     </ion-card-content>
     <ion-row no-padding>
       <ion-col>
-        <button ion-button clear small color="danger" icon-start>
-          Details
-        </button>
+        <ion-checkbox color="secondary" checked="false" ng-model="myVar"></ion-checkbox>
       </ion-col>
       <ion-col text-right>
         <button ion-button clear small color="danger" icon-start>
-          Edit
+          Details
         </button>
       </ion-col>
     </ion-row>
@@ -41,21 +42,19 @@
   <ion-card>
     <ion-card-content>
       <ion-card-title>
-        Task 2
+        Singing Contest Preparation
       </ion-card-title>
       <p>
-        Singing Contest Preparation
+        19：00
       </p>
     </ion-card-content>
     <ion-row no-padding>
       <ion-col>
-        <button ion-button clear small color="danger" icon-start>
-          Details
-        </button>
+        <ion-checkbox color="secondary" checked="false"></ion-checkbox>
       </ion-col>
       <ion-col text-right>
         <button ion-button clear small color="danger" icon-start>
-          Edit
+          Details
         </button>
       </ion-col>
     </ion-row>

@@ -1,3 +1,21 @@
 page-calendar {
+    font-family:Tahoma,Helvetica,sans-serif;
 
+    .has-header{
+        .bottom-buttons{
+            margin-left: 6px;
+            margin-top: 5px;
+			// position: fixed;
+			// left: 0px;
+			// bottom: 0px;
+			// z-index: 3;
+			//font-size: 32px;
+
+            button{
+                background-color: RGB(255,62,47);
+                border-radius: 24px;
+                font-size: 16px;
+            }
+        }
+    }
 }

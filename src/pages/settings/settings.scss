@@ -1,3 +1,28 @@
 page-settings {
+    font-family:Tahoma,Helvetica,sans-serif;
+    .settings-content {
+        background: RGB(250,249,255);
 
+        ion-item{
+            .button{
+                background-color: white;
+                color: black;
+                font-size: 18px;
+            }
+        }
+        
+        .settings-box{
+            padding: 0px 16px;
+            //margin: 0px 10px 10px 10px;
+        }
+
+        .titles{
+            font-size: 15px;
+            color: RGB(255,120,82);
+        }
+
+        ion-toggle{
+            zoom: 0.9;
+        }
+    }
 }

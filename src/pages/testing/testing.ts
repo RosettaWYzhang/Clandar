@@ -8,6 +8,7 @@ import { Searcher } from '../searcher/searcher';
 import { Calendar } from '../calendar/calendar';
 import { SettingsPage } from "../settings/settings";
 import { TdlistPage } from '../tdlist/tdlist';
+import { TodoListComponent } from '../todo/list/list.component';
 
 /**
  * Generated class for the Testing page.
@@ -29,6 +30,7 @@ export class Testing {
   eventSearchPage: any;
   settingsPage: any;
   tdListPage: any;
+  todoListComponent: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.homePage = HomePage;
@@ -39,6 +41,7 @@ export class Testing {
     this.eventSearchPage = Searcher;
     this.settingsPage = SettingsPage;
     this.tdListPage = TdlistPage;
+    this.todoListComponent = TodoListComponent;
   }
 
   ionViewDidLoad() {
