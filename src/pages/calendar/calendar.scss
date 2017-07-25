@@ -12,10 +12,17 @@ page-calendar {
 			//font-size: 32px;
 
             button{
-                background-color: RGB(255,62,47);
+                background-color: RGB(233,30,99);
                 border-radius: 24px;
                 font-size: 16px;
             }
+        }
+
+        .calendar-event-inner{
+            //font-size: 14px;
+            color:black;
+            background-color: RGB(98,188,243);
+            opacity: 0.75;
         }
     }
 }

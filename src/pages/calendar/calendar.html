@@ -17,6 +17,7 @@
         <button ion-button (click)="changeMode('day')">D</button>
         <button ion-button [disabled]="isToday" (click)="today()">Today</button>
     </ion-buttons>
+
     <calendar [eventSource]="eventSource"
               [calendarMode]="calendar.mode"
               [currentDate]="calendar.currentDate"
@@ -24,7 +25,17 @@
               (onEventSelected)="onEventSelected($event)"
               (onTitleChanged)="onViewTitleChanged($event)"
               (onTimeSelected)="onTimeSelected($event)"
+              [weekviewNormalEventTemplate]="weekEvents"
               step="30">
     </calendar>
+
+    <ng-template #weekEvents let-displayEvent="displayEvent">
+      <div class="calendar-event-inner"       
+      [style.top]="(37*displayEvent.startOffset/hourParts)+'px'"
+      [style.left]="100/displayEvent.overlapNumber*displayEvent.position+'%'"
+      [style.width]="100+'%'"
+      [style.height]="37*(displayEvent.endIndex - displayEvent.startIndex) - 4 + 'px'"
+      >{{displayEvent.event.title}}</div><!--[style.width]="100/displayEvent.overlapNumber+'%'" -->
+    </ng-template>
     
 </ion-content>
