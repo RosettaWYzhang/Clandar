@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>任务详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form>
+        <div class="form-group">
+            <label>No.</label>
+            <p>{{selectedTodo.id}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>Title:</label>
+            <p>{{selectedTodo.title}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>Create Time:</label>
+            <p>{{selectedTodo.createdDate}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>Finished?</label>
+            <p>{{selectedTodo.complete}}</p>
+        </div>
+    </form>
+  </ion-card>
+<!--<a (click)="goBack()">返回</a>-->
+
+</ion-content>

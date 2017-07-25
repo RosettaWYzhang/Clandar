@@ -27,7 +27,7 @@ export class Calendar{
    viewTitle;
    isToday: boolean;
    calendar = {
-       mode: 'week',
+       mode: 'month',
        currentDate: new Date()
    }; // these are the variable used by the calendar.
    loadEvents() {
@@ -74,7 +74,7 @@ export class Calendar{
                    title: 'All Day - ' + i,
                    startTime: startTime,
                    endTime: endTime,
-                   allDay: true
+                   allDay: true,
                });
            } else {
                var startMinute = Math.floor(Math.random() * 24 * 60);

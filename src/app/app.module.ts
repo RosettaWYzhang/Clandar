@@ -17,6 +17,7 @@ import { Searcher } from '../pages/searcher/searcher';
 import { Calendar } from '../pages/calendar/calendar';
 import { SettingsPage } from '../pages/settings/settings';
 import { TdlistPage } from '../pages/tdlist/tdlist';
+import { TodoModule } from '../pages/todo/todo.module';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -43,6 +44,7 @@ const cloudSettings: CloudSettings = {
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     NgCalendarModule,
+    TodoModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

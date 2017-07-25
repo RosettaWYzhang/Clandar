@@ -13,6 +13,7 @@ import { Tasks } from '../pages/tasks/tasks';
 import { Searcher } from '../pages/searcher/searcher';
 import { SettingsPage } from '../pages/settings/settings';
 import { TdlistPage } from "../pages/tdlist/tdlist";
+import { TodoListComponent } from '../pages/todo/list/list.component';
 
 @Component({
   templateUrl: 'app.html'

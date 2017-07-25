@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -24730,6 +24731,27 @@ ion-navbar.toolbar {
   }
 }
 
+page-calendar {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-calendar .has-header .bottom-buttons {
+  margin-left: 6px;
+  margin-top: 5px;
+}
+
+page-calendar .has-header .bottom-buttons button {
+  background-color: RGB(233, 30, 99);
+  border-radius: 24px;
+  font-size: 16px;
+}
+
+page-calendar .has-header .calendar-event-inner {
+  color: black;
+  background-color: RGB(98, 188, 243);
+  opacity: 0.75;
+}
+
 page-events {
   font-family: Tahoma,Helvetica,sans-serif;
 }
@@ -24759,7 +24781,7 @@ page-login {
 }
 
 page-login .login-content {
-  background: RGB(249, 250, 255);
+  background: RGB(250, 249, 255);
 }
 
 page-login .login-content #bg {
@@ -24825,6 +24847,7 @@ page-register .reg-content {
 }
 
 page-register .reg-content .reg-btn {
+  background: lightsalmon;
   border-radius: 20px !important;
   font-size: 1em;
   border: 1px solid #ffffff;
@@ -24833,13 +24856,16 @@ page-register .reg-content .reg-btn {
 
 page-register .reg-content ion-input {
   border-radius: 20px !important;
-  border: 1.5px solid #51CFB1;
+  background-color: whitesmoke;
   margin-bottom: 10px;
   padding-left: 1pc;
 }
 
 page-register .reg-content .reg-box {
-  padding: 0px 16px;
+  border-radius: 25px !important;
+  background: #51CFB1;
+  margin: 50px 10px 10px 10px;
+  padding: 20px 16px 20px 16px;
 }
 
 page-searcher {
@@ -24868,6 +24894,33 @@ page-searcher .content ion-searchbar {
   text-align-last: center;
 }
 
+page-settings {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-settings .settings-content {
+  background: RGB(250, 249, 255);
+}
+
+page-settings .settings-content ion-item .button {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+}
+
+page-settings .settings-content .settings-box {
+  padding: 0px 16px;
+}
+
+page-settings .settings-content .titles {
+  font-size: 15px;
+  color: RGB(255, 120, 82);
+}
+
+page-settings .settings-content ion-toggle {
+  zoom: 0.9;
+}
+
 page-tasks {
   font-family: Tahoma,Helvetica,sans-serif;
 }
@@ -24876,4 +24929,297 @@ page-tasks .content .titles {
   color: white;
   padding: 10px 8px;
   border-radius: 8px;
+}
+
+page-tdlist {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-tdlist .content {
+  background: white;
+}
+
+page-tdlist .content .head {
+  background-color: RGB(70, 57, 75);
+  padding-left: 24px;
+}
+
+page-tdlist .content .head span {
+  font-size: 17px;
+  color: RGB(170, 170, 170);
+}
+
+page-tdlist .content ion-row {
+  margin-top: -12px;
+}
+
+page-tdlist .content ion-card-title {
+  font-size: 20px;
+}
+
+page-tdlist .content ion-checkbox {
+  margin-left: 25.5px;
+  zoom: 1.6;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 100px;
+}
+
+.form-group p {
+  display: inline-block;
+}
+
+a {
+  border: solid 1px gray;
+  border-radius: 3px;
+  padding: 5px 20px;
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+}
+
+.todo-item {
+  background-color: white;
+}
+
+.todo-item .toggle {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none;
+  /* Mobile Safari */
+  -webkit-appearance: none;
+}
+
+.todo-item .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+.todo-item .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+.todo-item label {
+  word-break: break-all;
+  padding: 15px 60px 15px 15px;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+}
+
+.completed {
+  opacity: 0.6;
+}
+
+.todo-item .dueTime {
+  font-size: 15px;
+}
+
+.todo-item.completed .dueTime {
+  color: lightgray;
+}
+
+.todo-item.completed ion-card-title {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.todo-item .destroy {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 36px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+  background: none;
+  border: none;
+}
+
+.todo-item .destroy:hover {
+  color: #af5b5e;
+}
+
+.todo-item .destroy:after {
+  content: '×';
+}
+
+.todo-item:hover .destroy {
+  display: block;
+}
+
+.todo-item ion-card-title {
+  font-size: 22px;
+  margin-top: -10px;
+}
+
+.todo-item ion-checkbox {
+  margin-left: 14px;
+  zoom: 1.6;
+}
+
+.todo-item ion-row {
+  margin-top: -14px;
+}
+
+.todo-item.completed button {
+  color: lightgray;
+}
+
+todo-list {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+todo-list .list-content .add {
+  color: RGB(233, 30, 99);
+  position: fixed;
+  right: 11px;
+  top: 110px;
+  z-index: 3;
+  font-size: 80px;
+}
+
+todo-list .list-content .head {
+  background-color: RGB(70, 57, 75);
+  padding-left: 24px;
+}
+
+todo-list .list-content .head span {
+  font-size: 17px;
+  color: RGB(170, 170, 170);
+}
+
+todo-list .list-content section {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+todo-list .list-content button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+todo-list .list-content :focus {
+  outline: 0;
+}
+
+todo-list .list-content .hidden {
+  display: none;
+}
+
+todo-list .list-content .todoapp {
+  background: #fff;
+  position: relative;
+}
+
+todo-list .list-content .todoapp input::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+todo-list .list-content .todoapp input::-moz-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+todo-list .list-content .todoapp input::input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+todo-list .list-content .new-todo,
+todo-list .list-content .edit {
+  position: relative;
+  width: 100%;
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1em;
+  border: 0;
+  color: inherit;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+todo-list .list-content .new-todo {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+}
+
+todo-list .list-content .main {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #e6e6e6;
+}
+
+todo-list .list-content .todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+todo-list .list-content .todo-list todo-item {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  display: list-item;
+}
+
+todo-list .list-content .todo-list todo-item:last-child {
+  border-bottom: none;
+}
+
+todo-list .list-content .footer {
+  color: #777;
+  padding: 10px 15px;
+  height: 35px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+}
+
+todo-list .list-content .footer:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+todo-list .list-content .todo-count {
+  float: left;
+  text-align: left;
+}
+
+todo-list .list-content .todo-count strong {
+  font-weight: 300;
 }

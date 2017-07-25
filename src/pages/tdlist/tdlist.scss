@@ -1,3 +1,30 @@
 page-tdlist {
+    font-family:Tahoma,Helvetica,sans-serif;
 
+    .content{
+        background: white;
+
+        .head{
+            background-color:RGB(70,57,75);
+            padding-left:24px;
+
+            span{
+                font-size: 17px;
+                color: RGB(170,170,170);
+            }
+        }
+
+        ion-row{
+            margin-top: -12px;
+        }
+
+        ion-card-title{
+            font-size: 20px;
+        }
+        
+        ion-checkbox{
+            margin-left: 25.5px;
+            zoom: 1.6;
+        }
+    }
 }

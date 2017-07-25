@@ -21,4 +21,6 @@ export class Events {
     console.log('ionViewDidLoad Events');
   }
 
+  defValue: number = 2;
+  
 }

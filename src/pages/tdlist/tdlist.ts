@@ -21,4 +21,5 @@ export class TdlistPage {
     console.log('ionViewDidLoad TdlistPage');
   }
 
+  myDate: String = new Date().toISOString();
 }

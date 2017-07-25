@@ -7,20 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>settings</ion-title>
+    <ion-title>Settings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="settings-content">
+  <img src="assets/img/regLogo.png" id="bg">
+  <div class="settings-box">
+    <h2 style="margin-bottom:15px">Settings</h2>
+  </div>
+  <ion-list full>
+    <ion-item>
+      <button (click)='gotoHomePage()' ion-button full>Access Phone Contacts</button>
+    </ion-item>
+    <ion-item>
+      <button (click)='gotoHomePage()' ion-button full>Sync with System Calendar</button>
+    </ion-item>
+    <ion-item>
+      <button (click)='gotoHomePage()' ion-button full>Invite Your Friends :)</button>
+    </ion-item>
+  </ion-list>
   <ion-list>
-    <button (click)='gotoHomePage()' ion-button full>Access Contacts</button>
-    <button (click)='gotoHomePage()' ion-button full>Invite Your Friends to Use</button>
-    <button (click)='gotoHomePage()' ion-button full>Sync with System Calendar</button>
-    <ion-toggle color="secondary" checked="false" style="margin-left:-10px"></ion-toggle>
-    <ion-label>
-      <h2 class="titles" style="background-color:MediumSeaGreen">Allow Others to View My Calendar</h2>
-    </ion-label>
+    <ion-item>
+        <ion-toggle color="secondary" checked="false"></ion-toggle>
+        <ion-label>
+          <h6 class="titles">Allow others to view my calendar</h6>
+        </ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>
