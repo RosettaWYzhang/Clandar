@@ -2,10 +2,10 @@
 
 <ion-header>
     <ion-navbar>
-        <ion-title>{{viewTitle}}</ion-title>
-        <ion-buttons end>
-            <button ion-button (click)="loadEvents()" style="font-size:16px">Load Events</button>
-        </ion-buttons>
+        <button ion-button menuToggle icon-only >
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Welcome back, {{name}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -38,4 +38,11 @@
       >{{displayEvent.event.title}}</div><!--[style.width]="100/displayEvent.overlapNumber+'%'" -->
     </ng-template>
     
+<ion-tabs class="tabs-icon-text" [color]="isAndroid ? 'royal' : 'primary'">
+      <ion-tab tabIcon="water" tabTitle="Water" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="leaf" tabTitle="Life" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="flame" tabTitle="Fire" [root]="rootPage"></ion-tab>
+      <ion-tab tabIcon="magnet" tabTitle="Force" [root]="rootPage"></ion-tab>
+    </ion-tabs>
+
 </ion-content>
