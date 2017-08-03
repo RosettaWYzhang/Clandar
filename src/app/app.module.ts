@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { AngularFireModule } from 'angularfire2';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,12 +18,22 @@ import { Searcher } from '../pages/searcher/searcher';
 import { Calendar } from '../pages/calendar/calendar';
 import { SettingsPage } from '../pages/settings/settings';
 import { TdlistPage } from '../pages/tdlist/tdlist';
-import { TodoModule } from '../pages/todo/todo.module';
+import { TabsPage } from "../pages/tabs/tabs";
+import { DecidePage } from "../pages/decide/decide";
 
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': 'a9078208'
   }
+};
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyAbihXWCa40DwPvVcy8rL0SYEDY4bOMOsE",
+  authDomain: "clandar-2e188.firebaseapp.com",
+  databaseURL: "https://clandar-2e188.firebaseio.com",
+  projectId: "clandar-2e188",
+  storageBucket: "clandar-2e188.appspot.com",
+  messagingSenderId: "1038439505893"
 };
 
 @NgModule({
@@ -37,14 +48,16 @@ const cloudSettings: CloudSettings = {
     Searcher,
     Calendar,
     SettingsPage,
-    TdlistPage
+    TdlistPage,
+    TabsPage,
+    DecidePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     NgCalendarModule,
-    TodoModule
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +71,9 @@ const cloudSettings: CloudSettings = {
     Searcher,
     Calendar,
     SettingsPage,
-    TdlistPage
+    TdlistPage,
+    TabsPage,
+    DecidePage
   ],
   providers: [
     StatusBar,

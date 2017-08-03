@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,  } from 'ionic-angular';
+import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
+import { Login } from '../login/login';
 
 /**
  * Generated class for the SettingsPage page.
@@ -13,12 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
+  name: string;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public auth: Auth,
+              public user: User) {
+    this.name = this.user.details.name;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
-
 }

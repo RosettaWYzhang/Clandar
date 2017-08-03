@@ -5,58 +5,30 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar>   
     <ion-title>To-do List</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-<ion-content class="content">
-<ion-item class="head">
-  <h1 style="color:RGB(255,120,82)">{{myDate | date:'EEEE, d'}}</h1>
-  <span>{{myDate | date:'MMMM'}}</span><span style="float:right">(麻烦加个counter) task(s)</span>
-</ion-item>
-  <ion-card>
-    <ion-card-content>
-      <ion-card-title>
-        Finish CS1102 Assignment 1
-      </ion-card-title>
-      <p>
-        17：00
-      </p>
-    </ion-card-content>
-    <ion-row no-padding>
-      <ion-col>
-        <ion-checkbox color="secondary" checked="false" ng-model="myVar"></ion-checkbox>
-      </ion-col>
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-start>
-          Details
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-card-title>
-        Singing Contest Preparation
-      </ion-card-title>
-      <p>
-        19：00
-      </p>
-    </ion-card-content>
-    <ion-row no-padding>
-      <ion-col>
-        <ion-checkbox color="secondary" checked="false"></ion-checkbox>
-      </ion-col>
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-start>
-          Details
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+<ion-content>
+  <ion-item class="head">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-9>
+          <h1 style="color:RGB(255,120,82)">{{myDate | date:'EEEE, d'}}</h1>
+          <span>{{myDate | date:'MMMM'}}</span>
+        </ion-col>
+        <ion-col class="button">
+          <ion-buttons end>
+            <button [navPush]="decidePage" ion-button clear icon-only>
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
 
 </ion-content>

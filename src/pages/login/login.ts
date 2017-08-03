@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams, Platform, AlertController, Loading
 import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home'; 
-import { Calendar } from '../calendar/calendar';
+import { TabsPage } from '../tabs/tabs';
 
 declare var window: any;
 
@@ -38,7 +38,7 @@ export class Login {
     
     this.auth.login('basic', {'email':this.email, 'password':this.password}).then(() => {
       //loader.dismissAll();
-      this.navCtrl.push(Calendar);        
+      this.navCtrl.push(TabsPage);        
     }, (err) => {
       //loader.dismissAll();
       console.log(err.message);

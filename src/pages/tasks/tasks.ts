@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TabsPage } from "../tabs/tabs";
 
 /**
  * Generated class for the Tasks page.
@@ -19,6 +20,14 @@ export class Tasks {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Tasks');
+  }
+
+  save(){
+    this.navCtrl.push(TabsPage);
+  }
+
+  cancel(){
+    this.navCtrl.push(TabsPage);
   }
 
   defValue: number = 2;

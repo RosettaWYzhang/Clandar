@@ -27,7 +27,15 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        }
+    }
 }

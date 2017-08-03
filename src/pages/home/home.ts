@@ -12,7 +12,7 @@ export class HomePage {
   name: string;
   constructor(public navCtrl: NavController,
               public auth: Auth,
-              public user: User){
+              public user: User) {
     this.name = this.user.details.name;
   }
   

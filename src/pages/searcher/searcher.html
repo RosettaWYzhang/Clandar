@@ -14,61 +14,65 @@
 
 
 <ion-content class='content' padding>
-  <ion-searchbar></ion-searchbar>
-  <ion-list no-border>
+  <div padding>
+    <ion-segment [(ngModel)]="clan">
+      <ion-segment-button value="club">
+        Clubs
+      </ion-segment-button>
+      <ion-segment-button value="event">
+        Events
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-    <ion-list-header>
-      <ion-icon name='star' style="color:gold"></ion-icon> 
-      Recommended
-    </ion-list-header>
+  <div [ngSwitch]="clan">
+    <ion-searchbar></ion-searchbar>
+    <ion-list no-border  *ngSwitchCase="'club'">
 
-    <ion-item>
-      Dialogue with leaders in Social Media
-    </ion-item>
+      <ion-item>
+        Sports Club
+      </ion-item>
 
-    <ion-item>
-      SMU Open House 2015
-    </ion-item>
+      <ion-item>
+        Fight Club
+      </ion-item>
 
-    <ion-item>
-      YIC final presentation invitation
-    </ion-item>
+      <ion-item>
+        Student Union
+      </ion-item> 
 
-    <ion-item>
-      SPF career talk
-    </ion-item>   
+    </ion-list>
 
-  </ion-list>
+    <ion-list no-border  *ngSwitchCase="'event'">
 
+      <ion-item>
+        Dialogue with leaders in Social Media
+      </ion-item>
 
-  <ion-list>
+      <ion-item>
+        SMU Open House 2015
+      </ion-item>
 
-    <ion-list-header>
-      <ion-icon name='heart' style="color:red"></ion-icon> 
-      Volunteer
-    </ion-list-header>
+      <ion-item>
+        YIC final presentation invitation
+      </ion-item>
 
-    <ion-item>
-      Sea game volunteers
-    </ion-item>  
+      <ion-item>
+        SPF career talk
+      </ion-item>   
 
-  </ion-list>
+      <ion-item>
+        Sea game volunteers
+      </ion-item>  
 
-  <ion-list>
+      <ion-item>
+        Social Media Internship
+      </ion-item>
 
-    <ion-list-header>
-      <ion-icon name='briefcase' style="color:black"></ion-icon>
-      Internship
-    </ion-list-header>
+      <ion-item>
+        Business Development Intern
+      </ion-item> 
 
-    <ion-item>
-      Social Media Internship
-    </ion-item>
-
-    <ion-item>
-      Business Development Intern
-    </ion-item> 
-
-  </ion-list>
-
+    </ion-list>
+  </div>
 </ion-content>

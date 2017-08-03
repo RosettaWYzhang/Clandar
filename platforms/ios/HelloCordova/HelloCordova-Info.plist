@@ -47,5 +47,7 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
+    <key>NSContactsUsageDescription</key>
+    <string/>
   </dict>
 </plist>

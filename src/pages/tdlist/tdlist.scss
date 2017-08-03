@@ -6,7 +6,7 @@ page-tdlist {
 
         .head{
             background-color:RGB(70,57,75);
-            padding-left:24px;
+            //padding-left:24px;
 
             span{
                 font-size: 17px;
@@ -14,17 +14,5 @@ page-tdlist {
             }
         }
 
-        ion-row{
-            margin-top: -12px;
-        }
-
-        ion-card-title{
-            font-size: 20px;
-        }
-        
-        ion-checkbox{
-            margin-left: 25.5px;
-            zoom: 1.6;
-        }
     }
 }
