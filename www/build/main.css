@@ -25234,6 +25234,16 @@ page-decide .bgd .title {
   color: #fff;
 }
 
+page-event-modal {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-event-modal .content .titles {
+  color: white;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+
 page-events {
   font-family: Tahoma,Helvetica,sans-serif;
 }
