@@ -39,7 +39,7 @@
       <ion-card-title>
         {{task.name}}
       </ion-card-title>
-      <p>Deadline: {{task.due}}</p>
+      <p>Deadline: {{task.due | date: 'd MMM yyyy, EEE, HH:mm:ss'}}, due {{task.dueIn}}</p>
       <p>Urgency: {{task.urgency}}</p>
       <p *ngIf="task.hide==false"> Reminder: {{task.reminder}}</p>
       <p *ngIf="task.hide==false">Note: {{task.note}}</p>

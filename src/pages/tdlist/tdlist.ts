@@ -5,6 +5,7 @@ import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 import { Tasks } from "../tasks/tasks";
 import { Events } from "../events/events";
 import { DecidePage } from "../decide/decide";
+import * as moment from 'moment';
 
 /**
  * Generated class for the TdlistPage page.
@@ -64,6 +65,7 @@ export class TdlistPage {
     let modal = this.modalCtrl.create(TaskModalPage,{
       tid: task.$key,
       tdue: task.due,
+      tdueIn: task.dueIn,
       temail: task.email,
       tname: task.name,
       tnote: task.note,
@@ -72,6 +74,7 @@ export class TdlistPage {
     });
     console.log("tid: " + task.$key +
       ",tdue: " + task.due +
+      ",tdueIn: " + task.dueIn +
       ",temail: " + task.email +
       ",tname: " + task.name +
       ",tnote: " + task.note +
@@ -148,6 +151,7 @@ export class TdlistPage {
 })
 
 export class TaskModalPage{
+  tdueIn: String;
   tid: any;
   email: any;
   tname: string;
@@ -164,6 +168,7 @@ export class TaskModalPage{
     this.email = this.user.details.email;
     this.tname = this.navParams.get('tname');
     this.tdue = this.navParams.get('tdue');
+    this.tdueIn = this.navParams.get('tdueIn');
     this.tnote = this.navParams.get('tnote');
     this.treminder = this.navParams.get('treminder');
     this.turgency = this.navParams.get('turgency');
@@ -180,12 +185,14 @@ export class TaskModalPage{
     this.tasks.update(this.tid,{
       name: this.tname,
       due: this.tdue,
+      dueIn: this.tdueIn,
       note: this.tnote,
       reminder: this.treminder,
       urgency: this.turgency
     });
     console.log("tid: " + this.tid +
       ",tdue: " + this.tdue +
+      ",tdueIn: " + this.tdueIn +
       ",temail: " + this.email +
       ",tname: " + this.tname +
       ",tnote: " + this.tnote +

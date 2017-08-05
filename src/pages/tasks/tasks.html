@@ -28,7 +28,7 @@
       <ion-label>
         <h2 style="margin-left:-1px" style="font-weight:bold;color:rgb(40,40,40)">Due</h2>
       </ion-label>
-      <ion-datetime [(ngModel)]="due" placeholder="Click to set" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
+      <ion-datetime [(ngModel)]="due" [min]="minDate" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
     </ion-item>
 
     <ion-item>
