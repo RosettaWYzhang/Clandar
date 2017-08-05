@@ -6,7 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { AngularFireModule } from 'angularfire2';
-
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Testing } from '../pages/testing/testing';
@@ -20,6 +21,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TdlistPage } from '../pages/tdlist/tdlist';
 import { TabsPage } from "../pages/tabs/tabs";
 import { DecidePage } from "../pages/decide/decide";
+import { TaskModalPage } from "../pages/tdlist/tdlist";
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -50,14 +52,17 @@ export const firebaseConfig = {
     SettingsPage,
     TdlistPage,
     TabsPage,
-    DecidePage
+    DecidePage,
+    TaskModalPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     NgCalendarModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -73,7 +78,8 @@ export const firebaseConfig = {
     SettingsPage,
     TdlistPage,
     TabsPage,
-    DecidePage
+    DecidePage,
+    TaskModalPage
   ],
   providers: [
     StatusBar,

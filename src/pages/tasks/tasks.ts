@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
-
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 /**
  * Generated class for the Tasks page.
  *
@@ -15,7 +16,27 @@ import { TabsPage } from "../tabs/tabs";
 })
 export class Tasks {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  email:string;
+  name:string;
+  due:any;
+  note:any;
+  reminder:boolean;
+  urgency:any;
+  tasks:FirebaseListObservable<any>;
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public auth: Auth,
+              public user: User,
+              public afDB: AngularFireDatabase) {
+    this.email = this.user.details.email;    
+    this.reminder = false;     
+    this.urgency = 1;       
+    this.tasks = afDB.list('/tasks',{
+      query:{
+        orderByChild: 'email',
+        equalTo: this.email
+      }
+    });
   }
 
   ionViewDidLoad() {
@@ -23,6 +44,15 @@ export class Tasks {
   }
 
   save(){
+    this.tasks.push({
+      due: this.due,
+      email: this.email,
+      hide: true,
+      name: this.name,
+      note: this.note,
+      reminder: this.reminder,
+      urgency:this.urgency
+    });
     this.navCtrl.push(TabsPage);
   }
 
@@ -30,6 +60,6 @@ export class Tasks {
     this.navCtrl.push(TabsPage);
   }
 
-  defValue: number = 2;
+  
 
 }

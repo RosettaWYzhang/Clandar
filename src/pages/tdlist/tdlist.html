@@ -30,5 +30,50 @@
     </ion-grid>
   </ion-item>
 
+  <ion-item>
+    <h1>Task</h1>
+  </ion-item>
+
+  <ion-card *ngFor="let task of tasks | async">
+    <ion-card-content >
+      <ion-card-title>
+        {{task.name}}
+      </ion-card-title>
+      <p>Deadline: {{task.due}}</p>
+      <p>Urgency: {{task.urgency}}</p>
+      <p *ngIf="task.hide==false"> Reminder: {{task.reminder}}</p>
+      <p *ngIf="task.hide==false">Note: {{task.note}}</p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col *ngIf="task.hide==true">
+        <button (click)="collapse(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
+          <ion-icon name='arrow-dropdown'></ion-icon>
+          Details
+        </button>
+      </ion-col>
+      <ion-col *ngIf="task.hide==false">
+        <button (click)="hiding(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
+          <ion-icon name='arrow-dropup'></ion-icon>
+          Details
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button (click)="edit(task)" ion-button clear small color="danger" icon-start>
+          <ion-icon name='create'></ion-icon>
+          Edit
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-item>
+    <h1>Event</h1>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let event of events | async" (click)="showEventDetails(event.$key, event.title)">
+      {{event.name}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

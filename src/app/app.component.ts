@@ -15,6 +15,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TdlistPage } from "../pages/tdlist/tdlist";
 import { TabsPage } from '../pages/tabs/tabs';
 import { DecidePage } from '../pages/decide/decide';
+import { TaskModalPage } from "../pages/tdlist/tdlist";
 
 @Component({
   templateUrl: 'app.html'
