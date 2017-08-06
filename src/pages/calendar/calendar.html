@@ -4,7 +4,10 @@
     <ion-navbar>
         <ion-title>{{viewTitle}}</ion-title>
         <ion-buttons end>
-            <button ion-button (click)="loadEvents()" style="font-size:16px">Load Events</button>
+            <button ion-button icon-only (click)="addEvent()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+            <!--<button ion-button (click)="loadEvents()" style="font-size:16px">Load Events</button>-->
         </ion-buttons>
     </ion-navbar>
 </ion-header>
@@ -26,7 +29,7 @@
               (onTitleChanged)="onViewTitleChanged($event)"
               (onTimeSelected)="onTimeSelected($event)"
               [weekviewNormalEventTemplate]="weekEvents"
-              step="30">
+              step="15">
     </calendar>
 
     <ng-template #weekEvents let-displayEvent="displayEvent">
