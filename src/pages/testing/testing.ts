@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 import { Login } from '../login/login';
-import { Events } from '../events/events';
 import { Tasks } from '../tasks/tasks';
 import { Searcher } from '../searcher/searcher';
 import { Calendar } from '../calendar/calendar';
 import { SettingsPage } from "../settings/settings";
 import { TdlistPage } from '../tdlist/tdlist';
 import { TabsPage } from '../tabs/tabs';
-
-
+import { AlertProvider } from '../../providers/alert/alert';
 /**
  * Generated class for the Testing page.
  *
@@ -23,10 +20,8 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'testing.html',
 })
 export class Testing {
-  homePage: any;
   loginPage: any;
   calendarPage: any;
-  eventManagerPage: any;
   taskManagerPage: any;
   eventSearchPage: any;
   settingsPage: any;
@@ -35,11 +30,11 @@ export class Testing {
   contactPage: any;
   tabsPage: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.homePage = HomePage;
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public alert: AlertProvider) {
     this.loginPage = Login;
     this.calendarPage = Calendar;
-    this.eventManagerPage = Events;
     this.taskManagerPage = Tasks;
     this.eventSearchPage = Searcher;
     this.settingsPage = SettingsPage;
@@ -49,6 +44,7 @@ export class Testing {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Testing');
+    this.alert.hello();
   }
 
 }

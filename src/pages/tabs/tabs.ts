@@ -6,7 +6,8 @@ import { Searcher } from '../searcher/searcher';
 import { TdlistPage } from '../tdlist/tdlist';
 import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 import { Login } from '../login/login';
-
+import { ConversationPage } from '../conversation/conversation';
+ 
 /**
  * Generated class for the TabsPage page.
  *
@@ -16,28 +17,21 @@ import { Login } from '../login/login';
 @IonicPage()
 @Component({
   template:`
-    <ion-header>
-    <ion-navbar>
-      <ion-title>CLANDAR</ion-title>
-      <ion-buttons end>
-        <button ion-button (click)="doLogout()" style="font-size:16px">Log out</button>
-      </ion-buttons>
-    </ion-navbar>
-  </ion-header>
-
-    <ion-tabs selectedIndex="0">
+    <ion-tabs #myTabs>
       <ion-tab tabIcon="calendar" tabTitle="Calendar" [root]="tab1"></ion-tab>
-      <ion-tab tabIcon="settings" tabTitle="Settings" [root]="tab2"></ion-tab>
-      <ion-tab tabIcon="list" tabTitle="To-do List" [root]="tab3"></ion-tab>
-      <ion-tab tabIcon="aperture" tabTitle="Clan" [root]="tab4"></ion-tab>      
+      <ion-tab tabIcon="list" tabTitle="To-do List" [root]="tab2"></ion-tab>
+      <ion-tab tabIcon="chatbubbles" tabTitle="Conversation" [root]="tab3"></ion-tab>
+      <ion-tab tabIcon="aperture" tabTitle="Clan" [root]="tab4"></ion-tab>  
+      <ion-tab tabIcon="settings" tabTitle="Settings" [root]="tab5"></ion-tab>          
     </ion-tabs>
 `})
 export class TabsPage {
+  @ViewChild('myTabs') tabRef: Tabs;
   tab1:any = Calendar;
-  tab2:any = SettingsPage;
-  tab3:any = TdlistPage;
+  tab2:any = TdlistPage;
+  tab3:any = ConversationPage;
   tab4:any = Searcher;
-
+  tab5:any = SettingsPage;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public auth: Auth,
@@ -46,10 +40,6 @@ export class TabsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
-  }
-  doLogout(){
-    console.log("Logging out");
-    this.auth.logout();
-    this.navCtrl.push(Login);
+    this.tabRef.select(0);
   }
 }

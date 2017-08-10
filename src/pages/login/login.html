@@ -20,34 +20,36 @@
   <!--</ion-row>-->
   <h6 style="text-align:center;color:black">Together, We make life simpler</h6>
   <div class="login-box">
+    <form [formGroup]="loginForm">
       <div class="login-form">
         <ion-row>
           <ion-col>
             <ion-list inset>
+              
               <ion-item style="background-color:whitesmoke">
                 <ion-icon name="person" item-left></ion-icon>
-                <ion-input [(ngModel)]="email" type="text" placeholder="Email" name="email"></ion-input>
+                <ion-input formControlName="email" type="text" placeholder="Email" name="email"></ion-input>
               </ion-item>
               <ion-item style="background-color:whitesmoke">
                 <ion-icon name="lock" item-left></ion-icon>
-                <ion-input [(ngModel)]="password" type="password" placeholder="Password" name="password"></ion-input>
+                <ion-input formControlName="password" type="password" placeholder="Password" name="password"></ion-input>
               </ion-item>
             </ion-list>
           </ion-col>
         </ion-row>
       </div>
 
-
       <ion-row>
         <ion-col class="signup-col">
           <div class="login-button">
-          <button ion-button full color="white" (click)="login()" class="submit-btn">Login</button>
+          <button ion-button full color="white" (click)="login()" class="submit-btn" [disabled]="!loginForm.valid">Login</button>
           <button ion-button full color="white" (click)="register()" class="submit-btn" style="background:lightsalmon; font-size: 0.9em;">Register</button>
-          <button ion-button outline color="white" class="forget-btn" (click)="createAccount()" >Forget Password?</button>
+          <button ion-button outline color="white" (click)="forgetPassword()" class="forget-btn">Forget Password?</button>
           <!--<button ion-button outline color="white" class="oauth-btn"   (click)="oauth()">OAuth2 Login</button>
           <button ion-button outline color="white" (click)="gotoSearchPatientPage()">Search Patient</button>-->
           </div>
         </ion-col>
       </ion-row>
+    </form>
   </div>
 </ion-content>

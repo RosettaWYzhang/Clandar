@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { IonicPage, NavController, NavParams, Platform, AlertController, LoadingController } from 'ionic-angular';
 import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from "angularfire2/auth";
 import { RegisterPage } from '../register/register';
-import { HomePage } from '../home/home'; 
 import { TabsPage } from '../tabs/tabs';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { Validator } from '../../validation';
+import * as firebase from 'firebase';
 
 declare var window: any;
 
@@ -20,14 +24,21 @@ declare var window: any;
   templateUrl: 'login.html',
 })
 export class Login {
-  email: string;
-  password: string;
+  private loginForm: FormGroup;
+  private alert:any;
+  private email: any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              private platform: Platform,
-              public auth: Auth,
-              public alertCtrl: AlertController){} 
+              public formBuilder: FormBuilder,
+              public authService: AuthServiceProvider,
+              public alertCtrl: AlertController){
+                authService.setNavCtrl(navCtrl);
+                this.loginForm = formBuilder.group({
+                  email: Validator.emailValidator,
+                  password: Validator.passwordValidator
+                });
+              } 
 
   login(){
     console.log('process login');
@@ -35,30 +46,40 @@ export class Login {
       content: "Logging in..."
     });
     loader.present();*/
-    
-    this.auth.login('basic', {'email':this.email, 'password':this.password}).then(() => {
-      //loader.dismissAll();
-      this.navCtrl.push(TabsPage);        
-    }, (err) => {
-      //loader.dismissAll();
-      console.log(err.message);
-
-      let errors = '';
-      if(err.message === 'UNPROCESSABLE ENTITY') errors += 'Email isn\'t valid.<br/>';
-      if(err.message === 'UNAUTHORIZED') errors += 'Password is required.<br/>';
-
-      let alert = this.alertCtrl.create({
-        title:'Login Error', 
-        subTitle:errors,
-        buttons:['OK']
-      });
-      alert.present();
-    });
+    this.authService.emailLogin(this.loginForm.value["email"],this.loginForm.value["password"]);
   }
 
   register() {
     console.log("go to register page");
     this.navCtrl.push(RegisterPage);
+  }
+
+  forgetPassword(){
+    console.log(this.loginForm.value["email"]);
+    this.alert = this.alertCtrl.create({
+      title: 'Reset Password',
+      message: 'Please Enter Your Email Address',
+      inputs: [
+        {
+          name: 'Email',
+          placeholder: ''
+        }
+      ],
+      buttons: [
+        {
+          text: 'Confirm',
+          handler: data => {
+            let email = data["Email"];
+            this.authService.sendPasswordReset(email);
+            this.loginForm.reset();    
+          }
+        },
+        {
+          text: 'Cancel',
+          handler: data => {}
+        }
+      ]
+    }).present();
   }
 
   ionViewDidLoad() {

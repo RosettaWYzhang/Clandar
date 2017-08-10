@@ -25220,20 +25220,6 @@ page-calendar .has-header .calendar-event-inner {
   opacity: 0.75;
 }
 
-page-decide .bgd ion-card {
-  position: relative;
-  text-align: center;
-}
-
-page-decide .bgd .title {
-  position: absolute;
-  top: 36%;
-  font-size: 2.0em;
-  width: 100%;
-  font-weight: bold;
-  color: #fff;
-}
-
 page-event-modal {
   font-family: Tahoma,Helvetica,sans-serif;
 }
@@ -25242,30 +25228,6 @@ page-event-modal .content .titles {
   color: white;
   padding: 10px 8px;
   border-radius: 8px;
-}
-
-page-events {
-  font-family: Tahoma,Helvetica,sans-serif;
-}
-
-page-events .content .titles {
-  color: white;
-  padding: 10px 8px;
-  border-radius: 8px;
-}
-
-page-home .content .rSlide {
-  font-size: 2em;
-}
-
-page-home .content ion-avatar {
-  width: 20px !important;
-  height: 20px !important;
-  zoom: 3.0;
-}
-
-page-home .content button {
-  width: 75px;
 }
 
 page-login {

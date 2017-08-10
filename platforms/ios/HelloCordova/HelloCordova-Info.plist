@@ -49,5 +49,13 @@
     </dict>
     <key>NSContactsUsageDescription</key>
     <string/>
+    <key>NSCameraUsageDescription</key>
+    <string/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string/>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string/>
   </dict>
 </plist>

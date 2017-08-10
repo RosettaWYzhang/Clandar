@@ -16,11 +16,11 @@
 <ion-content class="reg-content">
   <img src="assets/img/regLogo.png" id="bg">
   <div class="reg-box">
-    <h2 style="margin-bottom:15px">Registration</h2>
-    <ion-input [(ngModel)]="name" type="text" placeholder="Name" name="name"></ion-input>
-    <ion-input [(ngModel)]="email" type="text" placeholder="Email" name="email"></ion-input>
-    <ion-input [(ngModel)]="password" type="text" placeholder="Password" name="password"></ion-input>
-    <ion-col></ion-col>
-    <button ion-button full (click)="doRegister()" class="reg-btn">Register!</button>
+    <form [formGroup]="registerForm">
+      <h2 style="margin-bottom:15px">Registration</h2>
+      <ion-input formControlName="email" type="text" placeholder="Email" name="email"></ion-input>
+      <ion-input formControlName="password" type="text" placeholder="Password" name="password"></ion-input>    
+      <button ion-button full (click)="doRegister()" class="reg-btn">Register!</button>
+    </form>
   </div>
 </ion-content>

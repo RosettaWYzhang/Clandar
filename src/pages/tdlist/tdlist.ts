@@ -1,11 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController, Nav, ModalController, ViewController } from 'ionic-angular';
+import { IonicPage, Platform, NavController, NavParams, MenuController, Nav, ModalController, ViewController, ActionSheetController} from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 import { Tasks } from "../tasks/tasks";
-import { Events } from "../events/events";
-import { DecidePage } from "../decide/decide";
 import * as moment from 'moment';
+import * as firebase from 'firebase';
+import { Observable } from "rxjs";
 
 /**
  * Generated class for the TdlistPage page.
@@ -22,21 +21,23 @@ export class TdlistPage {
 
   @ViewChild(Nav) nav: Nav;
   length:any;
-  decidePage:any;
+  taskPage:any;
   email:any;
   myDate: String = new Date().toISOString();
   tasks: FirebaseListObservable<any>;
   events: FirebaseListObservable<any>;
+  actionSheet: any;
+  private date = moment();
 
   constructor(public navCtrl: NavController, 
               public menuController: MenuController,
               public modalCtrl: ModalController,
-              public auth: Auth,
-              public user: User,
+              public ASCtrl: ActionSheetController,
+              public platform: Platform,
               public afDB: AngularFireDatabase) {
     length = 2;        
-    this.decidePage = DecidePage;     
-    this.email = this.user.details.email;      
+    this.taskPage = Tasks;     
+    this.email = firebase.auth().currentUser.email;      
     this.tasks = afDB.list('/tasks',{
       query:{
         orderByChild: 'email',
@@ -44,8 +45,10 @@ export class TdlistPage {
       }
     });
 
-    this.events = afDB.list('/events');
-    
+    let source = Observable.interval(150);
+    source.subscribe((x) => {
+      this.date = moment();
+    });
   }
 
   collapse(taskID,hide){
@@ -74,7 +77,6 @@ export class TdlistPage {
     });
     console.log("tid: " + task.$key +
       ",tdue: " + task.due +
-      ",tdueIn: " + task.dueIn +
       ",temail: " + task.email +
       ",tname: " + task.name +
       ",tnote: " + task.note +
@@ -83,6 +85,86 @@ export class TdlistPage {
     );
     modal.present();
   }
+
+  isBefore(time){
+    if(moment(time,"YYYY-MM-DD HH:mm").isBefore(this.date))
+      return true;
+    else return false;
+  }
+
+  more(task){
+    if (task.finished == false){
+      this.actionSheet = this.ASCtrl.create({
+        title: 'Actions',
+        buttons:[
+          {
+            text: 'Delete',
+            role: 'destructive',
+            icon: !this.platform.is('ios') ? 'trash' : null,
+            handler: () => {
+              console.log('Delete clicked');
+              this.tasks.remove(task.$key);
+              console.log('Task deleted');
+            }
+          },
+          {
+            text: 'Mark as finished',
+            icon: !this.platform.is('ios') ? 'checkmark' : null,
+            handler: () => {
+              console.log('Marked');
+              this.tasks.update(task.$key,{
+                finished: true
+              })
+            }
+          },
+          {
+            text: 'Cancel',
+            role: 'cancel', // will always sort to be on the bottom
+            icon: !this.platform.is('ios') ? 'close' : null,
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });}
+    else {
+      this.actionSheet = this.ASCtrl.create({
+        title: 'Actions',
+        buttons:[
+          {
+            text: 'Delete',
+            role: 'destructive',
+            icon: !this.platform.is('ios') ? 'trash' : null,
+            handler: () => {
+              console.log('Delete clicked');
+              this.tasks.remove(task.$key);
+              console.log('Task deleted');
+            }
+          },
+          {
+            text: 'Mark as in progress',
+            icon: !this.platform.is('ios') ? 'checkmark' : null,
+            handler: () => {
+              console.log('Marked');
+              this.tasks.update(task.$key,{
+                finished: false
+              })
+            }
+          },
+          {
+            text: 'Cancel',
+            role: 'cancel', // will always sort to be on the bottom
+            icon: !this.platform.is('ios') ? 'close' : null,
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });
+    }
+    this.actionSheet.present();
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TdlistPage');
@@ -162,13 +244,10 @@ export class TaskModalPage{
   tasks:any;
   constructor(public navParams: NavParams,
               public viewCtrl: ViewController,
-              public user: User,
-              public auth:Auth,
               public afDB: AngularFireDatabase){
-    this.email = this.user.details.email;
+    this.email = firebase.auth().currentUser.email;
     this.tname = this.navParams.get('tname');
     this.tdue = this.navParams.get('tdue');
-    this.tdueIn = this.navParams.get('tdueIn');
     this.tnote = this.navParams.get('tnote');
     this.treminder = this.navParams.get('treminder');
     this.turgency = this.navParams.get('turgency');
@@ -185,14 +264,12 @@ export class TaskModalPage{
     this.tasks.update(this.tid,{
       name: this.tname,
       due: this.tdue,
-      dueIn: this.tdueIn,
       note: this.tnote,
       reminder: this.treminder,
       urgency: this.turgency
     });
     console.log("tid: " + this.tid +
       ",tdue: " + this.tdue +
-      ",tdueIn: " + this.tdueIn +
       ",temail: " + this.email +
       ",tname: " + this.tname +
       ",tnote: " + this.tnote +

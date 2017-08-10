@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsPage } from "../tabs/tabs";
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
+import { DataProvider } from '../../providers/data/data';
 import * as moment from 'moment';
+import * as firebase from 'firebase';
+
 /**
  * Generated class for the Tasks page.
  *
@@ -26,12 +27,12 @@ export class Tasks {
   tasks:FirebaseListObservable<any>;
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public auth: Auth,
-              public user: User,
+              public alertCtrl: AlertController,
+              public dataProvider: DataProvider,
               public afDB: AngularFireDatabase) {
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();
     this.due = preselectedDate;
-    this.email = this.user.details.email;    
+    this.email = firebase.auth().currentUser.email;  
     this.reminder = false;     
     this.urgency = 2;       
     this.tasks = afDB.list('/tasks',{
@@ -47,21 +48,41 @@ export class Tasks {
   }
 
   save(){
-    this.tasks.push({
-      due: this.due,
-      dueIn: moment(this.due).fromNow(),
-      email: this.email,
-      hide: true,
-      name: this.name,
-      note: this.note,
-      reminder: this.reminder,
-      urgency:this.urgency
-    });
-    this.navCtrl.push(TabsPage);
+    if (this.note==undefined){
+      let alert = this.alertCtrl.create({
+        title: 'Note is empty',
+        subTitle: 'Please fill in the note',
+        buttons: ['Dismiss']
+      });
+      alert.present();
+    }
+    else if (this.name==undefined){
+      let alert = this.alertCtrl.create({
+        title: 'Name is empty',
+        subTitle: 'Please fill in the name',
+        buttons: ['Dismiss']
+      });
+      alert.present();
+    }
+    else {
+      this.tasks.push({
+        due: this.due,
+        email: this.email,
+        hide: true,
+        name: this.name,
+        note: this.note,
+        reminder: this.reminder,
+        urgency: this.urgency,
+        finished: false,
+        overdue: false
+      });
+    this.navCtrl.parent.select(1);
+    }
   }
 
   cancel(){
-    this.navCtrl.push(TabsPage);
+    //this.navCtrl.push(TabsPage);
+    this.navCtrl.parent.select(1);
   }
 
   

@@ -14,27 +14,42 @@
 
 
 <ion-content class="settings-content">
-  <img src="assets/img/regLogo.png" id="bg">
-  <div class="settings-box">
-    <h2 style="margin-bottom:15px">Settings</h2>
+  <div *ngIf="user">
+    <img src="assets/img/regLogo.png" id="bg">
+
+    <ion-list>
+      <ion-item (click)='gotoInfo()'>
+        <ion-avatar item-left>
+          <img src='{{user.img}}' tappable (click)="setPhoto()">
+        </ion-avatar>
+        <h2>{{user.name}}</h2>
+        <p>{{user.description}}</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list full>
+      <ion-item>
+        <button (click)='gotoHomePage()' ion-button full>Access Phone Contacts</button>
+      </ion-item>
+      <ion-item>
+        <button (click)='gotoHomePage()' ion-button full>Sync with System Calendar</button>
+      </ion-item>
+      <ion-item>
+        <button (click)='gotoHomePage()' ion-button full>Invite Your Friends :)</button>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+          <ion-toggle color="primary" checked="false"></ion-toggle>
+          <ion-label>
+            <h6 class="titles">Allow others to view my calendar</h6>
+          </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <button (click)='doLogout()' ion-button full>Log out</button>
+      </ion-item>
+    </ion-list>
   </div>
-  <ion-list full>
-    <ion-item>
-      <button (click)='gotoHomePage()' ion-button full>Access Phone Contacts</button>
-    </ion-item>
-    <ion-item>
-      <button (click)='gotoHomePage()' ion-button full>Sync with System Calendar</button>
-    </ion-item>
-    <ion-item>
-      <button (click)='gotoHomePage()' ion-button full>Invite Your Friends :)</button>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item>
-        <ion-toggle color="secondary" checked="false"></ion-toggle>
-        <ion-label>
-          <h6 class="titles">Allow others to view my calendar</h6>
-        </ion-label>
-    </ion-item>
-  </ion-list>
 </ion-content>

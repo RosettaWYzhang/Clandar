@@ -21,7 +21,7 @@
         </ion-col>
         <ion-col class="button">
           <ion-buttons end>
-            <button [navPush]="decidePage" ion-button clear icon-only>
+            <button [navPush]="taskPage" ion-button clear icon-only>
               <ion-icon name="add"></ion-icon>
             </button>
           </ion-buttons>
@@ -31,49 +31,93 @@
   </ion-item>
 
   <ion-item>
-    <h1>Task</h1>
+    <h1>In Progress</h1>
   </ion-item>
 
-  <ion-card *ngFor="let task of tasks | async">
-    <ion-card-content >
-      <ion-card-title>
-        {{task.name}}
-      </ion-card-title>
-      <p>Deadline: {{task.due | date: 'd MMM yyyy, EEE, HH:mm:ss'}}, due {{task.dueIn}}</p>
-      <p>Urgency: {{task.urgency}}</p>
-      <p *ngIf="task.hide==false"> Reminder: {{task.reminder}}</p>
-      <p *ngIf="task.hide==false">Note: {{task.note}}</p>
-    </ion-card-content>
-    <ion-row no-padding>
-      <ion-col *ngIf="task.hide==true">
-        <button (click)="collapse(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
-          <ion-icon name='arrow-dropdown'></ion-icon>
-          Details
-        </button>
-      </ion-col>
-      <ion-col *ngIf="task.hide==false">
-        <button (click)="hiding(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
-          <ion-icon name='arrow-dropup'></ion-icon>
-          Details
-        </button>
-      </ion-col>
-      <ion-col text-right>
-        <button (click)="edit(task)" ion-button clear small color="danger" icon-start>
-          <ion-icon name='create'></ion-icon>
-          Edit
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+  <ng-container *ngFor="let task of tasks | async">
+    <ion-card *ngIf="task.finished==false">
+      <ion-card-content>
+        <ion-card-title>
+          {{task.name}}
+        </ion-card-title>
+        <ion-note *ngIf="isBefore(task.due)==true">Overdue</ion-note>
+        <p>Deadline: {{task.due | date: 'd MMM yyyy, EEE, HH:mm:ss'}}</p>
+        <p>Urgency: {{task.urgency}}</p>
+        <p *ngIf="task.hide==false"> Reminder: {{task.reminder}}</p>
+        <p *ngIf="task.hide==false">Note: {{task.note}}</p>
+      </ion-card-content>
+      <ion-row no-padding>
+        <ion-col *ngIf="task.hide==true">
+          <button (click)="collapse(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
+            <ion-icon name='arrow-dropdown'></ion-icon>
+            Details
+          </button>
+        </ion-col>
+        <ion-col *ngIf="task.hide==false">
+          <button (click)="hiding(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
+            <ion-icon name='arrow-dropup'></ion-icon>
+            Details
+          </button>
+        </ion-col>
+        <ion-col text-center>
+          <button (click)="edit(task)" ion-button clear small color="danger" icon-start>
+            <ion-icon name='create'></ion-icon>
+            Edit
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button (click)="more(task)" ion-button clear small color="danger" icon-start> 
+            <ion-icon name='more'></ion-icon>
+            More
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ng-container>
 
   <ion-item>
-    <h1>Event</h1>
+    <h1>Completed</h1>
   </ion-item>
 
-  <ion-list>
-    <ion-item *ngFor="let event of events | async" (click)="showEventDetails(event.$key, event.title)">
-      {{event.name}}
-    </ion-item>
-  </ion-list>
+  <ng-container *ngFor="let task of tasks | async">
+    <ion-card *ngIf="task.finished==true">
+      <ion-card-content>
+        <ion-card-title>
+          {{task.name}}
+        </ion-card-title>
+        <ion-note *ngIf="isBefore(task.due)==true">Overdue</ion-note>
+        <p>Deadline: {{task.due | date: 'd MMM yyyy, EEE, HH:mm:ss'}}</p>
+        <p>Urgency: {{task.urgency}}</p>
+        <p *ngIf="task.hide==false"> Reminder: {{task.reminder}}</p>
+        <p *ngIf="task.hide==false">Note: {{task.note}}</p>
+      </ion-card-content>
+      <ion-row no-padding>
+        <ion-col *ngIf="task.hide==true">
+          <button (click)="collapse(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
+            <ion-icon name='arrow-dropdown'></ion-icon>
+            Details
+          </button>
+        </ion-col>
+        <ion-col *ngIf="task.hide==false">
+          <button (click)="hiding(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
+            <ion-icon name='arrow-dropup'></ion-icon>
+            Details
+          </button>
+        </ion-col>
+        <ion-col text-center>
+          <button (click)="edit(task)" ion-button clear small color="danger" icon-start>
+            <ion-icon name='create'></ion-icon>
+            Edit
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button (click)="more(task)" ion-button clear small color="danger" icon-start> 
+            <ion-icon name='more'></ion-icon>
+            More
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ng-container>
 
 </ion-content>

@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,  } from 'ionic-angular';
-import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
+import { IonicPage, NavController, NavParams, AlertController, App} from 'ionic-angular';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { LogoutProvider } from '../../providers/auth-service/logout';
+import { DataProvider } from '../../providers/data/data';
+import { LoadingProvider } from '../../providers/loading/loading';
 import { Login } from '../login/login';
+import { InformationPage } from '../information/information';
 
 /**
  * Generated class for the SettingsPage page.
@@ -15,16 +19,53 @@ import { Login } from '../login/login';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-  
-  name: string;
+  private alert: any;
+  private user: FirebaseObjectObservable<any>;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public auth: Auth,
-              public user: User) {
-    this.name = this.user.details.name;
+              public app: App,
+              public logoutProvider: LogoutProvider,
+              public dataProvider: DataProvider,
+              public loadingProvider: LoadingProvider,
+              public alertCtrl: AlertController) {
+    this.logoutProvider.setApp(app);
   }
 
   ionViewDidLoad() {
+    this.loadingProvider.load();
+    this.dataProvider.getCurrentUser().subscribe((user) => {
+      this.loadingProvider.dismiss();
+      this.user = user;
+      console.log(this.user);
+      //console.log(this.user["userId"]);
+      console.log(this.user["userId"]);
+    });
+    
     console.log('ionViewDidLoad SettingsPage');
+  }
+
+  gotoInfo(){
+    this.navCtrl.push(InformationPage);
+  }
+
+  doLogout(){
+    this.alert = this.alertCtrl.create({
+      title: 'Confirm Logout',
+      message: 'Are you sure you want to logout?',
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Logout',
+          handler: data => {
+            // Log the user out.
+            this.logoutProvider.doLogout();
+            this.navCtrl.push(Login);
+          }
+        }
+      ]
+    }).present();
   }
 }
