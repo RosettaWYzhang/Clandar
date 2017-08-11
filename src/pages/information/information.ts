@@ -77,10 +77,13 @@ export class InformationPage {
     this.alert = this.alertCtrl.create({
       title: 'Set Profile Photo',
       message: 'Do you want to take a photo or choose from your photo gallery?',
-      buttons: [
+      buttons: [ 
         {
-          text: 'Cancel',
-          handler: data => { }
+          text: 'Take Photo',
+          handler: () => {
+            // Call imageProvider to process, upload, and update user photo.
+            this.imageProvider.setProfilePhoto(this.user, this.camera.PictureSourceType.CAMERA);
+          }
         },
         {
           text: 'Choose from Gallery',
@@ -88,14 +91,12 @@ export class InformationPage {
             // Call imageProvider to process, upload, and update user photo.
             this.imageProvider.setProfilePhoto(this.user, this.camera.PictureSourceType.PHOTOLIBRARY);
           }
-        },
+        }, 
         {
-          text: 'Take Photo',
-          handler: () => {
-            // Call imageProvider to process, upload, and update user photo.
-            this.imageProvider.setProfilePhoto(this.user, this.camera.PictureSourceType.CAMERA);
-          }
+          text: 'Cancel',
+          handler: data => { }
         }
+
       ]
     }).present();
   }
@@ -113,10 +114,6 @@ export class InformationPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
         {
           text: 'Save',
           handler: data => {
@@ -162,6 +159,10 @@ export class InformationPage {
               }
             }
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -179,11 +180,7 @@ export class InformationPage {
           value: this.user.description
         }
       ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+      buttons: [   
         {
           text: 'Save',
           handler: data => {
@@ -199,6 +196,10 @@ export class InformationPage {
               });
             }
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -218,10 +219,6 @@ export class InformationPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
         {
           text: 'Save',
           handler: data => {
@@ -263,6 +260,10 @@ export class InformationPage {
               }
             }
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -293,10 +294,6 @@ export class InformationPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
         {
           text: 'Save',
           handler: data => {
@@ -345,6 +342,10 @@ export class InformationPage {
                 this.alertProvider.showErrorMessage(code);
               });
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -357,9 +358,6 @@ export class InformationPage {
       title: 'Confirm Delete',
       message: 'Are you sure you want to delete your account? This cannot be undone.',
       buttons: [
-        {
-          text: 'Cancel'
-        },
         {
           text: 'Delete',
           handler: data => {
@@ -385,6 +383,9 @@ export class InformationPage {
                 }
               });
           }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();
@@ -396,12 +397,13 @@ export class InformationPage {
       title: 'Confirm Logout',
       message: 'Are you sure you want to logout?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
+        
         {
           text: 'Logout',
           handler: data => { this.logoutProvider.doLogout(); }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();

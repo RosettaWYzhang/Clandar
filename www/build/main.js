@@ -1454,7 +1454,7 @@ var SettingsPage = (function () {
 SettingsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-settings',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/'<!--\n  Generated template for the SettingsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="settings-content">\n  <div *ngIf="user">\n    <img src="assets/img/regLogo.png" id="bg">\n\n    <ion-list>\n      <ion-item (click)=\'gotoInfo()\'>\n        <ion-avatar item-left>\n          <img src=\'{{user.img}}\' tappable (click)="setPhoto()">\n        </ion-avatar>\n        <h2>{{user.name}}</h2>\n        <p>{{user.description}}</p>\n        <ion-icon name="arrow-forward" item-right style="color:grey"></ion-icon>\n      </ion-item>\n    </ion-list>\n\n    <ion-list full>\n      <ion-item>\n        <button (click)=\'gotoContacts()\' ion-button full>My Contacts</button>\n      </ion-item>\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Sync with System Calendar</button>\n      </ion-item>\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Invite Your Friends :)</button>\n      </ion-item>\n    </ion-list>\n    <ion-list>\n      <ion-item>\n          <ion-toggle color="secondary" checked="false"></ion-toggle>\n          <ion-label>\n            <h6 class="titles">Allow others to view my calendar</h6>\n          </ion-label>\n      </ion-item>\n    </ion-list>\n    <ion-list>\n      <ion-item>\n        <button (click)=\'doLogout()\' ion-button full>Log Out</button>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/,
+        selector: 'page-settings',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/'<!--\n  Generated template for the SettingsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="settings-content">\n  <div *ngIf="user">\n    <img src="assets/img/regLogo.png" id="bg">\n\n    <ion-list>\n      <ion-item (click)=\'gotoInfo()\'>\n        <ion-avatar item-left>\n          <img src=\'{{user.img}}\'>\n        </ion-avatar>\n        <h2>{{user.name}}</h2>\n        <p>{{user.description}}</p>\n        <ion-icon name="arrow-forward" item-right style="color:grey"></ion-icon>\n      </ion-item>\n    </ion-list>\n\n    <ion-list full>\n      <ion-item>\n        <button (click)=\'gotoContacts()\' ion-button full>My Contacts</button>\n      </ion-item>\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Sync with System Calendar</button>\n      </ion-item>\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Invite Your Friends :)</button>\n      </ion-item>\n    </ion-list>\n    <ion-list>\n      <ion-item>\n          <ion-toggle color="secondary" checked="false"></ion-toggle>\n          <ion-label>\n            <h6 class="titles">Allow others to view my calendar</h6>\n          </ion-label>\n      </ion-item>\n    </ion-list>\n    <ion-list>\n      <ion-item>\n        <button (click)=\'doLogout()\' ion-button full>Log Out</button>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -2744,8 +2744,11 @@ var InformationPage = (function () {
             message: 'Do you want to take a photo or choose from your photo gallery?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
+                    text: 'Take Photo',
+                    handler: function () {
+                        // Call imageProvider to process, upload, and update user photo.
+                        _this.imageProvider.setProfilePhoto(_this.user, _this.camera.PictureSourceType.CAMERA);
+                    }
                 },
                 {
                     text: 'Choose from Gallery',
@@ -2755,11 +2758,8 @@ var InformationPage = (function () {
                     }
                 },
                 {
-                    text: 'Take Photo',
-                    handler: function () {
-                        // Call imageProvider to process, upload, and update user photo.
-                        _this.imageProvider.setProfilePhoto(_this.user, _this.camera.PictureSourceType.CAMERA);
-                    }
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -2778,10 +2778,6 @@ var InformationPage = (function () {
                 }
             ],
             buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
                 {
                     text: 'Save',
                     handler: function (data) {
@@ -2829,6 +2825,10 @@ var InformationPage = (function () {
                             }
                         }
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -2848,10 +2848,6 @@ var InformationPage = (function () {
             ],
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Save',
                     handler: function (data) {
                         var description = data["description"];
@@ -2866,6 +2862,10 @@ var InformationPage = (function () {
                             });
                         }
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -2885,10 +2885,6 @@ var InformationPage = (function () {
                 }
             ],
             buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
                 {
                     text: 'Save',
                     handler: function (data) {
@@ -2931,6 +2927,10 @@ var InformationPage = (function () {
                             }
                         }
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -2961,10 +2961,6 @@ var InformationPage = (function () {
                 }
             ],
             buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
                 {
                     text: 'Save',
                     handler: function (data) {
@@ -3016,6 +3012,10 @@ var InformationPage = (function () {
                             _this.alertProvider.showErrorMessage(code);
                         });
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -3028,9 +3028,6 @@ var InformationPage = (function () {
             title: 'Confirm Delete',
             message: 'Are you sure you want to delete your account? This cannot be undone.',
             buttons: [
-                {
-                    text: 'Cancel'
-                },
                 {
                     text: 'Delete',
                     handler: function (data) {
@@ -3056,6 +3053,9 @@ var InformationPage = (function () {
                             }
                         });
                     }
+                },
+                {
+                    text: 'Cancel'
                 }
             ]
         }).present();
@@ -3068,11 +3068,11 @@ var InformationPage = (function () {
             message: 'Are you sure you want to logout?',
             buttons: [
                 {
-                    text: 'Cancel'
-                },
-                {
                     text: 'Logout',
                     handler: function (data) { _this.logoutProvider.doLogout(); }
+                },
+                {
+                    text: 'Cancel'
                 }
             ]
         }).present();
@@ -3082,21 +3082,12 @@ var InformationPage = (function () {
 InformationPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-information',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/information/information.html"*/'<!--\n  Generated template for the InformationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Personal Profile</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n  <div *ngIf="user">\n    <ion-list>\n      <ion-list-header>\n        My Account\n      </ion-list-header>\n      <ion-item no-lines class="head">\n        <p></p><p></p><p></p><p></p><p></p>\n        <div class="tx">\n          <ion-img class="img" src="{{user.img}}"></ion-img>\n        </div>\n        <p></p>		      \n        <h2 style="text-align:center;font-size:22px;color:white" tappable (click)="setName()">{{user.name}} </h2>\n        <p></p><p></p><p></p>\n      </ion-item>\n      <ion-list-header>\n        Status\n      </ion-list-header>\n      <ion-item no-lines>\n        <p tappable (click)="setDescription()" class="description">{{user.description}}</p>\n      </ion-item>\n      <ion-list-header>\n        More\n      </ion-list-header>\n      <ion-item no-lines tappable (click)="setEmail()">\n        Change Email Address\n      </ion-item>\n      <ion-item no-lines tappable (click)="setPassword()" *ngIf="user && user.provider == \'Firebase\'">\n        Change Password\n      </ion-item>\n      <ion-item no-lines tappable (click)="deleteAccount()">\n        Delete Account\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/information/information.html"*/,
+        selector: 'page-information',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/information/information.html"*/'<!--\n  Generated template for the InformationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Personal Profile</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n  <div *ngIf="user">\n    <ion-list>\n      <ion-list-header>\n        My Account\n      </ion-list-header>\n      <ion-item no-lines class="head">\n        <p></p><p></p><p></p><p></p><p></p>\n        <div class="tx">\n          <ion-img class="img" src="{{user.img}}" tappable (click)="setPhoto()"></ion-img>\n        </div>\n        <p></p>		      \n        <h2 style="text-align:center;font-size:22px;color:white" tappable (click)="setName()">{{user.name}} </h2>\n        <p></p><p></p><p></p>\n      </ion-item>\n      <ion-list-header>\n        Status\n      </ion-list-header>\n      <ion-item no-lines>\n        <p tappable (click)="setDescription()" class="description">{{user.description}}</p>\n      </ion-item>\n      <ion-list-header>\n        More\n      </ion-list-header>\n      <ion-item no-lines tappable (click)="setEmail()">\n        Change Email Address\n      </ion-item>\n      <ion-item no-lines tappable (click)="setPassword()" *ngIf="user && user.provider == \'Firebase\'">\n        Change Password\n      </ion-item>\n      <ion-item no-lines tappable (click)="deleteAccount()">\n        Delete Account\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/information/information.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_logout__["a" /* LogoutProvider */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */],
-        __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
-        __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */],
-        __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__["a" /* Camera */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_logout__["a" /* LogoutProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_logout__["a" /* LogoutProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__["a" /* Camera */]) === "function" && _l || Object])
 ], InformationPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 //# sourceMappingURL=information.js.map
 
 /***/ }),

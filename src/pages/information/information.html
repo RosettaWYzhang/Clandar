@@ -21,7 +21,7 @@
       <ion-item no-lines class="head">
         <p></p><p></p><p></p><p></p><p></p>
         <div class="tx">
-          <ion-img class="img" src="{{user.img}}"></ion-img>
+          <ion-img class="img" src="{{user.img}}" tappable (click)="setPhoto()"></ion-img>
         </div>
         <p></p>		      
         <h2 style="text-align:center;font-size:22px;color:white" tappable (click)="setName()">{{user.name}} </h2>
