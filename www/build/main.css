@@ -25220,6 +25220,10 @@ page-calendar .has-header .calendar-event-inner {
   opacity: 0.75;
 }
 
+page-conversation {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
 page-event-modal {
   font-family: Tahoma,Helvetica,sans-serif;
 }
