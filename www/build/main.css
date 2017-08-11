@@ -25230,6 +25230,32 @@ page-event-modal .content .titles {
   border-radius: 8px;
 }
 
+page-information {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-information .content {
+  background: RGB(250, 249, 255);
+}
+
+page-information .content .head {
+  background-image: url("../assets/img/regLogo.png");
+}
+
+page-information .content .head .tx {
+  margin: auto;
+}
+
+page-information .content .head .img {
+  width: 80px !important;
+  height: 80px !important;
+  background-color: transparent;
+}
+
+page-information .content .opt {
+  font-size: 20px;
+}
+
 page-login {
   font-family: Tahoma,Helvetica,sans-serif;
 }
@@ -25396,6 +25422,11 @@ page-tdlist .content {
   background: white;
 }
 
+page-tdlist .content .add {
+  color: RGB(233, 30, 99);
+  font-size: 50px;
+}
+
 page-tdlist .content .head {
   background-color: RGB(70, 57, 75);
 }
@@ -25403,4 +25434,17 @@ page-tdlist .content .head {
 page-tdlist .content .head span {
   font-size: 17px;
   color: RGB(170, 170, 170);
+}
+
+page-verify {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-verify .veri-content .page {
+  margin: 50px 10px 10px 10px;
+  padding: 20px 16px 20px 16px;
+}
+
+page-verify .veri-content ion-icon {
+  font-size: 50px;
 }

@@ -1,3 +1,27 @@
 page-information {
+    font-family:Tahoma,Helvetica,sans-serif;
+    .content{
+        background: RGB(250,249,255);
 
+        .head{
+            background-image: url("../assets/img/regLogo.png");
+        }
+
+        .head .tx{
+            margin: auto;
+        }
+
+        .head .img{
+            width: 80px !important;
+            height: 80px !important;  
+            //max-width: 30px !important;  //any size
+            //max-height: 1000px !important; //any size  
+            //border: 1px solid #000;
+            background-color: transparent;
+        }
+
+        .opt{
+            font-size: 20px;
+        }
+    }
 }

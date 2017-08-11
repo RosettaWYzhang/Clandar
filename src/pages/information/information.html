@@ -7,39 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Personal Profile</ion-title>
+    <ion-title>My Account</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content>
+<ion-content class="content">
   <div *ngIf="user">
     <ion-list>
-      <ion-list-header>
+      <!--<ion-list-header>
         My Account
-      </ion-list-header>
-      <ion-item no-lines>
-        <ion-avatar item-left>
-          <img src="{{user.img}}" tappable (click)="setPhoto()">
-        </ion-avatar>
-        <h2 tappable (click)="setName()">{{user.name}} </h2>
+      </ion-list-header>-->
+      <ion-item no-lines class="head">
+        <span class="tx">
+          <ion-img class="img" src="{{user.img}}"></ion-img>
+        </span>
+        <p></p>
+        <h2 style="text-align:center;font-size:24px" tappable (click)="setName()">{{user.name}} </h2>
+        <p></p><p></p><p></p><p></p>
       </ion-item>
       <ion-list-header>
         Status
       </ion-list-header>
       <ion-item no-lines>
-        <p tappable (click)="setDescription()" class="description">{{user.description}}</p>
+        <p style="font-size:18px;" tappable (click)="setDescription()" class="description">{{user.description}}</p>
       </ion-item>
       <ion-list-header>
         More
       </ion-list-header>
-      <ion-item no-lines tappable (click)="setEmail()">
+      <ion-item class="opt" tappable (click)="setEmail()">
         Change Email Address
       </ion-item>
-      <ion-item no-lines tappable (click)="setPassword()" *ngIf="user && this.provider == 'Firebase'">
+      <ion-item class="opt" tappable (click)="setPassword()" *ngIf="user && this.provider == 'Firebase'">
         Change Password
       </ion-item>
-      <ion-item no-lines tappable (click)="deleteAccount()">
+      <ion-item class="opt" tappable (click)="deleteAccount()">
         Delete Account
       </ion-item>
     </ion-list>

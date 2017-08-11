@@ -212,7 +212,7 @@ export class TdlistPage {
       <ion-item>
         <ion-toggle [(ngModel)]="treminder" color="secondary" checked="{{treminder}}" style="margin-left:-10px"></ion-toggle>
         <ion-label>
-          <h2 class="titles" style="background-color:MediumSeaGreen">Reminder</h2>
+          <h2 class="titles" style="background-color:MediumSeaGreen;border-radius: 8px;padding: 4px 8px">Reminder</h2>
         </ion-label>
         <ion-icon name="alarm" item-start style="color:MediumSeaGreen"></ion-icon>
       </ion-item>
@@ -220,7 +220,7 @@ export class TdlistPage {
       <ion-item>
         <ion-icon name="alert" item-start style="color:red;"></ion-icon>
         <ion-label>
-          <h2 class="titles" style="background-color:red;padding: 5px">Urgency</h2>
+          <h2 class="titles" style="background-color:red;padding: 5px;border-radius: 8px">Urgency</h2>
         </ion-label>
         <ion-range [(ngModel)]="turgency" color="danger" min="1" max="4" step="1" snaps="true" style="margin-top:-20px"></ion-range>
       </ion-item>

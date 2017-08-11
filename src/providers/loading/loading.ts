@@ -21,7 +21,6 @@ export class LoadingProvider {
     if(!this.loading){
       this.loading = this.loadingCtrl.create({
         content: 'Please wait...',
-        dismissOnPageChange: true
       });
       this.loading.present();
     } 
