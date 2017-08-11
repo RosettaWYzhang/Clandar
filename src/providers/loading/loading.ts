@@ -20,7 +20,11 @@ export class LoadingProvider {
   load(){
     if(!this.loading){
       this.loading = this.loadingCtrl.create({
+<<<<<<< HEAD
         content: 'Please wait...'
+=======
+        content: 'Please wait...',
+>>>>>>> 18221842349360faa665bf34a7f8f22d2a964d48
       });
       this.loading.present();
     } 

@@ -1,14 +1,23 @@
 webpackJsonp([8],{
 
+<<<<<<< HEAD
 /***/ 1176:
+=======
+/***/ 1152:
+>>>>>>> 18221842349360faa665bf34a7f8f22d2a964d48
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearcherModule", function() { return SearcherModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__searcher__ = __webpack_require__(152);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(241);
+>>>>>>> 18221842349360faa665bf34a7f8f22d2a964d48
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +27,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SearcherModule = (function () {
-    function SearcherModule() {
+var RegisterPageModule = (function () {
+    function RegisterPageModule() {
     }
-    return SearcherModule;
+    return RegisterPageModule;
 }());
-SearcherModule = __decorate([
+RegisterPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__searcher__["a" /* Searcher */],
+            __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
         ],
         imports: [
+<<<<<<< HEAD
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__searcher__["a" /* Searcher */]),
+=======
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
+>>>>>>> 18221842349360faa665bf34a7f8f22d2a964d48
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__searcher__["a" /* Searcher */]
+            __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]
         ]
     })
-], SearcherModule);
+], RegisterPageModule);
 
-//# sourceMappingURL=searcher.module.js.map
+//# sourceMappingURL=register.module.js.map
 
 /***/ })
 
