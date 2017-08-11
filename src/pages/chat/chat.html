@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+      <button ion-button tappable (click)="back()">Back</button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content has-footer>
+  <!-- Messages -->
+  <div class="messages">
+    <p class="center" *ngIf="startIndex > 0"><span tappable (click)="loadPreviousMessages()">Load previous messages</span></p>
+    <ion-grid>
+    <ion-row *ngFor="let message of messagesToShow">
+      <!--  Message -->
+      <ion-col width-10 class="center" *ngIf="isSender(message)">
+        <img src="{{message.avatar}}" (load)="doScroll()" />
+      </ion-col>
+      <ion-col width-10 *ngIf="!isSender(message)">
+      </ion-col>
+      <ion-col width-75 class="sender" *ngIf="isSender(message)">
+        <div class="left" *ngIf="message.type == 'text'">
+          <p>{{message.message}}</p>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+        <div class="left" *ngIf="message.type == 'image'">
+          <img tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+        <div class="left" *ngIf="message.type == 'video'">
+          <video controls width="100%" (load)="doScroll()">
+             <source src="{{message.url}}" type="video/mp4">
+          </video>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+      </ion-col>
+      <ion-col width-75 *ngIf="!isSender(message)">
+        <div class="right" *ngIf="message.type == 'text'">
+          <p>{{message.message}}</p>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+        <div class="left" *ngIf="message.type == 'image'">
+          <img tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+        <div class="left" *ngIf="message.type == 'video'">
+          <video controls width="100%" (load)="doScroll()">
+             <source src="{{message.url}}" type="video/mp4">
+          </video>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+      </ion-col>
+      <ion-col width-10 *ngIf="isSender(message)">
+      </ion-col>
+      <ion-col width-10 class="center" *ngIf="!isSender(message)">
+        <img src="{{message.avatar}}" tappable (click)="viewUser(message.sender)" (load)="doScroll()" />
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<!-- Message Box -->
+<ion-footer>
+  <ion-item class="bottom_bar">
+    <button item-left ion-button clear (click)="attach()"><ion-icon name="md-attach"></ion-icon></button>
+    <ion-textarea type="text" rows="0" placeholder="Type your message" [(ngModel)]="message" (focus)="scrollBottom()" (keypress)="onType($event.keyCode)"></ion-textarea>
+    <!-- <ion-buttons item-right> -->
+    <button item-right ion-button clear (click)="takePhoto()"><ion-icon name="md-camera"></ion-icon></button>
+    <button item-right ion-button clear (click)="send()" [disabled]="!message"><ion-icon name="md-send"></ion-icon></button>
+    <!-- </ion-buttons> -->
+  </ion-item>
+</ion-footer>

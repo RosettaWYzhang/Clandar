@@ -1,6 +1,5 @@
 <!--
   Generated template for the Tasks page.
-
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
@@ -11,18 +10,15 @@
 </ion-header>
 
 <ion-content class="content">
-  <ion-list no-lines style="margin-top:4px"> 
+  <ion-list> 
     <ion-item>
-      <ion-label>
-        <h2 style="margin-left:-1px" style="font-weight:bold;color:rgb(40,40,40)">Name</h2>
-      </ion-label>
-      <ion-input [(ngModel)]="name" type="text"></ion-input>
+      <ion-icon name="bookmark" item-start style="color:orange"></ion-icon>
+      <ion-input [(ngModel)]="name" placeholder="Title" type="text"></ion-input>
     </ion-item>      
 
     <ion-item>
-      <ion-label>
-        <h2 style="margin-left:-1px" style="font-weight:bold;color:rgb(40,40,40)">Due</h2>
-      </ion-label>
+      <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
+      <ion-label>Due</ion-label>
       <ion-datetime [(ngModel)]="due" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
     </ion-item>
 
@@ -35,7 +31,7 @@
     <ion-item>
       <ion-toggle [(ngModel)]="reminder" color="secondary" checked="false" style="margin-left:-10px"></ion-toggle>
       <ion-label>
-        <h2 class="titles" style="background-color:MediumSeaGreen">Reminder</h2>
+        <h2>Reminder</h2>
       </ion-label>
       <ion-icon name="alarm" item-start style="color:MediumSeaGreen"></ion-icon>
     </ion-item>
@@ -49,10 +45,12 @@
     </ion-item>
   </ion-list>
 
-  <div class="text-center">
-    <button ion-button round end color="light" (click)="save()">Save</button>
-    <button ion-button round end color="light" (click)="cancel()">Cancel</button>
-  </div>
+  <ion-row>
+    <ion-col text-right>
+      <button ion-button round end color="secondary" (click)="save()">Save</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button round end color="light" (click)="cancel()">Cancel</button>
+    </ion-col>
+  </ion-row>
 </ion-content>
-
-

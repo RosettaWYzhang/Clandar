@@ -1,6 +1,5 @@
 <!--
   Generated template for the TdlistPage page.
-
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
@@ -17,12 +16,12 @@
       <ion-row>
         <ion-col col-9>
           <h1 style="color:RGB(255,120,82)">{{myDate | date:'EEEE, d'}}</h1>
-          <span>{{myDate | date:'MMMM'}}</span>
+          <span>{{myDate | date:'MMMM, yyyy'}}</span>
         </ion-col>
-        <ion-col class="button">
+        <ion-col class="button" col-3>
           <ion-buttons end>
             <button [navPush]="taskPage" ion-button clear icon-only>
-              <ion-icon name="add"></ion-icon>
+              <ion-icon name="add" class="add"></ion-icon>
             </button>
           </ion-buttons>
         </ion-col>
@@ -36,7 +35,7 @@
 
   <ng-container *ngFor="let task of tasks | async">
     <ion-card *ngIf="task.finished==false">
-      <ion-card-content>
+      <ion-card-content style="margin-bottom: -20px">
         <ion-card-title>
           {{task.name}}
         </ion-card-title>
@@ -47,25 +46,25 @@
         <p *ngIf="task.hide==false">Note: {{task.note}}</p>
       </ion-card-content>
       <ion-row no-padding>
-        <ion-col *ngIf="task.hide==true">
+        <ion-col text-left *ngIf="task.hide==true" col-4>
           <button (click)="collapse(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
             <ion-icon name='arrow-dropdown'></ion-icon>
             Details
           </button>
         </ion-col>
-        <ion-col *ngIf="task.hide==false">
+        <ion-col text-left *ngIf="task.hide==false" col-4>
           <button (click)="hiding(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
             <ion-icon name='arrow-dropup'></ion-icon>
             Details
           </button>
         </ion-col>
-        <ion-col text-center>
+        <ion-col text-center col-4>
           <button (click)="edit(task)" ion-button clear small color="danger" icon-start>
             <ion-icon name='create'></ion-icon>
             Edit
           </button>
         </ion-col>
-        <ion-col text-right>
+        <ion-col text-right col-4>
           <button (click)="more(task)" ion-button clear small color="danger" icon-start> 
             <ion-icon name='more'></ion-icon>
             More

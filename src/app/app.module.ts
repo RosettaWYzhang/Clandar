@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { Camera } from '@ionic-native/camera';
+import { Keyboard } from '@ionic-native/keyboard';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Contacts } from '@ionic-native/contacts';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { File } from '@ionic-native/file';
@@ -25,7 +28,20 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TaskModalPage } from '../pages/tdlist/tdlist';
 import { VerifyPage } from '../pages/verify/verify';
 import { ConversationPage } from '../pages/conversation/conversation';
+import { NewChatPage } from '../pages/new-chat/new-chat';
+import { ChatPage } from '../pages/chat/chat';
 import { InformationPage } from '../pages/information/information';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { SearchPage } from '../pages/search/search';
+import { RequestsPage } from '../pages/requests/requests';
+import { UserInfoPage } from '../pages/user-info/user-info';
+import { ImageModalPage } from '../pages/image-modal/image-modal';
+
+import { FriendPipe } from '../pipes/friend';
+import { SearchPipe } from '../pipes/search';
+import { ConversationPipe } from '../pipes/conversation';
+import { DateFormatPipe } from '../pipes/date';
+import { GroupPipe } from '../pipes/group';
 
 import { AlertProvider } from "../providers/alert/alert";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
@@ -33,8 +49,10 @@ import { LoadingProvider } from "../providers/loading/loading";
 import { LogoutProvider } from "../providers/auth-service/logout";
 
 import * as firebase from 'firebase';
+import { Firebase } from '@ionic-native/firebase';
 import { DataProvider } from '../providers/data/data';
 import { ImageProvider } from '../providers/image/image';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -68,7 +86,19 @@ firebase.initializeApp(firebaseConfig);
     TaskModalPage,
     VerifyPage,
     ConversationPage,
-    InformationPage
+    ChatPage,
+    NewChatPage,
+    InformationPage,
+    ContactsPage,
+    SearchPage,
+    RequestsPage,
+    UserInfoPage,
+    ImageModalPage,
+    FriendPipe,
+    ConversationPipe,
+    SearchPipe,
+    DateFormatPipe,
+    GroupPipe
   ],
   imports: [
     BrowserModule,
@@ -95,7 +125,14 @@ firebase.initializeApp(firebaseConfig);
     TaskModalPage,
     VerifyPage,
     ConversationPage,
-    InformationPage
+    NewChatPage,
+    ChatPage,
+    InformationPage,
+    ContactsPage,
+    SearchPage,
+    RequestsPage,
+    UserInfoPage,
+    ImageModalPage
   ],
   providers: [
     StatusBar,
@@ -107,9 +144,14 @@ firebase.initializeApp(firebaseConfig);
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     Camera,
+    Contacts,
+    Geolocation,
+    Keyboard,
     File,
     MediaCapture,
-    ImageProvider
+    ImageProvider,
+    Firebase,
+    FirebaseProvider
   ]
 })
 export class AppModule {}

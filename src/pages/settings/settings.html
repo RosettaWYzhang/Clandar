@@ -24,12 +24,13 @@
         </ion-avatar>
         <h2>{{user.name}}</h2>
         <p>{{user.description}}</p>
+        <ion-icon name="arrow-forward" item-right style="color:grey"></ion-icon>
       </ion-item>
     </ion-list>
 
     <ion-list full>
       <ion-item>
-        <button (click)='gotoHomePage()' ion-button full>Access Phone Contacts</button>
+        <button (click)='gotoContacts()' ion-button full>My Contacts</button>
       </ion-item>
       <ion-item>
         <button (click)='gotoHomePage()' ion-button full>Sync with System Calendar</button>
@@ -40,7 +41,7 @@
     </ion-list>
     <ion-list>
       <ion-item>
-          <ion-toggle color="primary" checked="false"></ion-toggle>
+          <ion-toggle color="secondary" checked="false"></ion-toggle>
           <ion-label>
             <h6 class="titles">Allow others to view my calendar</h6>
           </ion-label>
@@ -48,7 +49,7 @@
     </ion-list>
     <ion-list>
       <ion-item>
-        <button (click)='doLogout()' ion-button full>Log out</button>
+        <button (click)='doLogout()' ion-button full>Log Out</button>
       </ion-item>
     </ion-list>
   </div>

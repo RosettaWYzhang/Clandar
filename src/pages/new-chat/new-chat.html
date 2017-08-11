@@ -1,0 +1,31 @@
+<!--
+  Generated template for the NewChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+      <button ion-button tappable (click)="back()">Back</button>
+    </ion-buttons>
+    <ion-title>New Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <!-- No friends yet to start a conversation with -->
+  <div class="empty-list" *ngIf="friends && friends.length == 0">
+    <button ion-button block icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search for your friends here</button>
+  </div>
+  <!-- Show friends to start a conversation with -->
+  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">
+    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" no-lines tappable (click)="message(friend.$key)">
+      <ion-avatar item-left>
+        <img src="{{friend.img}}">
+      </ion-avatar>
+      <h2>{{friend.name}}</h2>
+      <p>@{{friend.username}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

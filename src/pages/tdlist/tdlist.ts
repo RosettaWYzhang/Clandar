@@ -188,18 +188,15 @@ export class TdlistPage {
   </ion-header>
 
   <ion-content class="content">
-    <ion-list no-lines style="margin-top:4px"> 
+    <ion-list> 
       <ion-item>
-        <ion-label>
-          <h2 style="margin-left:-1px" style="font-weight:bold;color:rgb(40,40,40)">Name</h2>
-        </ion-label>
+        <ion-icon name="bookmark" item-start style="color:orange"></ion-icon>
         <ion-input [(ngModel)]="tname" type="text" placeholder="{{tname}}"></ion-input>
       </ion-item>      
 
       <ion-item>
-        <ion-label>
-          <h2 style="margin-left:-1px" style="font-weight:bold;color:rgb(40,40,40)">Due</h2>
-        </ion-label>
+        <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
+        <ion-label>Due</ion-label>
         <ion-datetime [(ngModel)]="tdue" placeholder="{{tdue}}" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
       </ion-item>
 
@@ -212,7 +209,7 @@ export class TdlistPage {
       <ion-item>
         <ion-toggle [(ngModel)]="treminder" color="secondary" checked="{{treminder}}" style="margin-left:-10px"></ion-toggle>
         <ion-label>
-          <h2 class="titles" style="background-color:MediumSeaGreen">Reminder</h2>
+          <h2>Reminder</h2>
         </ion-label>
         <ion-icon name="alarm" item-start style="color:MediumSeaGreen"></ion-icon>
       </ion-item>
@@ -220,14 +217,14 @@ export class TdlistPage {
       <ion-item>
         <ion-icon name="alert" item-start style="color:red;"></ion-icon>
         <ion-label>
-          <h2 class="titles" style="background-color:red;padding: 5px">Urgency</h2>
+          <h2 class="titles" style="background-color:red;padding: 10px 8px;border-radius: 8px;color:white">Urgency</h2>
         </ion-label>
         <ion-range [(ngModel)]="turgency" color="danger" min="1" max="4" step="1" snaps="true" style="margin-top:-20px"></ion-range>
       </ion-item>
     </ion-list>
 
-    <div class="text-center">
-      <button ion-button round end color="light" (click)="save()">Save</button>
+    <div style="text-align:center">
+      <button ion-button round end color="secondary" (click)="save()">Save</button>
     </div>
   </ion-content>`
 })

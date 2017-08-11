@@ -74,16 +74,18 @@ export class AuthServiceProvider {
         //save user info to database
         this.loginUser = firebase.auth().currentUser;
         console.log("User: ",this.loginUser);
-        firebase.database().ref('accounts/' + this.loginUser.uid).set({
-          email: this.loginUser.email,
-          userId: this.loginUser.uid,
-          name: 'newUser',
-          img: 'https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/profile.png?alt=media&token=22fd850b-d8bd-4926-80a4-c87b9032a938',
-          description: 'No description yet :('          
-        })
-        .catch((error) => {
-      	  console.error("User error",error);
-        });
+        /*if (this.loginUser.emailVerified){
+          firebase.database().ref('accounts/' + this.loginUser.uid).set({
+            email: this.loginUser.email,
+            userId: this.loginUser.uid,
+            name: 'newUser',
+            img: 'https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/profile.png?alt=media&token=22fd850b-d8bd-4926-80a4-c87b9032a938',
+            description: 'No description yet :('      
+          })
+          .catch((error) => {
+            console.error("User error",error);
+          });
+        }*/
         this.loading.dismiss();
       })
       .catch((error) => {

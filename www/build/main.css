@@ -25220,6 +25220,32 @@ page-calendar .has-header .calendar-event-inner {
   opacity: 0.75;
 }
 
+page-conversation {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-conversation ion-item span {
+  color: primary;
+  font-size: 75%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 0.75em;
+  padding-top: 0.75em;
+}
+
+page-conversation ion-badge {
+  float: right;
+}
+
+page-conversation div.bold {
+  font-weight: bold;
+}
+
+page-conversation div.bold h2 {
+  font-weight: bold !important;
+}
+
 page-event-modal {
   font-family: Tahoma,Helvetica,sans-serif;
 }
@@ -25228,6 +25254,37 @@ page-event-modal .content .titles {
   color: white;
   padding: 10px 8px;
   border-radius: 8px;
+}
+
+page-information {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-information .content {
+  background: RGB(250, 249, 255);
+}
+
+page-information .content .head {
+  background-image: url("../assets/img/regLogo.png");
+  background-size: auto 100%;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* optional, center the image */
+}
+
+page-information .content .head .tx {
+  text-align: center;
+}
+
+page-information .content .head .img {
+  width: 80px !important;
+  height: 80px !important;
+  background-color: transparent;
+}
+
+page-information .content .opt {
+  font-size: 20px;
 }
 
 page-login {
@@ -25293,6 +25350,10 @@ page-login .login-content .forget-btn {
   border: 0px;
   text-transform: capitalize;
   margin-top: 0px;
+}
+
+page-new-chat button {
+  text-aligh: center;
 }
 
 page-register {
@@ -25396,6 +25457,11 @@ page-tdlist .content {
   background: white;
 }
 
+page-tdlist .content .add {
+  color: RGB(233, 30, 99);
+  font-size: 50px;
+}
+
 page-tdlist .content .head {
   background-color: RGB(70, 57, 75);
 }
@@ -25403,4 +25469,17 @@ page-tdlist .content .head {
 page-tdlist .content .head span {
   font-size: 17px;
   color: RGB(170, 170, 170);
+}
+
+page-verify {
+  font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-verify .veri-content .page {
+  margin: 50px 10px 10px 10px;
+  padding: 20px 16px 20px 16px;
+}
+
+page-verify .veri-content ion-icon {
+  font-size: 50px;
 }

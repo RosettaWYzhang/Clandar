@@ -6,6 +6,7 @@ import { DataProvider } from '../../providers/data/data';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { Login } from '../login/login';
 import { InformationPage } from '../information/information';
+import { ContactsPage } from '../contacts/contacts';
 
 /**
  * Generated class for the SettingsPage page.
@@ -47,6 +48,10 @@ export class SettingsPage {
 
   gotoInfo(){
     this.navCtrl.push(InformationPage);
+  }
+
+  gotoContacts(){
+    this.navCtrl.push(ContactsPage);
   }
 
   doLogout(){

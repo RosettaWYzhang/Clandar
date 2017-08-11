@@ -5,14 +5,37 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>conversation</ion-title>
+    <ion-title>Conversation</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only tappable (click)="newMessage()"><ion-icon name="ios-create"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <!-- No conversations to show -->
+  <div class="empty-list" *ngIf="conversations && conversations.length <= 0">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/huaji.jpg"/>
+      </ion-avatar>
+      <h2>No conversations yet.</h2>
+      <p>Tap '+' to start a new conversation!</p>
+    </ion-item>
+  </div>
+  <!-- Show conversations -->
+  <ion-list class="avatar-list" *ngIf="conversations && conversations.length > 0">
+    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+    <ion-item *ngFor="let conversation of conversations | conversationFilter:searchFriend" no-lines tappable (click)="message(conversation.$key)">
+      <ion-avatar item-left *ngIf="conversation.friend">
+        <img src="{{conversation.friend.img}}">
+      </ion-avatar>
+      <div [ngClass]=hasUnreadMessages(conversation)>
+        <h2 *ngIf="conversation.friend">{{conversation.friend.name}}</h2>
+        <ion-badge color="danger" *ngIf="conversation.unreadMessagesCount > 0">{{conversation.unreadMessagesCount}}</ion-badge>
+        <p>{{conversation.message}}</p>
+        <span>{{conversation.date | DateFormat}}</span>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>
