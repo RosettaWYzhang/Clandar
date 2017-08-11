@@ -225,10 +225,6 @@ export class TdlistPage {
 
     <div style="text-align:center">
       <button ion-button round end color="secondary" (click)="save()">Save</button>
-<<<<<<< HEAD
-=======
-      <button ion-button round end color="light" (click)="dismiss()">Cancel</button>
->>>>>>> 18221842349360faa665bf34a7f8f22d2a964d48
     </div>
   </ion-content>`
 })
