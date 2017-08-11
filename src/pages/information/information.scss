@@ -5,10 +5,13 @@ page-information {
 
         .head{
             background-image: url("../assets/img/regLogo.png");
+            background-size:     auto 100%;                      /* <------ */
+            background-repeat:   no-repeat;
+            background-position: center center;              /* optional, center the image */
         }
 
         .head .tx{
-            margin: auto;
+            text-align: center;
         }
 
         .head .img{
@@ -18,6 +21,8 @@ page-information {
             //max-height: 1000px !important; //any size  
             //border: 1px solid #000;
             background-color: transparent;
+            //border: 1px solid white;
+            //border-radius: 40px;
         }
 
         .opt{

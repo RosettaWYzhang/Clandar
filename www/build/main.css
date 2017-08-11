@@ -25240,10 +25240,15 @@ page-information .content {
 
 page-information .content .head {
   background-image: url("../assets/img/regLogo.png");
+  background-size: auto 100%;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* optional, center the image */
 }
 
 page-information .content .head .tx {
-  margin: auto;
+  text-align: center;
 }
 
 page-information .content .head .img {
