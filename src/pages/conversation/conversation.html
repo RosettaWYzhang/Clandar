@@ -8,7 +8,7 @@
   <ion-navbar>
     <ion-title>Conversation</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only tappable (click)="newMessage()"><ion-icon name="ios-create"></ion-icon></button>
+      <button ion-button icon-only tappable (click)="newMessage()"><ion-icon name="ios-create" class="create"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -26,7 +26,7 @@
   <!-- Show conversations -->
   <ion-list class="avatar-list" *ngIf="conversations && conversations.length > 0">
     <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
-    <ion-item *ngFor="let conversation of conversations | conversationFilter:searchFriend" no-lines tappable (click)="message(conversation.$key)">
+    <ion-item *ngFor="let conversation of conversations | conversationFilter:searchFriend" tappable (click)="message(conversation.$key)">
       <ion-avatar item-left *ngIf="conversation.friend">
         <img src="{{conversation.friend.img}}">
       </ion-avatar>

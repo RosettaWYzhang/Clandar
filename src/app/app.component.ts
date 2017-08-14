@@ -22,6 +22,8 @@ import { SearchPage } from '../pages/search/search';
 import { RequestsPage } from '../pages/requests/requests';
 import { UserInfoPage } from '../pages/user-info/user-info';
 import { ImageModalPage } from '../pages/image-modal/image-modal';
+import { Doodle } from '../pages/doodle/doodle';
+
 import { DataProvider } from '../providers/data/data';
 import { Firebase } from '@ionic-native/firebase';
 import * as firebase from 'firebase';

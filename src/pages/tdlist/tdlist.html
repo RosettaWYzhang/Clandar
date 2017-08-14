@@ -80,7 +80,7 @@
 
   <ng-container *ngFor="let task of tasks | async">
     <ion-card *ngIf="task.finished==true">
-      <ion-card-content>
+      <ion-card-content style="margin-bottom: -20px">
         <ion-card-title>
           {{task.name}}
         </ion-card-title>
@@ -91,25 +91,25 @@
         <p *ngIf="task.hide==false">Note: {{task.note}}</p>
       </ion-card-content>
       <ion-row no-padding>
-        <ion-col *ngIf="task.hide==true">
+        <ion-col *ngIf="task.hide==true" col-4>
           <button (click)="collapse(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
             <ion-icon name='arrow-dropdown'></ion-icon>
             Details
           </button>
         </ion-col>
-        <ion-col *ngIf="task.hide==false">
+        <ion-col *ngIf="task.hide==false" col-4>
           <button (click)="hiding(task.$key, task.hide)" ion-button clear small color="danger" icon-start>
             <ion-icon name='arrow-dropup'></ion-icon>
             Details
           </button>
         </ion-col>
-        <ion-col text-center>
+        <ion-col text-center col-4>
           <button (click)="edit(task)" ion-button clear small color="danger" icon-start>
             <ion-icon name='create'></ion-icon>
             Edit
           </button>
         </ion-col>
-        <ion-col text-right>
+        <ion-col text-right col-4>
           <button (click)="more(task)" ion-button clear small color="danger" icon-start> 
             <ion-icon name='more'></ion-icon>
             More

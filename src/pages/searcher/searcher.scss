@@ -2,9 +2,12 @@ page-searcher {
     font-family:Tahoma,Helvetica,sans-serif;
 
      .content{
+         .segment{
+            margin-bottom: -10px;
+         }
+
          ion-list{
              margin-bottom:20px;
-
          }
 
         ion-list-header{

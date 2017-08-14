@@ -36,6 +36,7 @@ import { SearchPage } from '../pages/search/search';
 import { RequestsPage } from '../pages/requests/requests';
 import { UserInfoPage } from '../pages/user-info/user-info';
 import { ImageModalPage } from '../pages/image-modal/image-modal';
+import { Doodle } from '../pages/doodle/doodle';
 
 import { FriendPipe } from '../pipes/friend';
 import { SearchPipe } from '../pipes/search';
@@ -98,7 +99,8 @@ firebase.initializeApp(firebaseConfig);
     ConversationPipe,
     SearchPipe,
     DateFormatPipe,
-    GroupPipe
+    GroupPipe,
+    Doodle
   ],
   imports: [
     BrowserModule,
@@ -132,7 +134,8 @@ firebase.initializeApp(firebaseConfig);
     SearchPage,
     RequestsPage,
     UserInfoPage,
-    ImageModalPage
+    ImageModalPage,
+    Doodle
   ],
   providers: [
     StatusBar,
