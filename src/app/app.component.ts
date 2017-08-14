@@ -23,11 +23,16 @@ import { SearchPage } from '../pages/search/search';
 import { RequestsPage } from '../pages/requests/requests';
 import { UserInfoPage } from '../pages/user-info/user-info';
 import { ImageModalPage } from '../pages/image-modal/image-modal';
+<<<<<<< HEAD
 import { NewClubPage } from '../pages/new-club/new-club';
 import { ClubsPage } from '../pages/clubs/clubs';
 import { ClubPage } from '../pages/club/club';
 import { ClubInfoPage } from '../pages/club-info/club-info';
 import { AddMemberPage } from '../pages/add-member/add-member';
+=======
+import { Doodle } from '../pages/doodle/doodle';
+
+>>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 import { DataProvider } from '../providers/data/data';
 import { Firebase } from '@ionic-native/firebase';
 import * as firebase from 'firebase';

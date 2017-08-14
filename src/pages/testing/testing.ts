@@ -8,6 +8,8 @@ import { SettingsPage } from "../settings/settings";
 import { TdlistPage } from '../tdlist/tdlist';
 import { TabsPage } from '../tabs/tabs';
 import { AlertProvider } from '../../providers/alert/alert';
+import { Doodle } from '../doodle/doodle';
+
 /**
  * Generated class for the Testing page.
  *
@@ -29,6 +31,7 @@ export class Testing {
   todoListComponent: any;
   contactPage: any;
   tabsPage: any;
+  doodle: any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -40,6 +43,7 @@ export class Testing {
     this.settingsPage = SettingsPage;
     this.tdListPage = TdlistPage;
     this.tabsPage = TabsPage;
+    this.doodle = Doodle;
   }
 
   ionViewDidLoad() {

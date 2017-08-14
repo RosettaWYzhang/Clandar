@@ -1,11 +1,19 @@
 webpackJsonp([5],{
 
+<<<<<<< HEAD
 /***/ 1185:
+=======
+/***/ 1178:
+>>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventModalPageModule", function() { return EventModalPageModule; });
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TasksModule", function() { return TasksModule; });
+>>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_modal__ = __webpack_require__(1186);
@@ -18,6 +26,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+<<<<<<< HEAD
 var EventModalPageModule = (function () {
     function EventModalPageModule() {
     }
@@ -27,11 +36,23 @@ EventModalPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__event_modal__["a" /* EventModalPage */],
+=======
+var TasksModule = (function () {
+    function TasksModule() {
+    }
+    return TasksModule;
+}());
+TasksModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* Tasks */],
+>>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__event_modal__["a" /* EventModalPage */]),
         ],
         exports: [
+<<<<<<< HEAD
             __WEBPACK_IMPORTED_MODULE_2__event_modal__["a" /* EventModalPage */]
         ]
     })
@@ -127,6 +148,14 @@ EventModalPage = __decorate([
 ], EventModalPage);
 
 //# sourceMappingURL=event-modal.js.map
+=======
+            __WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* Tasks */]
+        ]
+    })
+], TasksModule);
+
+//# sourceMappingURL=tasks.module.js.map
+>>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 
 /***/ })
 

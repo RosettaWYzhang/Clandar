@@ -1,0 +1,62 @@
+<!--
+  Generated template for the Tasks page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Poll</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-list> 
+    <ion-item>
+      <ion-icon name="bookmark" item-start style="color:orange"></ion-icon>
+      <ion-input [(ngModel)]="name" placeholder="Title" type="text"></ion-input>
+    </ion-item>      
+
+    <ion-item>
+      <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
+      <ion-label>Due</ion-label>
+      <ion-datetime [(ngModel)]="due" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar" item-start style="color:rgb(83,184,229)"></ion-icon>
+      <h2 class="titles" style="background-color:rgb(83,184,229)">Add Note</h2>
+      <ion-input [(ngModel)]="note" placeholder="Add Note" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="reminder" color="secondary" checked="false" style="margin-left:-10px"></ion-toggle>
+      <ion-label>
+        <h2>Reminder</h2>
+      </ion-label>
+      <ion-icon name="alarm" item-start style="color:MediumSeaGreen"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="alert" item-start style="color:red;"></ion-icon>
+      <ion-label>
+        <h2 class="titles" style="background-color:red;padding: 5px">Urgency</h2>
+      </ion-label>
+      <ion-range [(ngModel)]="urgency" color="danger" min="1" max="4" step="1" snaps="true" style="margin-top:-20px"></ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col text-right>
+      <button ion-button round end color="secondary" (click)="save()">Save</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button round end color="light" (click)="cancel()">Cancel</button>
+    </ion-col>
+    <ion-col text-left>
+      <button ion-button round end color="light" (click)="url()">URL</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+

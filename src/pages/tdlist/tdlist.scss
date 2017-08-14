@@ -4,6 +4,10 @@ page-tdlist {
     .content{
         background: white;
 
+        ion-card-title{
+            margin-top: -20px;
+        }
+
         .add{
 			color: RGB(233,30,99);
 			font-size: 50px;
