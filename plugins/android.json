@@ -39,6 +39,9 @@
         },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     },
     "dependent_plugins": {

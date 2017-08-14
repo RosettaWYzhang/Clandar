@@ -47,11 +47,11 @@ export class SettingsPage {
   }
 
   gotoInfo(){
-    this.navCtrl.push(InformationPage);
+    this.app.getRootNav().push(InformationPage);
   }
 
   gotoContacts(){
-    this.navCtrl.push(ContactsPage);
+    this.app.getRootNav().push(ContactsPage);
   }
 
   doLogout(){

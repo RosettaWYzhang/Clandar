@@ -20,7 +20,7 @@
         </ion-col>
         <ion-col class="button" col-3>
           <ion-buttons end>
-            <button [navPush]="taskPage" ion-button clear icon-only>
+            <button (click)="gotoTaskPage()" ion-button clear icon-only>
               <ion-icon name="add" class="add"></ion-icon>
             </button>
           </ion-buttons>

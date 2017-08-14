@@ -76,13 +76,13 @@ export class Tasks {
         finished: false,
         overdue: false
       });
-    this.navCtrl.parent.select(1);
+    this.navCtrl.pop();
     }
   }
 
   cancel(){
-    //this.navCtrl.push(TabsPage);
-    this.navCtrl.parent.select(1);
+    this.navCtrl.pop();
+    //this.navCtrl.parent.select(1);
   }
 
   

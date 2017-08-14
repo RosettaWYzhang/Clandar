@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, Platform, NavController, NavParams, MenuController, Nav, ModalController, ViewController, ActionSheetController} from 'ionic-angular';
+import { App, IonicPage, Platform, NavController, NavParams, MenuController, Nav, ModalController, ViewController, ActionSheetController} from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Tasks } from "../tasks/tasks";
 import * as moment from 'moment';
@@ -34,6 +34,7 @@ export class TdlistPage {
               public modalCtrl: ModalController,
               public ASCtrl: ActionSheetController,
               public platform: Platform,
+              public app: App,
               public afDB: AngularFireDatabase) {
     length = 2;        
     this.taskPage = Tasks;     
@@ -49,6 +50,10 @@ export class TdlistPage {
     source.subscribe((x) => {
       this.date = moment();
     });
+  }
+
+  gotoTaskPage(){
+    this.app.getRootNav().push(Tasks);
   }
 
   collapse(taskID,hide){

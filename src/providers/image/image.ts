@@ -32,7 +32,7 @@ export class ImageProvider {
     correctOrientation: true
   };
 
-  private groupPhotoOptions: CameraOptions = {
+  private clubPhotoOptions: CameraOptions = {
     quality: 50,
     targetWidth: 384,
     targetHeight: 384,
@@ -122,22 +122,22 @@ export class ImageProvider {
     });
   }
 
-  // Upload and set the group object's image.
-  setGroupPhoto(group, sourceType) {
-    this.groupPhotoOptions.sourceType = sourceType;
+  // Upload and set the club object's image.
+  setClubPhoto(club, sourceType) {
+    this.clubPhotoOptions.sourceType = sourceType;
     this.loadingProvider.load();
     // Get picture from camera or gallery.
-    this.camera.getPicture(this.groupPhotoOptions).then((imageData) => {
+    this.camera.getPicture(this.clubPhotoOptions).then((imageData) => {
       // Process the returned imageURI.
       let imgBlob = this.imgURItoBlob("data:image/jpeg;base64," + imageData);
       let metadata = {
         'contentType': imgBlob.type
       };
       firebase.storage().ref().child('images/' + firebase.auth().currentUser.uid + '/' + this.generateFilename()).put(imgBlob, metadata).then((snapshot) => {
-        this.deleteImageFile(group.img);
+        this.deleteImageFile(club.img);
         // URL of the uploaded image!
         let url = snapshot.metadata.downloadURLs[0];
-        group.img = url;
+        club.img = url;
         this.loadingProvider.dismiss();
       }).catch((error) => {
         this.loadingProvider.dismiss();
@@ -148,25 +148,25 @@ export class ImageProvider {
     });
   }
 
-  // Set group photo and return the group object as promise.
-  setGroupPhotoPromise(group, sourceType): Promise<any> {
+  // Set club photo and return the club object as promise.
+  setClubPhotoPromise(club, sourceType): Promise<any> {
     return new Promise(resolve => {
-      this.groupPhotoOptions.sourceType = sourceType;
+      this.clubPhotoOptions.sourceType = sourceType;
       this.loadingProvider.load();
       // Get picture from camera or gallery.
-      this.camera.getPicture(this.groupPhotoOptions).then((imageData) => {
+      this.camera.getPicture(this.clubPhotoOptions).then((imageData) => {
         // Process the returned imageURI.
         let imgBlob = this.imgURItoBlob("data:image/jpeg;base64," + imageData);
         let metadata = {
           'contentType': imgBlob.type
         };
         firebase.storage().ref().child('images/' + firebase.auth().currentUser.uid + '/' + this.generateFilename()).put(imgBlob, metadata).then((snapshot) => {
-          this.deleteImageFile(group.img);
+          this.deleteImageFile(club.img);
           // URL of the uploaded image!
           let url = snapshot.metadata.downloadURLs[0];
-          group.img = url;
+          club.img = url;
           this.loadingProvider.dismiss();
-          resolve(group);
+          resolve(club);
         }).catch((error) => {
           this.loadingProvider.dismiss();
           this.alertProvider.showErrorMessage('image/error-image-upload');
@@ -189,10 +189,10 @@ export class ImageProvider {
     firebase.storage().ref().child('images/' + user.userId + '/' + fileName).delete().then(() => { }).catch((error) => { });
   }
 
-  // Delete group image file on group storage reference.
-  deleteGroupImageFile(groupId, path) {
+  // Delete club image file on club storage reference.
+  deleteClubImageFile(clubId, path) {
     var fileName = path.substring(path.lastIndexOf('%2F') + 3, path.lastIndexOf('?'));
-    firebase.storage().ref().child('images/' + groupId + '/' + fileName).delete().then(() => { }).catch((error) => { });
+    firebase.storage().ref().child('images/' + clubId + '/' + fileName).delete().then(() => { }).catch((error) => { });
   }
 
   // Upload photo message and return the url as promise.
@@ -223,8 +223,8 @@ export class ImageProvider {
     });
   }
 
-  // Upload group photo message and return a promise as url.
-  uploadGroupPhotoMessage(groupId, sourceType): Promise<any> {
+  // Upload club photo message and return a promise as url.
+  uploadClubPhotoMessage(clubId, sourceType): Promise<any> {
     return new Promise(resolve => {
       this.photoMessageOptions.sourceType = sourceType;
       this.loadingProvider.load();
@@ -236,7 +236,7 @@ export class ImageProvider {
           'contentType': imgBlob.type
         };
         // Generate filename and upload to Firebase Storage.
-        firebase.storage().ref().child('images/' + groupId + '/' + this.generateFilename()).put(imgBlob, metadata).then((snapshot) => {
+        firebase.storage().ref().child('images/' + clubId + '/' + this.generateFilename()).put(imgBlob, metadata).then((snapshot) => {
           // URL of the uploaded image!
           let url = snapshot.metadata.downloadURLs[0];
           this.loadingProvider.dismiss();
@@ -251,7 +251,7 @@ export class ImageProvider {
     });
   }
 
-  /*uploadGroupVideoMessage(groupId): Promise<any> {
+  /*uploadClubVideoMessage(clubId): Promise<any> {
     return new Promise(resolve => {
       this.loadingProvider.load();
           this.mediaCapture.captureVideo().then( data => {
@@ -268,7 +268,7 @@ export class ImageProvider {
                 let timestamp = (Math.floor(Date.now() / 1000)).toString();
                 let storageRef = firebase.storage().ref();
 
-                let upload = storageRef.child('videos/'+groupId+"/"+name).put(blob);
+                let upload = storageRef.child('videos/'+clubId+"/"+name).put(blob);
                 upload.on('state_changed', snapshot =>{
                   let process = upload.snapshot.bytesTransferred / upload.snapshot.totalBytes * 100;
                   console.log(process);

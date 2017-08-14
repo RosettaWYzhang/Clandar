@@ -106,7 +106,15 @@
     "cordova-plugin-firebase": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-firebase"
+            "id": "cordova-plugin-firebase@^0.1.23"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-calendar": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-calendar@^4.6.0"
         },
         "is_top_level": true,
         "variables": {}

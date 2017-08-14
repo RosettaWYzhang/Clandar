@@ -33,20 +33,20 @@ exports.newRequest = functions.database.ref('/requests/{userId}/friendRequests/'
 	}
 });
 
-// Send Notification when users is added into new group
-exports.newGroupCreation = functions.database.ref('accounts/{userId}/groups/').onWrite( event => {
-	let groupCreated = false;
-	let groupUpdated = false;
+// Send Notification when users is added into new club
+exports.newClubCreation = functions.database.ref('accounts/{userId}/clubs/').onWrite( event => {
+	let clubCreated = false;
+	let clubUpdated = false;
 	let userId = event.params.userId;
 
 	if (!event.data.previous.exists()) {
-        groupCreated = true;
+        clubCreated = true;
     }
-    if (!groupCreated && event.data.changed()) {
-        groupUpdated = true;
+    if (!clubCreated && event.data.changed()) {
+        clubUpdated = true;
     }
 
-    if(groupCreated || groupUpdated){
+    if(clubCreated || clubUpdated){
     	let dbRef = admin.database().ref('accounts/'+userId);
 	    dbRef.once('value', snap => {
 	    	console.log(snap.val().pushToken);
@@ -54,8 +54,8 @@ exports.newGroupCreation = functions.database.ref('accounts/{userId}/groups/').o
 	    	tokens.push(snap.val().pushToken);
 	    	let payload = {
 	    		notification: {
-	    			title: 'You have added into new group',
-	    			body: ' you have added into new group',
+	    			title: 'You have added into new club',
+	    			body: ' you have added into new club',
 	    			sound: 'default',
 	    		}
 	    	};
@@ -64,7 +64,7 @@ exports.newGroupCreation = functions.database.ref('accounts/{userId}/groups/').o
     }
 });
 
-// Send Notification when users is added into new group
+// Send Notification when users is added into new club
 exports.friendRequestAccepted = functions.database.ref('accounts/{userId}/friends/').onWrite( event => {
 	let friendsCreated = false;
 	let friendsUpdated = false;
@@ -95,20 +95,20 @@ exports.friendRequestAccepted = functions.database.ref('accounts/{userId}/friend
     }
 });
 
-// Send Notification when users is got new message from group
-exports.newGroupMessage = functions.database.ref('accounts/{userId}/groups/{groupMessage}').onWrite( event => {
-	let groupMessageCreated = false;
-	let groupMessageUpdated = false;
+// Send Notification when users is got new message from club
+exports.newClubMessage = functions.database.ref('accounts/{userId}/clubs/{clubMessage}').onWrite( event => {
+	let clubMessageCreated = false;
+	let clubMessageUpdated = false;
 	let userId = event.params.userId;
 
 	if (!event.data.previous.exists()) {
-        groupMessageCreated = true;
+        clubMessageCreated = true;
     }
-    if (!groupMessageCreated && event.data.changed()) {
-        groupMessageUpdated = true;
+    if (!clubMessageCreated && event.data.changed()) {
+        clubMessageUpdated = true;
     }
 
-    if(groupMessageCreated || groupMessageUpdated){
+    if(clubMessageCreated || clubMessageUpdated){
     	let dbRef = admin.database().ref('accounts/'+userId);
 	    dbRef.once('value', snap => {
 	    	console.log(snap.val().pushToken);
@@ -116,8 +116,8 @@ exports.newGroupMessage = functions.database.ref('accounts/{userId}/groups/{grou
 	    	tokens.push(snap.val().pushToken);
 	    	let payload = {
 	    		notification: {
-	    			title: 'New Group Message',
-	    			body: 'you got new group messages',
+	    			title: 'New Club Message',
+	    			body: 'you got new club messages',
 	    			sound: 'default',
 	    		}
 	    	};

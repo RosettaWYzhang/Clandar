@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Login } from '../login/login';
 import { Tasks } from '../tasks/tasks';
 import { Searcher } from '../searcher/searcher';
-import { Calendar } from '../calendar/calendar';
+import { CalendarPage } from '../calendar/calendar';
 import { SettingsPage } from "../settings/settings";
 import { TdlistPage } from '../tdlist/tdlist';
 import { TabsPage } from '../tabs/tabs';
@@ -34,7 +34,7 @@ export class Testing {
               public navParams: NavParams,
               public alert: AlertProvider) {
     this.loginPage = Login;
-    this.calendarPage = Calendar;
+    this.calendarPage = CalendarPage;
     this.taskManagerPage = Tasks;
     this.eventSearchPage = Searcher;
     this.settingsPage = SettingsPage;

@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 1175:
+/***/ 1180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearcherModule", function() { return SearcherModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TdlistPageModule", function() { return TdlistPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tdlist__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SearcherModule = (function () {
-    function SearcherModule() {
+var TdlistPageModule = (function () {
+    function TdlistPageModule() {
     }
-    return SearcherModule;
+    return TdlistPageModule;
 }());
-SearcherModule = __decorate([
+TdlistPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__searcher__["a" /* Searcher */],
+            __WEBPACK_IMPORTED_MODULE_2__tdlist__["b" /* TdlistPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__settings__["a" /* SettingsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tdlist__["b" /* TdlistPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__searcher__["a" /* Searcher */]
+            __WEBPACK_IMPORTED_MODULE_2__tdlist__["b" /* TdlistPage */]
         ]
     })
-], SearcherModule);
+], TdlistPageModule);
 
-//# sourceMappingURL=searcher.module.js.map
+//# sourceMappingURL=tdlist.module.js.map
 
 /***/ })
 

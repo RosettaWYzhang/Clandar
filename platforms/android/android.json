@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -110,6 +114,16 @@
                             "xml": "<provider android:authorities=\"${applicationId}.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"android.support.v4.content.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/provider_paths\" /></provider>",
                             "count": 1
                         }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_CALENDAR\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_CALENDAR\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -153,6 +167,9 @@
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         },
         "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-calendar": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     },
@@ -557,6 +574,14 @@
             "file": "plugins/cordova-plugin-media-capture/www/android/init.js",
             "pluginId": "cordova-plugin-media-capture",
             "runs": true
+        },
+        {
+            "id": "cordova-plugin-calendar.Calendar",
+            "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+            "pluginId": "cordova-plugin-calendar",
+            "clobbers": [
+                "Calendar"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -572,6 +597,7 @@
         "cordova-plugin-fcm": "2.1.2",
         "cordova-plugin-camera": "2.4.1",
         "cordova-plugin-file": "4.3.3",
-        "cordova-plugin-media-capture": "1.4.3"
+        "cordova-plugin-media-capture": "1.4.3",
+        "cordova-plugin-calendar": "4.6.0"
     }
 }

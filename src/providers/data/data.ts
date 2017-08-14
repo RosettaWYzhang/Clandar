@@ -71,17 +71,25 @@ export class DataProvider {
   }
 
   // Get messages of the group given the Id.
-  getGroupMessages(groupId) {
-    return this.angularfire.object('/groups/' + groupId + '/messages');
+  getClubMessages(clubId) {
+    return this.angularfire.object('/clubs/' + clubId + '/messages');
+  }
+
+  getAllClubs() {
+    return this.angularfire.list('/clubs',{
+      query:{
+        orderByChild: 'name'
+      }
+    });
   }
 
   // Get groups of the logged in user.
-  getGroups() {
-    return this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/groups');
+  getClubs() {
+    return this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/clubs');
   }
 
   // Get group info given the groupId.
-  getGroup(groupId) {
-    return this.angularfire.object('/groups/' + groupId);
+  getClub(clubId) {
+    return this.angularfire.object('/clubs/' + clubId);
   }
 }

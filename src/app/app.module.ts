@@ -9,6 +9,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { File } from '@ionic-native/file';
 import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
+import { Calendar } from '@ionic-native/calendar';
 import { StatusBar } from '@ionic-native/status-bar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { NgCalendarModule } from 'ionic2-calendar';
@@ -21,7 +22,7 @@ import { Login } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { Tasks } from '../pages/tasks/tasks';
 import { Searcher } from '../pages/searcher/searcher';
-import { Calendar } from '../pages/calendar/calendar';
+import { CalendarPage } from '../pages/calendar/calendar';
 import { SettingsPage } from '../pages/settings/settings';
 import { TdlistPage } from '../pages/tdlist/tdlist';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -36,12 +37,17 @@ import { SearchPage } from '../pages/search/search';
 import { RequestsPage } from '../pages/requests/requests';
 import { UserInfoPage } from '../pages/user-info/user-info';
 import { ImageModalPage } from '../pages/image-modal/image-modal';
+import { NewClubPage } from '../pages/new-club/new-club';
+import { ClubsPage } from '../pages/clubs/clubs';
+import { ClubPage } from '../pages/club/club';
+import { ClubInfoPage } from '../pages/club-info/club-info';
+import { AddMemberPage } from '../pages/add-member/add-member';
 
 import { FriendPipe } from '../pipes/friend';
 import { SearchPipe } from '../pipes/search';
 import { ConversationPipe } from '../pipes/conversation';
 import { DateFormatPipe } from '../pipes/date';
-import { GroupPipe } from '../pipes/group';
+import { ClubPipe } from '../pipes/club';
 
 import { AlertProvider } from "../providers/alert/alert";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
@@ -79,7 +85,7 @@ firebase.initializeApp(firebaseConfig);
     RegisterPage,
     Tasks,
     Searcher,
-    Calendar,
+    CalendarPage,
     SettingsPage,
     TdlistPage,
     TabsPage,
@@ -94,11 +100,16 @@ firebase.initializeApp(firebaseConfig);
     RequestsPage,
     UserInfoPage,
     ImageModalPage,
+    NewClubPage,
+    ClubPage,
+    ClubsPage,
+    ClubInfoPage,
+    AddMemberPage,
     FriendPipe,
     ConversationPipe,
     SearchPipe,
     DateFormatPipe,
-    GroupPipe
+    ClubPipe
   ],
   imports: [
     BrowserModule,
@@ -118,7 +129,7 @@ firebase.initializeApp(firebaseConfig);
     RegisterPage,
     Tasks,
     Searcher,
-    Calendar,
+    CalendarPage,
     SettingsPage,
     TdlistPage,
     TabsPage,
@@ -132,7 +143,12 @@ firebase.initializeApp(firebaseConfig);
     SearchPage,
     RequestsPage,
     UserInfoPage,
-    ImageModalPage
+    ImageModalPage,
+    NewClubPage,
+    ClubPage,
+    ClubsPage,
+    ClubInfoPage,
+    AddMemberPage
   ],
   providers: [
     StatusBar,
@@ -144,6 +160,7 @@ firebase.initializeApp(firebaseConfig);
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     Camera,
+    Calendar,
     Contacts,
     Geolocation,
     Keyboard,

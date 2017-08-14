@@ -21,8 +21,6 @@
         <button ion-button [disabled]="isToday" (click)="today()">Today</button>
     </ion-buttons>
 
-
-
     <calendar [eventSource]="eventSource"
               [calendarMode]="calendar.mode"
               [currentDate]="calendar.currentDate"
@@ -31,16 +29,32 @@
               (onTitleChanged)="onViewTitleChanged($event)"
               (onTimeSelected)="onTimeSelected($event)"
               [weekviewNormalEventTemplate]="weekEvents"
+              [monthviewEventDetailTemplate]="monthEventDetail"
               step="15">
     </calendar>
 
+    <ng-template #monthEventDetail let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
+      <ion-list class="event-detail-container" has-bouncing="false" *ngIf="showEventDetail" overflow-scroll="false">
+        <ion-item *ngFor="let event of selectedDate?.events" (click)="eventSelected(event)">
+          <span *ngIf="this.isSameDay(this.selectedDay,event.startTime)" class="monthview-eventdetail-timecolumn">{{event.startTime|date: 'HH:mm'}} - 24:00</span>
+          <span *ngIf="this.isSameDay(this.selectedDay,event.endTime)" class="monthview-eventdetail-timecolumn">00:00 - {{event.endTime|date: 'HH:mm'}}</span>
+          <span *ngIf="this.dateInRange(this.selectedDay,event.startTime,event.endTime)" class="monthview-eventdetail-timecolumn">All day</span>
+          <span class="event-detail"> | {{event.title}}</span>
+        </ion-item>
+        <ion-item *ngIf="selectedDate?.events.length==0">
+          <div class="no-events-label">{{noEventsLabel}}</div>
+        </ion-item>
+      </ion-list>
+    </ng-template>
+    
     <ng-template #weekEvents let-displayEvent="displayEvent">
       <div class="calendar-event-inner"       
       [style.top]="(37*displayEvent.startOffset/hourParts)+'px'"
       [style.left]="100/displayEvent.overlapNumber*displayEvent.position+'%'"
       [style.width]="100+'%'"
-      [style.height]="37*(displayEvent.endIndex - displayEvent.startIndex) - 4 + 'px'"
-      >{{displayEvent.event.title}}</div><!--[style.width]="100/displayEvent.overlapNumber+'%'" -->
+      [style.height]="37*(displayEvent.endIndex - displayEvent.startIndex) - 4 + 'px'">
+        {{displayEvent.event.title}}
+      </div>
     </ng-template>
     
 </ion-content>

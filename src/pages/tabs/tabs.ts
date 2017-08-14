@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, Tabs} from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Calendar } from '../calendar/calendar';
+import { CalendarPage } from '../calendar/calendar';
 import { SettingsPage } from '../settings/settings';
 import { Searcher } from '../searcher/searcher';
 import { TdlistPage } from '../tdlist/tdlist';
@@ -29,7 +29,7 @@ import * as firebase from 'firebase';
 `})
 export class TabsPage {
   @ViewChild('myTabs') tabRef: Tabs;
-  tab1:any = Calendar;
+  tab1:any = CalendarPage;
   tab2:any = TdlistPage;
   tab3:any = ConversationPage;
   tab4:any = Searcher;

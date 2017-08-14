@@ -37,6 +37,6 @@ export namespace Validator {
     patternError: { title: 'Invalid Password!', subTitle: 'Sorry, but the password you have entered contains special characters.' }
   };
   // Group Form Validators
-  export const groupNameValidator = ['', [Validators.required, Validators.minLength(1)]];
-  export const groupDescriptionValidator = ['', [Validators.required, Validators.minLength(1)]];
+  export const clubNameValidator = ['', [Validators.required, Validators.minLength(1)]];
+  export const clubDescriptionValidator = ['', [Validators.required, Validators.minLength(1)]];
 }

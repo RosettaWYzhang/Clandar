@@ -1,0 +1,79 @@
+<!--
+  Generated template for the NewClubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+      <button ion-button tappable (click)="back()">Back</button>
+    </ion-buttons>
+    <ion-title>New Club</ion-title>
+    <!-- New Group can only be added when a group form is filled up, image is uploaded, and there's more than one member. -->
+    <ion-buttons end>
+      <button ion-button tappable (click)="done()" [disabled]="!clubForm.valid || club.img == '' || clubMembers.length <= 1">Done</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="club">
+    <ion-list>
+      <ion-list-header>
+        Club Info
+      </ion-list-header>
+      <form [formGroup]="clubForm">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="{{club.img}}" *ngIf="club.img != ''" tappable (click)="setClubPhoto()" />
+            <img src="assets/img/club.png" *ngIf="club.img == ''" tappable (click)="setClubPhoto()" />
+          </ion-avatar>
+          <ion-input type="text" formControlName="name" placeholder="Name of Club"></ion-input>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label stacked>Description *</ion-label>
+          <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>
+        </ion-item>
+        <div *ngIf="clubMembers">
+        <ion-list-header>
+          Club Members ({{clubMembers.length}})
+        </ion-list-header>
+        
+        <ion-item  *ngFor="let member of clubMembers">
+          <ion-avatar item-left>
+            <img src="{{member.img}}"/>
+          </ion-avatar>
+          <h2>{{member.name}}</h2>
+          <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>
+        </ion-item>
+        </div>
+      </form>
+    </ion-list>
+
+    <ion-list-header>
+      Add New Members
+    </ion-list-header>
+    <div class="form">
+      <!-- No friends to create a group. -->
+      <div class="empty" *ngIf="friends && friends.length == 0">
+        <p>You have no friends right now to create a new club.</p>
+        <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>
+      </div>
+      <!-- Show friends to add/remove to group. -->
+      <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">
+        <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+        <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" no-lines tappable (click)="addOrRemoveFromClub(friend)">
+          <ion-fab middle right>
+            <button ion-fab mini tappable (click)="addToClub(friend); $event.stopPropagation();" *ngIf="!inClub(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>
+            <button ion-fab mini tappable (click)="removeFromClub(friend); $event.stopPropagation();" *ngIf="inClub(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>
+          </ion-fab>
+          <ion-avatar item-left>
+            <img src="{{friend.img}}">
+          </ion-avatar>
+          <h2>{{friend.name}}</h2>
+          <p>@{{friend.username}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

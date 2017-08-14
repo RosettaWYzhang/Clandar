@@ -37,10 +37,10 @@ const errorMessages = {
   usernameExists: { title: 'Username Already Exists!', subTitle: 'Sorry, but this username is already taken by another user.' },
   // Image Error Messages
   imageUpload: { title: 'Image Upload Failed!', subTitle: 'Sorry but we\'ve encountered an error uploading selected image.' },
-  // Group Error Messages
-  groupUpdate: { title: 'Update Group Failed!', subTitle: 'Sorry, but we\'ve encountered an error updating this group.' },
-  groupLeave: { title: 'Leave Group Failed!', subTitle: 'Sorry, but you\'ve encountered an error leaving this group.' },
-  groupDelete: { title: 'Delete Group Failed!', subTitle: 'Sorry, but we\'ve encountered an error deleting this group.' }
+  // Club Error Messages
+  clubUpdate: { title: 'Update Club Failed!', subTitle: 'Sorry, but we\'ve encountered an error updating this club.' },
+  clubLeave: { title: 'Leave Club Failed!', subTitle: 'Sorry, but you\'ve encountered an error leaving this club.' },
+  clubDelete: { title: 'Delete Club Failed!', subTitle: 'Sorry, but we\'ve encountered an error deleting this club.' }
 };
 
 const successMessages = {
@@ -52,8 +52,8 @@ const successMessages = {
   passwordChanged: { title: 'Password Changed!', subTitle: 'Your password has been successfully changed.' },
   friendRequestSent: { title: 'Friend Request Sent!', subTitle: 'Your friend request has been successfully sent!' },
   friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
-  groupUpdated: { title: 'Group Updated!', subTitle: 'This group has been successfully updated!' },
-  groupLeft: { title: 'Leave Group', subTitle: 'You have successfully left this group.' }
+  clubUpdated: { title: 'Club Updated!', subTitle: 'This club has been successfully updated!' },
+  clubLeft: { title: 'Leave Club', subTitle: 'You have successfully left this club.' }
 };
 
 @Injectable()
@@ -146,11 +146,11 @@ export class AlertProvider {
     }).present();
   }
 
-  // Show group updated.
-  showGroupUpdatedMessage() {
+  // Show club updated.
+  showClubUpdatedMessage() {
     this.alert = this.alertCtrl.create({
-      title: successMessages.groupUpdated["title"],
-      subTitle: successMessages.groupUpdated["subTitle"],
+      title: successMessages.clubUpdated["title"],
+      subTitle: successMessages.clubUpdated["subTitle"],
       buttons: ['OK']
     }).present();
   }
@@ -338,25 +338,25 @@ export class AlertProvider {
           buttons: ['OK']
         }).present();
         break;
-      // Group Error MEssages
-      case 'group/error-update-group':
+      // Club Error MEssages
+      case 'club/error-update-club':
         this.alert = this.alertCtrl.create({
-          title: errorMessages.groupUpdate["title"],
-          subTitle: errorMessages.groupUpdate["subTitle"],
+          title: errorMessages.clubUpdate["title"],
+          subTitle: errorMessages.clubUpdate["subTitle"],
           buttons: ['OK']
         }).present();
         break;
-      case 'group/error-leave-group':
+      case 'club/error-leave-club':
         this.alert = this.alertCtrl.create({
-          title: errorMessages.groupLeave["title"],
-          subTitle: errorMessages.groupLeave["subTitle"],
+          title: errorMessages.clubLeave["title"],
+          subTitle: errorMessages.clubLeave["subTitle"],
           buttons: ['OK']
         }).present();
         break;
-      case 'group/error-delete-group':
+      case 'club/error-delete-club':
         this.alert = this.alertCtrl.create({
-          title: errorMessages.groupDelete["title"],
-          subTitle: errorMessages.groupDelete["subTitle"],
+          title: errorMessages.clubDelete["title"],
+          subTitle: errorMessages.clubDelete["subTitle"],
           buttons: ['OK']
         }).present();
         break;

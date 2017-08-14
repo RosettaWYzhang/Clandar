@@ -26,25 +26,34 @@
   </div>
 
   <div [ngSwitch]="clan">
-    <ion-searchbar></ion-searchbar>
-    <ion-list no-border  *ngSwitchCase="'club'">
+    <div no-border  *ngSwitchCase="'club'">
+      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">
+        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>
+        <p>You haven't joined any club yet.</p>
+        <button ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create A New Club</button>
+        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join A Club</button>
+      </div>
+      
+    
+      <ion-list *ngIf="clubs && clubs.length > 0">
+        <button ion-button full tappable (click)="newClub()">Create A Club</button> 
+        <button ion-button full tappable (click)="joinClub()">Join A Club</button>                
+        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+        <ion-item *ngFor="let club of clubs | clubFilter: searchClub">
+          <ion-col width-50 (click)="viewClub(club.$key)" tappable>
+            <div [ngClass]=hasUnreadMessages(club)>
+              <img src="{{club.img}}" />
+              <ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge>
+              <p>{{club.name}}</p>
+              <span>{{club.date | DateFormat}}</span>
+            </div>
+          </ion-col>
+        </ion-item>
+      </ion-list>
+    </div>
 
-      <ion-item>
-        Sports Club
-      </ion-item>
-
-      <ion-item>
-        Fight Club
-      </ion-item>
-
-      <ion-item>
-        Student Union
-      </ion-item> 
-
-    </ion-list>
-
-    <ion-list no-border  *ngSwitchCase="'event'">
-
+    <div no-border  *ngSwitchCase="'event'">
+      
       <ion-item>
         Dialogue with leaders in Social Media
       </ion-item>
@@ -73,6 +82,6 @@
         Business Development Intern
       </ion-item> 
 
-    </ion-list>
+    </div>
   </div>
 </ion-content>
