@@ -31,13 +31,13 @@
         <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>
         <p>You haven't joined any club yet.</p>
         <button ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create A New Club</button>
-        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join A Club</button>
+        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Club Square</button>
       </div>
       
     
       <ion-list *ngIf="clubs && clubs.length > 0">
-        <button ion-button full tappable (click)="newClub()">Create A Club</button> 
-        <button ion-button full tappable (click)="joinClub()">Join A Club</button>                
+        <button ion-button full tappable (click)="newClub()">Create A New Club</button> 
+        <button ion-button full tappable (click)="joinClub()">Club Square</button>                
         <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
         <ion-item *ngFor="let club of clubs | clubFilter: searchClub">
           <ion-col width-50 (click)="viewClub(club.$key)" tappable>

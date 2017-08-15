@@ -481,7 +481,7 @@ var FriendPipe = (function () {
         }
         else {
             var term_1 = search.toLowerCase();
-            return friends.filter(function (friend) { return friend.name.toLowerCase().indexOf(term_1) > -1 || friend.username.toLowerCase().indexOf(term_1) > -1; });
+            return friends.filter(function (friend) { return friend.name.toLowerCase().indexOf(term_1) > -1 || friend.email.toLowerCase().indexOf(term_1) > -1; });
         }
     };
     return FriendPipe;
@@ -893,10 +893,15 @@ AddMembersPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-add-members',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/add-members/add-members.html"*/'<!--\n  Generated template for the AddMemberPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title>Add Members</ion-title>\n    <!-- Only enable button when user is adding atleast one member to the club -->\n    <ion-buttons end>\n      <button ion-button tappable (click)="done()" [disabled]="toAdd && toAdd.length < 1">Done</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- All friends already in the club. -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n    <p>Uh-oh! Sorry but all your friends are already in this club.</p>\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n  </div>\n  <!-- Add/Cancel Add friends to the club. -->\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" no-lines tappable (click)="addOrRemove(friend)">\n      <ion-fab middle right>\n        <button ion-fab mini tappable (click)="add(friend); $event.stopPropagation();" *ngIf="!isAdded(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n        <button ion-fab mini tappable (click)="remove(friend); $event.stopPropagation();" *ngIf="isAdded(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n      </ion-fab>\n      <ion-avatar item-left>\n        <img src="{{friend.img}}">\n      </ion-avatar>\n      <h2>{{friend.name}}</h2>\n      <p>@{{friend.username}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/add-members/add-members.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
+        __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]])
 ], AddMembersPage);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=add-members.js.map
 
 /***/ }),
@@ -1955,7 +1960,7 @@ var Searcher = (function () {
 Searcher = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-searcher',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/'<!--\n  Generated template for the Searcher page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>My Clan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class=\'content\' no-padding>\n  <div padding>\n    <ion-segment [(ngModel)]="clan">\n      <ion-segment-button value="club">\n        Clubs\n      </ion-segment-button>\n      <ion-segment-button value="event">\n        Events\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="clan">\n    <div no-border  *ngSwitchCase="\'club\'">\n      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">\n        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>\n        <p>You haven\'t joined any club yet.</p>\n        <button ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create A New Club</button>\n        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join A Club</button>\n      </div>\n      \n    \n      <ion-list *ngIf="clubs && clubs.length > 0">\n        <button ion-button full tappable (click)="newClub()">Create A Club</button> \n        <button ion-button full tappable (click)="joinClub()">Join A Club</button>                \n        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <ion-item *ngFor="let club of clubs | clubFilter: searchClub">\n          <ion-col width-50 (click)="viewClub(club.$key)" tappable>\n            <div [ngClass]=hasUnreadMessages(club)>\n              <img src="{{club.img}}" />\n              <ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge>\n              <p>{{club.name}}</p>\n              <span>{{club.date | DateFormat}}</span>\n            </div>\n          </ion-col>\n        </ion-item>\n      </ion-list>\n    </div>\n\n    <div no-border  *ngSwitchCase="\'event\'">\n      \n      <ion-item>\n        Dialogue with leaders in Social Media\n      </ion-item>\n\n      <ion-item>\n        SMU Open House 2015\n      </ion-item>\n\n      <ion-item>\n        YIC final presentation invitation\n      </ion-item>\n\n      <ion-item>\n        SPF career talk\n      </ion-item>   \n\n      <ion-item>\n        Sea game volunteers\n      </ion-item>  \n\n      <ion-item>\n        Social Media Internship\n      </ion-item>\n\n      <ion-item>\n        Business Development Intern\n      </ion-item> \n\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/,
+        selector: 'page-searcher',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/'<!--\n  Generated template for the Searcher page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>My Clan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class=\'content\' no-padding>\n  <div padding>\n    <ion-segment [(ngModel)]="clan">\n      <ion-segment-button value="club">\n        Clubs\n      </ion-segment-button>\n      <ion-segment-button value="event">\n        Events\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="clan">\n    <div no-border  *ngSwitchCase="\'club\'">\n      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">\n        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>\n        <p>You haven\'t joined any club yet.</p>\n        <button ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create A New Club</button>\n        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Club Square</button>\n      </div>\n      \n    \n      <ion-list *ngIf="clubs && clubs.length > 0">\n        <button ion-button full tappable (click)="newClub()">Create A New Club</button> \n        <button ion-button full tappable (click)="joinClub()">Club Square</button>                \n        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <ion-item *ngFor="let club of clubs | clubFilter: searchClub">\n          <ion-col width-50 (click)="viewClub(club.$key)" tappable>\n            <div [ngClass]=hasUnreadMessages(club)>\n              <img src="{{club.img}}" />\n              <ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge>\n              <p>{{club.name}}</p>\n              <span>{{club.date | DateFormat}}</span>\n            </div>\n          </ion-col>\n        </ion-item>\n      </ion-list>\n    </div>\n\n    <div no-border  *ngSwitchCase="\'event\'">\n      \n      <ion-item>\n        Dialogue with leaders in Social Media\n      </ion-item>\n\n      <ion-item>\n        SMU Open House 2015\n      </ion-item>\n\n      <ion-item>\n        YIC final presentation invitation\n      </ion-item>\n\n      <ion-item>\n        SPF career talk\n      </ion-item>   \n\n      <ion-item>\n        Sea game volunteers\n      </ion-item>  \n\n      <ion-item>\n        Social Media Internship\n      </ion-item>\n\n      <ion-item>\n        Business Development Intern\n      </ion-item> \n\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
@@ -3463,6 +3468,13 @@ ContactsPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3474,6 +3486,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
+
 /**
  * Generated class for the ClubsPage page.
  *
@@ -3481,21 +3499,134 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var ClubsPage = (function () {
-    function ClubsPage(navCtrl, navParams) {
+    function ClubsPage(navCtrl, platform, navParams, dataProvider, loadingProvider, alertProvider, imageProvider, alertCtrl, afDB, app) {
         this.navCtrl = navCtrl;
+        this.platform = platform;
         this.navParams = navParams;
+        this.dataProvider = dataProvider;
+        this.loadingProvider = loadingProvider;
+        this.alertProvider = alertProvider;
+        this.imageProvider = imageProvider;
+        this.alertCtrl = alertCtrl;
+        this.afDB = afDB;
+        this.app = app;
     }
     ClubsPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.dataProvider.getCurrentUser().subscribe(function (user) {
+            _this.user = user;
+        });
+        this.search = "";
         console.log('ionViewDidLoad ClubsPage');
+        this.clubs = [];
+        this.dataProvider.getAllClubs().subscribe(function (clubs) {
+            if (clubs) {
+                clubs.forEach(function (club) {
+                    _this.clubs.push(club);
+                });
+            }
+        });
+    };
+    ClubsPage.prototype.getUsername = function (uid) {
+        var uname;
+        this.dataProvider.getUser(uid).subscribe(function (user) {
+            uname = user.name;
+        });
+        return uname;
+    };
+    ClubsPage.prototype.isMember = function (club) {
+        for (var i = 0; i < club.members.length; i++) {
+            if (this.user.userId == club.members[i])
+                return true;
+        }
+        return false;
+    };
+    ClubsPage.prototype.details = function (club) {
+        var note;
+        if (this.isMember(club)) {
+            note = 'Welcome to join our club';
+        }
+        else {
+            note = 'You are already a member of the club';
+        }
+        var name = club.name;
+        var description = club.description;
+        var alert = this.alertCtrl.create({
+            title: 'Details',
+            subTitle: '<br><br>Name: ' + name
+                + '<br><br>Number of Members: ' + club.members.length
+                + '<br><br>Description: ' + club.description
+                + '<br><br>Created By: ' + this.getUsername(club.creater)
+                + '<br><br>' + note,
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ClubsPage.prototype.addOrUpdateMember = function (member) {
+        if (!this.clubMembers) {
+            this.clubMembers = [member];
+        }
+        else {
+            var index = -1;
+            for (var i = 0; i < this.clubMembers.length; i++) {
+                if (this.clubMembers[i].$key == member.$key) {
+                    index = i;
+                }
+            }
+            if (index > -1) {
+                this.clubMembers[index] = member;
+            }
+            else {
+                this.clubMembers.push(member);
+            }
+        }
+    };
+    ClubsPage.prototype.join = function (clubId) {
+        var _this = this;
+        var thisclub;
+        this.loadingProvider.load();
+        // Get club information
+        this.dataProvider.getClub(clubId).subscribe(function (club) {
+            thisclub = club;
+            _this.loadingProvider.dismiss();
+        });
+        this.loadingProvider.load();
+        this.afDB.object('/accounts/' + __WEBPACK_IMPORTED_MODULE_7_firebase__["auth"]().currentUser.uid + '/clubs/' + clubId).update({
+            messagesRead: 0
+        });
+        thisclub.members.push(__WEBPACK_IMPORTED_MODULE_7_firebase__["auth"]().currentUser.uid);
+        thisclub.messages.push({
+            date: new Date().toString(),
+            sender: __WEBPACK_IMPORTED_MODULE_7_firebase__["auth"]().currentUser.uid,
+            type: 'system',
+            message: this.user.name + ' has joined the club.',
+            icon: 'md-contacts'
+        });
+        this.dataProvider.getClub(clubId).update({
+            members: thisclub.members,
+            messages: thisclub.messages
+        }).then(function () {
+            _this.loadingProvider.dismiss();
+            _this.alertProvider.showClubJoinedMessage();
+        });
     };
     return ClubsPage;
 }());
 ClubsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-clubs',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/'<!--\n  Generated template for the ClubsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>clubs</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/,
+        selector: 'page-clubs',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/'<!--\n  Generated template for the ClubsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>clubs</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-list-header>Joined Clubs</ion-list-header>\n    <ng-container *ngFor="let club of clubs">\n      <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">\n        <ion-avatar item-start>\n          <img src={{club.img}}>\n        </ion-avatar>\n        <h2>{{club.name}}</h2>\n      </ion-item>\n    </ng-container>\n  </ion-list>\n  <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n  <ion-list>\n    <ion-list-header>All Clubs</ion-list-header>\n    <ion-item-sliding *ngFor="let club of clubs|clubFilter: search">\n      <ion-item tappable (click)="details(club)">\n        <ion-avatar item-start>\n          <img src={{club.img}}>\n        </ion-avatar>\n        <h2>{{club.name}}</h2>\n      </ion-item>\n      <ion-item-options side="right">\n        <button (click)="details(club)" ion-button color="primary">\n          <ion-icon name="more"></ion-icon>\n          Details\n        </button>\n        <button *ngIf="!isMember(club)" (click)="join(club.$key)" ion-button color="secondary">\n          <ion-icon name="add"></ion-icon>\n          Join \n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
 ], ClubsPage);
 
 //# sourceMappingURL=clubs.js.map
@@ -4296,6 +4427,7 @@ var successMessages = {
     passwordChanged: { title: 'Password Changed!', subTitle: 'Your password has been successfully changed.' },
     friendRequestSent: { title: 'Friend Request Sent!', subTitle: 'Your friend request has been successfully sent!' },
     friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
+    clubJoined: { title: 'Club Joined!', subTitle: 'You have successfully joined the club!' },
     clubUpdated: { title: 'Club Updated!', subTitle: 'This club has been successfully updated!' },
     clubLeft: { title: 'Leave Club', subTitle: 'You have successfully left this club.' }
 };
@@ -4313,6 +4445,13 @@ var AlertProvider = (function () {
         this.alert = this.alertCtrl.create({
             title: successMessages.profileUpdated["title"],
             subTitle: successMessages.profileUpdated["subTitle"],
+            buttons: ['OK']
+        }).present();
+    };
+    AlertProvider.prototype.showClubJoinedMessage = function () {
+        this.alert = this.alertCtrl.create({
+            title: successMessages.clubJoined['title'],
+            subTitle: successMessages.clubJoined['subTitle'],
             buttons: ['OK']
         }).present();
     };
@@ -4945,8 +5084,11 @@ var NewClubPage = (function () {
         for (var i = 0; i < this.clubMembers.length; i++) {
             members.push(this.clubMembers[i].$key);
         }
+        var administrators = [];
+        administrators.push(__WEBPACK_IMPORTED_MODULE_11_firebase__["auth"]().currentUser.uid);
         // Add club info and date.
         this.club.creater = __WEBPACK_IMPORTED_MODULE_11_firebase__["auth"]().currentUser.uid;
+        this.club.administrators = administrators;
         this.club.dateCreated = new Date().toString();
         this.club.messages = messages;
         this.club.members = members;
@@ -4960,6 +5102,7 @@ var NewClubPage = (function () {
                 messagesRead: 1
             });
             _this.angularfire.list('/accounts/' + __WEBPACK_IMPORTED_MODULE_11_firebase__["auth"]().currentUser.uid + '/createdClubs/').push(clubId);
+            _this.angularfire.list('/accounts/' + __WEBPACK_IMPORTED_MODULE_11_firebase__["auth"]().currentUser.uid + '/adminedClubs/').push(clubId);
             for (var i = 1; i < _this.clubMembers.length; i++) {
                 _this.angularfire.object('/accounts/' + _this.clubMembers[i].$key + '/clubs/' + clubId).update({
                     messagesRead: 0
@@ -5040,21 +5183,12 @@ var NewClubPage = (function () {
 }());
 NewClubPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-new-club',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/new-club/new-club.html"*/'<!--\n  Generated template for the NewClubPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title>New Club</ion-title>\n    <!-- New Group can only be added when a group form is filled up, image is uploaded, and there\'s more than one member. -->\n    <ion-buttons end>\n      <button ion-button tappable (click)="done()" [disabled]="!clubForm.valid || club.img == \'\' || clubMembers.length <= 1">Done</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="club">\n    <ion-list>\n      <ion-list-header>\n        Club Info\n      </ion-list-header>\n      <form [formGroup]="clubForm">\n        <ion-item>\n          <ion-avatar item-left>\n            <img src="{{club.img}}" *ngIf="club.img != \'\'" tappable (click)="setClubPhoto()" />\n            <img src="assets/img/club.png" *ngIf="club.img == \'\'" tappable (click)="setClubPhoto()" />\n          </ion-avatar>\n          <ion-input type="text" formControlName="name" placeholder="Name of Club"></ion-input>\n        </ion-item>\n        <ion-item no-lines>\n          <ion-label stacked>Description *</ion-label>\n          <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>\n        </ion-item>\n        <div *ngIf="clubMembers">\n        <ion-list-header>\n          Club Members ({{clubMembers.length}})\n        </ion-list-header>\n        \n        <ion-item  *ngFor="let member of clubMembers">\n          <ion-avatar item-left>\n            <img src="{{member.img}}"/>\n          </ion-avatar>\n          <h2>{{member.name}}</h2>\n          <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>\n        </ion-item>\n        </div>\n      </form>\n    </ion-list>\n\n    <ion-list-header>\n      Add New Members\n    </ion-list-header>\n    <div class="form">\n      <!-- No friends to create a group. -->\n      <div class="empty" *ngIf="friends && friends.length == 0">\n        <p>You have no friends right now to create a new club.</p>\n        <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n      </div>\n      <!-- Show friends to add/remove to group. -->\n      <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n        <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" no-lines tappable (click)="addOrRemoveFromClub(friend)">\n          <ion-fab middle right>\n            <button ion-fab mini tappable (click)="addToClub(friend); $event.stopPropagation();" *ngIf="!inClub(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n            <button ion-fab mini tappable (click)="removeFromClub(friend); $event.stopPropagation();" *ngIf="inClub(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n          </ion-fab>\n          <ion-avatar item-left>\n            <img src="{{friend.img}}">\n          </ion-avatar>\n          <h2>{{friend.name}}</h2>\n          <p>@{{friend.username}}</p>\n        </ion-item>\n      </ion-list>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/new-club/new-club.html"*/
+        selector: 'page-new-club',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/new-club/new-club.html"*/'<!--\n  Generated template for the NewClubPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title>New Club</ion-title>\n    <!-- New Group can only be added when a group form is filled up, image is uploaded, and there\'s more than one member. -->\n    <ion-buttons end>\n      <button ion-button tappable (click)="done()" [disabled]="!clubForm.valid || club.img == \'\' || clubMembers.length <= 1">Done</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="club">\n    <ion-list>\n      <ion-list-header>\n        Club Info\n      </ion-list-header>\n      <form [formGroup]="clubForm">\n        <ion-item>\n          <ion-avatar item-left>\n            <img src="{{club.img}}" *ngIf="club.img != \'\'" tappable (click)="setClubPhoto()" />\n            <img src="assets/img/club.png" *ngIf="club.img == \'\'" tappable (click)="setClubPhoto()" />\n          </ion-avatar>\n          <ion-input type="text" formControlName="name" placeholder="Name of Club"></ion-input>\n        </ion-item>\n        <ion-item no-lines>\n          <ion-label stacked>Description *</ion-label>\n          <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>\n        </ion-item>\n        <div *ngIf="clubMembers">\n        <ion-list-header>\n          Club Members ({{clubMembers.length}})\n        </ion-list-header>\n        \n        <ion-item  *ngFor="let member of clubMembers">\n          <ion-avatar item-left>\n            <img src="{{member.img}}"/>\n          </ion-avatar>\n          <h2>{{member.name}}</h2>\n          <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>\n        </ion-item>\n        </div>\n      </form>\n    </ion-list>\n\n    <ion-list-header>\n      Add New Members\n    </ion-list-header>\n    <div class="form">\n      <!-- No friends to create a group. -->\n      <div class="empty" *ngIf="friends && friends.length == 0">\n        <p>You have no friends right now to create a new club.</p>\n        <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n      </div>\n      <!-- Show friends to add/remove to group. -->\n      <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n        <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <ng-container *ngFor="let friend of friends | friendFilter:searchFriend">\n          <ion-item *ngIf="!inClub(friend)" no-lines tappable (click)="addOrRemoveFromClub(friend)">\n            <ion-fab middle right>\n              <button ion-fab mini tappable (click)="addToClub(friend); $event.stopPropagation();" *ngIf="!inClub(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n              <button ion-fab mini tappable (click)="removeFromClub(friend); $event.stopPropagation();" *ngIf="inClub(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n            </ion-fab>\n            <ion-avatar item-left>\n              <img src="{{friend.img}}">\n            </ion-avatar>\n            <h2>{{friend.name}}</h2>\n            <p>{{friend.email}}</p>\n          </ion-item>\n        </ng-container>\n      </ion-list>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/new-club/new-club.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__["a" /* AlertProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */],
-        __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__["a" /* Camera */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__["a" /* Camera */]) === "function" && _l || Object])
 ], NewClubPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 //# sourceMappingURL=new-club.js.map
 
 /***/ }),
@@ -5457,10 +5591,18 @@ ClubInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-club-info',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/club-info/club-info.html"*/'<!--\n  Generated template for the ClubInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title>Club Info</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- Club Info -->\n  <div *ngIf="club">\n    <ion-list>\n      <ion-list-header>\n        Club Info\n      </ion-list-header>\n      <ion-item no-lines>\n        <ion-avatar item-left>\n          <img src="{{club.img}}" tappable *ngIf="this.uid===club.creater" (click)="setPhoto()"/>\n          <img src="{{club.img}}" tappable *ngIf="!(this.uid===club.creater)"/>\n        </ion-avatar>\n        <h2 tappable (click)="setName()" *ngIf="this.uid===club.creater">{{club.name}}</h2>\n        <h2 tappable *ngIf="!(this.uid===club.creater)">{{club.name}}</h2>\n        <p>Started {{club.dateCreated | DateFormat}}</p>\n      </ion-item>\n      <ion-list-header>\n        About\n      </ion-list-header>\n      <ion-item no-lines *ngIf="this.uid===club.creater">\n        <p class="description" tappable (click)="setDescription()">{{club.description}}</p>\n      </ion-item>\n      <ion-item no-lines *ngIf="!(this.uid===club.creater)">\n        <p class="description" tappable>{{club.description}}</p>\n      </ion-item>\n    </ion-list>\n    <ion-list *ngIf="clubMembers">\n      <ion-list-header>\n        Club Members ({{clubMembers.length}})\n      </ion-list-header>\n      <ion-item (click)="addMembers()">\n        <ion-icon name="add" item-left></ion-icon>\n        <h2>Add Members</h2>\n      </ion-item>\n      <ion-item *ngFor="let member of clubMembers" (click)="viewUser(member.$key)">\n        <ion-avatar item-left>\n          <img src="{{member.img}}" />\n        </ion-avatar>\n        <h2>{{member.name}}<span *ngIf="club.creater===member.userId">(Administrator)</span></h2>\n        <p>{{member.description}}</p>\n      </ion-item>\n    </ion-list>\n    <ion-list-header>\n        More\n    </ion-list-header>\n    <ion-list style="text-align: center;">  \n      <ion-item no-lines tappable (click)="leaveClub()" *ngIf="clubMembers && clubMembers.length > 1">\n        Leave Club\n      </ion-item>\n      <!-- When there\'s only one member left, allow deleting of club. -->\n      <ion-item no-lines tappable (click)="deleteClub()" *ngIf="clubMembers && clubMembers.length <= 1">\n        Delete Club\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/club-info/club-info.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_image_image__["a" /* ImageProvider */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__["a" /* Camera */]) === "function" && _k || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */],
+        __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_image_image__["a" /* ImageProvider */],
+        __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__["a" /* Camera */]])
 ], ClubInfoPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=club-info.js.map
 
 /***/ }),

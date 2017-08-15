@@ -53,7 +53,7 @@ export class NewClubPage {
     // Get user's friends to add to the club.
     this.dataProvider.getCurrentUser().subscribe((account) => {
       if (!this.clubMembers) {
-        this.clubMembers = [account]
+        this.clubMembers = [account];
       }
       if (account.friends) {
         for (var i = 0; i < account.friends.length; i++) {
@@ -110,8 +110,11 @@ export class NewClubPage {
     for (var i = 0; i < this.clubMembers.length; i++) {
       members.push(this.clubMembers[i].$key);
     }
+    var administrators = [];
+    administrators.push(firebase.auth().currentUser.uid);
     // Add club info and date.
     this.club.creater = firebase.auth().currentUser.uid;
+    this.club.administrators = administrators;
     this.club.dateCreated = new Date().toString();
     this.club.messages = messages;
     this.club.members = members;
@@ -125,6 +128,7 @@ export class NewClubPage {
         messagesRead: 1
       });
       this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/createdClubs/').push(clubId);
+      this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/adminedClubs/').push(clubId);      
       for (var i = 1; i < this.clubMembers.length; i++) {
         this.angularfire.object('/accounts/' + this.clubMembers[i].$key + '/clubs/' + clubId).update({
           messagesRead: 0

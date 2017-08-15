@@ -52,6 +52,7 @@ const successMessages = {
   passwordChanged: { title: 'Password Changed!', subTitle: 'Your password has been successfully changed.' },
   friendRequestSent: { title: 'Friend Request Sent!', subTitle: 'Your friend request has been successfully sent!' },
   friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
+  clubJoined: { title: 'Club Joined!', subTitle: 'You have successfully joined the club!' },
   clubUpdated: { title: 'Club Updated!', subTitle: 'This club has been successfully updated!' },
   clubLeft: { title: 'Leave Club', subTitle: 'You have successfully left this club.' }
 };
@@ -74,6 +75,14 @@ export class AlertProvider {
     this.alert = this.alertCtrl.create({
       title: successMessages.profileUpdated["title"],
       subTitle: successMessages.profileUpdated["subTitle"],
+      buttons: ['OK']
+    }).present();
+  }
+
+  showClubJoinedMessage(){
+    this.alert = this.alertCtrl.create({
+      title: successMessages.clubJoined['title'],
+      subTitle: successMessages.clubJoined['subTitle'],
       buttons: ['OK']
     }).present();
   }
