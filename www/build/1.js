@@ -1,18 +1,14 @@
 webpackJsonp([1],{
 
-<<<<<<< HEAD
 /***/ 1190:
-=======
-/***/ 1182:
->>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClubsPageModule", function() { return ClubsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerifyPageModule", function() { return VerifyPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clubs__ = __webpack_require__(1191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__verify__ = __webpack_require__(258);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ClubsPageModule = (function () {
-    function ClubsPageModule() {
+var VerifyPageModule = (function () {
+    function VerifyPageModule() {
     }
-    return ClubsPageModule;
+    return VerifyPageModule;
 }());
-ClubsPageModule = __decorate([
+VerifyPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__clubs__["a" /* ClubsPage */],
+            __WEBPACK_IMPORTED_MODULE_2__verify__["a" /* VerifyPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clubs__["a" /* ClubsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__verify__["a" /* VerifyPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__clubs__["a" /* ClubsPage */]
+            __WEBPACK_IMPORTED_MODULE_2__verify__["a" /* VerifyPage */]
         ]
     })
-], ClubsPageModule);
+], VerifyPageModule);
 
-//# sourceMappingURL=clubs.module.js.map
+//# sourceMappingURL=verify.module.js.map
 
 /***/ })
 

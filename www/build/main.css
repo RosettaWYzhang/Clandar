@@ -25302,13 +25302,10 @@ page-conversation {
   font-family: Tahoma,Helvetica,sans-serif;
 }
 
-<<<<<<< HEAD
-=======
 page-conversation .create {
   color: #51CFB1;
 }
 
->>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 page-conversation ion-item span {
   color: primary;
   font-size: 75%;
@@ -25331,8 +25328,6 @@ page-conversation div.bold h2 {
   font-weight: bold !important;
 }
 
-<<<<<<< HEAD
-=======
 doodle-tasks {
   font-family: Tahoma,Helvetica,sans-serif;
 }
@@ -25343,7 +25338,6 @@ doodle-tasks .content .titles {
   border-radius: 8px;
 }
 
->>>>>>> d41ea44fb65daeef34b86bd5bdf08233b36d35f2
 page-event-modal {
   font-family: Tahoma,Helvetica,sans-serif;
 }

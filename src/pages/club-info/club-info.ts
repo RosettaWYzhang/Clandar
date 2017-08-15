@@ -5,7 +5,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
 import { ImageProvider } from '../../providers/image/image';
 import { AlertProvider } from '../../providers/alert/alert';
 import { ImageModalPage } from '../image-modal/image-modal';
-import { AddMemberPage } from '../add-member/add-member';
+import { AddMembersPage } from '../add-members/add-members';
 import { UserInfoPage } from '../user-info/user-info';
 import * as firebase from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -16,6 +16,7 @@ import { Camera } from '@ionic-native/camera';
   templateUrl: 'club-info.html'
 })
 export class ClubInfoPage {
+  private uid: any;
   private clubId: any;
   private club: any;
   private clubMembers: any;
@@ -38,7 +39,7 @@ export class ClubInfoPage {
   ionViewDidLoad() {
     // Initialize
     this.clubId = this.navParams.get('clubId');
-
+    this.uid = firebase.auth().currentUser.uid;
     // Get club details.
     this.subscription = this.dataProvider.getClub(this.clubId).subscribe((club) => {
       if (club.$exists()) {
@@ -373,6 +374,6 @@ export class ClubInfoPage {
 
   // Add members.
   addMembers() {
-    this.navCtrl.push(AddMemberPage, { clubId: this.clubId });
+    this.navCtrl.push(AddMembersPage, { clubId: this.clubId });
   }
 }
