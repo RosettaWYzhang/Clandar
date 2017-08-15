@@ -27,14 +27,8 @@ import { NewClubPage } from '../pages/new-club/new-club';
 import { ClubsPage } from '../pages/clubs/clubs';
 import { ClubPage } from '../pages/club/club';
 import { ClubInfoPage } from '../pages/club-info/club-info';
-<<<<<<< HEAD
-import { AddMemberPage } from '../pages/add-member/add-member';
-import { Doodle } from '../pages/doodle/doodle';
-
-=======
 import { AddMembersPage } from '../pages/add-members/add-members';
 import { Doodle } from '../pages/doodle/doodle';
->>>>>>> 4dd964cede624c6e184eaf3991dec6426be83eda
 import { DataProvider } from '../providers/data/data';
 import { Firebase } from '@ionic-native/firebase';
 import * as firebase from 'firebase';
