@@ -21,20 +21,20 @@
       </ion-list-header>
       <ion-item no-lines>
         <ion-avatar item-left>
-          <img src="{{club.img}}" tappable *ngIf="this.uid===club.creater" (click)="setPhoto()"/>
-          <img src="{{club.img}}" tappable *ngIf="!(this.uid===club.creater)"/>
+          <img src="{{club.img}}" tappable *ngIf="isAdmin()" (click)="setPhoto()"/>
+          <img src="{{club.img}}" tappable *ngIf="!(isAdmin())"/>
         </ion-avatar>
-        <h2 tappable (click)="setName()" *ngIf="this.uid===club.creater">{{club.name}}</h2>
-        <h2 tappable *ngIf="!(this.uid===club.creater)">{{club.name}}</h2>
+        <h2 tappable (click)="setName()" *ngIf="isAdmin()">{{club.name}}</h2>
+        <h2 tappable *ngIf="!(isAdmin())">{{club.name}}</h2>
         <p>Started {{club.dateCreated | DateFormat}}</p>
       </ion-item>
       <ion-list-header>
         About
       </ion-list-header>
-      <ion-item no-lines *ngIf="this.uid===club.creater">
+      <ion-item no-lines *ngIf="isAdmin()">
         <p class="description" tappable (click)="setDescription()">{{club.description}}</p>
       </ion-item>
-      <ion-item no-lines *ngIf="!(this.uid===club.creater)">
+      <ion-item no-lines *ngIf="!(isAdmin())">
         <p class="description" tappable>{{club.description}}</p>
       </ion-item>
     </ion-list>
@@ -50,7 +50,7 @@
         <ion-avatar item-left>
           <img src="{{member.img}}" />
         </ion-avatar>
-        <h2>{{member.name}}<span *ngIf="club.creater===member.userId">(Administrator)</span></h2>
+        <h2>{{member.name}}<span *ngIf="isAdmin()">(Administrator)</span></h2>
         <p>{{member.description}}</p>
       </ion-item>
     </ion-list>

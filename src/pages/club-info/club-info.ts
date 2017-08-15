@@ -340,6 +340,21 @@ export class ClubInfoPage {
     }).present();
   }
 
+  //check if logged in user is the creator of the club
+  isCreater(){
+    return (this.club.creator===this.uid);
+  }
+
+  //check if logged in user is the administrator of the club
+  isAdmin(){
+    for (var i=0;i<this.club.administrators.length;i++){
+      if (this.club.administrators[i]===this.uid){
+        return true;
+      }
+    }
+    return false;
+  }
+
   // Delete club.
   deleteClub() {
     this.alert = this.alertCtrl.create({

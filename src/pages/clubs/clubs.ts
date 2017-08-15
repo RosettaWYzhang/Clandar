@@ -114,9 +114,7 @@ export class ClubsPage {
     // Get club information
     this.dataProvider.getClub(clubId).subscribe((club) => {
       thisclub = club;
-      this.loadingProvider.dismiss();
     });
-    this.loadingProvider.load();
     this.afDB.object('/accounts/'+firebase.auth().currentUser.uid+'/clubs/'+clubId).update({
       messagesRead: 0
     });
@@ -133,8 +131,8 @@ export class ClubsPage {
       messages: thisclub.messages
     }).then(()=>{
       this.loadingProvider.dismiss();
-      this.alertProvider.showClubJoinedMessage();
-    })    
+    });  
+    this.alertProvider.showClubJoinedMessage();  
   }
 
 }

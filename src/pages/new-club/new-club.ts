@@ -113,7 +113,7 @@ export class NewClubPage {
     var administrators = [];
     administrators.push(firebase.auth().currentUser.uid);
     // Add club info and date.
-    this.club.creater = firebase.auth().currentUser.uid;
+    this.club.creator = firebase.auth().currentUser.uid;
     this.club.administrators = administrators;
     this.club.dateCreated = new Date().toString();
     this.club.messages = messages;
