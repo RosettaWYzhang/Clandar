@@ -7,11 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-<<<<<<< HEAD
-    <ion-title>Clans</ion-title>
-=======
     <ion-title>My Clan</ion-title>
->>>>>>> 4dd964cede624c6e184eaf3991dec6426be83eda
   </ion-navbar>
 
 </ion-header>
@@ -34,7 +30,6 @@
       <div class="empty-list" *ngIf="clubs && clubs.length <= 0">
         <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>
         <p>You haven't joined any club yet.</p>
-<<<<<<< HEAD
         <div class="operation">
           <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>
           <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join a club</button>
@@ -51,20 +46,6 @@
         <span *ngFor="let club of clubs | clubFilter: searchClub">
           <ion-item (click)="viewClub(club.$key)" tappable>
             <ion-avatar [ngClass]=hasUnreadMessages(club) item-start>
-=======
-        <button ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create A New Club</button>
-        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Club Square</button>
-      </div>
-      
-    
-      <ion-list *ngIf="clubs && clubs.length > 0">
-        <button ion-button full tappable (click)="newClub()">Create A New Club</button> 
-        <button ion-button full tappable (click)="joinClub()">Club Square</button>                
-        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
-        <ion-item *ngFor="let club of clubs | clubFilter: searchClub">
-          <ion-col width-50 (click)="viewClub(club.$key)" tappable>
-            <div [ngClass]=hasUnreadMessages(club)>
->>>>>>> 4dd964cede624c6e184eaf3991dec6426be83eda
               <img src="{{club.img}}" />
             </ion-avatar>
             <h2>{{club.name}}</h2>

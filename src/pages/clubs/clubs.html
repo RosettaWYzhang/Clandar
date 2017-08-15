@@ -7,15 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>clubs</ion-title>
+    <ion-title>Clubs</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="content" padding>
   <ion-list>
-    <ion-list-header>Joined Clubs</ion-list-header>
+    <ion-list-header>Clubs I Joined</ion-list-header>
     <ng-container *ngFor="let club of clubs">
       <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">
         <ion-avatar item-start>
@@ -25,6 +25,7 @@
       </ion-item>
     </ng-container>
   </ion-list>
+  <hr>
   <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
   <ion-list>
     <ion-list-header>All Clubs</ion-list-header>

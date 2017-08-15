@@ -27687,6 +27687,14 @@ page-club-info .content {
   background: RGB(249, 250, 255);
 }
 
+page-clubs .content hr {
+  margin-top: -20px;
+  height: 4px;
+  background-color: lightgray;
+  border-radius: 2px;
+  width: 92vw;
+}
+
 page-conversation {
   font-family: Tahoma,Helvetica,sans-serif;
 }

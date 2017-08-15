@@ -195,7 +195,7 @@ export class AddMembersPage {
                 date: new Date().toString(),
                 sender: this.user.$key,
                 type: 'system',
-                message: this.user.name + ' has added ' + this.getNames() + ' to the club.',
+                message: this.user.name + ' added ' + this.getNames() + ' to the club',
                 icon: 'md-contacts'
               });
             });
