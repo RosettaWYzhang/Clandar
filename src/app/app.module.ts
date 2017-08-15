@@ -41,7 +41,11 @@ import { NewClubPage } from '../pages/new-club/new-club';
 import { ClubsPage } from '../pages/clubs/clubs';
 import { ClubPage } from '../pages/club/club';
 import { ClubInfoPage } from '../pages/club-info/club-info';
+<<<<<<< HEAD
 import { AddMemberPage } from '../pages/add-member/add-member';
+=======
+import { AddMembersPage } from '../pages/add-members/add-members';
+>>>>>>> 4dd964cede624c6e184eaf3991dec6426be83eda
 import { Doodle } from '../pages/doodle/doodle';
 
 import { FriendPipe } from '../pipes/friend';
@@ -105,7 +109,7 @@ firebase.initializeApp(firebaseConfig);
     ClubPage,
     ClubsPage,
     ClubInfoPage,
-    AddMemberPage,
+    AddMembersPage,
     FriendPipe,
     ConversationPipe,
     SearchPipe,
@@ -150,7 +154,11 @@ firebase.initializeApp(firebaseConfig);
     ClubPage,
     ClubsPage,
     ClubInfoPage,
+<<<<<<< HEAD
     AddMemberPage,
+=======
+    AddMembersPage,
+>>>>>>> 4dd964cede624c6e184eaf3991dec6426be83eda
     Doodle
   ],
   providers: [

@@ -14,5 +14,37 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-list-header>Joined Clubs</ion-list-header>
+    <ng-container *ngFor="let club of clubs">
+      <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">
+        <ion-avatar item-start>
+          <img src={{club.img}}>
+        </ion-avatar>
+        <h2>{{club.name}}</h2>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+  <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+  <ion-list>
+    <ion-list-header>All Clubs</ion-list-header>
+    <ion-item-sliding *ngFor="let club of clubs|clubFilter: search">
+      <ion-item tappable (click)="details(club)">
+        <ion-avatar item-start>
+          <img src={{club.img}}>
+        </ion-avatar>
+        <h2>{{club.name}}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button (click)="details(club)" ion-button color="primary">
+          <ion-icon name="more"></ion-icon>
+          Details
+        </button>
+        <button *ngIf="!isMember(club)" (click)="join(club.$key)" ion-button color="secondary">
+          <ion-icon name="add"></ion-icon>
+          Join 
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
