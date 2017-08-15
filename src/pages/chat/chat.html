@@ -14,7 +14,7 @@
     <ion-row *ngFor="let message of messagesToShow">
       <!--  Message -->
       <ion-col width-10 class="center" *ngIf="!isSender(message)">
-        <img src="{{message.avatar}}" (load)="doScroll()" />
+        <img src="{{message.avatar}}" tappable (click)="viewUser(message.sender)" (load)="doScroll()" />
       </ion-col>
       <ion-col width-10 *ngIf="isSender(message)">
       </ion-col>
@@ -53,7 +53,7 @@
       <ion-col width-10 *ngIf="!isSender(message)">
       </ion-col>
       <ion-col width-10 class="center" *ngIf="isSender(message)">
-        <img src="{{message.avatar}}" tappable (click)="viewUser(message.sender)" (load)="doScroll()" />
+        <img src="{{message.avatar}}" (load)="doScroll()" />
       </ion-col>
     </ion-row>
     </ion-grid>

@@ -102,7 +102,7 @@ export class NewClubPage {
       date: new Date().toString(),
       sender: firebase.auth().currentUser.uid,
       type: 'system',
-      message: 'This club has been created.',
+      message: 'Club created',
       icon: 'md-chatbubbles'
     });
     // Add members of the club.

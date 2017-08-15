@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar hideBackButton="true">
     <ion-buttons>
-      <button ion-button tappable (click)="back()">Back</button>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
     </ion-buttons>
     <ion-title tappable (click)="clubInfo()">{{title}}</ion-title>
     <!-- View Group Info -->
@@ -13,60 +13,72 @@
 <ion-content has-footer>
   <!-- Messages -->
   <div class="messages">
-    <p class="center" *ngIf="startIndex > 0"><span tappable (click)="loadPreviousMessages()">Load previous messages</span></p>
+    <p class="loadPreviousMessages" *ngIf="startIndex > 0"><span tappable (click)="loadPreviousMessages()">Load previous messages</span></p>
     <ion-row *ngFor="let message of messagesToShow">
       <!--  System Message -->
       <ion-col width-100 class="system" *ngIf="isSystemMessage(message)">
-        <p>
+        <span>
           <ion-icon name="{{message.icon}}"></ion-icon>
-          {{message.message}}
-        </p>
-        <span>{{message.date | DateFormat}}</span>
+          {{message.message}} {{message.date | DateFormat}}
+        </span>
+        <p></p>
+        <!--<span>{{message.date | DateFormat}}</span>-->
       </ion-col>
-      <!--  Message -->
-      <ion-col width-20 class="center" *ngIf="isSender(message) && !isSystemMessage(message)">
-        <img src="{{message.avatar}}" (load)="doScroll()"/>
-      </ion-col>
-      <ion-col width-10 *ngIf="!isSender(message) && !isSystemMessage(message)">
-      </ion-col>
-      <ion-col width-67 class="sender" *ngIf="isSender(message) && !isSystemMessage(message)">
-        <div class="left" *ngIf="message.type == 'text'">
-          <p>{{message.message}}</p>
-          <span>{{message.date | DateFormat}}</span>
-        </div>
-        <div class="left" *ngIf="message.type == 'image'">
-          <img tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()"/>
-          <span>{{message.date | DateFormat}}</span>
-        </div>
-      </ion-col>
-      <ion-col width-67 *ngIf="!isSender(message) && !isSystemMessage(message)">
-        <div class="right" *ngIf="message.type == 'text'">
-          <p>{{message.message}}</p>
-          <span>{{message.date | DateFormat}}</span>
-        </div>
-        <div class="left" *ngIf="message.type == 'image'">
-          <img tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()"/>
-          <span>{{message.date | DateFormat}}</span>
-        </div>
-      </ion-col>
-      <ion-col width-10 *ngIf="isSender(message) && !isSystemMessage(message)">
-      </ion-col>
+      <!--  Message -->      
+      <!--system message-->
       <ion-col width-20 class="center" *ngIf="!isSender(message) && !isSystemMessage(message)">
         <img src="{{message.avatar}}" tappable (click)="viewUser(message.sender)" (load)="doScroll()"/>
       </ion-col>
+      <ion-col width-10 *ngIf="isSender(message) && !isSystemMessage(message)">
+      </ion-col>
+      <ion-col width-67 *ngIf="!isSender(message) && !isSystemMessage(message)">
+        <div class="right" *ngIf="message.type == 'text'">
+          <p class="textMessage">{{message.message}}</p>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+        <div class="left" *ngIf="message.type == 'image'">
+          <img tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()"/>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+      </ion-col>
+      <!--your message-->
+      <ion-col width-67 class="sender" *ngIf="isSender(message) && !isSystemMessage(message)">
+        <div class="left" *ngIf="message.type == 'text'">
+          <p class="textMessage">{{message.message}}</p>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+        <div class="left" *ngIf="message.type == 'image'">
+          <img tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()"/>
+          <span>{{message.date | DateFormat}}</span>
+        </div>
+      </ion-col>
+      <ion-col width-10 *ngIf="!isSender(message) && !isSystemMessage(message)">
+      </ion-col>
+      <ion-col width-20 class="center" *ngIf="isSender(message) && !isSystemMessage(message)">
+        <img src="{{message.avatar}}" (load)="doScroll()"/>
+      </ion-col>
+
     </ion-row>
   </div>
 </ion-content>
 <!-- Message Box -->
 <ion-footer>
-  <ion-item class="bottom_bar">
-    <button item-left ion-button clear (click)="attach()"><ion-icon name="md-attach"></ion-icon></button>
-    <ion-textarea type="text" rows="0" placeholder="Type your message" [(ngModel)]="message" (focus)="scrollBottom()" (keypress)="onType($event.keyCode)"></ion-textarea>
+  <ion-row>
+      <ion-col col-1>
+        <button item-left ion-button clear (click)="attach()"><ion-icon name="md-attach"></ion-icon></button>
+      </ion-col>
+      <ion-col col-7>
+        <ion-textarea class="inputMessage" type="text" rows="0" placeholder="Type your message" [(ngModel)]="message" (focus)="scrollBottom()" (keypress)="onType($event.keyCode)"></ion-textarea>
+      </ion-col>
     <!-- <ion-buttons item-right> -->
-    <button item-right ion-button clear (click)="takePhoto()"><ion-icon name="md-camera"></ion-icon></button>
-    <button item-right ion-button clear (click)="send()" [disabled]="!message"><ion-icon name="md-send"></ion-icon></button>
+      <ion-col col-2 text-left>
+        <button item-left ion-button clear (click)="takePhoto()"><ion-icon name="md-camera"></ion-icon></button>
+      </ion-col>
+      <ion-col col-2>
+        <button item-right ion-button clear (click)="send()" [disabled]="!message"><ion-icon name="md-send"></ion-icon></button>
+      </ion-col>
     <!-- </ion-buttons> -->
-  </ion-item>
+    </ion-row>
   <!-- <div class="bottom_bar">
     <ion-fab middle left>
       <button ion-fab mini tappable (click)="sendPhoto()"><ion-icon name="md-camera"></ion-icon></button>

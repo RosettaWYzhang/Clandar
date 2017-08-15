@@ -313,7 +313,7 @@ export class ClubInfoPage {
               date: new Date().toString(),
               sender: this.user.$key,
               type: 'system',
-              message: this.user.name + ' has left this club.',
+              message: this.user.name + ' left this club',
               icon: 'md-log-out'
             });
             // Update club on database.
