@@ -52,7 +52,7 @@ export class VerifyPage {
           that.emailVerified = true;
           that.alert = that.alertCtrl.create({
           title: 'Email Confirmed!', 
-          subTitle: 'Congratulations! Your email has been confirmed!',
+          subTitle: 'Congratulations! Your email has been verified!',
           buttons: [{
             text: 'OK',
             handler: () => {
@@ -143,10 +143,7 @@ export class VerifyPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Save',
           handler: data => {
@@ -189,6 +186,10 @@ export class VerifyPage {
               }
             }
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -200,9 +201,7 @@ export class VerifyPage {
       title: 'Confirm Logout',
       message: 'Are you sure you want to logout?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
+        
         {
           text: 'Logout',
           handler: data => {
@@ -213,6 +212,9 @@ export class VerifyPage {
             // Log the user out.
             this.logoutProvider.doLogout();
           }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();

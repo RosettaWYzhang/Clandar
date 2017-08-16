@@ -59,9 +59,7 @@ export class SettingsPage {
       title: 'Confirm Logout',
       message: 'Are you sure you want to logout?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
+        
         {
           text: 'Logout',
           handler: data => {
@@ -69,6 +67,9 @@ export class SettingsPage {
             this.logoutProvider.doLogout();
             this.navCtrl.push(Login);
           }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();

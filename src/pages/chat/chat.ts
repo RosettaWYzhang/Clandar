@@ -311,17 +311,18 @@ export class ChatPage {
             let confirm = this.alertCtrl.create({
               title: 'Your Location',
               message: locationMessage,
-              buttons:[{
-                text:'cancel',
-                handler: () =>{
-                  console.log("canceled");
-                }
-              },{
+              buttons:[
+                {
                 text: 'Share',
                 handler: () =>{
                   console.log("share");
                   this.message = locationMessage;
                   this.send();
+                }
+              },{
+                text:'cancel',
+                handler: () =>{
+                  console.log("canceled");
                 }
               }]
             });

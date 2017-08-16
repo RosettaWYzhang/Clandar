@@ -175,9 +175,7 @@ export class AddMembersPage {
       title: 'Add Members',
       message: 'Are you sure you want to add <b>' + this.getNames() + '</b> to the club?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
+        
         {
           text: 'Add',
           handler: data => {
@@ -209,6 +207,9 @@ export class AddMembersPage {
               this.navCtrl.pop();
             });
           }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();

@@ -95,15 +95,16 @@ export class SearchPage {
       title: 'Send Friend Request',
       message: 'Do you want to send friend request to <b>' + user.name + '</b>?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Send',
           handler: () => {
             this.firebaseProvider.sendFriendRequest(user.$key);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -115,15 +116,16 @@ export class SearchPage {
       title: 'Friend Request Pending',
       message: 'Do you want to delete your friend request to <b>' + user.name + '</b>?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Delete',
           handler: () => {
             this.firebaseProvider.cancelFriendRequest(user.$key);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -135,10 +137,7 @@ export class SearchPage {
       title: 'Confirm Friend Request',
       message: 'Do you want to accept <b>' + user.name + '</b> as your friend?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Reject Request',
           handler: () => {
@@ -150,6 +149,10 @@ export class SearchPage {
           handler: () => {
             this.firebaseProvider.acceptFriendRequest(user.$key);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();

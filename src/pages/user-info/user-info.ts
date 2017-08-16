@@ -64,15 +64,16 @@ export class UserInfoPage {
       title: 'Confirm Friend Request',
       message: 'Do you want to accept <b>' + this.user.name + '</b> as your friend?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Accept',
           handler: () => {
             this.firebaseProvider.acceptFriendRequest(this.userId);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -84,15 +85,16 @@ export class UserInfoPage {
       title: 'Reject Friend Request',
       message: 'Do you want to reject <b>' + this.user.name + '</b> as your friend?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Reject',
           handler: () => {
             this.firebaseProvider.deleteFriendRequest(this.userId);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -104,15 +106,16 @@ export class UserInfoPage {
       title: 'Friend Request Pending',
       message: 'Do you want to delete your friend request to <b>' + this.user.name + '</b>?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Delete',
           handler: () => {
             this.firebaseProvider.cancelFriendRequest(this.userId);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -124,15 +127,16 @@ export class UserInfoPage {
       title: 'Send Friend Request',
       message: 'Do you want to send friend request to <b>' + this.user.name + '</b>?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Send',
           handler: () => {
             this.firebaseProvider.sendFriendRequest(this.userId);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
