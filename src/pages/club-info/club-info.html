@@ -50,7 +50,7 @@
         <ion-avatar item-left>
           <img src="{{member.img}}" />
         </ion-avatar>
-        <h2>{{member.name}}<span *ngIf="isAdmin()">(Administrator)</span></h2>
+        <h2>{{member.name}}<span *ngIf="member.userId===club.administrator">(Administrator)</span></h2>
         <p>{{member.description}}</p>
       </ion-item>
     </ion-list>
@@ -62,7 +62,7 @@
         Leave Club
       </ion-item>
       <!-- When there's only one member left, allow deleting of club. -->
-      <ion-item no-lines tappable (click)="deleteClub()" *ngIf="clubMembers && clubMembers.length <= 1">
+      <ion-item no-lines tappable *ngIf="isAdmin()" (click)="deleteClub()" *ngIf="clubMembers && clubMembers.length <= 1">
         Delete Club
       </ion-item>
     </ion-list>
