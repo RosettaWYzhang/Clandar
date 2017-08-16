@@ -280,16 +280,17 @@ export class ClubPage {
               title: 'Your Location',
               message: locationMessage,
               buttons:[{
-                text:'cancel',
-                handler: () =>{
-                  console.log("canceled");
-                }
-              },{
                 text: 'Share',
                 handler: () =>{
                   console.log("share");
                   this.message = locationMessage;
                   this.send();
+                }
+              },
+              {
+                text:'cancel',
+                handler: () =>{
+                  console.log("canceled");
                 }
               }]
             });

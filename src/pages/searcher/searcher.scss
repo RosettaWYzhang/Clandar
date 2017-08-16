@@ -2,8 +2,9 @@ page-searcher {
     font-family:Tahoma,Helvetica,sans-serif;
 
      .content{
+
          .segment{
-            margin-bottom: -10px;
+            margin-bottom: -10px;         
          }
 
          ion-list{
@@ -28,6 +29,15 @@ page-searcher {
             padding-bottom:5px;
             margin-bottom:10px;
             text-align-last: center;
+        }
+
+        .operation{
+            text-align: center;
+            font-size: 18px;
+            .button{
+                background-color: #51CFB1;
+            }
+            
         }
      }
 }

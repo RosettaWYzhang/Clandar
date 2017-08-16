@@ -15,7 +15,7 @@
 
 <ion-content class='content' no-padding>
   <div padding>
-    <ion-segment [(ngModel)]="clan">
+    <ion-segment [(ngModel)]="clan"  color="mainColor">
       <ion-segment-button value="club">
         Clubs
       </ion-segment-button>
@@ -30,25 +30,29 @@
       <div class="empty-list" *ngIf="clubs && clubs.length <= 0">
         <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>
         <p>You haven't joined any club yet.</p>
-        <button ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create A New Club</button>
-        <button ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Club Square</button>
-      </div>
+        <div class="operation">
+          <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>
+          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join a club</button>
+        </div>
+  </div>
       
     
       <ion-list *ngIf="clubs && clubs.length > 0">
-        <button ion-button full tappable (click)="newClub()">Create A New Club</button> 
-        <button ion-button full tappable (click)="joinClub()">Club Square</button>                
-        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
-        <ion-item *ngFor="let club of clubs | clubFilter: searchClub">
-          <ion-col width-50 (click)="viewClub(club.$key)" tappable>
-            <div [ngClass]=hasUnreadMessages(club)>
+        <div class="operation">
+          <button class="operation" ion-button tappable (click)="newClub()">Create a club</button> 
+          <button class="operation" ion-button tappable (click)="joinClub()">Join a club</button>  
+        </div>              
+        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for your club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+        <span *ngFor="let club of clubs | clubFilter: searchClub">
+          <ion-item (click)="viewClub(club.$key)" tappable>
+            <ion-avatar [ngClass]=hasUnreadMessages(club) item-start>
               <img src="{{club.img}}" />
-              <ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge>
-              <p>{{club.name}}</p>
-              <span>{{club.date | DateFormat}}</span>
-            </div>
-          </ion-col>
-        </ion-item>
+            </ion-avatar>
+            <h2>{{club.name}}</h2>
+            <p>{{club.date | DateFormat}}</p>
+            <ion-note item-end><ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge></ion-note>
+          </ion-item>
+        </span>
       </ion-list>
     </div>
 

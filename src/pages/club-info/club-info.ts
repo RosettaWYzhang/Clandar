@@ -140,10 +140,7 @@ export class ClubInfoPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Save',
           handler: data => {
@@ -171,6 +168,10 @@ export class ClubInfoPage {
               });
             }
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -182,10 +183,7 @@ export class ClubInfoPage {
       title: 'Set Club Photo',
       message: 'Do you want to take a photo or choose from your photo gallery?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Choose from Gallery',
           handler: () => {
@@ -241,6 +239,10 @@ export class ClubInfoPage {
               });
             });
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -259,10 +261,7 @@ export class ClubInfoPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Save',
           handler: data => {
@@ -290,6 +289,10 @@ export class ClubInfoPage {
               });
             }
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -301,9 +304,7 @@ export class ClubInfoPage {
       title: 'Confirm Leave',
       message: 'Are you sure you want to leave this club?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
+        
         {
           text: 'Leave',
           handler: data => {
@@ -315,7 +316,7 @@ export class ClubInfoPage {
               date: new Date().toString(),
               sender: this.user.$key,
               type: 'system',
-              message: this.user.name + ' has left this club.',
+              message: this.user.name + ' left this club',
               icon: 'md-log-out'
             });
             // Update club on database.
@@ -336,6 +337,9 @@ export class ClubInfoPage {
               this.alertProvider.showErrorMessage('club/error-leave-club');
             });
           }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();
@@ -370,6 +374,10 @@ export class ClubInfoPage {
       title: 'Confirm Delete',
       message: 'Are you sure you want to delete this club?',
       buttons: [
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
         {
           text: 'Delete',
           handler: data => {
@@ -388,7 +396,12 @@ export class ClubInfoPage {
               this.dataProvider.getClub(club.$key).remove();
             });
           }
+<<<<<<< HEAD
         },{
+=======
+        },
+        {
+>>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
           text: 'Cancel'
         }
       ]

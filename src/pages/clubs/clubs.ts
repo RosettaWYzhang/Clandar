@@ -123,7 +123,7 @@ export class ClubsPage {
                 date: new Date().toString(),
                 sender: firebase.auth().currentUser.uid,
                 type: 'system',
-                message: this.user.name + ' has joined the club.',
+                message: this.user.name + ' joined the club',
                 icon: 'md-contacts'
               });
     this.dataProvider.getClub(clubId).update({

@@ -1,3 +1,93 @@
 page-club {
+    ion-header{
+        .back{
+            color: #51CFB1;
+        }
+        ion-icon{
+            font-size: 42px;
+            margin-right: 5px;
+            color: #51CFB1;
+        }
+    }
 
+    .content{
+        background: RGB(240,240,240);
+
+        .system{
+            text-align: center;
+        }
+
+        .loadPreviousMessages{
+            text-align: center;
+        }
+
+        .textMessage{
+            font-size: 18px;
+        }
+
+        img{
+            //border: 1px solid black;
+            width:50px;
+        }
+
+        .loadPreviousMessages{
+            text-align: center;
+        }
+
+        .textMessage{
+            font-size: 18px;
+        }
+
+        span{
+            color: gray;
+            font-size: 15px;
+        }
+
+        .left{
+            border-radius: 12px;
+            width: 65vw;
+            padding: 1px 6px 1px 4px;
+            background-color: #51CFB1;
+
+            span{
+                float: right;
+            }
+        }
+
+        .right{
+            border-radius: 12px;
+            width: 65vw;
+            padding: 1px 2px 1px 6px;
+            background-color: white;
+
+            .textMessage{
+                text-align: left;
+            }
+
+            span{
+                float: left;
+            }
+        }
+    }
+
+    ion-footer{
+        background-color: RGB(250,250,250);
+        height: 76px;
+        .button{
+            margin-left: -8px;
+        }
+
+        ion-icon{
+            font-size: 30px;
+            color: #51CFB1;
+        }
+
+        ion-textarea{
+            padding-left: 10px;
+            font-size: 18px;
+            border: 1px solid gray;
+            border-radius: 12px;
+            margin-left: 8px;
+        }
+    }
 }

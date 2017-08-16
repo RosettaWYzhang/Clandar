@@ -114,10 +114,7 @@ export class RequestsPage {
       title: 'Confirm Friend Request',
       message: 'Do you want to accept <b>' + user.name + '</b> as your friend?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Reject Request',
           handler: () => {
@@ -129,6 +126,10 @@ export class RequestsPage {
           handler: () => {
             this.firebaseProvider.acceptFriendRequest(user.$key);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
@@ -140,15 +141,16 @@ export class RequestsPage {
       title: 'Friend Request Pending',
       message: 'Do you want to delete your friend request to <b>' + user.name + '</b>?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Delete',
           handler: () => {
             this.firebaseProvider.cancelFriendRequest(user.$key);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();

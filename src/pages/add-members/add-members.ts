@@ -175,9 +175,7 @@ export class AddMembersPage {
       title: 'Add Members',
       message: 'Are you sure you want to add <b>' + this.getNames() + '</b> to the club?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
+        
         {
           text: 'Add',
           handler: data => {
@@ -195,7 +193,7 @@ export class AddMembersPage {
                 date: new Date().toString(),
                 sender: this.user.$key,
                 type: 'system',
-                message: this.user.name + ' has added ' + this.getNames() + ' to the club.',
+                message: this.user.name + ' added ' + this.getNames() + ' to the club',
                 icon: 'md-contacts'
               });
             });
@@ -209,6 +207,9 @@ export class AddMembersPage {
               this.navCtrl.pop();
             });
           }
+        },
+        {
+          text: 'Cancel'
         }
       ]
     }).present();

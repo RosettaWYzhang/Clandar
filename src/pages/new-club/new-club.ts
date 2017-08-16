@@ -102,7 +102,7 @@ export class NewClubPage {
       date: new Date().toString(),
       sender: firebase.auth().currentUser.uid,
       type: 'system',
-      message: 'This club has been created.',
+      message: 'Club created',
       icon: 'md-chatbubbles'
     });
     // Add members of the club.
@@ -189,10 +189,7 @@ export class NewClubPage {
       title: 'Set Club Photo',
       message: 'Do you want to take a photo or choose from your photo gallery?',
       buttons: [
-        {
-          text: 'Cancel',
-          handler: data => { }
-        },
+        
         {
           text: 'Choose from Gallery',
           handler: () => {
@@ -204,6 +201,10 @@ export class NewClubPage {
           handler: () => {
             this.imageProvider.setClubPhoto(this.club, this.camera.PictureSourceType.CAMERA);
           }
+        },
+        {
+          text: 'Cancel',
+          handler: data => { }
         }
       ]
     }).present();
