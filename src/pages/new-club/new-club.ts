@@ -123,12 +123,16 @@ export class NewClubPage {
     // Add club to database.
     this.angularfire.list('clubs').push(this.club).then((success) => {
       let clubId = success.key;
+      var createdClubs = [];
+      var adminedClubs = [];
+      createdClubs.push(clubId);
+      adminedClubs.push(clubId);
       // Add club reference to users.
       this.angularfire.object('/accounts/' + this.clubMembers[0].$key + '/clubs/' + clubId).update({
         messagesRead: 1
       });
-      this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/createdClubs/').push(clubId);
-      this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/adminedClubs/').push(clubId);      
+      this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/createdClubs/').push(createdClubs);
+      this.angularfire.list('/accounts/' + firebase.auth().currentUser.uid + '/adminedClubs/').push(adminedClubs);      
       for (var i = 1; i < this.clubMembers.length; i++) {
         this.angularfire.object('/accounts/' + this.clubMembers[i].$key + '/clubs/' + clubId).update({
           messagesRead: 0

@@ -24,7 +24,7 @@
       <ion-icon name="logo-facebook" *ngIf="user.provider == 'Facebook'" class="facebook"></ion-icon>
       <ion-icon name="logo-google" *ngIf="user.provider == 'Google'" class="google"></ion-icon>
     </h4>
-    <p class="username">@{{user.username}}</p>
+    <p class="username">{{user.email}}</p>
     <p class="description">{{user.description}}</p>
     <div class="divider"></div>
     <div class="center">

@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DEFAULT_LIVERELOAD_PORT = 35729;
+exports.DEFAULT_SERVER_PORT = 8100;
+exports.IONIC_LAB_URL = '/ionic-lab';
+exports.BIND_ALL_ADDRESS = '0.0.0.0';
+exports.LOCAL_ADDRESSES = ['localhost', '127.0.0.1'];

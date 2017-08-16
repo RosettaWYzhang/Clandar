@@ -28,6 +28,7 @@ import { ClubsPage } from '../pages/clubs/clubs';
 import { ClubPage } from '../pages/club/club';
 import { ClubInfoPage } from '../pages/club-info/club-info';
 import { AddMembersPage } from '../pages/add-members/add-members';
+import { AdminModalPage } from '../pages/admin-modal/admin-modal';
 import { Doodle } from '../pages/doodle/doodle';
 import { DataProvider } from '../providers/data/data';
 import { Firebase } from '@ionic-native/firebase';

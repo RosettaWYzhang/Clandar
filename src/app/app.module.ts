@@ -42,6 +42,7 @@ import { ClubsPage } from '../pages/clubs/clubs';
 import { ClubPage } from '../pages/club/club';
 import { ClubInfoPage } from '../pages/club-info/club-info';
 import { AddMembersPage } from '../pages/add-members/add-members';
+import { AdminModalPage } from '../pages/admin-modal/admin-modal';
 import { Doodle } from '../pages/doodle/doodle';
 
 import { FriendPipe } from '../pipes/friend';
@@ -49,7 +50,8 @@ import { SearchPipe } from '../pipes/search';
 import { ConversationPipe } from '../pipes/conversation';
 import { DateFormatPipe } from '../pipes/date';
 import { ClubPipe } from '../pipes/club';
-
+import { MemberPipe } from '../pipes/member';
+ 
 import { AlertProvider } from "../providers/alert/alert";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import { LoadingProvider } from "../providers/loading/loading";
@@ -106,11 +108,13 @@ firebase.initializeApp(firebaseConfig);
     ClubsPage,
     ClubInfoPage,
     AddMembersPage,
+    AdminModalPage,
     FriendPipe,
     ConversationPipe,
     SearchPipe,
     DateFormatPipe,
     ClubPipe,
+    MemberPipe,
     Doodle
   ],
   imports: [
@@ -151,6 +155,7 @@ firebase.initializeApp(firebaseConfig);
     ClubsPage,
     ClubInfoPage,
     AddMembersPage,
+    AdminModalPage,
     Doodle
   ],
   providers: [

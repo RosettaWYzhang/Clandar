@@ -10,6 +10,7 @@ import { UserInfoPage } from '../user-info/user-info';
 import * as firebase from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Camera } from '@ionic-native/camera';
+import { AdminModalPage } from "../admin-modal/admin-modal";
 
 @Component({
   selector: 'page-club-info',
@@ -34,7 +35,7 @@ export class ClubInfoPage {
               public alertProvider: AlertProvider, 
               public angularfire: AngularFireDatabase,
               public imageProvider: ImageProvider, 
-              public camera: Camera) { }
+              public camera: Camera) { this.club = '';}
 
   ionViewDidLoad() {
     // Initialize
@@ -95,14 +96,14 @@ export class ClubInfoPage {
         }
       } else {
         // User already left the club, remove member from list.
-        var index = -1;
-        for (var i = 0; i < this.clubMembers.length; i++) {
-          if (this.clubMembers[i].$key == member.$key) {
-            index = i;
+        var ind = -1;
+        for (var j = 0; j < this.clubMembers.length; j++) {
+          if (this.clubMembers[j].$key == member.$key) {
+            ind = j;
           }
         }
-        if (index > -1) {
-          this.clubMembers.splice(index, 1);
+        if (ind > -1) {
+          this.clubMembers.splice(ind, 1);
         }
       }
     }
@@ -341,7 +342,7 @@ export class ClubInfoPage {
   }
 
   //check if logged in user is the creator of the club
-  isCreater(){
+  isCreator(){
     return (this.club.creator===this.uid);
   }
 
@@ -354,6 +355,14 @@ export class ClubInfoPage {
     }
     return false;
   }
+  isUserAdmin(uid){
+    for (var i=0;i<this.club.administrators.length;i++){
+      if (this.club.administrators[i]===uid){
+        return true;
+      }
+    }
+    return false;
+  }
 
   // Delete club.
   deleteClub() {
@@ -361,9 +370,6 @@ export class ClubInfoPage {
       title: 'Confirm Delete',
       message: 'Are you sure you want to delete this club?',
       buttons: [
-        {
-          text: 'Cancel'
-        },
         {
           text: 'Delete',
           handler: data => {
@@ -382,9 +388,27 @@ export class ClubInfoPage {
               this.dataProvider.getClub(club.$key).remove();
             });
           }
+        },{
+          text: 'Cancel'
         }
       ]
     }).present();
+  }
+
+  adminClub(){
+    var admins = [];
+    var members = [];
+    this.clubId = this.navParams.get('clubId');
+    this.dataProvider.getClub(this.clubId).subscribe((club)=>{
+      admins = club.administrators;
+      members = club.members;
+    });
+    let modal = this.modalCtrl.create(AdminModalPage,{
+      members: members,
+      admins: admins,
+      clubId: this.clubId
+    });
+    modal.present();
   }
 
   // Add members.

@@ -35,17 +35,17 @@
           <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>
         </ion-item>
         <div *ngIf="clubMembers">
-        <ion-list-header>
-          Club Members ({{clubMembers.length}})
-        </ion-list-header>
-        
-        <ion-item  *ngFor="let member of clubMembers">
-          <ion-avatar item-left>
-            <img src="{{member.img}}"/>
-          </ion-avatar>
-          <h2>{{member.name}}</h2>
-          <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>
-        </ion-item>
+          <ion-list-header>
+            Club Members ({{clubMembers.length}})
+          </ion-list-header>
+          
+          <ion-item  *ngFor="let member of clubMembers">
+            <ion-avatar item-left>
+              <img src="{{member.img}}"/>
+            </ion-avatar>
+            <h2>{{member.name}}</h2>
+            <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>
+          </ion-item>
         </div>
       </form>
     </ion-list>

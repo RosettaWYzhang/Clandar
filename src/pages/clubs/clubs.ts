@@ -63,7 +63,7 @@ export class ClubsPage {
 
   isMember(club) {
     for (var i=0;i<club.members.length;i++){
-      if (this.user.userId==club.members[i])
+      if (this.user.userId===club.members[i])
         return true;
     }
     return false;
@@ -72,9 +72,9 @@ export class ClubsPage {
   details(club){
     var note:any;
     if (this.isMember(club)){
-      note = 'Welcome to join our club';}
-    else {
       note = 'You are already a member of the club';}
+    else {
+      note = 'Welcome to join our club';}
     let name = club.name;
     let description = club.description;
     
@@ -83,7 +83,7 @@ export class ClubsPage {
     subTitle: '<br><br>Name: ' + name
             + '<br><br>Number of Members: ' + club.members.length
             + '<br><br>Description: ' + club.description
-            + '<br><br>Created By: ' + this.getUsername(club.creater)
+            + '<br><br>Created By: ' + this.getUsername(club.creator)
             + '<br><br>' + note,
     buttons: ['OK']
     })

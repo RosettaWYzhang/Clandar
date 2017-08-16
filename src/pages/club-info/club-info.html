@@ -9,7 +9,7 @@
     <ion-buttons>
       <button ion-button tappable (click)="back()">Back</button>
     </ion-buttons>
-    <ion-title>Club Info</ion-title>
+    <ion-title *ngIf="club">{{club.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
@@ -50,7 +50,7 @@
         <ion-avatar item-left>
           <img src="{{member.img}}" />
         </ion-avatar>
-        <h2>{{member.name}}<span *ngIf="member.userId===club.administrator">(Administrator)</span></h2>
+        <h2>{{member.name}}<span *ngIf="isUserAdmin(member.userId)">(Administrator)</span></h2>
         <p>{{member.description}}</p>
       </ion-item>
     </ion-list>
@@ -58,11 +58,14 @@
         More
     </ion-list-header>
     <ion-list style="text-align: center;">  
+      <ion-item no-lines tappable (click)="adminClub()" *ngIf="isCreator()">
+        Manage Administration
+      </ion-item>
       <ion-item no-lines tappable (click)="leaveClub()" *ngIf="clubMembers && clubMembers.length > 1">
         Leave Club
       </ion-item>
       <!-- When there's only one member left, allow deleting of club. -->
-      <ion-item no-lines tappable *ngIf="isAdmin()" (click)="deleteClub()" *ngIf="clubMembers && clubMembers.length <= 1">
+      <ion-item no-lines tappable (click)="deleteClub()" *ngIf="clubMembers && (clubMembers.length <= 1||isAdmin())">
         Delete Club
       </ion-item>
     </ion-list>
