@@ -374,10 +374,7 @@ export class ClubInfoPage {
       title: 'Confirm Delete',
       message: 'Are you sure you want to delete this club?',
       buttons: [
-<<<<<<< HEAD
-=======
         
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
         {
           text: 'Delete',
           handler: data => {
@@ -396,12 +393,8 @@ export class ClubInfoPage {
               this.dataProvider.getClub(club.$key).remove();
             });
           }
-<<<<<<< HEAD
-        },{
-=======
         },
         {
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
           text: 'Cancel'
         }
       ]
