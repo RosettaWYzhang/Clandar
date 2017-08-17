@@ -19,7 +19,8 @@
     <form [formGroup]="registerForm">
       <h2 style="margin-bottom:15px">Registration</h2>
       <ion-input formControlName="email" type="text" placeholder="Email" name="email"></ion-input>
-      <ion-input formControlName="password" type="text" placeholder="Password" name="password"></ion-input>    
+      <ion-input formControlName="password" type="text" placeholder="Password" name="password"></ion-input> 
+      <p></p>   
       <button ion-button full (click)="doRegister()" class="reg-btn">Register!</button>
     </form>
   </div>

@@ -29,10 +29,10 @@
     <div no-border  *ngSwitchCase="'club'">
       <div class="empty-list" *ngIf="clubs && clubs.length <= 0">
         <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>
-        <p>You haven't joined any club yet.</p>
+        <p style="color:gray">You haven't joined any club yet.</p>
         <div class="operation">
           <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>
-          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join a club</button>
+          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="person"></ion-icon>Join a club</button>
         </div>
   </div>
       

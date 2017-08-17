@@ -1,3 +1,23 @@
 page-contacts {
+    ion-header{
+        .back{
+            color: #51CFB1;
+        }
+        ion-icon{
+            font-size: 42px;
+            margin-right: 5px;
+        }
+    }
+
+    .content{
+        .empty-list{
+            text-align: center;
+            font-size: 18px;
+            .button{
+                background-color: #51CFB1;
+            }
+            
+        }
+    }
 
 }

@@ -7,12 +7,12 @@
 <ion-header>
   <ion-navbar hideBackButton="true">
     <ion-buttons>
-      <button ion-button tappable (click)="back()">Back</button>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
     </ion-buttons>
     <ion-title>Search People</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="content">
   <!-- No other users to send friend request right now. -->
   <div class="empty-list" *ngIf="accounts && (accounts.length == 0 || (accounts.length == excludedIds.length))">
     <h1><ion-icon name="md-search"></ion-icon></h1>
@@ -29,13 +29,13 @@
         // 0 when user can be requested as friend.
         // 1 when a friend request was already sent to this user.
         // 2 when this user has a pending friend request. -->
-        <button ion-fab mini tappable (click)="sendFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 0">
+        <button color="mainColor" ion-fab mini tappable (click)="sendFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 0">
           <ion-icon name="md-add-circle" class="success"></ion-icon>
         </button>
-        <button ion-fab mini tappable (click)="cancelFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 1">
+        <button color="mainColor" ion-fab mini tappable (click)="cancelFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 1">
           <ion-icon name="md-close-circle" class="danger"></ion-icon>
         </button>
-        <button ion-fab mini tappable (click)="acceptFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 2">
+        <button color="mainColor" ion-fab mini tappable (click)="acceptFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 2">
           <ion-icon name="md-checkmark-circle" class="success"></ion-icon>
         </button>
       </ion-fab>

@@ -1,3 +1,48 @@
 page-user-info {
+    .content{
+
+        .profile{
+            text-align: center;
+            img{
+            width: 50vw;
+            }
+        }
+
+        .center{
+            text-align: center;
+
+            .button{
+                font-size: 1.2em;
+                border-radius: 25px;
+                background-color: #51CFB1;
+            }
+        }
+
+        .userName{
+            font-size: 1.2em;
+        }
+
+        .userEmail{
+            text-align: center;
+            color: gray;
+        }
+
+        .description{
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .info{
+            color: gray;
+            font-size: 0.9em;
+        }
+
+        .divider{
+            width: 90vw;
+            height: 1px;
+        }
+        
+    }
 
 }

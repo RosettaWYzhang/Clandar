@@ -10,5 +10,16 @@ page-new-chat {
         }
     }
 
-    button{ text-aligh: center;}
+    .content{
+         .empty-list{
+            text-align: center;
+            font-size: 18px;
+            .button{
+                background-color: #51CFB1;
+            }
+            
+        }
+    }
+
+    
 }

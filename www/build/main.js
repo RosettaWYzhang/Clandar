@@ -1,14 +1,14 @@
-webpackJsonp([17],{
+webpackJsonp([18],{
 
 /***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -59,7 +59,7 @@ LogoutProvider = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImageModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -102,13 +102,13 @@ ImageModalPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TdlistPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaskModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tasks_tasks__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs__);
@@ -351,27 +351,27 @@ TaskModalPage = __decorate([
 
 /***/ }),
 
-/***/ 1160:
+/***/ 1161:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 1170:
+/***/ 1171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(568);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_testing_testing__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__ = __webpack_require__(734);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_testing_testing__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__ = __webpack_require__(735);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -442,20 +442,24 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__["a" /* Firebase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__["a" /* Firebase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+        __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__["a" /* Firebase */],
+        __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */]])
 ], MyApp);
 
-var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 1171:
+/***/ 1172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FriendPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -493,12 +497,12 @@ FriendPipe = __decorate([
 
 /***/ }),
 
-/***/ 1172:
+/***/ 1173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -541,12 +545,12 @@ SearchPipe = __decorate([
 
 /***/ }),
 
-/***/ 1173:
+/***/ 1174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConversationPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -584,12 +588,12 @@ ConversationPipe = __decorate([
 
 /***/ }),
 
-/***/ 1174:
+/***/ 1175:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateFormatPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -621,12 +625,12 @@ DateFormatPipe = __decorate([
 
 /***/ }),
 
-/***/ 1175:
+/***/ 1176:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -664,432 +668,12 @@ ClubPipe = __decorate([
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 1195:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddMembersPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(40);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var AddMembersPage = (function () {
-    // AddMemberPage
-    // This is the page where the user can add their friends to an existing club.
-    // The user can only add their friends to the club.
-    function AddMembersPage(navCtrl, navParams, dataProvider, loadingProvider, angularfire, alertCtrl, alertProvider) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.dataProvider = dataProvider;
-        this.loadingProvider = loadingProvider;
-        this.angularfire = angularfire;
-        this.alertCtrl = alertCtrl;
-        this.alertProvider = alertProvider;
-    }
-    AddMembersPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        // Initialize
-        this.clubId = this.navParams.get('clubId');
-        this.searchFriend = '';
-        this.toAdd = [];
-        this.loadingProvider.load();
-        // Get user information for system message sent to the club when a member was added.
-        this.dataProvider.getCurrentUser().subscribe(function (user) {
-            _this.user = user;
-        });
-        // Get club information
-        this.dataProvider.getClub(this.clubId).subscribe(function (club) {
-            _this.club = club;
-            _this.clubMembers = null;
-            // Get club members
-            if (club.members) {
-                club.members.forEach(function (memberId) {
-                    _this.dataProvider.getUser(memberId).subscribe(function (member) {
-                        _this.addOrUpdateMember(member);
-                    });
-                });
-                // Get user's friends to add
-                _this.dataProvider.getCurrentUser().subscribe(function (account) {
-                    if (account.friends) {
-                        for (var i = 0; i < account.friends.length; i++) {
-                            _this.dataProvider.getUser(account.friends[i]).subscribe(function (friend) {
-                                // Only friends that are not yet a member of this club can be added.
-                                if (!_this.isMember(friend))
-                                    _this.addOrUpdateFriend(friend);
-                            });
-                        }
-                        if (!_this.friends) {
-                            _this.friends = [];
-                        }
-                    }
-                    else {
-                        _this.friends = [];
-                    }
-                });
-            }
-            _this.loadingProvider.dismiss();
-        });
-    };
-    // Check if friend is a member of the club or not.
-    AddMembersPage.prototype.isMember = function (friend) {
-        if (this.clubMembers) {
-            for (var i = 0; i < this.clubMembers.length; i++) {
-                if (this.clubMembers[i].$key == friend.$key) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    };
-    // Check if friend is already on the list of members to be added.
-    AddMembersPage.prototype.isAdded = function (friend) {
-        if (this.toAdd) {
-            for (var i = 0; i < this.toAdd.length; i++) {
-                if (this.toAdd[i].$key == friend.$key) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    };
-    // Toggle for adding/removing friend on the list of members to be added.
-    AddMembersPage.prototype.addOrRemove = function (friend) {
-        if (this.isAdded(friend)) {
-            this.remove(friend);
-        }
-        else {
-            this.add(friend);
-        }
-    };
-    // Add or update friend information for real-time sync.
-    AddMembersPage.prototype.addOrUpdateFriend = function (friend) {
-        if (!this.friends) {
-            this.friends = [friend];
-        }
-        else {
-            var index = -1;
-            for (var i = 0; i < this.friends.length; i++) {
-                if (this.friends[i].$key == friend.$key) {
-                    index = i;
-                }
-            }
-            if (index > -1) {
-                this.friends[index] = friend;
-            }
-            else {
-                this.friends.push(friend);
-            }
-        }
-    };
-    // Add or update member information for real-time sync.
-    AddMembersPage.prototype.addOrUpdateMember = function (member) {
-        if (!this.clubMembers) {
-            this.clubMembers = [member];
-        }
-        else {
-            var index = -1;
-            for (var i = 0; i < this.clubMembers.length; i++) {
-                if (this.clubMembers[i].$key == member.$key) {
-                    index = i;
-                }
-            }
-            if (index > -1) {
-                this.clubMembers[index] = member;
-            }
-            else {
-                this.clubMembers.push(member);
-            }
-        }
-    };
-    // Add friend to the list of to be added.
-    AddMembersPage.prototype.add = function (friend) {
-        this.toAdd.push(friend);
-    };
-    // Remove friend from the list of to be added.
-    AddMembersPage.prototype.remove = function (friend) {
-        this.toAdd.splice(this.toAdd.indexOf(friend), 1);
-    };
-    // Back
-    AddMembersPage.prototype.back = function () {
-        this.navCtrl.pop();
-    };
-    // Get names of the members to be added to the club.
-    AddMembersPage.prototype.getNames = function () {
-        var names = '';
-        this.toAdd.forEach(function (friend) {
-            names += friend.name + ', ';
-        });
-        return names.substring(0, names.length - 2);
-    };
-    // Confirm adding of new members, afterwards add the members.
-    AddMembersPage.prototype.done = function () {
-        var _this = this;
-        this.alert = this.alertCtrl.create({
-            title: 'Add Members',
-            message: 'Are you sure you want to add <b>' + this.getNames() + '</b> to the club?',
-            buttons: [
-                {
-                    text: 'Cancel'
-                },
-                {
-                    text: 'Add',
-                    handler: function (data) {
-                        // Proceed
-                        _this.loadingProvider.load();
-                        _this.toAdd.forEach(function (friend) {
-                            // Add clubInfo to each friend added to the club.
-                            _this.angularfire.object('/accounts/' + friend.$key + '/clubs/' + _this.clubId).update({
-                                messagesRead: 0
-                            });
-                            // Add friend as members of the club.
-                            _this.club.members.push(friend.$key);
-                            // Add system message that the members are added to the club.
-                            _this.club.messages.push({
-                                date: new Date().toString(),
-                                sender: _this.user.$key,
-                                type: 'system',
-                                message: _this.user.name + ' has added ' + _this.getNames() + ' to the club.',
-                                icon: 'md-contacts'
-                            });
-                        });
-                        // Update club data on the database.
-                        _this.dataProvider.getClub(_this.clubId).update({
-                            members: _this.club.members,
-                            messages: _this.club.messages
-                        }).then(function () {
-                            // Back.
-                            _this.loadingProvider.dismiss();
-                            _this.navCtrl.pop();
-                        });
-                    }
-                }
-            ]
-        }).present();
-    };
-    return AddMembersPage;
-}());
-AddMembersPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-add-members',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/add-members/add-members.html"*/'<!--\n  Generated template for the AddMemberPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title>Add Members</ion-title>\n    <!-- Only enable button when user is adding atleast one member to the club -->\n    <ion-buttons end>\n      <button ion-button tappable (click)="done()" [disabled]="toAdd && toAdd.length < 1">Done</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- All friends already in the club. -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n    <p>Uh-oh! Sorry but all your friends are already in this club.</p>\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n  </div>\n  <!-- Add/Cancel Add friends to the club. -->\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" no-lines tappable (click)="addOrRemove(friend)">\n      <ion-fab middle right>\n        <button ion-fab mini tappable (click)="add(friend); $event.stopPropagation();" *ngIf="!isAdded(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n        <button ion-fab mini tappable (click)="remove(friend); $event.stopPropagation();" *ngIf="isAdded(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n      </ion-fab>\n      <ion-avatar item-left>\n        <img src="{{friend.img}}">\n      </ion-avatar>\n      <h2>{{friend.name}}</h2>\n      <p>@{{friend.username}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/add-members/add-members.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
-        __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]])
-], AddMembersPage);
-
-//# sourceMappingURL=add-members.js.map
-
-/***/ }),
-
-/***/ 1197:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the AdminModalPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var AdminModalPage = (function () {
-    function AdminModalPage(navCtrl, navParams, afDB, dataProvider, loadProvider) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.afDB = afDB;
-        this.dataProvider = dataProvider;
-        this.loadProvider = loadProvider;
-        this.searchMember = '';
-        this.admins = this.navParams.get("admins");
-        this.members = this.navParams.get("members");
-        this.clubId = this.navParams.get("clubId");
-    }
-    AdminModalPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AdminModalPage');
-        console.log('Admins: ' + this.admins);
-        console.log('Admins Length: ' + this.admins.length);
-        for (var i = 0; i < this.admins.length; i++) {
-            console.log('admin ' + i + ': ' + this.admins[i] + ' admin $key ' + i + ': ' + this.admins[i].$key);
-        }
-        for (var i = 0; i < this.admins.length; i++) {
-            console.log('admin info ' + i + ': ' + this.adminInfo(this.admins[i]).name);
-        }
-        for (var i = 0; i < this.members.length; i++) {
-            console.log('member info ' + i + ': ' + this.memberInfo(this.members[i]));
-        }
-        for (var i = 0; i < this.members.length; i++) {
-            console.log('member ' + i + ': ' + this.members[i] + ' member $key ' + i + ': ' + this.members[i].$key);
-        }
-        console.log('members: ' + this.members);
-    };
-    AdminModalPage.prototype.inAdmins = function (member) {
-        for (var i = 0; i < this.admins.length; i++) {
-            if (this.admins[i] === member) {
-                return true;
-            }
-        }
-        return false;
-    };
-    AdminModalPage.prototype.adminInfo = function (adminId) {
-        var adminInfo;
-        this.dataProvider.getUser(adminId).subscribe(function (admin) {
-            adminInfo = admin;
-        });
-        return adminInfo;
-    };
-    AdminModalPage.prototype.isCreator = function (uid) {
-        return (__WEBPACK_IMPORTED_MODULE_5_firebase__["auth"]().currentUser.uid === uid);
-    };
-    AdminModalPage.prototype.memberInfo = function (memberId) {
-        var memberInfo;
-        this.dataProvider.getUser(memberId).subscribe(function (member) {
-            memberInfo = member;
-        });
-        return memberInfo;
-    };
-    AdminModalPage.prototype.addToAdmins = function (member) {
-        this.admins.push(member);
-    };
-    AdminModalPage.prototype.removeFromAdmins = function (member) {
-        var index = -1;
-        for (var i = 1; i < this.admins.length; i++) {
-            if (this.admins[i] == member) {
-                index = i;
-            }
-        }
-        if (index > -1) {
-            this.admins.splice(index, 1);
-        }
-    };
-    AdminModalPage.prototype.done = function () {
-        var _this = this;
-        this.loadProvider.load();
-        this.afDB.object('/clubs/' + this.clubId).update({
-            administrators: this.admins
-        });
-        for (var i = 0; i < this.admins.length; i++) {
-            var newAdminedClub = true;
-            var hasAdminedClub = false;
-            var addClub;
-            this.dataProvider.getUser(this.admins[i]).subscribe(function (user) {
-                if (user.adminedClubs) {
-                    addClub = user.adminedClubs;
-                    hasAdminedClub = true;
-                    for (var j = 0; j < user.adminedClubs.length; j++) {
-                        if (user.adminedClubs[j] === _this.clubId) {
-                            newAdminedClub = false;
-                            break;
-                        }
-                    }
-                }
-            });
-            if (hasAdminedClub) {
-                if (newAdminedClub === true) {
-                    addClub.push(this.clubId);
-                    this.afDB.object('/accounts/' + this.admins[i] + '/adminedClubs/').update(addClub);
-                }
-            }
-            else {
-                this.afDB.object('/accounts/' + this.admins[i]).update({
-                    adminedClubs: [this.clubId]
-                });
-            }
-        }
-        if (this.members) {
-            for (var j = 0; j < this.members.length; j++) {
-                if (!this.inAdmins(this.members[j])) {
-                    var index = -1;
-                    var toAddAdminedClubs;
-                    this.dataProvider.getUser(this.members[j]).subscribe(function (member) {
-                        if (member.adminedClubs) {
-                            toAddAdminedClubs = member.adminedClubs;
-                            for (var k = 0; k < member.adminedClubs.length; k++) {
-                                if (member.adminedClubs[k] === _this.clubId) {
-                                    console.log(member);
-                                    console.log(toAddAdminedClubs);
-                                    toAddAdminedClubs.splice(k, 1);
-                                    console.log(toAddAdminedClubs);
-                                }
-                            }
-                        }
-                    });
-                    if (toAddAdminedClubs) {
-                        this.afDB.object('/accounts/' + this.members[j] + '/adminedClubs/').set(toAddAdminedClubs);
-                    }
-                }
-            }
-        }
-        this.loadProvider.dismiss();
-        this.navCtrl.pop();
-    };
-    AdminModalPage.prototype.cancel = function () {
-        this.navCtrl.pop();
-    };
-    return AdminModalPage;
-}());
-AdminModalPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-admin-modal',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/admin-modal/admin-modal.html"*/'<!--\n  Generated template for the AdminModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="cancel()">\n        <ion-icon name="close"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>Administration Management</ion-title>\n    <ion-buttons end>\n      <button ion-button tappable (click)="done()" [disabled]="admins.length < 1">Done</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list *ngIf="admins">\n    <ion-list-header>\n      Administrators\n    </ion-list-header>\n    <ion-item-sliding *ngFor="let admin of admins">\n      <ion-item>\n        <ion-avatar item-start>\n          <img src="{{adminInfo(admin).img}}"/>\n        </ion-avatar>\n        <h2>{{adminInfo(admin).name}}</h2>\n        <p>{{adminInfo(admin).email}}</p>\n      </ion-item>\n      <ion-item-options *ngIf="!isCreator(admin)">\n        <button ion-button (click)="removeFromAdmins(admin)">Delete</button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n  <ion-list *ngIf="members">\n    <ion-list-header>\n      Club Members\n    </ion-list-header>\n    <ion-searchbar [(ngModel)]="searchMember" placeholder="Search for members" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-item *ngFor="let member of members | memberFilter:searchMember" no-lines>\n      <ion-fab middle right>\n        <button ion-fab mini tappable (click)="addToAdmins(member); $event.stopPropagation();" *ngIf="!inAdmins(member)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n        <button ion-fab mini tappable (click)="removeFromAdmins(member); $event.stopPropagation();" *ngIf="inAdmins(member)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n      </ion-fab>\n      <ion-avatar item-left>\n        <img src="{{memberInfo(member).img}}">\n      </ion-avatar>\n      <h2>{{memberInfo(member).name}}</h2>\n      <p>{{memberInfo(member).email}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/admin-modal/admin-modal.html"*/,
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _e || Object])
-], AdminModalPage);
-
-var _a, _b, _c, _d, _e;
-//# sourceMappingURL=admin-modal.js.map
-
-/***/ }),
-
-/***/ 1198:
+/***/ 1177:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemberPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1132,19 +716,17 @@ MemberPipe = __decorate([
 
 /***/ }),
 
-=======
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
 /***/ 134:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirebaseProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_take__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_take__);
@@ -1342,13 +924,13 @@ FirebaseProvider = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_firebase_firebase__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__user_info_user_info__ = __webpack_require__(73);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1452,14 +1034,14 @@ var SearchPage = (function () {
             message: 'Do you want to send friend request to <b>' + user.name + '</b>?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Send',
                     handler: function () {
                         _this.firebaseProvider.sendFriendRequest(user.$key);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -1472,14 +1054,14 @@ var SearchPage = (function () {
             message: 'Do you want to delete your friend request to <b>' + user.name + '</b>?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Delete',
                     handler: function () {
                         _this.firebaseProvider.cancelFriendRequest(user.$key);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -1492,10 +1074,6 @@ var SearchPage = (function () {
             message: 'Do you want to accept <b>' + user.name + '</b> as your friend?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Reject Request',
                     handler: function () {
                         _this.firebaseProvider.deleteFriendRequest(user.$key);
@@ -1506,6 +1084,10 @@ var SearchPage = (function () {
                     handler: function () {
                         _this.firebaseProvider.acceptFriendRequest(user.$key);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -1518,7 +1100,7 @@ var SearchPage = (function () {
 }());
 SearchPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\search\search.html"*/'<!--\n\n  Generated template for the SearchPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Search People</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- No other users to send friend request right now. -->\n\n  <div class="empty-list" *ngIf="accounts && (accounts.length == 0 || (accounts.length == excludedIds.length))">\n\n    <h1><ion-icon name="md-search"></ion-icon></h1>\n\n    <p>We can\'t find new users right now</p>\n\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n\n  </div>\n\n  <!-- Show other users excluding yourself, and friends with the help of searchFilter pipe. -->\n\n  <ion-list class="avatar-list" *ngIf="accounts && accounts.length > 0">\n\n    <ion-searchbar *ngIf="accounts.length != excludedIds.length" [(ngModel)]="searchUser" placeholder="Search for name or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let account of accounts | searchFilter: [excludedIds, searchUser]" no-lines tappable (click)="viewUser(account.$key)">\n\n      <ion-fab middle right>\n\n        <!-- Show appropriate buttons depending on the status of this user in relation to the current user. -->\n\n        <!-- // Returns:\n\n        // 0 when user can be requested as friend.\n\n        // 1 when a friend request was already sent to this user.\n\n        // 2 when this user has a pending friend request. -->\n\n        <button ion-fab mini tappable (click)="sendFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 0">\n\n          <ion-icon name="md-add-circle" class="success"></ion-icon>\n\n        </button>\n\n        <button ion-fab mini tappable (click)="cancelFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 1">\n\n          <ion-icon name="md-close-circle" class="danger"></ion-icon>\n\n        </button>\n\n        <button ion-fab mini tappable (click)="acceptFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 2">\n\n          <ion-icon name="md-checkmark-circle" class="success"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{account.img}}">\n\n      </ion-avatar>\n\n      <h2>{{account.name}}</h2>\n\n      <p>@{{account.username}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\search\search.html"*/,
+        selector: 'page-search',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\search\search.html"*/'<!--\n\n  Generated template for the SearchPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Search People</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <!-- No other users to send friend request right now. -->\n\n  <div class="empty-list" *ngIf="accounts && (accounts.length == 0 || (accounts.length == excludedIds.length))">\n\n    <h1><ion-icon name="md-search"></ion-icon></h1>\n\n    <p>We can\'t find new users right now</p>\n\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n\n  </div>\n\n  <!-- Show other users excluding yourself, and friends with the help of searchFilter pipe. -->\n\n  <ion-list class="avatar-list" *ngIf="accounts && accounts.length > 0">\n\n    <ion-searchbar *ngIf="accounts.length != excludedIds.length" [(ngModel)]="searchUser" placeholder="Search for name or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let account of accounts | searchFilter: [excludedIds, searchUser]" no-lines tappable (click)="viewUser(account.$key)">\n\n      <ion-fab middle right>\n\n        <!-- Show appropriate buttons depending on the status of this user in relation to the current user. -->\n\n        <!-- // Returns:\n\n        // 0 when user can be requested as friend.\n\n        // 1 when a friend request was already sent to this user.\n\n        // 2 when this user has a pending friend request. -->\n\n        <button color="mainColor" ion-fab mini tappable (click)="sendFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 0">\n\n          <ion-icon name="md-add-circle" class="success"></ion-icon>\n\n        </button>\n\n        <button color="mainColor" ion-fab mini tappable (click)="cancelFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 1">\n\n          <ion-icon name="md-close-circle" class="danger"></ion-icon>\n\n        </button>\n\n        <button color="mainColor" ion-fab mini tappable (click)="acceptFriendRequest(account); $event.stopPropagation();" *ngIf="getStatus(account) == 2">\n\n          <ion-icon name="md-checkmark-circle" class="success"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{account.img}}">\n\n      </ion-avatar>\n\n      <h2>{{account.name}}</h2>\n\n      <p>@{{account.username}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\search\search.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_firebase_firebase__["a" /* FirebaseProvider */]])
@@ -1533,13 +1115,13 @@ SearchPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1711,16 +1293,16 @@ CalendarPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__calendar_calendar__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_settings__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__searcher_searcher__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tdlist_tdlist__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__conversation_conversation__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__conversation_conversation__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1850,11 +1432,11 @@ TabsPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_logout__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__information_information__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__contacts_contacts__ = __webpack_require__(254);
@@ -1917,15 +1499,15 @@ var SettingsPage = (function () {
             message: 'Are you sure you want to logout?',
             buttons: [
                 {
-                    text: 'Cancel'
-                },
-                {
                     text: 'Logout',
                     handler: function (data) {
                         // Log the user out.
                         _this.logoutProvider.doLogout();
                         _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__login_login__["a" /* Login */]);
                     }
+                },
+                {
+                    text: 'Cancel'
                 }
             ]
         }).present();
@@ -1955,7 +1537,7 @@ SettingsPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(252);
@@ -2061,15 +1643,15 @@ Login = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Searcher; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__new_club_new_club__ = __webpack_require__(482);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__clubs_clubs__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__new_club_new_club__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__clubs_clubs__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__club_club__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2188,7 +1770,7 @@ var Searcher = (function () {
 Searcher = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-searcher',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\searcher\searcher.html"*/'<!--\n\n  Generated template for the Searcher page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>My Clan</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class=\'content\' no-padding>\n\n  <div padding>\n\n    <ion-segment [(ngModel)]="clan"  color="mainColor">\n\n      <ion-segment-button value="club">\n\n        Clubs\n\n      </ion-segment-button>\n\n      <ion-segment-button value="event">\n\n        Events\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <div [ngSwitch]="clan">\n\n    <div no-border  *ngSwitchCase="\'club\'">\n\n      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">\n\n        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>\n\n        <p>You haven\'t joined any club yet.</p>\n\n        <div class="operation">\n\n          <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>\n\n          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="md-add"></ion-icon>Join a club</button>\n\n        </div>\n\n  </div>\n\n      \n\n    \n\n      <ion-list *ngIf="clubs && clubs.length > 0">\n\n        <div class="operation">\n\n          <button class="operation" ion-button tappable (click)="newClub()">Create a club</button> \n\n          <button class="operation" ion-button tappable (click)="joinClub()">Join a club</button>  \n\n        </div>              \n\n        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for your club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n        <span *ngFor="let club of clubs | clubFilter: searchClub">\n\n          <ion-item (click)="viewClub(club.$key)" tappable>\n\n            <ion-avatar [ngClass]=hasUnreadMessages(club) item-start>\n\n              <img src="{{club.img}}" />\n\n            </ion-avatar>\n\n            <h2>{{club.name}}</h2>\n\n            <p>{{club.date | DateFormat}}</p>\n\n            <ion-note item-end><ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge></ion-note>\n\n          </ion-item>\n\n        </span>\n\n      </ion-list>\n\n    </div>\n\n\n\n    <div no-border  *ngSwitchCase="\'event\'">\n\n      \n\n      <ion-item>\n\n        Dialogue with leaders in Social Media\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        SMU Open House 2015\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        YIC final presentation invitation\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        SPF career talk\n\n      </ion-item>   \n\n\n\n      <ion-item>\n\n        Sea game volunteers\n\n      </ion-item>  \n\n\n\n      <ion-item>\n\n        Social Media Internship\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        Business Development Intern\n\n      </ion-item> \n\n\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\searcher\searcher.html"*/,
+        selector: 'page-searcher',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\searcher\searcher.html"*/'<!--\n\n  Generated template for the Searcher page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>My Clan</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class=\'content\' no-padding>\n\n  <div padding>\n\n    <ion-segment [(ngModel)]="clan"  color="mainColor">\n\n      <ion-segment-button value="club">\n\n        Clubs\n\n      </ion-segment-button>\n\n      <ion-segment-button value="event">\n\n        Events\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n\n\n  <div [ngSwitch]="clan">\n\n    <div no-border  *ngSwitchCase="\'club\'">\n\n      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">\n\n        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>\n\n        <p style="color:gray">You haven\'t joined any club yet.</p>\n\n        <div class="operation">\n\n          <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>\n\n          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="person"></ion-icon>Join a club</button>\n\n        </div>\n\n  </div>\n\n      \n\n    \n\n      <ion-list *ngIf="clubs && clubs.length > 0">\n\n        <div class="operation">\n\n          <button class="operation" ion-button tappable (click)="newClub()">Create a club</button> \n\n          <button class="operation" ion-button tappable (click)="joinClub()">Join a club</button>  \n\n        </div>              \n\n        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for your club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n        <span *ngFor="let club of clubs | clubFilter: searchClub">\n\n          <ion-item (click)="viewClub(club.$key)" tappable>\n\n            <ion-avatar [ngClass]=hasUnreadMessages(club) item-start>\n\n              <img src="{{club.img}}" />\n\n            </ion-avatar>\n\n            <h2>{{club.name}}</h2>\n\n            <p>{{club.date | DateFormat}}</p>\n\n            <ion-note item-end><ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge></ion-note>\n\n          </ion-item>\n\n        </span>\n\n      </ion-list>\n\n    </div>\n\n\n\n    <div no-border  *ngSwitchCase="\'event\'">\n\n      \n\n      <ion-item>\n\n        Dialogue with leaders in Social Media\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        SMU Open House 2015\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        YIC final presentation invitation\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        SPF career talk\n\n      </ion-item>   \n\n\n\n      <ion-item>\n\n        Sea game volunteers\n\n      </ion-item>  \n\n\n\n      <ion-item>\n\n        Social Media Internship\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        Business Development Intern\n\n      </ion-item> \n\n\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\searcher\searcher.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
@@ -2209,13 +1791,13 @@ Searcher = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tasks; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2315,12 +1897,12 @@ Tasks = __decorate([
 
 /***/ }),
 
-/***/ 17:
+/***/ 16:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoadingProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
@@ -2381,14 +1963,14 @@ LoadingProvider = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__alert_alert__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__info__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2526,7 +2108,7 @@ AuthServiceProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Info; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_tabs_tabs__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_verify_verify__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_verify_verify__ = __webpack_require__(258);
 
 
 var Info;
@@ -2555,17 +2137,17 @@ var Info;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__user_info_user_info__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__club_info_club_info__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__club_info_club_info__ = __webpack_require__(484);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__image_modal_image_modal__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_camera__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_contacts__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_keyboard__ = __webpack_require__(162);
@@ -2833,16 +2415,17 @@ var ClubPage = ClubPage_1 = (function () {
                                 title: 'Your Location',
                                 message: locationMessage,
                                 buttons: [{
-                                        text: 'cancel',
-                                        handler: function () {
-                                            console.log("canceled");
-                                        }
-                                    }, {
                                         text: 'Share',
                                         handler: function () {
                                             console.log("share");
                                             _this.message = locationMessage;
                                             _this.send();
+                                        }
+                                    },
+                                    {
+                                        text: 'cancel',
+                                        handler: function () {
+                                            console.log("canceled");
                                         }
                                     }]
                             });
@@ -2942,14 +2525,14 @@ var ClubPage_1;
 
 /***/ }),
 
-/***/ 23:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3055,7 +2638,7 @@ DataProvider = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validation__ = __webpack_require__(84);
@@ -3103,7 +2686,7 @@ var RegisterPage = (function () {
 RegisterPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-register',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\register\register.html"*/'<!--\n\n  Generated template for the RegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Register</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="reg-content">\n\n  <img src="assets/img/regLogo.png" id="bg">\n\n  <div class="reg-box">\n\n    <form [formGroup]="registerForm">\n\n      <h2 style="margin-bottom:15px">Registration</h2>\n\n      <ion-input formControlName="email" type="text" placeholder="Email" name="email"></ion-input>\n\n      <ion-input formControlName="password" type="text" placeholder="Password" name="password"></ion-input>    \n\n      <button ion-button full (click)="doRegister()" class="reg-btn">Register!</button>\n\n    </form>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\register\register.html"*/,
+        selector: 'page-register',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\register\register.html"*/'<!--\n\n  Generated template for the RegisterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Register</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="reg-content">\n\n  <img src="assets/img/regLogo.png" id="bg">\n\n  <div class="reg-box">\n\n    <form [formGroup]="registerForm">\n\n      <h2 style="margin-bottom:15px">Registration</h2>\n\n      <ion-input formControlName="email" type="text" placeholder="Email" name="email"></ion-input>\n\n      <ion-input formControlName="password" type="text" placeholder="Password" name="password"></ion-input> \n\n      <p></p>   \n\n      <button ion-button full (click)="doRegister()" class="reg-btn">Register!</button>\n\n    </form>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\register\register.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -3120,17 +2703,17 @@ RegisterPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InformationPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_logout__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__validation__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__info__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3574,15 +3157,15 @@ InformationPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chat_chat__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__requests_requests__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__requests_requests__ = __webpack_require__(482);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__search_search__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user_info_user_info__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3671,12 +3254,16 @@ var ContactsPage = (function () {
     ContactsPage.prototype.message = function (userId) {
         this.app.getRootNav().push(__WEBPACK_IMPORTED_MODULE_2__chat_chat__["a" /* ChatPage */], { userId: userId });
     };
+    // Back
+    ContactsPage.prototype.back = function () {
+        this.navCtrl.pop();
+    };
     return ContactsPage;
 }());
 ContactsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-contacts',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\contacts\contacts.html"*/'<!--\n\n  Generated template for the ContactsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Friends</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only tappable (click)="manageRequests()"><ion-icon name="md-filing"></ion-icon><ion-badge color="danger" *ngIf="friendRequests">{{friendRequests.length}}</ion-badge></button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon></button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <!-- No friends to show -->\n\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n\n    <h1><ion-icon name="contacts"></ion-icon></h1>\n\n    <p>You don\'t have new friends yet</p>\n\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="search"></ion-icon>Search People</button>\n\n  </div>\n\n  <!-- Show list of friends -->\n\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n    <ion-searchbar [(ngModel)]="friendSearch" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" (click)="message(friend.$key); $event.stopPropagation();">\n\n      <ion-avatar item-left>\n\n        <img src="{{friend.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friend.name}}</h2>\n\n      <p>{{friend.description}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\contacts\contacts.html"*/,
+        selector: 'page-contacts',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\contacts\contacts.html"*/'<!--\n\n  Generated template for the ContactsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Friends</ion-title>\n\n    <ion-buttons end>\n\n      <button class="back" ion-button icon-only tappable (click)="manageRequests()"><ion-icon name="md-filing"></ion-icon><ion-badge color="danger" *ngIf="friendRequests">{{friendRequests.length}}</ion-badge></button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button class="back" ion-button icon-only tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon></button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <!-- No friends to show -->\n\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n\n    <h1><ion-icon name="contacts"></ion-icon></h1>\n\n    <p style="color:gray">You don\'t have new friends yet</p>\n\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="search"></ion-icon>Search People</button>\n\n  </div>\n\n  <!-- Show list of friends -->\n\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n    <ion-searchbar [(ngModel)]="friendSearch" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" (click)="message(friend.$key); $event.stopPropagation();">\n\n      <ion-avatar item-left>\n\n        <img src="{{friend.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friend.name}}</h2>\n\n      <p>{{friend.description}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\contacts\contacts.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -3693,15 +3280,199 @@ ContactsPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the AdminModalPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var AdminModalPage = (function () {
+    function AdminModalPage(navCtrl, navParams, afDB, dataProvider, loadProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.afDB = afDB;
+        this.dataProvider = dataProvider;
+        this.loadProvider = loadProvider;
+        this.searchMember = '';
+        this.admins = this.navParams.get("admins");
+        this.members = this.navParams.get("members");
+        this.clubId = this.navParams.get("clubId");
+    }
+    AdminModalPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AdminModalPage');
+        console.log('Admins: ' + this.admins);
+        console.log('Admins Length: ' + this.admins.length);
+        for (var i = 0; i < this.admins.length; i++) {
+            console.log('admin ' + i + ': ' + this.admins[i] + ' admin $key ' + i + ': ' + this.admins[i].$key);
+        }
+        for (var i = 0; i < this.admins.length; i++) {
+            console.log('admin info ' + i + ': ' + this.adminInfo(this.admins[i]).name);
+        }
+        for (var i = 0; i < this.members.length; i++) {
+            console.log('member info ' + i + ': ' + this.memberInfo(this.members[i]));
+        }
+        for (var i = 0; i < this.members.length; i++) {
+            console.log('member ' + i + ': ' + this.members[i] + ' member $key ' + i + ': ' + this.members[i].$key);
+        }
+        console.log('members: ' + this.members);
+    };
+    AdminModalPage.prototype.inAdmins = function (member) {
+        for (var i = 0; i < this.admins.length; i++) {
+            if (this.admins[i] === member) {
+                return true;
+            }
+        }
+        return false;
+    };
+    AdminModalPage.prototype.adminInfo = function (adminId) {
+        var adminInfo;
+        this.dataProvider.getUser(adminId).subscribe(function (admin) {
+            adminInfo = admin;
+        });
+        return adminInfo;
+    };
+    AdminModalPage.prototype.isCreator = function (uid) {
+        return (__WEBPACK_IMPORTED_MODULE_5_firebase__["auth"]().currentUser.uid === uid);
+    };
+    AdminModalPage.prototype.memberInfo = function (memberId) {
+        var memberInfo;
+        this.dataProvider.getUser(memberId).subscribe(function (member) {
+            memberInfo = member;
+        });
+        return memberInfo;
+    };
+    AdminModalPage.prototype.addToAdmins = function (member) {
+        this.admins.push(member);
+    };
+    AdminModalPage.prototype.removeFromAdmins = function (member) {
+        var index = -1;
+        for (var i = 1; i < this.admins.length; i++) {
+            if (this.admins[i] == member) {
+                index = i;
+            }
+        }
+        if (index > -1) {
+            this.admins.splice(index, 1);
+        }
+    };
+    AdminModalPage.prototype.done = function () {
+        var _this = this;
+        this.loadProvider.load();
+        this.afDB.object('/clubs/' + this.clubId).update({
+            administrators: this.admins
+        });
+        for (var i = 0; i < this.admins.length; i++) {
+            var newAdminedClub = true;
+            var hasAdminedClub = false;
+            var addClub;
+            this.dataProvider.getUser(this.admins[i]).subscribe(function (user) {
+                if (user.adminedClubs) {
+                    addClub = user.adminedClubs;
+                    hasAdminedClub = true;
+                    for (var j = 0; j < user.adminedClubs.length; j++) {
+                        if (user.adminedClubs[j] === _this.clubId) {
+                            newAdminedClub = false;
+                            break;
+                        }
+                    }
+                }
+            });
+            if (hasAdminedClub) {
+                if (newAdminedClub === true) {
+                    addClub.push(this.clubId);
+                    this.afDB.object('/accounts/' + this.admins[i] + '/adminedClubs/').update(addClub);
+                }
+            }
+            else {
+                this.afDB.object('/accounts/' + this.admins[i]).update({
+                    adminedClubs: [this.clubId]
+                });
+            }
+        }
+        if (this.members) {
+            for (var j = 0; j < this.members.length; j++) {
+                if (!this.inAdmins(this.members[j])) {
+                    var index = -1;
+                    var toAddAdminedClubs;
+                    this.dataProvider.getUser(this.members[j]).subscribe(function (member) {
+                        if (member.adminedClubs) {
+                            toAddAdminedClubs = member.adminedClubs;
+                            for (var k = 0; k < member.adminedClubs.length; k++) {
+                                if (member.adminedClubs[k] === _this.clubId) {
+                                    console.log(member);
+                                    console.log(toAddAdminedClubs);
+                                    toAddAdminedClubs.splice(k, 1);
+                                    console.log(toAddAdminedClubs);
+                                }
+                            }
+                        }
+                    });
+                    if (toAddAdminedClubs) {
+                        this.afDB.object('/accounts/' + this.members[j] + '/adminedClubs/').set(toAddAdminedClubs);
+                    }
+                }
+            }
+        }
+        this.loadProvider.dismiss();
+        this.navCtrl.pop();
+    };
+    AdminModalPage.prototype.cancel = function () {
+        this.navCtrl.pop();
+    };
+    return AdminModalPage;
+}());
+AdminModalPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-admin-modal',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\admin-modal\admin-modal.html"*/'<!--\n\n  Generated template for the AdminModalPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only (click)="cancel()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Administration Management</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button tappable (click)="done()" [disabled]="admins.length < 1">Done</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list *ngIf="admins">\n\n    <ion-list-header>\n\n      Administrators\n\n    </ion-list-header>\n\n    <ion-item-sliding *ngFor="let admin of admins">\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="{{adminInfo(admin).img}}"/>\n\n        </ion-avatar>\n\n        <h2>{{adminInfo(admin).name}}</h2>\n\n        <p>{{adminInfo(admin).email}}</p>\n\n      </ion-item>\n\n      <ion-item-options *ngIf="!isCreator(admin)">\n\n        <button ion-button (click)="removeFromAdmins(admin)">Delete</button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n  <ion-list *ngIf="members">\n\n    <ion-list-header>\n\n      Club Members\n\n    </ion-list-header>\n\n    <ion-searchbar [(ngModel)]="searchMember" placeholder="Search for members" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let member of members | memberFilter:searchMember" no-lines>\n\n      <ion-fab middle right>\n\n        <button ion-fab mini tappable (click)="addToAdmins(member); $event.stopPropagation();" *ngIf="!inAdmins(member)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n\n        <button ion-fab mini tappable (click)="removeFromAdmins(member); $event.stopPropagation();" *ngIf="inAdmins(member)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{memberInfo(member).img}}">\n\n      </ion-avatar>\n\n      <h2>{{memberInfo(member).name}}</h2>\n\n      <p>{{memberInfo(member).email}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\admin-modal\admin-modal.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]])
+], AdminModalPage);
+
+//# sourceMappingURL=admin-modal.js.map
+
+/***/ }),
+
+/***/ 256:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3836,46 +3607,38 @@ var ClubsPage = (function () {
         });
         this.alertProvider.showClubJoinedMessage();
     };
+    // Back
+    ClubsPage.prototype.back = function () {
+        this.navCtrl.pop();
+    };
     return ClubsPage;
 }());
 ClubsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-        selector: 'page-clubs',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/'<!--\n  Generated template for the ClubsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>clubs</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-list-header>Joined Clubs</ion-list-header>\n    <ng-container *ngFor="let club of clubs">\n      <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">\n        <ion-avatar item-start>\n          <img src={{club.img}}>\n        </ion-avatar>\n        <h2>{{club.name}}</h2>\n      </ion-item>\n    </ng-container>\n  </ion-list>\n  \n  <ion-list>\n    <ion-list-header>All Clubs</ion-list-header>\n    <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-item-sliding *ngFor="let club of clubs|clubFilter: search">\n      <ion-item tappable (click)="details(club)">\n        <ion-avatar item-start>\n          <img src={{club.img}}>\n        </ion-avatar>\n        <h2>{{club.name}}<span *ngIf="isMember(club)">[Joined]</span></h2>\n      </ion-item>\n      <ion-item-options side="right">\n        <button (click)="details(club)" ion-button color="primary">\n          <ion-icon name="more"></ion-icon>\n          Details\n        </button>\n        <button *ngIf="!isMember(club)" (click)="join(club.$key)" ion-button color="secondary">\n          <ion-icon name="add"></ion-icon>\n          Join \n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/,
-=======
-        selector: 'page-clubs',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\clubs\clubs.html"*/'<!--\n\n  Generated template for the ClubsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Clubs</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="content" padding>\n\n  <ion-list>\n\n    <ion-list-header>Clubs I Joined</ion-list-header>\n\n    <ng-container *ngFor="let club of clubs">\n\n      <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">\n\n        <ion-avatar item-start>\n\n          <img src={{club.img}}>\n\n        </ion-avatar>\n\n        <h2>{{club.name}}</h2>\n\n      </ion-item>\n\n    </ng-container>\n\n  </ion-list>\n\n  <hr>\n\n  <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n  <ion-list>\n\n    <ion-list-header>All Clubs</ion-list-header>\n\n    <ion-item-sliding *ngFor="let club of clubs|clubFilter: search">\n\n      <ion-item tappable (click)="details(club)">\n\n        <ion-avatar item-start>\n\n          <img src={{club.img}}>\n\n        </ion-avatar>\n\n        <h2>{{club.name}}</h2>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button (click)="details(club)" ion-button color="primary">\n\n          <ion-icon name="more"></ion-icon>\n\n          Details\n\n        </button>\n\n        <button *ngIf="!isMember(club)" (click)="join(club.$key)" ion-button color="secondary">\n\n          <ion-icon name="add"></ion-icon>\n\n          Join \n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\clubs\clubs.html"*/,
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
+        selector: 'page-clubs',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\clubs\clubs.html"*/'<!--\n\n  Generated template for the ClubsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Clubs</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="content" padding>\n\n  <ion-list>\n\n    <ion-list-header>Clubs I Joined</ion-list-header>\n\n    <ng-container *ngFor="let club of clubs">\n\n      <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">\n\n        <ion-avatar item-start>\n\n          <img src={{club.img}}>\n\n        </ion-avatar>\n\n        <h2>{{club.name}}</h2>\n\n      </ion-item>\n\n    </ng-container>\n\n  </ion-list>\n\n  \n\n  <ion-list>\n\n    <ion-list-header>All Clubs</ion-list-header>\n\n    <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item-sliding *ngFor="let club of clubs|clubFilter: search">\n\n      <ion-item tappable (click)="details(club)">\n\n        <ion-avatar item-start>\n\n          <img src={{club.img}}>\n\n        </ion-avatar>\n\n        <h2>{{club.name}}<span *ngIf="isMember(club)">[Joined]</span></h2>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button (click)="details(club)" ion-button color="primary">\n\n          <ion-icon name="more"></ion-icon>\n\n          Details\n\n        </button>\n\n        <button *ngIf="!isMember(club)" (click)="join(club.$key)" ion-button color="secondary">\n\n          <ion-icon name="add"></ion-icon>\n\n          Join \n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\clubs\clubs.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _k || Object])
 ], ClubsPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=clubs.js.map
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConversationPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__new_chat_new_chat__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__new_chat_new_chat__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chat_chat__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4045,20 +3808,20 @@ ConversationPage = __decorate([
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerifyPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_logout__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__validation__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__info__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4112,7 +3875,7 @@ var VerifyPage = (function () {
                 that.emailVerified = true;
                 that.alert = that.alertCtrl.create({
                     title: 'Email Confirmed!',
-                    subTitle: 'Congratulations! Your email has been confirmed!',
+                    subTitle: 'Congratulations! Your email has been verified!',
                     buttons: [{
                             text: 'OK',
                             handler: function () {
@@ -4201,10 +3964,6 @@ var VerifyPage = (function () {
             ],
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Save',
                     handler: function (data) {
                         var email = data["email"];
@@ -4247,6 +4006,10 @@ var VerifyPage = (function () {
                             }
                         }
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -4259,9 +4022,6 @@ var VerifyPage = (function () {
             message: 'Are you sure you want to logout?',
             buttons: [
                 {
-                    text: 'Cancel'
-                },
-                {
                     text: 'Logout',
                     handler: function (data) {
                         // Clear the verification check interval.
@@ -4271,6 +4031,9 @@ var VerifyPage = (function () {
                         // Log the user out.
                         _this.logoutProvider.doLogout();
                     }
+                },
+                {
+                    text: 'Cancel'
                 }
             ]
         }).present();
@@ -4296,12 +4059,12 @@ VerifyPage = __decorate([
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Doodle; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4403,12 +4166,12 @@ Doodle = __decorate([
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Testing; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tasks_tasks__ = __webpack_require__(157);
@@ -4418,7 +4181,7 @@ Doodle = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tdlist_tdlist__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tabs_tabs__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__doodle_doodle__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__doodle_doodle__ = __webpack_require__(259);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4479,7 +4242,7 @@ Testing = __decorate([
 
 /***/ }),
 
-/***/ 269:
+/***/ 270:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -4492,158 +4255,85 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 269;
+webpackEmptyAsyncContext.id = 270;
 
 /***/ }),
 
-/***/ 314:
+/***/ 315:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-<<<<<<< HEAD
-	"../pages/add-member/add-member.module": [
-		1183,
-		2
-	],
 	"../pages/admin-modal/admin-modal.module": [
-		1196,
-		1
-	],
-	"../pages/calendar/calendar.module": [
-		1176,
-		38
-	],
-	"../pages/chat/chat.module": [
-		1180,
+		1185,
 		17
 	],
-	"../pages/clubs/clubs.module": [
-		1184,
-		16
-	],
-	"../pages/contacts/contacts.module": [
-		1181,
-		15
-	],
-	"../pages/conversation/conversation.module": [
-		1188,
-		14
-	],
-	"../pages/doodle/doodle.module": [
-		1191,
-		13
-	],
-	"../pages/event-modal/event-modal.module": [
-		1193,
-=======
 	"../pages/calendar/calendar.module": [
-		1176,
+		1178,
 		16
 	],
 	"../pages/chat/chat.module": [
-		1180,
+		1182,
 		15
 	],
 	"../pages/clubs/clubs.module": [
-		1183,
+		1186,
 		14
 	],
 	"../pages/contacts/contacts.module": [
-		1181,
+		1183,
 		13
 	],
 	"../pages/conversation/conversation.module": [
-		1187,
+		1190,
 		12
 	],
 	"../pages/doodle/doodle.module": [
-		1190,
+		1193,
 		11
 	],
 	"../pages/event-modal/event-modal.module": [
-		1192,
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
+		1195,
 		0
 	],
 	"../pages/information/information.module": [
+		1181,
+		10
+	],
+	"../pages/login/login.module": [
+		1180,
+		9
+	],
+	"../pages/register/register.module": [
 		1179,
-<<<<<<< HEAD
-		12
-	],
-	"../pages/login/login.module": [
-		1178,
-		11
-	],
-	"../pages/register/register.module": [
-		1177,
-		10
-	],
-	"../pages/searcher/searcher.module": [
-		1185,
-		9
-	],
-	"../pages/settings/settings.module": [
-		1182,
 		8
 	],
-	"../pages/tabs/tabs.module": [
-		1189,
-		7
-	],
-	"../pages/tasks/tasks.module": [
-		1186,
-		6
-	],
-	"../pages/tdlist/tdlist.module": [
+	"../pages/searcher/searcher.module": [
 		1187,
-		5
-	],
-	"../pages/testing/testing.module": [
-		1192,
-		4
-	],
-	"../pages/verify/verify.module": [
-		1190,
-		3
-=======
-		10
-	],
-	"../pages/login/login.module": [
-		1178,
-		9
-	],
-	"../pages/register/register.module": [
-		1177,
-		8
-	],
-	"../pages/searcher/searcher.module": [
-		1184,
 		7
 	],
 	"../pages/settings/settings.module": [
-		1182,
+		1184,
 		6
 	],
 	"../pages/tabs/tabs.module": [
-		1188,
+		1191,
 		5
 	],
 	"../pages/tasks/tasks.module": [
-		1185,
+		1188,
 		4
 	],
 	"../pages/tdlist/tdlist.module": [
-		1186,
+		1189,
 		3
 	],
 	"../pages/testing/testing.module": [
-		1191,
+		1194,
 		2
 	],
 	"../pages/verify/verify.module": [
-		1189,
+		1192,
 		1
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
 	]
 };
 function webpackAsyncContext(req) {
@@ -4657,7 +4347,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 314;
+webpackAsyncContext.id = 315;
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -4667,7 +4357,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlertProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validation__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_service_logout__ = __webpack_require__(102);
@@ -5046,18 +4736,18 @@ AlertProvider = __decorate([
 
 /***/ }),
 
-/***/ 481:
+/***/ 482:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__user_info_user_info__ = __webpack_require__(73);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5181,10 +4871,6 @@ var RequestsPage = (function () {
             message: 'Do you want to accept <b>' + user.name + '</b> as your friend?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Reject Request',
                     handler: function () {
                         _this.firebaseProvider.deleteFriendRequest(user.$key);
@@ -5195,6 +4881,10 @@ var RequestsPage = (function () {
                     handler: function () {
                         _this.firebaseProvider.acceptFriendRequest(user.$key);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -5207,14 +4897,14 @@ var RequestsPage = (function () {
             message: 'Do you want to delete your friend request to <b>' + user.name + '</b>?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Delete',
                     handler: function () {
                         _this.firebaseProvider.cancelFriendRequest(user.$key);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -5241,7 +4931,7 @@ var RequestsPage = (function () {
 }());
 RequestsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-requests',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\requests\requests.html"*/'<!--\n\n  Generated template for the RequestsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Friend Requests</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- No friend requests sent or received. -->\n\n  <div class="empty-list" *ngIf="(friendRequests && friendRequests.length == 0) && (requestsSent && requestsSent.length == 0)">\n\n    <h1><ion-icon name="md-filing"></ion-icon></h1>\n\n    <p style="color:gray">No New Requests</p>\n\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n\n  </div>\n\n  <!-- Show friend requests received. -->\n\n  <ion-list class="avatar-list" *ngIf="friendRequests && friendRequests.length > 0">\n\n    <ion-item *ngFor="let friendRequest of friendRequests" no-lines tappable (click)="viewUser(friendRequest.$key)">\n\n      <ion-fab middle right>\n\n        <button ion-fab mini tappable (click)="acceptFriendRequest(friendRequest); $event.stopPropagation();">\n\n          <ion-icon name="md-checkmark-circle" class="success"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{friendRequest.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friendRequest.name}}</h2>\n\n      <p>has sent you a friend request.</p>\n\n    </ion-item>\n\n  </ion-list>\n\n  <!-- Show friend requests sent. -->\n\n  <ion-list class="avatar-list" *ngIf="requestsSent && requestsSent.length > 0">\n\n    <ion-item *ngFor="let requestSent of requestsSent" no-lines tappable (click)="viewUser(requestSent.$key)">\n\n      <ion-fab middle right>\n\n        <button ion-fab mini tappable (click)="cancelFriendRequest(requestSent); $event.stopPropagation();">\n\n          <ion-icon name="md-close-circle" class="danger"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{requestSent.img}}">\n\n      </ion-avatar>\n\n      <h2>{{requestSent.name}}</h2>\n\n      <p>friend request sent.</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\requests\requests.html"*/
+        selector: 'page-requests',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\requests\requests.html"*/'<!--\n\n  Generated template for the RequestsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Friend Requests</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- No friend requests sent or received. -->\n\n  <div class="empty-list" *ngIf="(friendRequests && friendRequests.length == 0) && (requestsSent && requestsSent.length == 0)">\n\n    <h1><ion-icon name="md-filing"></ion-icon></h1>\n\n    <p style="color:gray">No New Requests</p>\n\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n\n  </div>\n\n  <!-- Show friend requests received. -->\n\n  <ion-list class="avatar-list" *ngIf="friendRequests && friendRequests.length > 0">\n\n    <ion-item *ngFor="let friendRequest of friendRequests" no-lines tappable (click)="viewUser(friendRequest.$key)">\n\n      <ion-fab middle right>\n\n        <button color="mainColor" ion-fab mini tappable (click)="acceptFriendRequest(friendRequest); $event.stopPropagation();">\n\n          <ion-icon name="md-checkmark-circle" class="success"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{friendRequest.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friendRequest.name}}</h2>\n\n      <p>has sent you a friend request.</p>\n\n    </ion-item>\n\n  </ion-list>\n\n  <!-- Show friend requests sent. -->\n\n  <ion-list class="avatar-list" *ngIf="requestsSent && requestsSent.length > 0">\n\n    <ion-item *ngFor="let requestSent of requestsSent" no-lines tappable (click)="viewUser(requestSent.$key)">\n\n      <ion-fab middle right>\n\n        <button color="mainColor" ion-fab mini tappable (click)="cancelFriendRequest(requestSent); $event.stopPropagation();">\n\n          <ion-icon name="md-close-circle" class="danger"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{requestSent.img}}">\n\n      </ion-avatar>\n\n      <h2>{{requestSent.name}}</h2>\n\n      <p>friend request sent.</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\requests\requests.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -5257,23 +4947,23 @@ RequestsPage = __decorate([
 
 /***/ }),
 
-/***/ 482:
+/***/ 483:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewClubPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_data_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_data_data__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validation__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__club_club__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__search_search__ = __webpack_require__(135);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5464,10 +5154,6 @@ var NewClubPage = (function () {
             message: 'Do you want to take a photo or choose from your photo gallery?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Choose from Gallery',
                     handler: function () {
                         _this.imageProvider.setClubPhoto(_this.club, _this.camera.PictureSourceType.PHOTOLIBRARY);
@@ -5478,6 +5164,10 @@ var NewClubPage = (function () {
                     handler: function () {
                         _this.imageProvider.setClubPhoto(_this.club, _this.camera.PictureSourceType.CAMERA);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -5490,11 +5180,7 @@ var NewClubPage = (function () {
 }());
 NewClubPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-        selector: 'page-new-club',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/new-club/new-club.html"*/'<!--\n  Generated template for the NewClubPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title>New Club</ion-title>\n    <!-- New Group can only be added when a group form is filled up, image is uploaded, and there\'s more than one member. -->\n    <ion-buttons end>\n      <button ion-button tappable (click)="done()" [disabled]="!clubForm.valid || club.img == \'\' || clubMembers.length <= 1">Done</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="club">\n    <ion-list>\n      <ion-list-header>\n        Club Info\n      </ion-list-header>\n      <form [formGroup]="clubForm">\n        <ion-item>\n          <ion-avatar item-left>\n            <img src="{{club.img}}" *ngIf="club.img != \'\'" tappable (click)="setClubPhoto()" />\n            <img src="assets/img/club.png" *ngIf="club.img == \'\'" tappable (click)="setClubPhoto()" />\n          </ion-avatar>\n          <ion-input type="text" formControlName="name" placeholder="Name of Club"></ion-input>\n        </ion-item>\n        <ion-item no-lines>\n          <ion-label stacked>Description *</ion-label>\n          <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>\n        </ion-item>\n        <div *ngIf="clubMembers">\n          <ion-list-header>\n            Club Members ({{clubMembers.length}})\n          </ion-list-header>\n          \n          <ion-item  *ngFor="let member of clubMembers">\n            <ion-avatar item-left>\n              <img src="{{member.img}}"/>\n            </ion-avatar>\n            <h2>{{member.name}}</h2>\n            <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>\n          </ion-item>\n        </div>\n      </form>\n    </ion-list>\n\n    <ion-list-header>\n      Add New Members\n    </ion-list-header>\n    <div class="form">\n      <!-- No friends to create a group. -->\n      <div class="empty" *ngIf="friends && friends.length == 0">\n        <p>You have no friends right now to create a new club.</p>\n        <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n      </div>\n      <!-- Show friends to add/remove to group. -->\n      <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n        <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <ng-container *ngFor="let friend of friends | friendFilter:searchFriend">\n          <ion-item *ngIf="!inClub(friend)" no-lines tappable (click)="addOrRemoveFromClub(friend)">\n            <ion-fab middle right>\n              <button ion-fab mini tappable (click)="addToClub(friend); $event.stopPropagation();" *ngIf="!inClub(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n              <button ion-fab mini tappable (click)="removeFromClub(friend); $event.stopPropagation();" *ngIf="inClub(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n            </ion-fab>\n            <ion-avatar item-left>\n              <img src="{{friend.img}}">\n            </ion-avatar>\n            <h2>{{friend.name}}</h2>\n            <p>{{friend.email}}</p>\n          </ion-item>\n        </ng-container>\n      </ion-list>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/new-club/new-club.html"*/
-=======
-        selector: 'page-new-club',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-club\new-club.html"*/'<!--\n\n  Generated template for the NewClubPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title>New Club</ion-title>\n\n    <!-- New Group can only be added when a group form is filled up, image is uploaded, and there\'s more than one member. -->\n\n    <ion-buttons end>\n\n      <button ion-button tappable (click)="done()" [disabled]="!clubForm.valid || club.img == \'\' || clubMembers.length <= 1">Done</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div *ngIf="club">\n\n    <ion-list>\n\n      <ion-list-header>\n\n        Club Info\n\n      </ion-list-header>\n\n      <form [formGroup]="clubForm">\n\n        <ion-item>\n\n          <ion-avatar item-left>\n\n            <img src="{{club.img}}" *ngIf="club.img != \'\'" tappable (click)="setClubPhoto()" />\n\n            <img src="assets/img/club.png" *ngIf="club.img == \'\'" tappable (click)="setClubPhoto()" />\n\n          </ion-avatar>\n\n          <ion-input type="text" formControlName="name" placeholder="Name of Club"></ion-input>\n\n        </ion-item>\n\n        <ion-item no-lines>\n\n          <ion-label stacked>Description *</ion-label>\n\n          <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>\n\n        </ion-item>\n\n        <div *ngIf="clubMembers">\n\n        <ion-list-header>\n\n          Club Members ({{clubMembers.length}})\n\n        </ion-list-header>\n\n        \n\n        <ion-item  *ngFor="let member of clubMembers">\n\n          <ion-avatar item-left>\n\n            <img src="{{member.img}}"/>\n\n          </ion-avatar>\n\n          <h2>{{member.name}}</h2>\n\n          <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>\n\n        </ion-item>\n\n        </div>\n\n      </form>\n\n    </ion-list>\n\n\n\n    <ion-list-header>\n\n      Add New Members\n\n    </ion-list-header>\n\n    <div class="form">\n\n      <!-- No friends to create a group. -->\n\n      <div class="empty" *ngIf="friends && friends.length == 0">\n\n        <p>You have no friends right now to create a new club.</p>\n\n        <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n\n      </div>\n\n      <!-- Show friends to add/remove to group. -->\n\n      <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n        <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n        <ng-container *ngFor="let friend of friends | friendFilter:searchFriend">\n\n          <ion-item *ngIf="!inClub(friend)" no-lines tappable (click)="addOrRemoveFromClub(friend)">\n\n            <ion-fab middle right>\n\n              <button ion-fab mini tappable (click)="addToClub(friend); $event.stopPropagation();" *ngIf="!inClub(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n\n              <button ion-fab mini tappable (click)="removeFromClub(friend); $event.stopPropagation();" *ngIf="inClub(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n\n            </ion-fab>\n\n            <ion-avatar item-left>\n\n              <img src="{{friend.img}}">\n\n            </ion-avatar>\n\n            <h2>{{friend.name}}</h2>\n\n            <p>{{friend.email}}</p>\n\n          </ion-item>\n\n        </ng-container>\n\n      </ion-list>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-club\new-club.html"*/
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
+        selector: 'page-new-club',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-club\new-club.html"*/'<!--\n\n  Generated template for the NewClubPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>New Club</ion-title>\n\n    <!-- New Group can only be added when a group form is filled up, image is uploaded, and there\'s more than one member. -->\n\n    <ion-buttons end>\n\n      <button class="back" ion-button tappable (click)="done()" [disabled]="!clubForm.valid || club.img == \'\' || clubMembers.length <= 1">Done</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <div *ngIf="club">\n\n    <ion-list>\n\n      <ion-list-header>\n\n        Club Info\n\n      </ion-list-header>\n\n      <form [formGroup]="clubForm">\n\n        <ion-item>\n\n          <ion-avatar item-left>\n\n            <img src="{{club.img}}" *ngIf="club.img != \'\'" tappable (click)="setClubPhoto()" />\n\n            <img src="assets/img/club.png" *ngIf="club.img == \'\'" tappable (click)="setClubPhoto()" />\n\n          </ion-avatar>\n\n          <ion-input type="text" formControlName="name" placeholder="Name of Club"></ion-input>\n\n        </ion-item>\n\n        <ion-item no-lines>\n\n          <ion-label stacked>Description *</ion-label>\n\n          <ion-textarea rows="4" formControlName="description" placeholder="Describe this Club"></ion-textarea>\n\n        </ion-item>\n\n        <div *ngIf="clubMembers">\n\n          <ion-list-header>\n\n            Club Members ({{clubMembers.length}})\n\n          </ion-list-header>\n\n          \n\n          <ion-item  *ngFor="let member of clubMembers">\n\n            <ion-avatar item-left>\n\n              <img src="{{member.img}}"/>\n\n            </ion-avatar>\n\n            <h2>{{member.name}}</h2>\n\n            <ion-icon name="close-circle" item-right (click)="removeFromClub(member)"></ion-icon>\n\n          </ion-item>\n\n        </div>\n\n      </form>\n\n    </ion-list>\n\n\n\n    <ion-list-header>\n\n      Add New Members\n\n    </ion-list-header>\n\n    <div class="form">\n\n      <!-- No friends to create a group. -->\n\n      <div class="empty-list" *ngIf="friends && friends.length == 0">\n\n        <p style="color:gray">You have no friends right now to create a new club.</p>\n\n        <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n\n      </div>\n\n      <!-- Show friends to add/remove to group. -->\n\n      <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n        <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n        <ng-container *ngFor="let friend of friends | friendFilter:searchFriend">\n\n          <ion-item *ngIf="!inClub(friend)" no-lines tappable (click)="addOrRemoveFromClub(friend)">\n\n            <ion-fab middle right>\n\n              <button color="mainColor" ion-fab mini tappable (click)="addToClub(friend); $event.stopPropagation();" *ngIf="!inClub(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n\n              <button color="mainColor" ion-fab mini tappable (click)="removeFromClub(friend); $event.stopPropagation();" *ngIf="inClub(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n\n            </ion-fab>\n\n            <ion-avatar item-left>\n\n              <img src="{{friend.img}}">\n\n            </ion-avatar>\n\n            <h2>{{friend.name}}</h2>\n\n            <p>{{friend.email}}</p>\n\n          </ion-item>\n\n        </ng-container>\n\n      </ion-list>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-club\new-club.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -5513,30 +5199,25 @@ NewClubPage = __decorate([
 
 /***/ }),
 
-/***/ 483:
+/***/ 484:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubInfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_image_image__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__image_modal_image_modal__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__add_members_add_members__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__add_members_add_members__ = __webpack_require__(485);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__user_info_user_info__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_firebase__);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__admin_modal_admin_modal__ = __webpack_require__(1197);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__ = __webpack_require__(63);
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__admin_modal_admin_modal__ = __webpack_require__(255);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5678,10 +5359,6 @@ var ClubInfoPage = (function () {
             ],
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Save',
                     handler: function (data) {
                         var name = data["name"];
@@ -5708,6 +5385,10 @@ var ClubInfoPage = (function () {
                             });
                         }
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -5719,10 +5400,6 @@ var ClubInfoPage = (function () {
             title: 'Set Club Photo',
             message: 'Do you want to take a photo or choose from your photo gallery?',
             buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
                 {
                     text: 'Choose from Gallery',
                     handler: function () {
@@ -5778,6 +5455,10 @@ var ClubInfoPage = (function () {
                             });
                         });
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -5796,10 +5477,6 @@ var ClubInfoPage = (function () {
                 }
             ],
             buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
                 {
                     text: 'Save',
                     handler: function (data) {
@@ -5827,6 +5504,10 @@ var ClubInfoPage = (function () {
                             });
                         }
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -5838,9 +5519,6 @@ var ClubInfoPage = (function () {
             title: 'Confirm Leave',
             message: 'Are you sure you want to leave this club?',
             buttons: [
-                {
-                    text: 'Cancel'
-                },
                 {
                     text: 'Leave',
                     handler: function (data) {
@@ -5873,6 +5551,9 @@ var ClubInfoPage = (function () {
                             _this.alertProvider.showErrorMessage('club/error-leave-club');
                         });
                     }
+                },
+                {
+                    text: 'Cancel'
                 }
             ]
         }).present();
@@ -5923,7 +5604,8 @@ var ClubInfoPage = (function () {
                             _this.dataProvider.getClub(club.$key).remove();
                         });
                     }
-                }, {
+                },
+                {
                     text: 'Cancel'
                 }
             ]
@@ -5952,11 +5634,7 @@ var ClubInfoPage = (function () {
 }());
 ClubInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-        selector: 'page-club-info',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/club-info/club-info.html"*/'<!--\n  Generated template for the ClubInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title *ngIf="club">{{club.name}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- Club Info -->\n  <div *ngIf="club">\n    <ion-list>\n      <ion-list-header>\n        Club Info\n      </ion-list-header>\n      <ion-item no-lines>\n        <ion-avatar item-left>\n          <img src="{{club.img}}" tappable *ngIf="isAdmin()" (click)="setPhoto()"/>\n          <img src="{{club.img}}" tappable *ngIf="!(isAdmin())"/>\n        </ion-avatar>\n        <h2 tappable (click)="setName()" *ngIf="isAdmin()">{{club.name}}</h2>\n        <h2 tappable *ngIf="!(isAdmin())">{{club.name}}</h2>\n        <p>Started {{club.dateCreated | DateFormat}}</p>\n      </ion-item>\n      <ion-list-header>\n        About\n      </ion-list-header>\n      <ion-item no-lines *ngIf="isAdmin()">\n        <p class="description" tappable (click)="setDescription()">{{club.description}}</p>\n      </ion-item>\n      <ion-item no-lines *ngIf="!(isAdmin())">\n        <p class="description" tappable>{{club.description}}</p>\n      </ion-item>\n    </ion-list>\n    <ion-list *ngIf="clubMembers">\n      <ion-list-header>\n        Club Members ({{clubMembers.length}})\n      </ion-list-header>\n      <ion-item (click)="addMembers()">\n        <ion-icon name="add" item-left></ion-icon>\n        <h2>Add Members</h2>\n      </ion-item>\n      <ion-item *ngFor="let member of clubMembers" (click)="viewUser(member.$key)">\n        <ion-avatar item-left>\n          <img src="{{member.img}}" />\n        </ion-avatar>\n        <h2>{{member.name}}<span *ngIf="isUserAdmin(member.userId)">(Administrator)</span></h2>\n        <p>{{member.description}}</p>\n      </ion-item>\n    </ion-list>\n    <ion-list-header>\n        More\n    </ion-list-header>\n    <ion-list style="text-align: center;">  \n      <ion-item no-lines tappable (click)="adminClub()" *ngIf="isCreator()">\n        Manage Administration\n      </ion-item>\n      <ion-item no-lines tappable (click)="leaveClub()" *ngIf="clubMembers && clubMembers.length > 1">\n        Leave Club\n      </ion-item>\n      <!-- When there\'s only one member left, allow deleting of club. -->\n      <ion-item no-lines tappable (click)="deleteClub()" *ngIf="clubMembers && (clubMembers.length <= 1||isAdmin())">\n        Delete Club\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/club-info/club-info.html"*/
-=======
-        selector: 'page-club-info',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\club-info\club-info.html"*/'<!--\n\n  Generated template for the ClubInfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Club Info</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <!-- Club Info -->\n\n  <div *ngIf="club">\n\n    <ion-list>\n\n      <ion-list-header>\n\n        Club Info\n\n      </ion-list-header>\n\n      <ion-item no-lines>\n\n        <ion-avatar item-left>\n\n          <img src="{{club.img}}" tappable *ngIf="isAdmin()" (click)="setPhoto()"/>\n\n          <img src="{{club.img}}" tappable *ngIf="!(isAdmin())"/>\n\n        </ion-avatar>\n\n        <h2 tappable (click)="setName()" *ngIf="isAdmin()">{{club.name}}</h2>\n\n        <h2 tappable *ngIf="!(isAdmin())">{{club.name}}</h2>\n\n        <p>Started {{club.dateCreated | DateFormat}}</p>\n\n      </ion-item>\n\n      <ion-list-header>\n\n        About\n\n      </ion-list-header>\n\n      <ion-item no-lines *ngIf="isAdmin()">\n\n        <p class="description" tappable (click)="setDescription()">{{club.description}}</p>\n\n      </ion-item>\n\n      <ion-item no-lines *ngIf="!(isAdmin())">\n\n        <p class="description" tappable>{{club.description}}</p>\n\n      </ion-item>\n\n    </ion-list>\n\n    <ion-list *ngIf="clubMembers">\n\n      <ion-list-header>\n\n        Club Members ({{clubMembers.length}})\n\n      </ion-list-header>\n\n      <ion-item (click)="addMembers()">\n\n        <ion-icon name="add" item-left></ion-icon>\n\n        <h2>Add Members</h2>\n\n      </ion-item>\n\n      <ion-item *ngFor="let member of clubMembers" (click)="viewUser(member.$key)">\n\n        <ion-avatar item-left>\n\n          <img src="{{member.img}}" />\n\n        </ion-avatar>\n\n        <h2>{{member.name}}<span *ngIf="isAdmin()">(Administrator)</span></h2>\n\n        <p>{{member.description}}</p>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list style="text-align: center;">  \n\n      <ion-list-header>\n\n        More\n\n      </ion-list-header>\n\n      <ion-item no-lines tappable (click)="leaveClub()" *ngIf="clubMembers && clubMembers.length > 1">\n\n        Leave this club\n\n      </ion-item>\n\n      <!-- When there\'s only one member left, allow deleting of club. -->\n\n      <ion-item no-lines tappable (click)="deleteClub()" *ngIf="clubMembers && clubMembers.length <= 1">\n\n        Delete this club\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\club-info\club-info.html"*/
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
+        selector: 'page-club-info',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\club-info\club-info.html"*/'<!--\n\n  Generated template for the ClubInfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title *ngIf="club">{{club.name}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <!-- Club Info -->\n\n  <div *ngIf="club">\n\n    <ion-list>\n\n      <ion-list-header>\n\n        Club Info\n\n      </ion-list-header>\n\n      <ion-item no-lines>\n\n        <ion-avatar item-left>\n\n          <img src="{{club.img}}" tappable *ngIf="isAdmin()" (click)="setPhoto()"/>\n\n          <img src="{{club.img}}" tappable *ngIf="!(isAdmin())"/>\n\n        </ion-avatar>\n\n        <h2 tappable (click)="setName()" *ngIf="isAdmin()">{{club.name}}</h2>\n\n        <h2 tappable *ngIf="!(isAdmin())">{{club.name}}</h2>\n\n        <p>Started {{club.dateCreated | DateFormat}}</p>\n\n      </ion-item>\n\n      <ion-list-header>\n\n        About\n\n      </ion-list-header>\n\n      <ion-item no-lines *ngIf="isAdmin()">\n\n        <p class="description" tappable (click)="setDescription()">{{club.description}}</p>\n\n      </ion-item>\n\n      <ion-item no-lines *ngIf="!(isAdmin())">\n\n        <p class="description" tappable>{{club.description}}</p>\n\n      </ion-item>\n\n    </ion-list>\n\n    <ion-list *ngIf="clubMembers">\n\n      <ion-list-header>\n\n        Club Members ({{clubMembers.length}})\n\n      </ion-list-header>\n\n      <ion-item (click)="addMembers()">\n\n        <ion-icon name="add" item-left></ion-icon>\n\n        <h2>Add Members</h2>\n\n      </ion-item>\n\n      <ion-item *ngFor="let member of clubMembers" (click)="viewUser(member.$key)">\n\n        <ion-avatar item-left>\n\n          <img src="{{member.img}}" />\n\n        </ion-avatar>\n\n        <h2>{{member.name}}<span *ngIf="isUserAdmin(member.userId)">(Administrator)</span></h2>\n\n        <p>{{member.description}}</p>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list style="text-align: center;">  \n\n      <ion-list-header>\n\n        More\n\n      </ion-list-header>\n\n      <ion-item no-lines tappable (click)="adminClub()" *ngIf="isCreator()">\n\n        Manage Administration\n\n      </ion-item>\n\n      <ion-item no-lines tappable (click)="leaveClub()" *ngIf="clubMembers && clubMembers.length > 1">\n\n        Leave this club\n\n      </ion-item>\n\n      <!-- When there\'s only one member left, allow deleting of club. -->\n\n      <ion-item no-lines tappable (click)="deleteClub()" *ngIf="clubMembers && clubMembers.length <= 1">\n\n        Delete this club\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\club-info\club-info.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -5974,16 +5652,16 @@ ClubInfoPage = __decorate([
 
 /***/ }),
 
-/***/ 484:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddMembersPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6156,9 +5834,6 @@ var AddMembersPage = (function () {
             message: 'Are you sure you want to add <b>' + this.getNames() + '</b> to the club?',
             buttons: [
                 {
-                    text: 'Cancel'
-                },
-                {
                     text: 'Add',
                     handler: function (data) {
                         // Proceed
@@ -6189,6 +5864,9 @@ var AddMembersPage = (function () {
                             _this.navCtrl.pop();
                         });
                     }
+                },
+                {
+                    text: 'Cancel'
                 }
             ]
         }).present();
@@ -6199,25 +5877,30 @@ AddMembersPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-add-members',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\add-members\add-members.html"*/'<!--\n\n  Generated template for the AddMemberPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title>Add Members</ion-title>\n\n    <!-- Only enable button when user is adding atleast one member to the club -->\n\n    <ion-buttons end>\n\n      <button ion-button tappable (click)="done()" [disabled]="toAdd && toAdd.length < 1">Done</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- All friends already in the club. -->\n\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n\n    <p>Uh-oh! Sorry but all your friends are already in this club.</p>\n\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n\n  </div>\n\n  <!-- Add/Cancel Add friends to the club. -->\n\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" no-lines tappable (click)="addOrRemove(friend)">\n\n      <ion-fab middle right>\n\n        <button ion-fab mini tappable (click)="add(friend); $event.stopPropagation();" *ngIf="!isAdded(friend)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n\n        <button ion-fab mini tappable (click)="remove(friend); $event.stopPropagation();" *ngIf="isAdded(friend)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n\n      </ion-fab>\n\n      <ion-avatar item-left>\n\n        <img src="{{friend.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friend.name}}</h2>\n\n      <p>@{{friend.username}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\add-members\add-members.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
+        __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]])
 ], AddMembersPage);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=add-members.js.map
 
 /***/ }),
 
-/***/ 526:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewChatPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6299,7 +5982,7 @@ var NewChatPage = (function () {
 }());
 NewChatPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-new-chat',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-chat\new-chat.html"*/'<!--\n\n  Generated template for the NewChatPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>New Chat</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- No friends yet to start a conversation with -->\n\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n\n    <button ion-button block icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search for your friends here</button>\n\n  </div>\n\n  <!-- Show friends to start a conversation with -->\n\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" tappable (click)="message(friend.$key)">\n\n      <ion-avatar item-left>\n\n        <img src="{{friend.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friend.name}}</h2>\n\n      <p>@{{friend.username}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-chat\new-chat.html"*/
+        selector: 'page-new-chat',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-chat\new-chat.html"*/'<!--\n\n  Generated template for the NewChatPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n\n    </ion-buttons>\n\n    <ion-title>New Chat</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <p></p>\n\n  <!-- No friends yet to start a conversation with -->\n\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search for your friends here</button>\n\n  </div>\n\n  <!-- Show friends to start a conversation with -->\n\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n\n    <ion-item *ngFor="let friend of friends | friendFilter:searchFriend" tappable (click)="message(friend.$key)">\n\n      <ion-avatar item-left>\n\n        <img src="{{friend.img}}">\n\n      </ion-avatar>\n\n      <h2>{{friend.name}}</h2>\n\n      <p>@{{friend.username}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\new-chat\new-chat.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */],
         __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__["a" /* LoadingProvider */]])
@@ -6314,15 +5997,15 @@ NewChatPage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImageProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_media_capture__ = __webpack_require__(479);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_media_capture__ = __webpack_require__(480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(481);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6596,14 +6279,14 @@ ImageProvider = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserInfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_firebase_firebase__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__chat_chat__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__image_modal_image_modal__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6670,14 +6353,14 @@ var UserInfoPage = (function () {
             message: 'Do you want to accept <b>' + this.user.name + '</b> as your friend?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Accept',
                     handler: function () {
                         _this.firebaseProvider.acceptFriendRequest(_this.userId);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -6690,14 +6373,14 @@ var UserInfoPage = (function () {
             message: 'Do you want to reject <b>' + this.user.name + '</b> as your friend?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Reject',
                     handler: function () {
                         _this.firebaseProvider.deleteFriendRequest(_this.userId);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -6710,14 +6393,14 @@ var UserInfoPage = (function () {
             message: 'Do you want to delete your friend request to <b>' + this.user.name + '</b>?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Delete',
                     handler: function () {
                         _this.firebaseProvider.cancelFriendRequest(_this.userId);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -6730,14 +6413,14 @@ var UserInfoPage = (function () {
             message: 'Do you want to send friend request to <b>' + this.user.name + '</b>?',
             buttons: [
                 {
-                    text: 'Cancel',
-                    handler: function (data) { }
-                },
-                {
                     text: 'Send',
                     handler: function () {
                         _this.firebaseProvider.sendFriendRequest(_this.userId);
                     }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
                 }
             ]
         }).present();
@@ -6769,11 +6452,7 @@ var UserInfoPage = (function () {
 }());
 UserInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-        selector: 'page-user-info',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/user-info/user-info.html"*/'<!--\n  Generated template for the UserInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title *ngIf="user">{{user.name}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- User Info -->\n  <div *ngIf="user">\n    <div class="profile">\n      <img src="{{user.img}}" tappable (click)="enlargeImage(user.img)" />\n    </div>\n    <h4>\n      <span>{{user.name}} </span>\n      <ion-icon name="md-flame" *ngIf="user.provider == \'Firebase\'" class="firebase"></ion-icon>\n      <ion-icon name="logo-facebook" *ngIf="user.provider == \'Facebook\'" class="facebook"></ion-icon>\n      <ion-icon name="logo-google" *ngIf="user.provider == \'Google\'" class="google"></ion-icon>\n    </h4>\n    <p class="username">{{user.email}}</p>\n    <p class="description">{{user.description}}</p>\n    <div class="divider"></div>\n    <div class="center">\n      <!-- Show actions based on the status of the user in relation to the current logged in user. -->\n      <div *ngIf="friendRequests && friendRequests.indexOf(user.$key) > -1">\n        <p class="info">Sent you a friend request.</p>\n        <button ion-button icon-only class="danger" tappable (click)="rejectFriendRequest()"><ion-icon name="md-close"></ion-icon></button>\n        <button ion-button icon-only class="success" tappable (click)="acceptFriendRequest()"><ion-icon name="md-checkmark"></ion-icon></button>\n      </div>\n      <div *ngIf="requestsSent && requestsSent.indexOf(user.$key) > -1">\n        <p class="info">Friend request sent.</p>\n        <button ion-button class="dark" tappable (click)="cancelFriendRequest()">Cancel Friend Request</button>\n      </div>\n      <div *ngIf="canAdd()">\n        <p class="info">You are not yet friends.</p>\n        <button ion-button class="primary" tappable (click)="sendFriendRequest()">Send Friend Request</button>\n      </div>\n      <div *ngIf="friends && friends.indexOf(user.$key) > -1">\n        <p class="info">You are already friends.</p>\n        <button ion-button class="primary" tappable (click)="sendMessage()">Send Message</button>\n      </div>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/user-info/user-info.html"*/
-=======
-        selector: 'page-user-info',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\user-info\user-info.html"*/'<!--\n\n  Generated template for the UserInfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title *ngIf="user">{{user.name}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- User Info -->\n\n  <div *ngIf="user">\n\n    <div class="profile">\n\n      <img src="{{user.img}}" tappable (click)="enlargeImage(user.img)" />\n\n    </div>\n\n    <h4>\n\n      <span>{{user.name}} </span>\n\n      <ion-icon name="md-flame" *ngIf="user.provider == \'Firebase\'" class="firebase"></ion-icon>\n\n      <ion-icon name="logo-facebook" *ngIf="user.provider == \'Facebook\'" class="facebook"></ion-icon>\n\n      <ion-icon name="logo-google" *ngIf="user.provider == \'Google\'" class="google"></ion-icon>\n\n    </h4>\n\n    <p class="username">@{{user.username}}</p>\n\n    <p class="description">{{user.description}}</p>\n\n    <div class="divider"></div>\n\n    <div class="center">\n\n      <!-- Show actions based on the status of the user in relation to the current logged in user. -->\n\n      <div *ngIf="friendRequests && friendRequests.indexOf(user.$key) > -1">\n\n        <p class="info">Sent you a friend request.</p>\n\n        <button ion-button icon-only class="danger" tappable (click)="rejectFriendRequest()"><ion-icon name="md-close"></ion-icon></button>\n\n        <button ion-button icon-only class="success" tappable (click)="acceptFriendRequest()"><ion-icon name="md-checkmark"></ion-icon></button>\n\n      </div>\n\n      <div *ngIf="requestsSent && requestsSent.indexOf(user.$key) > -1">\n\n        <p class="info">Friend request sent.</p>\n\n        <button ion-button class="dark" tappable (click)="cancelFriendRequest()">Cancel Friend Request</button>\n\n      </div>\n\n      <div *ngIf="canAdd()">\n\n        <p class="info">You are not yet friends.</p>\n\n        <button ion-button class="primary" tappable (click)="sendFriendRequest()">Send Friend Request</button>\n\n      </div>\n\n      <div *ngIf="friends && friends.indexOf(user.$key) > -1">\n\n        <p class="info">You are already friends.</p>\n\n        <button ion-button class="primary" tappable (click)="sendMessage()">Send Message</button>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\user-info\user-info.html"*/
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
+        selector: 'page-user-info',template:/*ion-inline-start:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\user-info\user-info.html"*/'<!--\n\n  Generated template for the UserInfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-buttons>\n\n      <button ion-button tappable (click)="back()">Back</button>\n\n    </ion-buttons>\n\n    <ion-title *ngIf="user">{{user.name}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="content">\n\n  <!-- User Info -->\n\n  <div *ngIf="user">\n\n    <div class="profile">\n\n      <img src="{{user.img}}" tappable (click)="enlargeImage(user.img)" />\n\n    </div>\n\n    <h4 class="center">\n\n      <span class="userName">{{user.name}} </span>\n\n      <ion-icon name="md-flame" *ngIf="user.provider == \'Firebase\'" class="firebase"></ion-icon>\n\n      <ion-icon name="logo-facebook" *ngIf="user.provider == \'Facebook\'" class="facebook"></ion-icon>\n\n      <ion-icon name="logo-google" *ngIf="user.provider == \'Google\'" class="google"></ion-icon>\n\n    </h4>\n\n    <p class="userEmail">{{user.email}}</p>\n\n    <hr class="divider">\n\n    <p class="description">{{user.description}}</p>\n\n    <div class="divider"></div>\n\n    <hr class="divider">\n\n    <div class="center">\n\n      <!-- Show actions based on the status of the user in relation to the current logged in user. -->\n\n      <div *ngIf="friendRequests && friendRequests.indexOf(user.$key) > -1">\n\n        <p class="info">Sent you a friend request.</p>\n\n        <button ion-button icon-only class="danger" tappable (click)="rejectFriendRequest()"><ion-icon name="md-close"></ion-icon></button>\n\n        <button ion-button icon-only class="success" tappable (click)="acceptFriendRequest()"><ion-icon name="md-checkmark"></ion-icon></button>\n\n      </div>\n\n      <div *ngIf="requestsSent && requestsSent.indexOf(user.$key) > -1">\n\n        <p class="info">Friend request sent.</p>\n\n        <button ion-button class="dark" tappable (click)="cancelFriendRequest()">Cancel Friend Request</button>\n\n      </div>\n\n      <div *ngIf="canAdd()">\n\n        <p class="info">You are not yet friends.</p>\n\n        <button ion-button class="primary" tappable (click)="sendFriendRequest()">Send Friend Request</button>\n\n      </div>\n\n      <div *ngIf="friends && friends.indexOf(user.$key) > -1">\n\n        <p class="info">You are already friends.</p>\n\n        <button ion-button class="primary" tappable (click)="sendMessage()">Send Messages</button>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\YUE Baochuan\Desktop\Clandar-master\Clandar_0805\Clandar\src\pages\user-info\user-info.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -6788,13 +6467,13 @@ UserInfoPage = __decorate([
 
 /***/ }),
 
-/***/ 735:
+/***/ 736:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(736);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(737);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(741);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -6802,32 +6481,32 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 740:
+/***/ 741:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export firebaseConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_contacts__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(480);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_media_capture__ = __webpack_require__(479);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_calendar__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(568);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_cloud_angular__ = __webpack_require__(1086);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ionic2_calendar__ = __webpack_require__(1156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angularfire2__ = __webpack_require__(1167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_auth__ = __webpack_require__(1168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_component__ = __webpack_require__(1170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_testing_testing__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_media_capture__ = __webpack_require__(480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_calendar__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_cloud_angular__ = __webpack_require__(1087);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ionic2_calendar__ = __webpack_require__(1157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angularfire2__ = __webpack_require__(1168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2_auth__ = __webpack_require__(1169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__app_component__ = __webpack_require__(1171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_testing_testing__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_login_login__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_register_register__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_tasks_tasks__ = __webpack_require__(157);
@@ -6836,60 +6515,39 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_settings_settings__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_tdlist_tdlist__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_tabs_tabs__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_verify_verify__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_conversation_conversation__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_new_chat_new_chat__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_verify_verify__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_conversation_conversation__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_new_chat_new_chat__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_chat_chat__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_information_information__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_contacts_contacts__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_search_search__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_requests_requests__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_requests_requests__ = __webpack_require__(482);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_user_info_user_info__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_image_modal_image_modal__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_new_club_new_club__ = __webpack_require__(482);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_clubs_clubs__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_new_club_new_club__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_clubs_clubs__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_club_club__ = __webpack_require__(208);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_club_info_club_info__ = __webpack_require__(484);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_add_members_add_members__ = __webpack_require__(1195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_admin_modal_admin_modal__ = __webpack_require__(1197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_add_members_add_members__ = __webpack_require__(485);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_admin_modal_admin_modal__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_doodle_doodle__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pipes_friend__ = __webpack_require__(1171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pipes_search__ = __webpack_require__(1172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pipes_conversation__ = __webpack_require__(1173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pipes_date__ = __webpack_require__(1174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pipes_club__ = __webpack_require__(1175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pipes_member__ = __webpack_require__(1198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__providers_alert_alert__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pipes_friend__ = __webpack_require__(1172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pipes_search__ = __webpack_require__(1173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pipes_conversation__ = __webpack_require__(1174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pipes_date__ = __webpack_require__(1175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pipes_club__ = __webpack_require__(1176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pipes_member__ = __webpack_require__(1177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__providers_alert_alert__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__providers_auth_service_auth_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__providers_loading_loading__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__providers_auth_service_logout__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_55_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_firebase__ = __webpack_require__(734);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_data_data__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_image_image__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_firebase__ = __webpack_require__(735);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_image_image__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__providers_firebase_firebase__ = __webpack_require__(134);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_club_info_club_info__ = __webpack_require__(483);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_add_members_add_members__ = __webpack_require__(484);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_doodle_doodle__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pipes_friend__ = __webpack_require__(1171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pipes_search__ = __webpack_require__(1172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pipes_conversation__ = __webpack_require__(1173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pipes_date__ = __webpack_require__(1174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pipes_club__ = __webpack_require__(1175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__providers_alert_alert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__providers_auth_service_auth_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__providers_loading_loading__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__providers_auth_service_logout__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53_firebase__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_53_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_firebase__ = __webpack_require__(734);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__providers_firebase_firebase__ = __webpack_require__(134);
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7026,6 +6684,7 @@ AppModule = __decorate([
                     { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/admin-modal/admin-modal.module#AdminModalPageModule', name: 'AdminModalPage', segment: 'admin-modal', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/clubs/clubs.module#ClubsPageModule', name: 'ClubsPage', segment: 'clubs', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/searcher/searcher.module#SearcherModule', name: 'Searcher', segment: 'searcher', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/tasks/tasks.module#TasksModule', name: 'Tasks', segment: 'tasks', priority: 'low', defaultHistory: [] },
@@ -7035,13 +6694,7 @@ AppModule = __decorate([
                     { loadChildren: '../pages/verify/verify.module#VerifyPageModule', name: 'VerifyPage', segment: 'verify', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/doodle/doodle.module#DoodleModule', name: 'Doodle', segment: 'doodle', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/testing/testing.module#TestingModule', name: 'Testing', segment: 'testing', priority: 'low', defaultHistory: [] },
-<<<<<<< HEAD
-                    { loadChildren: '../pages/event-modal/event-modal.module#EventModalPageModule', name: 'EventModalPage', segment: 'event-modal', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/add-members/add-member.module#AddMemberPageModule', name: 'AddMemberPage', segment: 'add-member', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/admin-modal/admin-modal.module#AdminModalPageModule', name: 'AdminModalPage', segment: 'admin-modal', priority: 'low', defaultHistory: [] }
-=======
                     { loadChildren: '../pages/event-modal/event-modal.module#EventModalPageModule', name: 'EventModalPage', segment: 'event-modal', priority: 'low', defaultHistory: [] }
->>>>>>> 8a0ffac559accfec7c17540f63a09f18dc4baaa7
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_13__ionic_cloud_angular__["a" /* CloudModule */].forRoot(cloudSettings),
@@ -7108,240 +6761,240 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 818:
+/***/ 819:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 354,
-	"./af.js": 354,
-	"./ar": 355,
-	"./ar-dz": 356,
-	"./ar-dz.js": 356,
-	"./ar-kw": 357,
-	"./ar-kw.js": 357,
-	"./ar-ly": 358,
-	"./ar-ly.js": 358,
-	"./ar-ma": 359,
-	"./ar-ma.js": 359,
-	"./ar-sa": 360,
-	"./ar-sa.js": 360,
-	"./ar-tn": 361,
-	"./ar-tn.js": 361,
-	"./ar.js": 355,
-	"./az": 362,
-	"./az.js": 362,
-	"./be": 363,
-	"./be.js": 363,
-	"./bg": 364,
-	"./bg.js": 364,
-	"./bn": 365,
-	"./bn.js": 365,
-	"./bo": 366,
-	"./bo.js": 366,
-	"./br": 367,
-	"./br.js": 367,
-	"./bs": 368,
-	"./bs.js": 368,
-	"./ca": 369,
-	"./ca.js": 369,
-	"./cs": 370,
-	"./cs.js": 370,
-	"./cv": 371,
-	"./cv.js": 371,
-	"./cy": 372,
-	"./cy.js": 372,
-	"./da": 373,
-	"./da.js": 373,
-	"./de": 374,
-	"./de-at": 375,
-	"./de-at.js": 375,
-	"./de-ch": 376,
-	"./de-ch.js": 376,
-	"./de.js": 374,
-	"./dv": 377,
-	"./dv.js": 377,
-	"./el": 378,
-	"./el.js": 378,
-	"./en-au": 379,
-	"./en-au.js": 379,
-	"./en-ca": 380,
-	"./en-ca.js": 380,
-	"./en-gb": 381,
-	"./en-gb.js": 381,
-	"./en-ie": 382,
-	"./en-ie.js": 382,
-	"./en-nz": 383,
-	"./en-nz.js": 383,
-	"./eo": 384,
-	"./eo.js": 384,
-	"./es": 385,
-	"./es-do": 386,
-	"./es-do.js": 386,
-	"./es.js": 385,
-	"./et": 387,
-	"./et.js": 387,
-	"./eu": 388,
-	"./eu.js": 388,
-	"./fa": 389,
-	"./fa.js": 389,
-	"./fi": 390,
-	"./fi.js": 390,
-	"./fo": 391,
-	"./fo.js": 391,
-	"./fr": 392,
-	"./fr-ca": 393,
-	"./fr-ca.js": 393,
-	"./fr-ch": 394,
-	"./fr-ch.js": 394,
-	"./fr.js": 392,
-	"./fy": 395,
-	"./fy.js": 395,
-	"./gd": 396,
-	"./gd.js": 396,
-	"./gl": 397,
-	"./gl.js": 397,
-	"./gom-latn": 398,
-	"./gom-latn.js": 398,
-	"./he": 399,
-	"./he.js": 399,
-	"./hi": 400,
-	"./hi.js": 400,
-	"./hr": 401,
-	"./hr.js": 401,
-	"./hu": 402,
-	"./hu.js": 402,
-	"./hy-am": 403,
-	"./hy-am.js": 403,
-	"./id": 404,
-	"./id.js": 404,
-	"./is": 405,
-	"./is.js": 405,
-	"./it": 406,
-	"./it.js": 406,
-	"./ja": 407,
-	"./ja.js": 407,
-	"./jv": 408,
-	"./jv.js": 408,
-	"./ka": 409,
-	"./ka.js": 409,
-	"./kk": 410,
-	"./kk.js": 410,
-	"./km": 411,
-	"./km.js": 411,
-	"./kn": 412,
-	"./kn.js": 412,
-	"./ko": 413,
-	"./ko.js": 413,
-	"./ky": 414,
-	"./ky.js": 414,
-	"./lb": 415,
-	"./lb.js": 415,
-	"./lo": 416,
-	"./lo.js": 416,
-	"./lt": 417,
-	"./lt.js": 417,
-	"./lv": 418,
-	"./lv.js": 418,
-	"./me": 419,
-	"./me.js": 419,
-	"./mi": 420,
-	"./mi.js": 420,
-	"./mk": 421,
-	"./mk.js": 421,
-	"./ml": 422,
-	"./ml.js": 422,
-	"./mr": 423,
-	"./mr.js": 423,
-	"./ms": 424,
-	"./ms-my": 425,
-	"./ms-my.js": 425,
-	"./ms.js": 424,
-	"./my": 426,
-	"./my.js": 426,
-	"./nb": 427,
-	"./nb.js": 427,
-	"./ne": 428,
-	"./ne.js": 428,
-	"./nl": 429,
-	"./nl-be": 430,
-	"./nl-be.js": 430,
-	"./nl.js": 429,
-	"./nn": 431,
-	"./nn.js": 431,
-	"./pa-in": 432,
-	"./pa-in.js": 432,
-	"./pl": 433,
-	"./pl.js": 433,
-	"./pt": 434,
-	"./pt-br": 435,
-	"./pt-br.js": 435,
-	"./pt.js": 434,
-	"./ro": 436,
-	"./ro.js": 436,
-	"./ru": 437,
-	"./ru.js": 437,
-	"./sd": 438,
-	"./sd.js": 438,
-	"./se": 439,
-	"./se.js": 439,
-	"./si": 440,
-	"./si.js": 440,
-	"./sk": 441,
-	"./sk.js": 441,
-	"./sl": 442,
-	"./sl.js": 442,
-	"./sq": 443,
-	"./sq.js": 443,
-	"./sr": 444,
-	"./sr-cyrl": 445,
-	"./sr-cyrl.js": 445,
-	"./sr.js": 444,
-	"./ss": 446,
-	"./ss.js": 446,
-	"./sv": 447,
-	"./sv.js": 447,
-	"./sw": 448,
-	"./sw.js": 448,
-	"./ta": 449,
-	"./ta.js": 449,
-	"./te": 450,
-	"./te.js": 450,
-	"./tet": 451,
-	"./tet.js": 451,
-	"./th": 452,
-	"./th.js": 452,
-	"./tl-ph": 453,
-	"./tl-ph.js": 453,
-	"./tlh": 454,
-	"./tlh.js": 454,
-	"./tr": 455,
-	"./tr.js": 455,
-	"./tzl": 456,
-	"./tzl.js": 456,
-	"./tzm": 457,
-	"./tzm-latn": 458,
-	"./tzm-latn.js": 458,
-	"./tzm.js": 457,
-	"./uk": 459,
-	"./uk.js": 459,
-	"./ur": 460,
-	"./ur.js": 460,
-	"./uz": 461,
-	"./uz-latn": 462,
-	"./uz-latn.js": 462,
-	"./uz.js": 461,
-	"./vi": 463,
-	"./vi.js": 463,
-	"./x-pseudo": 464,
-	"./x-pseudo.js": 464,
-	"./yo": 465,
-	"./yo.js": 465,
-	"./zh-cn": 466,
-	"./zh-cn.js": 466,
-	"./zh-hk": 467,
-	"./zh-hk.js": 467,
-	"./zh-tw": 468,
-	"./zh-tw.js": 468
+	"./af": 355,
+	"./af.js": 355,
+	"./ar": 356,
+	"./ar-dz": 357,
+	"./ar-dz.js": 357,
+	"./ar-kw": 358,
+	"./ar-kw.js": 358,
+	"./ar-ly": 359,
+	"./ar-ly.js": 359,
+	"./ar-ma": 360,
+	"./ar-ma.js": 360,
+	"./ar-sa": 361,
+	"./ar-sa.js": 361,
+	"./ar-tn": 362,
+	"./ar-tn.js": 362,
+	"./ar.js": 356,
+	"./az": 363,
+	"./az.js": 363,
+	"./be": 364,
+	"./be.js": 364,
+	"./bg": 365,
+	"./bg.js": 365,
+	"./bn": 366,
+	"./bn.js": 366,
+	"./bo": 367,
+	"./bo.js": 367,
+	"./br": 368,
+	"./br.js": 368,
+	"./bs": 369,
+	"./bs.js": 369,
+	"./ca": 370,
+	"./ca.js": 370,
+	"./cs": 371,
+	"./cs.js": 371,
+	"./cv": 372,
+	"./cv.js": 372,
+	"./cy": 373,
+	"./cy.js": 373,
+	"./da": 374,
+	"./da.js": 374,
+	"./de": 375,
+	"./de-at": 376,
+	"./de-at.js": 376,
+	"./de-ch": 377,
+	"./de-ch.js": 377,
+	"./de.js": 375,
+	"./dv": 378,
+	"./dv.js": 378,
+	"./el": 379,
+	"./el.js": 379,
+	"./en-au": 380,
+	"./en-au.js": 380,
+	"./en-ca": 381,
+	"./en-ca.js": 381,
+	"./en-gb": 382,
+	"./en-gb.js": 382,
+	"./en-ie": 383,
+	"./en-ie.js": 383,
+	"./en-nz": 384,
+	"./en-nz.js": 384,
+	"./eo": 385,
+	"./eo.js": 385,
+	"./es": 386,
+	"./es-do": 387,
+	"./es-do.js": 387,
+	"./es.js": 386,
+	"./et": 388,
+	"./et.js": 388,
+	"./eu": 389,
+	"./eu.js": 389,
+	"./fa": 390,
+	"./fa.js": 390,
+	"./fi": 391,
+	"./fi.js": 391,
+	"./fo": 392,
+	"./fo.js": 392,
+	"./fr": 393,
+	"./fr-ca": 394,
+	"./fr-ca.js": 394,
+	"./fr-ch": 395,
+	"./fr-ch.js": 395,
+	"./fr.js": 393,
+	"./fy": 396,
+	"./fy.js": 396,
+	"./gd": 397,
+	"./gd.js": 397,
+	"./gl": 398,
+	"./gl.js": 398,
+	"./gom-latn": 399,
+	"./gom-latn.js": 399,
+	"./he": 400,
+	"./he.js": 400,
+	"./hi": 401,
+	"./hi.js": 401,
+	"./hr": 402,
+	"./hr.js": 402,
+	"./hu": 403,
+	"./hu.js": 403,
+	"./hy-am": 404,
+	"./hy-am.js": 404,
+	"./id": 405,
+	"./id.js": 405,
+	"./is": 406,
+	"./is.js": 406,
+	"./it": 407,
+	"./it.js": 407,
+	"./ja": 408,
+	"./ja.js": 408,
+	"./jv": 409,
+	"./jv.js": 409,
+	"./ka": 410,
+	"./ka.js": 410,
+	"./kk": 411,
+	"./kk.js": 411,
+	"./km": 412,
+	"./km.js": 412,
+	"./kn": 413,
+	"./kn.js": 413,
+	"./ko": 414,
+	"./ko.js": 414,
+	"./ky": 415,
+	"./ky.js": 415,
+	"./lb": 416,
+	"./lb.js": 416,
+	"./lo": 417,
+	"./lo.js": 417,
+	"./lt": 418,
+	"./lt.js": 418,
+	"./lv": 419,
+	"./lv.js": 419,
+	"./me": 420,
+	"./me.js": 420,
+	"./mi": 421,
+	"./mi.js": 421,
+	"./mk": 422,
+	"./mk.js": 422,
+	"./ml": 423,
+	"./ml.js": 423,
+	"./mr": 424,
+	"./mr.js": 424,
+	"./ms": 425,
+	"./ms-my": 426,
+	"./ms-my.js": 426,
+	"./ms.js": 425,
+	"./my": 427,
+	"./my.js": 427,
+	"./nb": 428,
+	"./nb.js": 428,
+	"./ne": 429,
+	"./ne.js": 429,
+	"./nl": 430,
+	"./nl-be": 431,
+	"./nl-be.js": 431,
+	"./nl.js": 430,
+	"./nn": 432,
+	"./nn.js": 432,
+	"./pa-in": 433,
+	"./pa-in.js": 433,
+	"./pl": 434,
+	"./pl.js": 434,
+	"./pt": 435,
+	"./pt-br": 436,
+	"./pt-br.js": 436,
+	"./pt.js": 435,
+	"./ro": 437,
+	"./ro.js": 437,
+	"./ru": 438,
+	"./ru.js": 438,
+	"./sd": 439,
+	"./sd.js": 439,
+	"./se": 440,
+	"./se.js": 440,
+	"./si": 441,
+	"./si.js": 441,
+	"./sk": 442,
+	"./sk.js": 442,
+	"./sl": 443,
+	"./sl.js": 443,
+	"./sq": 444,
+	"./sq.js": 444,
+	"./sr": 445,
+	"./sr-cyrl": 446,
+	"./sr-cyrl.js": 446,
+	"./sr.js": 445,
+	"./ss": 447,
+	"./ss.js": 447,
+	"./sv": 448,
+	"./sv.js": 448,
+	"./sw": 449,
+	"./sw.js": 449,
+	"./ta": 450,
+	"./ta.js": 450,
+	"./te": 451,
+	"./te.js": 451,
+	"./tet": 452,
+	"./tet.js": 452,
+	"./th": 453,
+	"./th.js": 453,
+	"./tl-ph": 454,
+	"./tl-ph.js": 454,
+	"./tlh": 455,
+	"./tlh.js": 455,
+	"./tr": 456,
+	"./tr.js": 456,
+	"./tzl": 457,
+	"./tzl.js": 457,
+	"./tzm": 458,
+	"./tzm-latn": 459,
+	"./tzm-latn.js": 459,
+	"./tzm.js": 458,
+	"./uk": 460,
+	"./uk.js": 460,
+	"./ur": 461,
+	"./ur.js": 461,
+	"./uz": 462,
+	"./uz-latn": 463,
+	"./uz-latn.js": 463,
+	"./uz.js": 462,
+	"./vi": 464,
+	"./vi.js": 464,
+	"./x-pseudo": 465,
+	"./x-pseudo.js": 465,
+	"./yo": 466,
+	"./yo.js": 466,
+	"./zh-cn": 467,
+	"./zh-cn.js": 467,
+	"./zh-hk": 468,
+	"./zh-hk.js": 468,
+	"./zh-tw": 469,
+	"./zh-tw.js": 469
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -7357,7 +7010,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 818;
+webpackContext.id = 819;
 
 /***/ }),
 
@@ -7419,13 +7072,13 @@ var Validator;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_image_image__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__user_info_user_info__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__image_modal_image_modal__ = __webpack_require__(104);
@@ -7741,19 +7394,21 @@ var ChatPage = ChatPage_1 = (function () {
                             var confirm = _this.alertCtrl.create({
                                 title: 'Your Location',
                                 message: locationMessage,
-                                buttons: [{
-                                        text: 'cancel',
-                                        handler: function () {
-                                            console.log("canceled");
-                                        }
-                                    }, {
+                                buttons: [
+                                    {
                                         text: 'Share',
                                         handler: function () {
                                             console.log("share");
                                             _this.message = locationMessage;
                                             _this.send();
                                         }
-                                    }]
+                                    }, {
+                                        text: 'cancel',
+                                        handler: function () {
+                                            console.log("canceled");
+                                        }
+                                    }
+                                ]
                             });
                             confirm.present();
                         }, function (locationErr) {
@@ -7912,5 +7567,5 @@ var ChatPage_1;
 
 /***/ })
 
-},[735]);
+},[736]);
 //# sourceMappingURL=main.js.map

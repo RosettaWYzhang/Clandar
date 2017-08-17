@@ -27687,12 +27687,39 @@ page-club-info .content {
   background: RGB(249, 250, 255);
 }
 
+page-clubs ion-header .back {
+  color: #51CFB1;
+}
+
+page-clubs ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
 page-clubs .content hr {
   margin-top: -20px;
   height: 4px;
   background-color: lightgray;
   border-radius: 2px;
   width: 92vw;
+}
+
+page-contacts ion-header .back {
+  color: #51CFB1;
+}
+
+page-contacts ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+page-contacts .content .empty-list {
+  text-align: center;
+  font-size: 18px;
+}
+
+page-contacts .content .empty-list .button {
+  background-color: #51CFB1;
 }
 
 page-conversation {
@@ -27846,8 +27873,32 @@ page-new-chat ion-header ion-icon {
   margin-right: 5px;
 }
 
-page-new-chat button {
-  text-aligh: center;
+page-new-chat .content .empty-list {
+  text-align: center;
+  font-size: 18px;
+}
+
+page-new-chat .content .empty-list .button {
+  background-color: #51CFB1;
+}
+
+page-new-club ion-header .back {
+  color: #51CFB1;
+}
+
+page-new-club ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+page-new-club .content .empty-list {
+  margin: 0 10px 0 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+page-new-club .content .empty-list .button {
+  background-color: #51CFB1;
 }
 
 page-register {
@@ -27880,12 +27931,34 @@ page-register .reg-content .reg-box {
   padding: 20px 16px 20px 16px;
 }
 
+page-requests ion-header .back {
+  color: #51CFB1;
+}
+
+page-requests ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
 page-requests .content .empty-list {
   text-align: center;
 }
 
+page-search ion-header .back {
+  color: #51CFB1;
+}
+
+page-search ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
 page-searcher {
   font-family: Tahoma,Helvetica,sans-serif;
+}
+
+page-searcher .content .empty-list {
+  text-align: center;
 }
 
 page-searcher .content .segment {
@@ -27984,6 +28057,49 @@ page-tdlist .content .head {
 page-tdlist .content .head span {
   font-size: 17px;
   color: RGB(170, 170, 170);
+}
+
+page-user-info .content .profile {
+  text-align: center;
+}
+
+page-user-info .content .profile img {
+  width: 50vw;
+}
+
+page-user-info .content .center {
+  text-align: center;
+}
+
+page-user-info .content .center .button {
+  font-size: 1.2em;
+  border-radius: 25px;
+  background-color: #51CFB1;
+}
+
+page-user-info .content .userName {
+  font-size: 1.2em;
+}
+
+page-user-info .content .userEmail {
+  text-align: center;
+  color: gray;
+}
+
+page-user-info .content .description {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+page-user-info .content .info {
+  color: gray;
+  font-size: 0.9em;
+}
+
+page-user-info .content .divider {
+  width: 90vw;
+  height: 1px;
 }
 
 page-verify {

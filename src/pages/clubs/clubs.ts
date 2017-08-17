@@ -134,5 +134,9 @@ export class ClubsPage {
     });  
     this.alertProvider.showClubJoinedMessage();  
   }
+  // Back
+  back() {
+    this.navCtrl.pop();
+  }
 
 }

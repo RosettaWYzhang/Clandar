@@ -7,7 +7,7 @@
 <ion-header>
   <ion-navbar hideBackButton="true">
     <ion-buttons>
-      <button ion-button tappable (click)="back()">Back</button>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
     </ion-buttons>
     <ion-title>Friend Requests</ion-title>
   </ion-navbar>
@@ -23,7 +23,7 @@
   <ion-list class="avatar-list" *ngIf="friendRequests && friendRequests.length > 0">
     <ion-item *ngFor="let friendRequest of friendRequests" no-lines tappable (click)="viewUser(friendRequest.$key)">
       <ion-fab middle right>
-        <button ion-fab mini tappable (click)="acceptFriendRequest(friendRequest); $event.stopPropagation();">
+        <button color="mainColor" ion-fab mini tappable (click)="acceptFriendRequest(friendRequest); $event.stopPropagation();">
           <ion-icon name="md-checkmark-circle" class="success"></ion-icon>
         </button>
       </ion-fab>
@@ -38,7 +38,7 @@
   <ion-list class="avatar-list" *ngIf="requestsSent && requestsSent.length > 0">
     <ion-item *ngFor="let requestSent of requestsSent" no-lines tappable (click)="viewUser(requestSent.$key)">
       <ion-fab middle right>
-        <button ion-fab mini tappable (click)="cancelFriendRequest(requestSent); $event.stopPropagation();">
+        <button color="mainColor" ion-fab mini tappable (click)="cancelFriendRequest(requestSent); $event.stopPropagation();">
           <ion-icon name="md-close-circle" class="danger"></ion-icon>
         </button>
       </ion-fab>

@@ -12,10 +12,11 @@
     <ion-title>New Chat</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="content">
+  <p></p>
   <!-- No friends yet to start a conversation with -->
   <div class="empty-list" *ngIf="friends && friends.length == 0">
-    <button ion-button block icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search for your friends here</button>
+    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search for your friends here</button>
   </div>
   <!-- Show friends to start a conversation with -->
   <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">

@@ -91,4 +91,9 @@ export class ContactsPage {
     this.app.getRootNav().push(ChatPage, { userId: userId });
   }
 
+  // Back
+  back() {
+    this.navCtrl.pop();
+  }
+
 }

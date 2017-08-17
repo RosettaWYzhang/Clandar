@@ -6,7 +6,10 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
+    </ion-buttons>
     <ion-title>Clubs</ion-title>
   </ion-navbar>
 

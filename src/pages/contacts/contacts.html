@@ -5,13 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
+    </ion-buttons>
     <ion-title>Friends</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only tappable (click)="manageRequests()"><ion-icon name="md-filing"></ion-icon><ion-badge color="danger" *ngIf="friendRequests">{{friendRequests.length}}</ion-badge></button>
+      <button class="back" ion-button icon-only tappable (click)="manageRequests()"><ion-icon name="md-filing"></ion-icon><ion-badge color="danger" *ngIf="friendRequests">{{friendRequests.length}}</ion-badge></button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon></button>
+      <button class="back" ion-button icon-only tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -19,7 +22,7 @@
   <!-- No friends to show -->
   <div class="empty-list" *ngIf="friends && friends.length == 0">
     <h1><ion-icon name="contacts"></ion-icon></h1>
-    <p>You don't have new friends yet</p>
+    <p style="color:gray">You don't have new friends yet</p>
     <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="search"></ion-icon>Search People</button>
   </div>
   <!-- Show list of friends -->

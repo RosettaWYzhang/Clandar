@@ -12,21 +12,23 @@
     <ion-title *ngIf="user">{{user.name}}</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="content">
   <!-- User Info -->
   <div *ngIf="user">
     <div class="profile">
       <img src="{{user.img}}" tappable (click)="enlargeImage(user.img)" />
     </div>
-    <h4>
-      <span>{{user.name}} </span>
+    <h4 class="center">
+      <span class="userName">{{user.name}} </span>
       <ion-icon name="md-flame" *ngIf="user.provider == 'Firebase'" class="firebase"></ion-icon>
       <ion-icon name="logo-facebook" *ngIf="user.provider == 'Facebook'" class="facebook"></ion-icon>
       <ion-icon name="logo-google" *ngIf="user.provider == 'Google'" class="google"></ion-icon>
     </h4>
-    <p class="username">{{user.email}}</p>
+    <p class="userEmail">{{user.email}}</p>
+    <hr class="divider">
     <p class="description">{{user.description}}</p>
     <div class="divider"></div>
+    <hr class="divider">
     <div class="center">
       <!-- Show actions based on the status of the user in relation to the current logged in user. -->
       <div *ngIf="friendRequests && friendRequests.indexOf(user.$key) > -1">
@@ -44,7 +46,7 @@
       </div>
       <div *ngIf="friends && friends.indexOf(user.$key) > -1">
         <p class="info">You are already friends.</p>
-        <button ion-button class="primary" tappable (click)="sendMessage()">Send Message</button>
+        <button ion-button class="primary" tappable (click)="sendMessage()">Send Messages</button>
       </div>
     </div>
   </div>
