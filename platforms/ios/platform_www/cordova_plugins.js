@@ -433,6 +433,20 @@ module.exports = [
         "clobbers": [
             "Calendar"
         ]
+    },
+    {
+        "file": "plugins/es6-promise-plugin/www/promise.js",
+        "id": "es6-promise-plugin.Promise",
+        "pluginId": "es6-promise-plugin",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -451,7 +465,9 @@ module.exports.metadata =
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-media-capture": "1.4.3",
-    "cordova-plugin-calendar": "4.6.0"
+    "cordova-plugin-calendar": "4.6.0",
+    "es6-promise-plugin": "4.1.0",
+    "cordova-plugin-x-socialsharing": "5.1.8"
 }
 // BOTTOM OF METADATA
 });

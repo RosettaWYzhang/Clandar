@@ -64,8 +64,8 @@
     <ion-list-header>
       Invite Club Members
     </ion-list-header>
-    <ion-item *ngFor="let member of members">
-      <ng-container *ngIf="member.userId != this.uid">
+    <ng-container *ngIf="member.userId != this.uid">
+      <ion-item *ngFor="let member of members">
         <ion-fab middle right>
           <button color="mainColor" ion-fab mini tappable (click)="invite(member); $event.stopPropagation();" *ngIf="getStatus(member.userId,this.eventId)==0"><ion-icon name="md-add-circle" class="success"></ion-icon></button>
           <button color="mainColor" ion-fab mini tappable (click)="removeFromInvitation(member); $event.stopPropagation();" *ngIf="getStatus(member.userId,this.eventId)==1"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>
@@ -74,9 +74,9 @@
           <img src="{{member.img}}">
         </ion-avatar>
         <h2>{{member.name}}</h2>
-        <p>{{member.email}}</p>
-      </ng-container>
-    </ion-item>
+        <p>{{member.email}}</p>  
+      </ion-item>
+    </ng-container>
   </ion-list>
 
   <ion-row>

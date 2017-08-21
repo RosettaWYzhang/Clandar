@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { MemberPipe } from './../pipes/member';
+import { EventPipe } from './../pipes/event/event';
 @NgModule({
-	declarations: [MemberPipe],
+	declarations: [MemberPipe,
+    EventPipe],
 	imports: [],
-	exports: [MemberPipe]
+	exports: [MemberPipe,
+    EventPipe]
 })
 export class PipesModule {}

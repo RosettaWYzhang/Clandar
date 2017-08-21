@@ -26,6 +26,8 @@ export class CalendarPage{
     private event2: any;
     private eventsToShow;
     private events: FirebaseListObservable<any>;
+    private joinedEvents:any;
+    private joinedEventIds: any;
     private tasks: FirebaseListObservable<any>;
     private email: any;
     private uid: any;
@@ -49,6 +51,7 @@ export class CalendarPage{
                 private ionicCalendar: Calendar) { 
         this.uid = firebase.auth().currentUser.uid;
         this.email = firebase.auth().currentUser.email;
+
         this.events = afDB.list('/events',{
           query:{
             orderByChild: 'organizer',
@@ -62,7 +65,6 @@ export class CalendarPage{
           }
         });
     }
-
     ionViewDidLoad() {
         console.log(this.email);
         console.log("calendarPage");
@@ -100,8 +102,29 @@ export class CalendarPage{
    }
 
    loadEvents(){
-        this.eventsToShow = [];
+        this.eventsToShow = []; 
         this.eventSource = [];
+        this.afDB.list('/accounts/'+this.uid+'/events').subscribe((eventIds) => {
+            var eids = eventIds;
+            if(eventIds){
+                for (let eventId of eventIds){
+                    console.log(eventId);
+                    this.dataProvider.getEventByEID(eventId.$value).subscribe((event)=>{
+                        this.eventsToShow.push({
+                            "startTime": new Date(event.startTime),
+                            "endTime": new Date(event.endTime),
+                            "title": event.title,
+                            "note": event.note,
+                            "urgency": event.urgency,
+                            "location": event.location,
+                            "members": event.members,
+                            "organizer": event.organizer,
+                            "eid": event.$key
+                        });
+                    });
+                }
+            }
+        });
         console.log(this.events);
         this.events.subscribe((events)=>{
             events.forEach((event) => {
@@ -229,12 +252,12 @@ export class CalendarPage{
                         this.addEvent();
                         console.log('New Event Added');
                     }
-                    },{
+                    }/*,{
                     text: 'View My Timeline',
                     handler: () =>{
                         console.log('Timeline displayed');
                     }
-                    },{
+                    }*/,{
                     text: 'Cancel',
                     role: 'cancel',
                     handler: () => {

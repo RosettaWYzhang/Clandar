@@ -15,6 +15,7 @@ import { Camera } from '@ionic-native/camera';
 import { Contacts } from '@ionic-native/contacts';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Geolocation } from '@ionic-native/geolocation';
+import { EventInfoPage } from "../event-info/event-info";
 
 /**
  * Generated class for the Searcher page.
@@ -33,6 +34,11 @@ export class Searcher {
   private clubs:any;
   private updateDateTime: any;
   private searchClub: any;
+  private searchEvent:any;
+  private events: any;
+  private organizedEvents: any;
+  private allEvents: any;
+  private uid:any;
   constructor(public navCtrl: NavController, 
               public platform: Platform,
               public navParams: NavParams,
@@ -42,10 +48,12 @@ export class Searcher {
               public afDB: AngularFireDatabase,
               public app: App) {
     this.isAndroid = platform.is('android');
+    this.uid = firebase.auth().currentUser.uid;
   }
 
   ionViewDidLoad() {
     this.searchClub = "";
+    this.searchEvent = "";
     console.log('ionViewDidLoad Searcher');
     this.dataProvider.getClubs().subscribe((clubIds) => {
       console.log(clubIds);
@@ -83,6 +91,52 @@ export class Searcher {
         }
       }, 60000);
     }    
+    this.dataProvider.getUser(this.uid).subscribe((user)=>{
+      if (user.events){
+      var eids = user.events;
+      for (var i=0;i<eids.length;i++){
+        this.dataProvider.getEventByEID(eids[i]).subscribe((event) => {
+          this.events.push(event);
+        });
+      }}
+    });
+    this.afDB.list('/events', {
+      query: {
+        orderByChild: 'organizer',
+        equalTo: this.uid
+      }
+    }).subscribe((events) => {
+      this.organizedEvents = events;
+    });
+    this.afDB.list('/events').subscribe((events) => {
+      this.allEvents = events;
+    });
+  }
+
+  getStatus(event){
+    //0: organizer 1: participater 2: can join
+    if (event.organizer === this.uid){
+      return 0;
+    }
+    else if (this.joinedEvent(event)) {
+      return 1;
+    }
+    else return 2;
+  }
+
+  joinedEvent(event){
+    if(event.members){
+      for (var i=0;i<event.members.length;i++){
+        if (event.members[i].$key == this.uid){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  viewEvent(eventId){
+    this.navCtrl.push(EventInfoPage, { eventId: eventId });
   }
 
   addOrUpdateClub(club){

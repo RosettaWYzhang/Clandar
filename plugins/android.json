@@ -42,6 +42,9 @@
         },
         "cordova-plugin-calendar": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     },
     "dependent_plugins": {
@@ -49,6 +52,9 @@
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "es6-promise-plugin": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     }

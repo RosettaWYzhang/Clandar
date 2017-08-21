@@ -54,6 +54,7 @@ import { ConversationPipe } from '../pipes/conversation';
 import { DateFormatPipe } from '../pipes/date';
 import { ClubPipe } from '../pipes/club';
 import { MemberPipe } from '../pipes/member';
+import { EventPipe } from '../pipes/event';
  
 import { AlertProvider } from "../providers/alert/alert";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
@@ -121,6 +122,7 @@ firebase.initializeApp(firebaseConfig);
     DateFormatPipe,
     ClubPipe,
     MemberPipe,
+    EventPipe,
     Doodle
   ],
   imports: [

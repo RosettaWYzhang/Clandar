@@ -35,6 +35,7 @@ const errorMessages = {
   passwordsDoNotMatch: { title: 'Change Password Failed!', subTitle: 'Sorry, but the passwords you entered do not match.' },
   updateProfile: { title: 'Update Profile Failed', subTitle: 'Sorry, but we\'ve encountered an error updating your profile.' },
   usernameExists: { title: 'Username Already Exists!', subTitle: 'Sorry, but this username is already taken by another user.' },
+  eventUpdate: { title: 'Update Event Failed!', subTitle: 'Sorry, but we\'ve encountered an error updating this event.' },
   // Image Error Messages
   imageUpload: { title: 'Image Upload Failed!', subTitle: 'Sorry but we\'ve encountered an error uploading selected image.' },
   // Club Error Messages
@@ -54,6 +55,7 @@ const successMessages = {
   friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
   eventRequestSent: {title: 'Event Request Sent!', subTitle: 'Event request has been successfully sent!'},
   eventRequestRemoved: { title: 'Event Request Deleted!', subTitle: 'Your event request has been successfully deleted.' },
+  eventUpdated: { title: 'Event Updated!', subTitle: 'This event has been successfully updated!' }, 
   clubJoined: { title: 'Club Joined!', subTitle: 'You have successfully joined the club!' },
   clubUpdated: { title: 'Club Updated!', subTitle: 'This club has been successfully updated!' },
   clubLeft: { title: 'Leave Club', subTitle: 'You have successfully left this club.' }
@@ -173,6 +175,15 @@ export class AlertProvider {
       subTitle: successMessages.eventRequestRemoved["subTitle"],
       buttons: ['OK']
     }).present();    
+  }
+
+  // Show event updated.
+  showEventUpdatedMessage() {
+    this.alert = this.alertCtrl.create({
+      title: successMessages.eventUpdated["title"],
+      subTitle: successMessages.eventUpdated["subTitle"],
+      buttons: ['OK']
+    }).present();
   }
 
   // Show club updated.
@@ -367,6 +378,13 @@ export class AlertProvider {
           buttons: ['OK']
         }).present();
         break;
+      case 'event/error-update-event':
+        this.alert = this.alertCtrl.create({
+          title: errorMessages.eventUpdate["title"],
+          subTitle: errorMessages.eventUpdate["subTitle"],
+          buttons: ['OK']
+        }).present();
+        break;        
       // Club Error MEssages
       case 'club/error-update-club':
         this.alert = this.alertCtrl.create({

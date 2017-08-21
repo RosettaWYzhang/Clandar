@@ -74,7 +74,7 @@ export class ClubsPage {
     if (this.isMember(club)){
       note = 'You are already a member of the club';}
     else {
-      note = 'Welcome to join our club';}
+      note = 'Slide left and join our club!';}
     let name = club.name;
     let description = club.description;
     

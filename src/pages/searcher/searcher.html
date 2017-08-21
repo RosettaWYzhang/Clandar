@@ -57,35 +57,40 @@
     </div>
 
     <div no-border  *ngSwitchCase="'event'">
-      
-      <ion-item>
-        Dialogue with leaders in Social Media
-      </ion-item>
-
-      <ion-item>
-        SMU Open House 2015
-      </ion-item>
-
-      <ion-item>
-        YIC final presentation invitation
-      </ion-item>
-
-      <ion-item>
-        SPF career talk
-      </ion-item>   
-
-      <ion-item>
-        Sea game volunteers
-      </ion-item>  
-
-      <ion-item>
-        Social Media Internship
-      </ion-item>
-
-      <ion-item>
-        Business Development Intern
-      </ion-item> 
-
+      <ion-list *ngIf="organizedEvents">
+        <ion-list-header>
+          Organized By Me
+        </ion-list-header>
+        <ng-container *ngFor="let event of organizedEvents">
+          <ion-item (click)="viewEvent(event.$key)" tappable>
+            <h2>{{event.title}}</h2>
+            <p>{{event.startTime}} -- {{event.endTime}}</p>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+      <ion-list *ngIf="events">
+        <ion-list-header>
+          Participated Events
+        </ion-list-header>
+        <ng-container *ngFor="let event of Events">
+          <ion-item (click)="viewEvent(event.$key)" tappable>
+            <h2>{{event.title}}</h2>
+            <p>{{event.startTime}} -- {{event.endTime}}</p>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+      <ion-list *ngIf="allEvents">
+        <ion-list-header>
+          Event Square
+        </ion-list-header>
+        <ion-searchbar [(ngModel)]="searchEvent" placeholder="Search for events" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+        <ng-container *ngFor="let event of allEvents | eventFilter:searchEvent">
+          <ion-item (click)="viewEvent(event.$key)" tappable>
+            <h2>{{event.title}} <span *ngIf="getStatus(event)==0">(Organized By Me)</span><span *ngIf="getStatus(event)==1">(Participated)</span></h2>
+            <p>{{event.startTime}} -- {{event.endTime}}</p>
+          </ion-item>
+        </ng-container>
+      </ion-list>
     </div>
   </div>
 </ion-content>

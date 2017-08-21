@@ -59,6 +59,10 @@
                         {
                             "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -80,7 +84,7 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 3
+                            "count": 4
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
@@ -106,6 +110,10 @@
                         },
                         {
                             "xml": "<service android:name=\"com.gae.scaffolder.plugin.MyFirebaseInstanceIDService\"><intent-filter><action android:name=\"com.google.firebase.INSTANCE_ID_EVENT\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
                             "count": 1
                         }
                     ],
@@ -170,6 +178,12 @@
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         },
         "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     },
@@ -582,6 +596,20 @@
             "clobbers": [
                 "Calendar"
             ]
+        },
+        {
+            "id": "es6-promise-plugin.Promise",
+            "file": "plugins/es6-promise-plugin/www/promise.js",
+            "pluginId": "es6-promise-plugin",
+            "runs": true
+        },
+        {
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "pluginId": "cordova-plugin-x-socialsharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -598,6 +626,8 @@
         "cordova-plugin-camera": "2.4.1",
         "cordova-plugin-file": "4.3.3",
         "cordova-plugin-media-capture": "1.4.3",
-        "cordova-plugin-calendar": "4.6.0"
+        "cordova-plugin-calendar": "4.6.0",
+        "es6-promise-plugin": "4.1.0",
+        "cordova-plugin-x-socialsharing": "5.1.8"
     }
 }

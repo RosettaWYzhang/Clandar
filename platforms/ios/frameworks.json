@@ -9,5 +9,7 @@
     "CoreLocation.framework": 1,
     "AVFoundation.framework": 1,
     "EventKit.framework": 1,
-    "EventKitUI.framework": 1
+    "EventKitUI.framework": 1,
+    "Social.framework": 1,
+    "MessageUI.framework": 1
 }

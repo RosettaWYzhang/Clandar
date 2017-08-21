@@ -205,6 +205,28 @@ var CalendarPage = (function () {
         var _this = this;
         this.eventsToShow = [];
         this.eventSource = [];
+        this.afDB.list('/accounts/' + this.uid + '/events').subscribe(function (eventIds) {
+            var eids = eventIds;
+            if (eventIds) {
+                for (var _i = 0, eventIds_1 = eventIds; _i < eventIds_1.length; _i++) {
+                    var eventId = eventIds_1[_i];
+                    console.log(eventId);
+                    _this.dataProvider.getEventByEID(eventId.$value).subscribe(function (event) {
+                        _this.eventsToShow.push({
+                            "startTime": new Date(event.startTime),
+                            "endTime": new Date(event.endTime),
+                            "title": event.title,
+                            "note": event.note,
+                            "urgency": event.urgency,
+                            "location": event.location,
+                            "members": event.members,
+                            "organizer": event.organizer,
+                            "eid": event.$key
+                        });
+                    });
+                }
+            }
+        });
         console.log(this.events);
         this.events.subscribe(function (events) {
             events.forEach(function (event) {
@@ -327,12 +349,13 @@ var CalendarPage = (function () {
                             _this.addEvent();
                             console.log('New Event Added');
                         }
-                    }, {
-                        text: 'View My Timeline',
-                        handler: function () {
-                            console.log('Timeline displayed');
-                        }
-                    }, {
+                    } /*,{
+                    text: 'View My Timeline',
+                    handler: () =>{
+                        console.log('Timeline displayed');
+                    }
+                    }*/,
+                    {
                         text: 'Cancel',
                         role: 'cancel',
                         handler: function () {
@@ -416,15 +439,7 @@ CalendarPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-calendar',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/calendar/calendar.html"*/'<!-- source: http://www.codeexpertz.com/blog/mobile/ionic-2-calendar -->\n\n<ion-header>\n    <ion-navbar>\n        <ion-title>{{viewTitle}}</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="more()">\n                <ion-icon name="more"></ion-icon>\n            </button>\n            <!--<button ion-button (click)="loadEvents()" style="font-size:16px">Load Events</button>-->\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content class="has-header">\n\n    <ion-buttons class="bottom-buttons">\n        <button ion-button (click)="changeMode(\'month\')">M</button>\n        <button ion-button (click)="changeMode(\'week\')">W</button>\n        <button ion-button (click)="changeMode(\'day\')">D</button>\n        <button ion-button [disabled]="isToday" (click)="today()">Today</button>\n    </ion-buttons>\n\n    <calendar [eventSource]="eventSource"\n              [calendarMode]="calendar.mode"\n              [currentDate]="calendar.currentDate"\n              (onCurrentDateChanged)="onCurrentDateChanged($event)"\n              (onEventSelected)="onEventSelected($event)"\n              (onTitleChanged)="onViewTitleChanged($event)"\n              (onTimeSelected)="onTimeSelected($event)"\n              [weekviewNormalEventTemplate]="weekEvents"\n              [monthviewEventDetailTemplate]="monthEventDetail"\n              step="15">\n    </calendar>\n\n    <ng-template #monthEventDetail let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">\n      <ion-list class="event-detail-container" has-bouncing="false" *ngIf="showEventDetail" overflow-scroll="false">\n        <ion-item *ngFor="let event of selectedDate?.events" (click)="eventSelected(event)">\n          <span *ngIf="isSameDay(event.startTime,event.endTime)&&(!event.allDay)" class="monthview-eventdetail-timecolumn">{{event.startTime|date: \'HH:mm\'}} - {{event.endTime|date: \'HH:mm\'}}</span>\n          <span *ngIf="this.isSameDay(this.selectedDay,event.startTime)&&!isSameDay(event.startTime,event.endTime)" class="monthview-eventdetail-timecolumn">{{event.startTime|date: \'HH:mm\'}} - 24:00</span>\n          <span *ngIf="this.isSameDay(this.selectedDay,event.endTime)&&!isSameDay(event.startTime,event.endTime)" class="monthview-eventdetail-timecolumn">00:00 - {{event.endTime|date: \'HH:mm\'}}</span>\n          <span *ngIf="this.dateInRange(this.selectedDay,event.startTime,event.endTime)||event.allDay" class="monthview-eventdetail-timecolumn">All day</span>\n          <span class="event-detail"> | {{event.title}}</span>\n        </ion-item>\n        <ion-item *ngIf="selectedDate?.events.length==0">\n          <div class="no-events-label">{{noEventsLabel}}</div>\n        </ion-item>\n      </ion-list>\n    </ng-template>\n    \n    <ng-template #weekEvents let-displayEvent="displayEvent">\n      <div class="calendar-event-inner"       \n      [style.top]="(37*displayEvent.startOffset/hourParts)+\'px\'"\n      [style.left]="100/displayEvent.overlapNumber*displayEvent.position+\'%\'"\n      [style.width]="100+\'%\'"\n      [style.height]="37*(displayEvent.endIndex - displayEvent.startIndex) - 4 + \'px\'">\n        {{displayEvent.event.title}}\n      </div>\n    </ng-template>\n    \n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/calendar/calendar.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* PopoverController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
-        __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__["a" /* Calendar */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* PopoverController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* PopoverController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__["a" /* Calendar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__["a" /* Calendar */]) === "function" && _j || Object])
 ], CalendarPage);
 
 var PopPage = (function () {
@@ -440,6 +455,7 @@ PopPage = __decorate([
     __metadata("design:paramtypes", [])
 ], PopPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 //# sourceMappingURL=calendar.js.map
 
 /***/ }),
@@ -1135,10 +1151,14 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__["a" /* Firebase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__["a" /* Firebase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+        __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_7__ionic_native_firebase__["a" /* Firebase */],
+        __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */]])
 ], MyApp);
 
-var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -1559,10 +1579,16 @@ RequestModalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-request-modal',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/request-modal/request-modal.html"*/'<!--\n  Generated template for the RequestsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n    </ion-buttons>\n    <ion-title>Event Requests</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- No event requests sent or received. -->\n  <div class="empty-list" *ngIf="(eventRequests && eventRequests.length == 0)">\n    <h1><ion-icon name="md-filing"></ion-icon></h1>\n    <p style="color:gray">No New Invitations</p>\n    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>\n  </div>\n  <!-- Show event requests received. -->\n  <ion-list class="avatar-list" *ngIf="eventRequests && eventRequests.length > 0">\n    <ion-item *ngFor="let eventRequest of eventRequests" no-lines tappable (click)="viewEvent(eventRequest.$key)">\n      <ion-fab middle right>\n        <button color="mainColor" ion-fab mini tappable (click)="acceptEventRequest(eventRequest); $event.stopPropagation();">\n          <ion-icon name="md-checkmark-circle" class="success"></ion-icon>\n        </button>\n      </ion-fab>\n      <ion-avatar item-left>\n        <img src="https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/invite.jpg?alt=media&token=d916e762-3d05-4beb-b74c-fa293c5f7f99">\n      </ion-avatar>\n      <h2>{{eventRequest.title}}</h2>\n      <p>has sent you a event request.</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/request-modal/request-modal.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__["a" /* FirebaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__["a" /* FirebaseProvider */]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */],
+        __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__["a" /* LoadingProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__["a" /* FirebaseProvider */]])
 ], RequestModalPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=request-modal.js.map
 
 /***/ }),
@@ -1574,6 +1600,16 @@ var _a, _b, _c, _d, _e, _f, _g, _h;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventInfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_image_image__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__user_info_user_info__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__club_info_club_info__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_firebase_firebase__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1585,6 +1621,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
+
+
+
+
 /**
  * Generated class for the EventInfoPage page.
  *
@@ -1592,23 +1637,488 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var EventInfoPage = (function () {
-    function EventInfoPage(navCtrl, navParams) {
+    // ClubInfoPage
+    // This is the page where the user can view club information, change club information, add members, and leave/delete club.
+    function EventInfoPage(navCtrl, navParams, dataProvider, loadingProvider, modalCtrl, alertCtrl, alertProvider, firebaseProvider, angularfire, imageProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.dataProvider = dataProvider;
+        this.loadingProvider = loadingProvider;
+        this.modalCtrl = modalCtrl;
+        this.alertCtrl = alertCtrl;
+        this.alertProvider = alertProvider;
+        this.firebaseProvider = firebaseProvider;
+        this.angularfire = angularfire;
+        this.imageProvider = imageProvider;
+        this.event = '';
     }
     EventInfoPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.eventId = this.navParams.get('eventId');
+        this.uid = __WEBPACK_IMPORTED_MODULE_9_firebase__["auth"]().currentUser.uid;
+        this.subscription = this.dataProvider.getEventByEID(this.eventId).subscribe(function (event) {
+            if (event.$exists()) {
+                _this.loadingProvider.load();
+                _this.event = event;
+                _this.clubId = event.club;
+                if (event.organizer) {
+                    var organizerId = event.organizer;
+                    _this.dataProvider.getUser(organizerId).subscribe(function (organizer) {
+                        _this.organizer = organizer;
+                    });
+                }
+                if (event.members) {
+                    event.members.forEach(function (memberId) {
+                        _this.dataProvider.getUser(memberId).subscribe(function (member) {
+                            _this.addUpdateOrRemoveMember(member);
+                        });
+                    });
+                }
+                _this.loadingProvider.dismiss();
+            }
+            else {
+                _this.navCtrl.popToRoot();
+            }
+        });
+        this.dataProvider.getCurrentUser().subscribe(function (user) {
+            _this.user = user;
+        });
+        this.dataProvider.getClub(this.clubId).subscribe(function (club) {
+            _this.club = club;
+            _this.clubMembers = [];
+            var clubMembersIds = club.members;
+            if (clubMembersIds) {
+                for (var i = 0; i < clubMembersIds.length; i++) {
+                    _this.dataProvider.getUser(clubMembersIds[i]).subscribe(function (user) {
+                        _this.clubMembers.push(user);
+                    });
+                }
+            }
+        });
+        this.dataProvider.getEventRequests(this.eventId).subscribe(function (request) {
+            _this.eventRequestsSent = request.eventRequestsSent;
+        });
         console.log('ionViewDidLoad EventInfoPage');
+    };
+    EventInfoPage.prototype.isOrganizer = function () {
+        if (this.uid == this.organizer.$key) {
+            return true;
+        }
+        else
+            return false;
+    };
+    EventInfoPage.prototype.back = function () {
+        this.subscription.unsubscribe();
+        this.navCtrl.pop();
+    };
+    EventInfoPage.prototype.setName = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Change Event Name',
+            message: "Please enter a new club name.",
+            inputs: [
+                {
+                    name: 'name',
+                    placeholder: 'Event Name',
+                    value: this.event.title
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        var name = data["name"];
+                        if (_this.event.title != name) {
+                            _this.loadingProvider.load();
+                            // Update event on database.
+                            _this.dataProvider.getEventByEID(_this.eventId).update({
+                                title: name,
+                            }).then(function (success) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showEventUpdatedMessage();
+                            }).catch(function (error) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showErrorMessage('club/error-update-club');
+                            });
+                        }
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.setTime = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Change Event Time',
+            message: "Please enter a new start time and end time.",
+            inputs: [
+                {
+                    name: 'startTime',
+                    placeholder: 'New Start Time',
+                    type: 'date',
+                    value: this.event.startTime
+                },
+                {
+                    name: 'endTime',
+                    placeholder: 'New End Time',
+                    type: 'date',
+                    value: this.event.endTime
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        var startTime = data["startTime"];
+                        var endTime = data["endTime"];
+                        if (_this.event.startTime != startTime || _this.event.endTime != endTime) {
+                            _this.loadingProvider.load();
+                            // Update event on database.
+                            _this.dataProvider.getEventByEID(_this.eventId).update({
+                                startTime: startTime,
+                                endTime: endTime
+                            }).then(function (success) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showEventUpdatedMessage();
+                            }).catch(function (error) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showErrorMessage('club/error-update-club');
+                            });
+                        }
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.setLocation = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Change Event Location',
+            message: "Please enter a new event location.",
+            inputs: [
+                {
+                    name: 'location',
+                    placeholder: 'Event Location',
+                    value: this.event.location
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        var location = data["location"];
+                        if (_this.event.location != location) {
+                            _this.loadingProvider.load();
+                            // Update event on database.
+                            _this.dataProvider.getEventByEID(_this.eventId).update({
+                                location: location,
+                            }).then(function (success) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showEventUpdatedMessage();
+                            }).catch(function (error) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showErrorMessage('club/error-update-club');
+                            });
+                        }
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.setNote = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Change Event Note',
+            message: "Please enter a new event note.",
+            inputs: [
+                {
+                    name: 'note',
+                    placeholder: 'Event Note',
+                    value: this.event.note
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        var note = data["note"];
+                        if (_this.event.note != note) {
+                            _this.loadingProvider.load();
+                            // Update event on database.
+                            _this.dataProvider.getEventByEID(_this.eventId).update({
+                                note: note,
+                            }).then(function (success) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showEventUpdatedMessage();
+                            }).catch(function (error) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showErrorMessage('club/error-update-club');
+                            });
+                        }
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.setUrgency = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Change Event Urgenvy',
+            message: "Please enter a new event urgency(From 1 to 4).",
+            inputs: [
+                {
+                    name: 'urgency',
+                    placeholder: 'Event Urgency',
+                    value: this.event.urgency
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        var urgency = data["urgency"];
+                        if (_this.event.urgency != urgency && (_this.event.urgency == 1 || _this.event.urgency == 2 || _this.event.urgency == 3 || _this.event.urgency == 4)) {
+                            _this.loadingProvider.load();
+                            // Update event on database.
+                            _this.dataProvider.getEventByEID(_this.eventId).update({
+                                urgency: urgency,
+                            }).then(function (success) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showEventUpdatedMessage();
+                            }).catch(function (error) {
+                                _this.loadingProvider.dismiss();
+                                _this.alertProvider.showErrorMessage('club/error-update-club');
+                            });
+                        }
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    // Check if user exists in the club then add/update user.
+    // If the user has already left the club, remove user from the list.
+    EventInfoPage.prototype.addUpdateOrRemoveMember = function (member) {
+        if (this.event) {
+            if (this.event.members.indexOf(member.$key) > -1) {
+                // User exists in the club.
+                if (!this.members) {
+                    this.members = [member];
+                }
+                else {
+                    var index = -1;
+                    for (var i = 0; i < this.members.length; i++) {
+                        if (this.members[i].$key == member.$key) {
+                            index = i;
+                        }
+                    }
+                    // Add/Update User.
+                    if (index > -1) {
+                        this.members[index] = member;
+                    }
+                    else {
+                        this.members.push(member);
+                    }
+                }
+            }
+            else {
+                // User already left the club, remove member from list.
+                var ind = -1;
+                for (var j = 0; j < this.members.length; j++) {
+                    if (this.members[j].$key == member.$key) {
+                        ind = j;
+                    }
+                }
+                if (ind > -1) {
+                    this.members.splice(ind, 1);
+                }
+            }
+        }
+    };
+    EventInfoPage.prototype.viewUser = function (userId) {
+        if (__WEBPACK_IMPORTED_MODULE_9_firebase__["auth"]().currentUser.uid != userId)
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__user_info_user_info__["a" /* UserInfoPage */], { userId: userId });
+    };
+    EventInfoPage.prototype.viewOrganizer = function (userId) {
+        if (__WEBPACK_IMPORTED_MODULE_9_firebase__["auth"]().currentUser.uid != userId) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__user_info_user_info__["a" /* UserInfoPage */], { userId: userId });
+        }
+    };
+    EventInfoPage.prototype.viewClub = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__club_info_club_info__["a" /* ClubInfoPage */], { clubId: this.clubId });
+    };
+    EventInfoPage.prototype.inviteStatus = function (memberId, eventId) {
+        var _this = this;
+        // 0 when user can be invited.
+        // 1 when an invitation has already been sent to this user.
+        this.dataProvider.getEventRequests(eventId).subscribe(function (requests) {
+            _this.eventRequestsSent = requests.eventRequestsSent;
+        });
+        if (this.eventRequestsSent) {
+            for (var i = 0; i < this.eventRequestsSent.length; i++) {
+                if (this.eventRequestsSent[i] == memberId) {
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    };
+    // Send friend request.
+    EventInfoPage.prototype.invite = function (member) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Send Event Invitations',
+            message: 'Do you want to send event invitations to selected club members?',
+            buttons: [
+                {
+                    text: 'Send',
+                    handler: function () {
+                        _this.firebaseProvider.sendEventRequest(member.$key, _this.eventId);
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.removeFromInvitation = function (member) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Event Request Pending',
+            message: 'Do you want to delete your event invitation to <b>' + member.name + '</b>?',
+            buttons: [
+                {
+                    text: 'Delete',
+                    handler: function () {
+                        _this.firebaseProvider.cancelEventRequest(member.$key, _this.eventId);
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function (data) { }
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.delete = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Confirm Delete',
+            message: 'Are you sure you want to delete this event?',
+            buttons: [
+                {
+                    text: 'Delete',
+                    handler: function (data) {
+                        var itemObservable = _this.angularfire.object('/events/' + _this.eventId);
+                        itemObservable.remove();
+                        console.log(_this.club);
+                        console.log(_this.eventId);
+                        var eventsUpdated;
+                        _this.dataProvider.getClub(_this.clubId).subscribe(function (club) {
+                            eventsUpdated = club.events;
+                        });
+                        eventsUpdated.splice(eventsUpdated.indexOf(_this.eventId), 1);
+                        _this.dataProvider.getClub(_this.clubId).update({
+                            events: eventsUpdated
+                        });
+                        _this.angularfire.object('/requests/' + _this.eventId).remove();
+                    }
+                },
+                {
+                    text: 'Cancel'
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.join = function () {
+        this.alert = this.alertCtrl.create({
+            title: 'Ask to Join the Event',
+            message: 'Please contact the organizer for event invitation',
+            buttons: [
+                {
+                    text: 'OK'
+                }
+            ]
+        }).present();
+    };
+    EventInfoPage.prototype.joinedEvent = function () {
+        if (this.members) {
+            for (var i = 0; i < this.members.length; i++) {
+                if (this.members[i].$key == this.uid) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+    EventInfoPage.prototype.quit = function () {
+        var _this = this;
+        this.alert = this.alertCtrl.create({
+            title: 'Confirm Quit',
+            message: 'Are you sure you want to quit this event?',
+            buttons: [
+                {
+                    text: 'Quit',
+                    handler: function (data) {
+                        _this.loadingProvider.load();
+                        // Remove member from club.
+                        _this.members.splice(_this.members.indexOf(_this.user.$key), 1);
+                        // Update club on database.
+                        _this.dataProvider.getEventByEID(_this.eventId).update({
+                            members: _this.members
+                        }).then(function (success) {
+                            // Remove club from user's club list.
+                            var eventsUpdated;
+                            _this.dataProvider.getUser(_this.uid).subscribe(function (user) {
+                                eventsUpdated = user.events;
+                            });
+                            eventsUpdated.splice(eventsUpdated.indexOf(_this.eventId), 1);
+                            _this.dataProvider.getUser(_this.uid).update({
+                                events: eventsUpdated
+                            });
+                        }).catch(function (error) {
+                            _this.alertProvider.showErrorMessage('club/error-leave-club');
+                        });
+                    }
+                },
+                {
+                    text: 'Cancel'
+                }
+            ]
+        }).present();
     };
     return EventInfoPage;
 }());
 EventInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-event-info',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/event-info/event-info.html"*/'<!--\n  Generated template for the EventInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>event-info</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/event-info/event-info.html"*/,
+        selector: 'page-event-info',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/event-info/event-info.html"*/'<!--\n  Generated template for the EventInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button ion-button tappable (click)="back()">Back</button>\n    </ion-buttons>\n    <ion-title *ngIf="event">{{event.title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="content">\n  <!-- Event Info -->\n  <div *ngIf="event">\n    <ion-list>\n      <ion-list-header>\n        Event Info\n      </ion-list-header>\n      <ion-item no-lines>\n        <ion-avatar item-left>\n          <img src="https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/E.png?alt=media&token=edea099a-74a6-4a5b-8c83-559ae0e6c9b2"/>\n        </ion-avatar>\n        <h2 tappable (click)="setName()" *ngIf="isOrganizer()">{{event.title}}</h2>\n        <h2 tappable *ngIf="!(isOrganizer())">{{event.title}}</h2>\n        <p tappable (click)="setTime()">Time: {{event.startTime}} -- {{event.endTime}}</p>\n      </ion-item>\n      <ion-list-header>\n        Details\n      </ion-list-header>\n      <ion-item no-lines *ngIf="isOrganizer()">\n        <p class="location" tappable (click)="setLocation()">Location:  {{event.location}}</p>\n      </ion-item>\n      <ion-item no-lines *ngIf="!(isOrganizer())">\n        <p class="location" tappable>Location:  {{event.location}}</p>\n      </ion-item>\n      <ion-item no-lines *ngIf="isOrganizer()">\n        <p class="note" tappable (click)="setNote()">Note:  {{event.note}}</p>\n      </ion-item>\n      <ion-item no-lines *ngIf="!(isOrganizer())">\n        <p class="note" tappable>Note:  {{event.note}}</p>\n      </ion-item>     \n      <ion-item no-lines *ngIf="isOrganizer()">\n        <p class="urgency" tappable (click)="setUrgency()">Urgency: {{event.urgency}}</p>\n      </ion-item>\n      <ion-item no-lines *ngIf="!(isOrganizer())">\n        <p class="urgency" tappable>Urgency:  {{event.urgency}}</p>\n      </ion-item>       \n    </ion-list>\n    <ion-list>\n      <ion-list-header>\n        Event Members <span *ngIf="event.members&&eventRequestsSent">({{event.members.length}}/{{eventRequestsSent.length}})</span>\n      </ion-list-header>\n      <ion-item *ngFor="let member of members" (click)="viewUser(member.$key)">\n        <ion-avatar item-left>\n          <img src="{{member.img}}" />\n        </ion-avatar>\n        <h2>{{member.name}}</h2>\n        <p>{{member.email}}</p>\n      </ion-item>\n    </ion-list>\n\n    <ion-list>\n      <ion-list-header>\n        Club Members\n      </ion-list-header>\n      <ng-container *ngFor="let member of clubMembers">\n        <ion-item *ngIf="!joinedEvent()" (click)="viewUser(member.$key)">\n          <ion-fab middle right>\n            <button color="mainColor" ion-fab mini tappable (click)="invite(member); $event.stopPropagation();" *ngIf="inviteStatus(member.userId,this.eventId)==0"><ion-icon name="md-add-circle" class="success"></ion-icon></button>\n            <button color="mainColor" ion-fab mini tappable (click)="removeFromInvitation(member); $event.stopPropagation();" *ngIf="inviteStatus(member.userId,this.eventId)==1"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>\n          </ion-fab>\n          <ion-avatar item-left>\n            <img src="{{member.img}}" />\n          </ion-avatar>\n          <h2>{{member.name}}</h2>\n          <p>{{member.email}}</p>\n        </ion-item>\n      </ng-container>\n    </ion-list>\n\n    <ion-list>  \n      <ion-list-header>\n        Organizer Info\n      </ion-list-header>\n      <ion-item (click)="viewOrganizer(organizer.$key)" tappable>\n        <ion-avatar item-start>\n          <img src="{{organizer.img}}" />\n        </ion-avatar>\n        <h2>{{organizer.name}}</h2>\n      </ion-item>      \n      <ion-item (click)="viewClub()" tappable>\n        <ion-avatar item-start>\n          <img src="{{club.img}}" />\n        </ion-avatar>\n        <h2>{{club.name}}</h2>\n        <p>{{club.date | DateFormat}}</p>\n      </ion-item>\n    </ion-list>    \n\n    <ion-list>  \n      <ion-list-header>\n        More\n      </ion-list-header>\n      <ion-item no-lines tappable *ngIf="isOrganizer()" (click)="delete()">\n        Delete this event\n      </ion-item>\n      <!-- When there\'s only one member left, allow deleting of club. -->\n      <ion-item no-lines tappable *ngIf="!isOrganizer()&&joinedEvent()" (click)="quit()">\n        Quit this event\n      </ion-item>\n      <ion-item no-lines tappable *ngIf="!joinedEvent()&&!isOrganizer()" (click)="join()">\n        Ask to join this event\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/event-info/event-info.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_8__providers_firebase_firebase__["a" /* FirebaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_firebase_firebase__["a" /* FirebaseProvider */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_image_image__["a" /* ImageProvider */]) === "function" && _k || Object])
 ], EventInfoPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=event-info.js.map
 
 /***/ }),
@@ -2033,7 +2543,7 @@ var SettingsPage = (function () {
 SettingsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-settings',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/'<!--\n  Generated template for the SettingsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="settings-content">\n  <div *ngIf="user">\n    <img src="assets/img/regLogo.png" id="bg">\n    <p></p>\n    <ion-list>\n      <ion-item (click)=\'gotoInfo()\'>\n        <ion-avatar item-left>\n          <img src=\'{{user.img}}\'>\n        </ion-avatar>\n        <h2>{{user.name}}</h2>\n        <p>{{user.description}}</p>\n        <ion-icon name="arrow-forward" item-right style="color:gray"></ion-icon>\n      </ion-item>\n    </ion-list>\n\n    <ion-list full>\n      <ion-item>\n        <button (click)=\'gotoContacts()\' ion-button full>My Contacts</button>\n      </ion-item>\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Sync with System Calendar</button>\n      </ion-item>\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Invite Your Friends :)</button>\n      </ion-item>\n      <ion-item>\n          <ion-toggle color="secondary" checked="false"></ion-toggle>\n          <ion-label>\n            <h6 class="titles">Allow others to view my calendar</h6>\n          </ion-label>\n      </ion-item>\n    </ion-list>\n    <ion-list>\n      <ion-item>\n        <button (click)=\'doLogout()\' ion-button full>Log Out</button>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/,
+        selector: 'page-settings',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/'<!--\n  Generated template for the SettingsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="settings-content">\n  <div *ngIf="user">\n    <img src="assets/img/regLogo.png" id="bg">\n    <p></p>\n    <ion-list>\n      <ion-item (click)=\'gotoInfo()\'>\n        <ion-avatar item-left>\n          <img src=\'{{user.img}}\'>\n        </ion-avatar>\n        <h2>{{user.name}}</h2>\n        <p>{{user.description}}</p>\n        <ion-icon name="arrow-forward" item-right style="color:gray"></ion-icon>\n      </ion-item>\n    </ion-list>\n\n    <ion-list full>\n      <ion-item>\n        <button (click)=\'gotoContacts()\' ion-button full>My Contacts</button>\n      </ion-item>\n      <!--<ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Sync with System Calendar</button>\n      </ion-item>-->\n      <ion-item>\n        <button (click)=\'gotoHomePage()\' ion-button full>Invite Your Friends :)</button>\n      </ion-item>\n      <!--<ion-item>\n          <ion-toggle color="secondary" checked="false"></ion-toggle>\n          <ion-label>\n            <h6 class="titles">Allow others to view my calendar</h6>\n          </ion-label>\n      </ion-item>-->\n    </ion-list>\n    <ion-list>\n      <ion-item>\n        <button (click)=\'doLogout()\' ion-button full>Log Out</button>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/settings/settings.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
@@ -2168,6 +2678,9 @@ Login = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__clubs_clubs__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__club_club__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__event_info_event_info__ = __webpack_require__(1200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2177,6 +2690,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -2205,6 +2720,7 @@ var Searcher = (function () {
         this.clan = "club";
         this.isAndroid = false;
         this.isAndroid = platform.is('android');
+        this.uid = __WEBPACK_IMPORTED_MODULE_9_firebase__["auth"]().currentUser.uid;
     }
     Searcher.prototype.ionViewDidLoad = function () {
         var _this = this;
@@ -2246,6 +2762,51 @@ var Searcher = (function () {
                 }
             }, 60000);
         }
+        this.dataProvider.getUser(this.uid).subscribe(function (user) {
+            if (user.events) {
+                var eids = user.events;
+                for (var i = 0; i < eids.length; i++) {
+                    _this.dataProvider.getEventByEID(eids[i]).subscribe(function (event) {
+                        _this.events.push(event);
+                    });
+                }
+            }
+        });
+        this.afDB.list('/events', {
+            query: {
+                orderByChild: 'organizer',
+                equalTo: this.uid
+            }
+        }).subscribe(function (events) {
+            _this.organizedEvents = events;
+        });
+        this.afDB.list('/events').subscribe(function (events) {
+            _this.allEvents = events;
+        });
+    };
+    Searcher.prototype.getStatus = function (event) {
+        //0: organizer 1: participater 2: can join
+        if (event.organizer === this.uid) {
+            return 0;
+        }
+        else if (this.joinedEvent(event)) {
+            return 1;
+        }
+        else
+            return 2;
+    };
+    Searcher.prototype.joinedEvent = function (event) {
+        if (event.members) {
+            for (var i = 0; i < event.members.length; i++) {
+                if (event.members[i].$key == this.uid) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+    Searcher.prototype.viewEvent = function (eventId) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__event_info_event_info__["a" /* EventInfoPage */], { eventId: eventId });
     };
     Searcher.prototype.addOrUpdateClub = function (club) {
         if (!this.clubs) {
@@ -2286,7 +2847,7 @@ var Searcher = (function () {
 Searcher = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-searcher',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/'<!--\n  Generated template for the Searcher page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>My Clan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class=\'content\' no-padding>\n  <div padding>\n    <ion-segment [(ngModel)]="clan"  color="mainColor">\n      <ion-segment-button value="club">\n        Clubs\n      </ion-segment-button>\n      <ion-segment-button value="event">\n        Events\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="clan">\n    <div no-border  *ngSwitchCase="\'club\'">\n      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">\n        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>\n        <p style="color:gray">You haven\'t joined any club yet.</p>\n        <div class="operation">\n          <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>\n          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="person"></ion-icon>Join a club</button>\n        </div>\n  </div>\n      \n    \n      <ion-list *ngIf="clubs && clubs.length > 0">\n        <div class="operation">\n          <button class="operation" ion-button tappable (click)="newClub()">Create a club</button> \n          <button class="operation" ion-button tappable (click)="joinClub()">Join a club</button>  \n        </div>              \n        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for your club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <span *ngFor="let club of clubs | clubFilter: searchClub">\n          <ion-item (click)="viewClub(club.$key)" tappable>\n            <ion-avatar [ngClass]=hasUnreadMessages(club) item-start>\n              <img src="{{club.img}}" />\n            </ion-avatar>\n            <h2>{{club.name}}</h2>\n            <p>{{club.date | DateFormat}}</p>\n            <ion-note item-end><ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge></ion-note>\n          </ion-item>\n        </span>\n      </ion-list>\n    </div>\n\n    <div no-border  *ngSwitchCase="\'event\'">\n      \n      <ion-item>\n        Dialogue with leaders in Social Media\n      </ion-item>\n\n      <ion-item>\n        SMU Open House 2015\n      </ion-item>\n\n      <ion-item>\n        YIC final presentation invitation\n      </ion-item>\n\n      <ion-item>\n        SPF career talk\n      </ion-item>   \n\n      <ion-item>\n        Sea game volunteers\n      </ion-item>  \n\n      <ion-item>\n        Social Media Internship\n      </ion-item>\n\n      <ion-item>\n        Business Development Intern\n      </ion-item> \n\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/,
+        selector: 'page-searcher',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/'<!--\n  Generated template for the Searcher page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>My Clan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class=\'content\' no-padding>\n  <div padding>\n    <ion-segment [(ngModel)]="clan"  color="mainColor">\n      <ion-segment-button value="club">\n        Clubs\n      </ion-segment-button>\n      <ion-segment-button value="event">\n        Events\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="clan">\n    <div no-border  *ngSwitchCase="\'club\'">\n      <div class="empty-list" *ngIf="clubs && clubs.length <= 0">\n        <h1><ion-icon name="md-chatbubbles"></ion-icon></h1>\n        <p style="color:gray">You haven\'t joined any club yet.</p>\n        <div class="operation">\n          <button class="operation" ion-button icon-left tappable (click)="newClub()"><ion-icon name="md-add"></ion-icon>Create a club</button>\n          <button class="operation" ion-button icon-left tappable (click)="joinClub()"><ion-icon name="person"></ion-icon>Join a club</button>\n        </div>\n  </div>\n      \n    \n      <ion-list *ngIf="clubs && clubs.length > 0">\n        <div class="operation">\n          <button class="operation" ion-button tappable (click)="newClub()">Create a club</button> \n          <button class="operation" ion-button tappable (click)="joinClub()">Join a club</button>  \n        </div>              \n        <ion-searchbar [(ngModel)]="searchClub" placeholder="Search for your club" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n        <span *ngFor="let club of clubs | clubFilter: searchClub">\n          <ion-item (click)="viewClub(club.$key)" tappable>\n            <ion-avatar [ngClass]=hasUnreadMessages(club) item-start>\n              <img src="{{club.img}}" />\n            </ion-avatar>\n            <h2>{{club.name}}</h2>\n            <p>{{club.date | DateFormat}}</p>\n            <ion-note item-end><ion-badge color="danger" *ngIf="club.unreadMessagesCount > 0">{{club.unreadMessagesCount}}</ion-badge></ion-note>\n          </ion-item>\n        </span>\n      </ion-list>\n    </div>\n\n    <div no-border  *ngSwitchCase="\'event\'">\n      <ion-list *ngIf="organizedEvents">\n        <ion-list-header>\n          Organized By Me\n        </ion-list-header>\n        <ng-container *ngFor="let event of organizedEvents">\n          <ion-item (click)="viewEvent(event.$key)" tappable>\n            <h2>{{event.title}}</h2>\n            <p>{{event.startTime}} -- {{event.endTime}}</p>\n          </ion-item>\n        </ng-container>\n      </ion-list>\n      <ion-list *ngIf="events">\n        <ion-list-header>\n          Participated Events\n        </ion-list-header>\n        <ng-container *ngFor="let event of Events">\n          <ion-item (click)="viewEvent(event.$key)" tappable>\n            <h2>{{event.title}}</h2>\n            <p>{{event.startTime}} -- {{event.endTime}}</p>\n          </ion-item>\n        </ng-container>\n      </ion-list>\n      <ion-list *ngIf="allEvents">\n        <ion-list-header>\n          Event Square\n        </ion-list-header>\n        <ng-container *ngFor="let event of allEvents">\n          <ion-item (click)="viewEvent(event.$key)" tappable>\n            <h2>{{event.title}} <span *ngIf="getStatus(event)==0">(Organized By Me)</span><span *ngIf="getStatus(event)==1">(Participated)</span></h2>\n            <p>{{event.startTime}} -- {{event.endTime}}</p>\n          </ion-item>\n        </ng-container>\n      </ion-list>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/searcher/searcher.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
@@ -4068,7 +4629,7 @@ var ClubsPage = (function () {
             note = 'You are already a member of the club';
         }
         else {
-            note = 'Welcome to join our club';
+            note = 'Slide left and join our club!';
         }
         var name = club.name;
         var description = club.description;
@@ -4140,18 +4701,10 @@ ClubsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-clubs',template:/*ion-inline-start:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/'<!--\n  Generated template for the ClubsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton="true">\n    <ion-buttons>\n      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>\n    </ion-buttons>\n    <ion-title>Clubs</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="content" padding>\n  <ion-list>\n    <ion-list-header>Clubs I Joined</ion-list-header>\n    <ng-container *ngFor="let club of clubs">\n      <ion-item tappable *ngIf="isMember(club)" (click)="details(club)">\n        <ion-avatar item-start>\n          <img src={{club.img}}>\n        </ion-avatar>\n        <h2>{{club.name}}</h2>\n      </ion-item>\n    </ng-container>\n  </ion-list>\n  \n  <ion-list>\n    <ion-list-header>All Clubs</ion-list-header>\n    <ion-searchbar [(ngModel)]="search" placeholder="Search for clubs" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-item-sliding *ngFor="let club of clubs|clubFilter: search">\n      <ion-item tappable (click)="details(club)">\n        <ion-avatar item-start>\n          <img src={{club.img}}>\n        </ion-avatar>\n        <h2>{{club.name}}<span *ngIf="isMember(club)">[Joined]</span></h2>\n      </ion-item>\n      <ion-item-options side="right">\n        <button (click)="details(club)" ion-button color="primary">\n          <ion-icon name="more"></ion-icon>\n          Details\n        </button>\n        <button *ngIf="!isMember(club)" (click)="join(club.$key)" ion-button color="secondary">\n          <ion-icon name="add"></ion-icon>\n          Join \n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/liam/Documents/IONIC/Project/Clandar/src/pages/clubs/clubs.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _k || Object])
 ], ClubsPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=clubs.js.map
 
 /***/ }),
@@ -4942,6 +5495,7 @@ var errorMessages = {
     passwordsDoNotMatch: { title: 'Change Password Failed!', subTitle: 'Sorry, but the passwords you entered do not match.' },
     updateProfile: { title: 'Update Profile Failed', subTitle: 'Sorry, but we\'ve encountered an error updating your profile.' },
     usernameExists: { title: 'Username Already Exists!', subTitle: 'Sorry, but this username is already taken by another user.' },
+    eventUpdate: { title: 'Update Event Failed!', subTitle: 'Sorry, but we\'ve encountered an error updating this event.' },
     // Image Error Messages
     imageUpload: { title: 'Image Upload Failed!', subTitle: 'Sorry but we\'ve encountered an error uploading selected image.' },
     // Club Error Messages
@@ -4960,6 +5514,7 @@ var successMessages = {
     friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
     eventRequestSent: { title: 'Event Request Sent!', subTitle: 'Event request has been successfully sent!' },
     eventRequestRemoved: { title: 'Event Request Deleted!', subTitle: 'Your event request has been successfully deleted.' },
+    eventUpdated: { title: 'Event Updated!', subTitle: 'This event has been successfully updated!' },
     clubJoined: { title: 'Club Joined!', subTitle: 'You have successfully joined the club!' },
     clubUpdated: { title: 'Club Updated!', subTitle: 'This club has been successfully updated!' },
     clubLeft: { title: 'Leave Club', subTitle: 'You have successfully left this club.' }
@@ -5062,6 +5617,14 @@ var AlertProvider = (function () {
         this.alert = this.alertCtrl.create({
             title: successMessages.eventRequestRemoved["title"],
             subTitle: successMessages.eventRequestRemoved["subTitle"],
+            buttons: ['OK']
+        }).present();
+    };
+    // Show event updated.
+    AlertProvider.prototype.showEventUpdatedMessage = function () {
+        this.alert = this.alertCtrl.create({
+            title: successMessages.eventUpdated["title"],
+            subTitle: successMessages.eventUpdated["subTitle"],
             buttons: ['OK']
         }).present();
     };
@@ -5253,6 +5816,13 @@ var AlertProvider = (function () {
                 this.alert = this.alertCtrl.create({
                     title: errorMessages.imageUpload["title"],
                     subTitle: errorMessages.imageUpload["subTitle"],
+                    buttons: ['OK']
+                }).present();
+                break;
+            case 'event/error-update-event':
+                this.alert = this.alertCtrl.create({
+                    title: errorMessages.eventUpdate["title"],
+                    subTitle: errorMessages.eventUpdate["subTitle"],
                     buttons: ['OK']
                 }).present();
                 break;
