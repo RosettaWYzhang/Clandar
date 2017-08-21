@@ -18,7 +18,7 @@ export class SearchPipe implements PipeTransform {
       return accounts.filter((account) => excludedIds.indexOf(account.userId) == -1);
     } else {
       term = term.toLowerCase();
-      return accounts.filter((account) => excludedIds.indexOf(account.userId) == -1 && (account.name.toLowerCase().indexOf(term) > -1 || account.username.toLowerCase().indexOf(term) > -1));
+      return accounts.filter((account) => excludedIds.indexOf(account.userId) == -1 && (account.name.toLowerCase().indexOf(term) > -1 || account.email.toLowerCase().indexOf(term) > -1));
     }
   }
 }

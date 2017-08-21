@@ -40,9 +40,17 @@ export class DataProvider {
     return this.angularfire.object('/accounts/' + userId);
   }
 
+  getEventByEID(eid){
+    return this.angularfire.object('/events/'+eid);
+  }
+
   // Get requests given the userId.
   getRequests(userId) {
     return this.angularfire.object('/requests/' + userId);
+  }
+
+  getEventRequests(eid){
+    return this.angularfire.object('/requests/' + eid);
   }
 
   // Get friend requests given the userId.

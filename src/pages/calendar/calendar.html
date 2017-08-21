@@ -4,8 +4,8 @@
     <ion-navbar>
         <ion-title>{{viewTitle}}</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only (click)="addEvent()">
-                <ion-icon name="add"></ion-icon>
+            <button ion-button icon-only (click)="more()">
+                <ion-icon name="more"></ion-icon>
             </button>
             <!--<button ion-button (click)="loadEvents()" style="font-size:16px">Load Events</button>-->
         </ion-buttons>
@@ -36,9 +36,10 @@
     <ng-template #monthEventDetail let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
       <ion-list class="event-detail-container" has-bouncing="false" *ngIf="showEventDetail" overflow-scroll="false">
         <ion-item *ngFor="let event of selectedDate?.events" (click)="eventSelected(event)">
-          <span *ngIf="this.isSameDay(this.selectedDay,event.startTime)" class="monthview-eventdetail-timecolumn">{{event.startTime|date: 'HH:mm'}} - 24:00</span>
-          <span *ngIf="this.isSameDay(this.selectedDay,event.endTime)" class="monthview-eventdetail-timecolumn">00:00 - {{event.endTime|date: 'HH:mm'}}</span>
-          <span *ngIf="this.dateInRange(this.selectedDay,event.startTime,event.endTime)" class="monthview-eventdetail-timecolumn">All day</span>
+          <span *ngIf="isSameDay(event.startTime,event.endTime)&&(!event.allDay)" class="monthview-eventdetail-timecolumn">{{event.startTime|date: 'HH:mm'}} - {{event.endTime|date: 'HH:mm'}}</span>
+          <span *ngIf="this.isSameDay(this.selectedDay,event.startTime)&&!isSameDay(event.startTime,event.endTime)" class="monthview-eventdetail-timecolumn">{{event.startTime|date: 'HH:mm'}} - 24:00</span>
+          <span *ngIf="this.isSameDay(this.selectedDay,event.endTime)&&!isSameDay(event.startTime,event.endTime)" class="monthview-eventdetail-timecolumn">00:00 - {{event.endTime|date: 'HH:mm'}}</span>
+          <span *ngIf="this.dateInRange(this.selectedDay,event.startTime,event.endTime)||event.allDay" class="monthview-eventdetail-timecolumn">All day</span>
           <span class="event-detail"> | {{event.title}}</span>
         </ion-item>
         <ion-item *ngIf="selectedDate?.events.length==0">

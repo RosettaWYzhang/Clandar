@@ -1,7 +1,9 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { IonicPage, NavController, ModalController, AlertController, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavController, ModalController, AlertController, ActionSheetController, PopoverController, NavParams } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { AngularFireDatabase,FirebaseListObservable } from 'angularfire2/database';
+import { DataProvider } from '../../providers/data/data';
+import { RequestModalPage } from '../../pages/request-modal/request-modal';
 import * as moment from 'moment';
 import * as firebase from 'firebase';
 
@@ -22,24 +24,84 @@ export class CalendarPage{
 
     private event1: any;
     private event2: any;
+    private eventsToShow;
     private events: FirebaseListObservable<any>;
+    private tasks: FirebaseListObservable<any>;
+    private email: any;
     private uid: any;
+    isToday: boolean;
+    eventSource = [];
+    viewTitle: string;
+    selectedDay = new Date();    
+    calendar = {
+        mode: 'month',
+        currentDate: new Date()
+    };
+
     constructor(public navCtrl: NavController, 
                 private modalCtrl: ModalController, 
                 private alertCtrl: AlertController,
+                public popoverCtrl: PopoverController,
+                public asCtrl: ActionSheetController,
                 public afDB: AngularFireDatabase,
+                public dataProvider: DataProvider,
+                public app: App,
                 private ionicCalendar: Calendar) { 
         this.uid = firebase.auth().currentUser.uid;
+        this.email = firebase.auth().currentUser.email;
         this.events = afDB.list('/events',{
-        query:{
+          query:{
             orderByChild: 'organizer',
             equalTo: this.uid
+          }
+        });
+        this.tasks = afDB.list('/tasks',{
+          query:{
+            orderByChild: 'email',
+            equalTo: this.email
           }
         });
     }
 
     ionViewDidLoad() {
+        console.log(this.email);
         console.log("calendarPage");
+        //console.log(this.events);
+        /*[
+            {
+                "startTime": new Date("2017-08-27T23:49:31+08:00"),
+                "endTime": new Date("2017-08-28T23:49:31+08:00"),
+                "title": "test",
+                "note": "test",
+                "urgency": "test",
+                "location": "test",
+                "members": "test",
+                "organizer": "test"
+            },
+            {
+                "startTime": new Date("2017-10-27T23:49:31+08:00"),
+                "endTime": new Date("2017-11-27T23:59:31+08:00"),
+                "title": "due",
+                "allDay": true,
+                "note": "test",
+                "urgency": "test",
+                "userId": "test"
+            }
+
+        ];*/
+    }
+
+   changeMode(mode){
+       this.calendar.mode = mode;
+   }
+
+   today(){
+       this.calendar.currentDate = new Date();
+   }
+
+   loadEvents(){
+        this.eventsToShow = [];
+        this.eventSource = [];
         console.log(this.events);
         this.events.subscribe((events)=>{
             events.forEach((event) => {
@@ -51,30 +113,59 @@ export class CalendarPage{
                     "urgency": event.urgency,
                     "location": event.location,
                     "members": event.members,
-                    "organizer": event.organizer
+                    "organizer": event.organizer,
+                    "eid": event.$key
                 }
-                console.log(event);
-                console.log("testEvent: "+ testEvent);
-                let testEvents = this.eventSource;
-                testEvents.push(testEvent);
-                this.eventSource = [];
-                setTimeout(() => {
-                    this.eventSource = testEvents;
-                });    
+                var hasEvent = false;
+                if (this.eventsToShow.length>0){
+                    for (var i=0;i<this.eventsToShow.length;i++){
+                        if (this.eventsToShow[i].eid===testEvent.eid){
+                            hasEvent = true;
+                            break;
+                        }
+                    }
+                }
+                if(hasEvent===false){
+                    this.eventsToShow.push(testEvent);
+                }
+                console.log(testEvent);
+                console.log(this.eventsToShow);
             });
         });
-        
+       
+        this.tasks.subscribe((tasks)=>{
+            tasks.forEach((task) => {
+                let testTask = {
+                    "startTime": new Date(task.due),
+                    "endTime": new Date(task.due),
+                    "title": task.name+ " due",
+                    "allDay": true,
+                    "note": task.note,
+                    "urgency": task.urgency,
+                    "userId": this.uid,
+                    "tid": task.$key
+                }
+                var hasTask = false;
+                if (this.eventsToShow.length>0){
+                    for (var i=0;i<this.eventsToShow.length;i++){
+                        if (this.eventsToShow[i].tid===testTask.tid){
+                            hasTask = true;
+                            break;
+                        }
+                    }
+                }
+                if(hasTask==false){
+                    this.eventsToShow.push(testTask);
+                }                
+                
+                console.log(testTask);
+                console.log(this.eventsToShow);
+            });
+        });
 
-    }
-
-   isToday: boolean;
-
-   changeMode(mode){
-       this.calendar.mode = mode;
-   }
-
-   today(){
-       this.calendar.currentDate = new Date();
+        console.log(this.eventsToShow);
+        this.eventSource = this.eventsToShow;
+        console.log(this.eventSource);
    }
 
    onCurrentDateChanged(event:Date){
@@ -83,15 +174,6 @@ export class CalendarPage{
        event.setHours(0, 0, 0, 0);
        this.isToday = today.getTime() === event.getTime();
    }
-
-    eventSource = [];
-    viewTitle: string;
-    selectedDay = new Date();
-    
-    calendar = {
-        mode: 'month',
-        currentDate: new Date()
-    };
 
     isSameDay(date1,date2){
         var d1 = date1;
@@ -117,28 +199,102 @@ export class CalendarPage{
         else return false;
     }
     
+    more(){
+        var isAdmin = false;
+        this.dataProvider.getUser(this.uid).subscribe((user)=>{
+            if(user.adminedClubs){
+                isAdmin = true;
+            }
+        });
+
+        if(isAdmin){
+            let actionSheet = this.asCtrl.create({
+                title: 'Actions',
+                buttons: [
+                    {
+                    text: 'Load Events',
+                    handler: () => {
+                        this.loadEvents();
+                        console.log('Events loaded');
+                    }
+                    },{
+                    text: 'View My Event Requests',
+                    handler: () => {
+                        this.viewRequests();
+                        console.log('View My Event Invitations');
+                    }
+                    },{
+                    text: 'Add New Event',
+                    handler: () => {
+                        this.addEvent();
+                        console.log('New Event Added');
+                    }
+                    },{
+                    text: 'View My Timeline',
+                    handler: () =>{
+                        console.log('Timeline displayed');
+                    }
+                    },{
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Cancel clicked');
+                    }
+                    }
+                ]            
+            });
+            actionSheet.present();
+        }
+        else {
+            let actionSheet = this.asCtrl.create({
+                title: 'Actions',
+                buttons: [
+                    {
+                    text: 'Load Events',
+                    handler: () => {
+                        this.loadEvents();
+                        console.log('Events loaded');
+                    }
+                    },{
+                    text: 'View My Event Requests',
+                    handler: () => {
+                        this.viewRequests();
+                        console.log('View My Event Invitations');
+                    }
+                    },{
+                    text: 'View My Timeline',
+                    handler: () =>{
+                        console.log('Timeline displayed');
+                    }
+                    },{
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Cancel clicked');
+                    }
+                    }
+                ]            
+            });
+            actionSheet.present();
+        }
+    }
+
+    popover(myEvent){
+        let pop = this.popoverCtrl.create(PopPage);
+        pop.present({
+            ev: myEvent
+        });
+    }    
+
     addEvent() {
         let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay});
         modal.present();
-        /**modal.onDidDismiss(data => {
-            console.log(data);
-            if (data) {
-                let events = this.eventSource;
-
-                let eventData = data;
-                eventData.startTime = new Date(data.startTime);
-                eventData.endTime = new Date(data.endTime);
-        
-                events.push(eventData);
-                this.eventSource = [];
-                setTimeout(() => {
-                this.eventSource = events;
-                });
-            }
-            console.log(this.eventSource);
-        });**/
     }
     
+    viewRequests(){
+        this.app.getRootNav().push(RequestModalPage);
+    }
+
     onViewTitleChanged(title) {
         this.viewTitle = title;
     }
@@ -163,4 +319,24 @@ export class CalendarPage{
         this.selectedDay = ev.selectedTime;
     }
 
+}
+
+@Component({
+    selector: 'popover',
+    template: `
+    <ion-content>
+        <ion-list class="popover-page">
+            <button ion-item detail-none>Load Events</button>
+
+            <button ion-item detail-none>Add New Event</button>
+
+            <button ion-item detail-none class="timeline">View My Timeline</button>
+        </ion-list>
+    </ion-content>
+    `
+})
+export class PopPage{
+    constructor(){
+
+    }
 }

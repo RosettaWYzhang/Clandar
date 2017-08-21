@@ -19,6 +19,148 @@ export class FirebaseProvider {
     console.log("Initializing Firebase Provider");
   }
 
+  sendEventRequest(userId,eventId){
+    this.loadingProvider.load();
+    var eventRequestsSent;
+    this.dataProvider.getEventRequests(eventId).take(1).subscribe((requests)=>{
+      eventRequestsSent = requests.eventRequestsSent;
+      if(!eventRequestsSent) {
+        eventRequestsSent = [userId];
+      } else {
+        if(eventRequestsSent.indexOf(userId) == -1)
+          eventRequestsSent.push(userId);        
+      }
+      this.angularfire.object('/requests/' + eventId).update({
+        eventRequestsSent: eventRequestsSent
+      }).then((success)=>{
+        var eventRequests;
+        this.dataProvider.getRequests(userId).take(1).subscribe((requests) => {
+          eventRequests = requests.eventRequests;
+          if (!eventRequests) {
+            eventRequests = [eventId];
+          } else {
+            if(eventRequests.indexOf(eventId) == -1)
+              eventRequests.push(eventId);
+          }
+          // Add Event Request information.
+          this.angularfire.object('/requests/' + userId).update({
+            eventRequests: eventRequests
+          }).then((success) => {
+            this.loadingProvider.dismiss();
+            this.alertProvider.showEventRequestSent();
+          }).catch((error) => {
+            this.loadingProvider.dismiss();
+          });
+        });
+      }).catch((error) => {
+        this.loadingProvider.dismiss();
+      });
+    });
+  }
+
+// Cancel friend request sent to userId.
+  cancelEventRequest(userId, eventId) {
+    this.loadingProvider.load();
+
+    var eventRequestsSent;
+    this.dataProvider.getEventRequests(eventId).take(1).subscribe((requests) => {
+      eventRequestsSent = requests.eventRequestsSent;
+      eventRequestsSent.splice(eventRequestsSent.indexOf(eventId), 1);
+      // Update requestSent information.
+      this.angularfire.object('/requests/' + eventId).update({
+        eventRequestsSent: eventRequestsSent
+      }).then((success) => {
+        var eventRequests;
+        this.dataProvider.getRequests(userId).take(1).subscribe((requests) => {
+          eventRequests = requests.eventRequests;
+          eventRequests.splice(eventRequests.indexOf(eventId), 1);
+          // Update friendRequests information.
+          this.angularfire.object('/requests/' + userId).update({
+            eventRequests: eventRequests
+          }).then((success) => {
+            this.loadingProvider.dismiss();
+            this.alertProvider.showEventRequestRemoved();
+          }).catch((error) => {
+            this.loadingProvider.dismiss();
+          });
+        });
+      }).catch((error) => {
+        this.loadingProvider.dismiss();
+      });
+    });
+  }
+
+  // Delete friend request.(refuse invitation)
+  deleteEventRequest(userId, eventId) {
+    this.loadingProvider.load();
+
+    var eventRequests;
+    this.dataProvider.getRequests(userId).take(1).subscribe((requests) => {
+      eventRequests = requests.eventRequests;
+      eventRequests.splice(eventRequests.indexOf(userId), 1);
+      // Update friendRequests information.
+      this.angularfire.object('/requests/' + userId).update({
+        eventRequests: eventRequests
+      }).then((success) => {
+        var eventRequestsSent;
+        this.dataProvider.getEventRequests(eventId).take(1).subscribe((requests) => {
+          eventRequestsSent = requests.eventRequestsSent;
+          eventRequestsSent.splice(eventRequestsSent.indexOf(eventId), 1);
+          // Update requestsSent information.
+          this.angularfire.object('/requests/' + userId).update({
+            eventRequestsSent: eventRequestsSent
+          }).then((success) => {
+            this.loadingProvider.dismiss();
+
+          }).catch((error) => {
+            this.loadingProvider.dismiss();
+          });
+        });
+      }).catch((error) => {
+        this.loadingProvider.dismiss();
+        //TODO ERROR
+      });
+    });
+  }
+
+  // Accept friend request.
+  acceptEventRequest(userId, eventId) {
+    // Delete friend request.
+    this.deleteEventRequest(userId,eventId);
+
+    this.loadingProvider.load();
+    this.dataProvider.getEventByEID(eventId).take(1).subscribe((event) => {
+      var members = event.members;
+      if (!members) {
+        members = [userId];
+      } else {
+        members.push(userId);
+      }
+      // Add both users as friends.
+      this.dataProvider.getEventByEID(eventId).update({
+        members: members
+      }).then((success) => {
+        this.dataProvider.getUser(userId).take(1).subscribe((account) => {
+          var events = account.events;
+          if (!events) {
+            events = [eventId];
+          } else {
+            events.push(eventId);
+          }
+          this.dataProvider.getUser(userId).update({
+            events: events
+          }).then((success) => {
+            this.loadingProvider.dismiss();
+          }).catch((error) => {
+            this.loadingProvider.dismiss();
+          });
+        });
+      }).catch((error) => {
+        this.loadingProvider.dismiss();
+      });
+    });
+  }
+
   // Send friend request to userId.
   sendFriendRequest(userId) {
     let loggedInUserId = firebase.auth().currentUser.uid;

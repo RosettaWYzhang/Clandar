@@ -1,0 +1,37 @@
+<!--
+  Generated template for the RequestsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
+    </ion-buttons>
+    <ion-title>Event Requests</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <!-- No event requests sent or received. -->
+  <div class="empty-list" *ngIf="(eventRequests && eventRequests.length == 0)">
+    <h1><ion-icon name="md-filing"></ion-icon></h1>
+    <p style="color:gray">No New Invitations</p>
+    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>
+  </div>
+  <!-- Show event requests received. -->
+  <ion-list class="avatar-list" *ngIf="eventRequests && eventRequests.length > 0">
+    <ion-item *ngFor="let eventRequest of eventRequests" no-lines tappable (click)="viewEvent(eventRequest.$key)">
+      <ion-fab middle right>
+        <button color="mainColor" ion-fab mini tappable (click)="acceptEventRequest(eventRequest); $event.stopPropagation();">
+          <ion-icon name="md-checkmark-circle" class="success"></ion-icon>
+        </button>
+      </ion-fab>
+      <ion-avatar item-left>
+        <img src="https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/invite.jpg?alt=media&token=d916e762-3d05-4beb-b74c-fa293c5f7f99">
+      </ion-avatar>
+      <h2>{{eventRequest.title}}</h2>
+      <p>has sent you a event request.</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -52,6 +52,8 @@ const successMessages = {
   passwordChanged: { title: 'Password Changed!', subTitle: 'Your password has been successfully changed.' },
   friendRequestSent: { title: 'Friend Request Sent!', subTitle: 'Your friend request has been successfully sent!' },
   friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
+  eventRequestSent: {title: 'Event Request Sent!', subTitle: 'Event request has been successfully sent!'},
+  eventRequestRemoved: { title: 'Event Request Deleted!', subTitle: 'Your event request has been successfully deleted.' },
   clubJoined: { title: 'Club Joined!', subTitle: 'You have successfully joined the club!' },
   clubUpdated: { title: 'Club Updated!', subTitle: 'This club has been successfully updated!' },
   clubLeft: { title: 'Leave Club', subTitle: 'You have successfully left this club.' }
@@ -153,6 +155,24 @@ export class AlertProvider {
       subTitle: successMessages.friendRequestRemoved["subTitle"],
       buttons: ['OK']
     }).present();
+  }
+
+  // Show event request sent
+  showEventRequestSent() {
+    this.alert = this.alertCtrl.create({
+      title: successMessages.eventRequestSent["title"],
+      subTitle: successMessages.eventRequestSent["subTitle"],
+      buttons: ['OK']
+    }).present();
+  }
+
+  // Show event request removed
+  showEventRequestRemoved() {
+    this.alert = this.alertCtrl.create({
+      title: successMessages.eventRequestRemoved["title"],
+      subTitle: successMessages.eventRequestRemoved["subTitle"],
+      buttons: ['OK']
+    }).present();    
   }
 
   // Show club updated.

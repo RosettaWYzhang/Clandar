@@ -33,6 +33,67 @@ exports.newRequest = functions.database.ref('/requests/{userId}/friendRequests/'
 	}
 });
 
+exports.newEventRequest = functions.database.ref('/requests/{userId}/eventRequests/').onWrite(event => {
+    let requestStateChanged = false;
+    let requestCreated = false;
+    let requestData = event.data.val();
+    let userId = event.params.userId;
+
+    if (!event.data.previous.exists()) {
+        requestCreated = true;
+    }
+    if (!requestCreated && event.data.changed()) {
+        requestStateChanged = true;
+    }
+    if(requestCreated || requestStateChanged){
+
+    	let dbRef = admin.database().ref('accounts/'+userId);
+	    dbRef.once('value', snap => {
+	    	console.log(snap.val().pushToken);
+	    	let tokens = [];
+	    	tokens.push(snap.val().pushToken);
+	    	let payload = {
+	    		notification: {
+	    			title: 'New Event Invitation Received',
+	    			body: ' you got a new event invitation',
+	    			sound: 'default',
+	    		}
+	    	};
+	    	return admin.messaging().sendToDevice(tokens, payload);
+	    });
+	}
+});
+
+exports.eventRequestAccepted = functions.database.ref('accounts/{userId}/events/').onWrite( event => {
+	let eventsCreated = false;
+	let eventsUpdated = false;
+	let userId = event.params.userId;
+
+	if (!event.data.previous.exists()) {
+        eventsCreated = true;
+    }
+    if (!eventsCreated && event.data.changed()) {
+        eventsUpdated = true;
+    }
+
+    if(eventsCreated || eventsUpdated){
+    	let dbRef = admin.database().ref('accounts/'+userId);
+	    dbRef.once('value', snap => {
+	    	console.log(snap.val().pushToken);
+	    	let tokens = [];
+	    	tokens.push(snap.val().pushToken);
+	    	let payload = {
+	    		notification: {
+	    			title: 'Your invitation has been accepted',
+	    			body: 'Your invitation has been accepted',
+	    			sound: 'default',
+	    		}
+	    	};
+	    	return admin.messaging().sendToDevice(tokens, payload);
+	    });
+    }
+});
+
 // Send Notification when users is added into new club
 exports.newClubCreation = functions.database.ref('accounts/{userId}/clubs/').onWrite( event => {
 	let clubCreated = false;

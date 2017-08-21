@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 1188:
+/***/ 1189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TasksModule", function() { return TasksModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TdlistPageModule", function() { return TdlistPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tasks__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tdlist__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TasksModule = (function () {
-    function TasksModule() {
+var TdlistPageModule = (function () {
+    function TdlistPageModule() {
     }
-    return TasksModule;
+    return TdlistPageModule;
 }());
-TasksModule = __decorate([
+TdlistPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* Tasks */],
+            __WEBPACK_IMPORTED_MODULE_2__tdlist__["b" /* TdlistPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* Tasks */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tdlist__["b" /* TdlistPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* Tasks */]
+            __WEBPACK_IMPORTED_MODULE_2__tdlist__["b" /* TdlistPage */]
         ]
     })
-], TasksModule);
+], TdlistPageModule);
 
-//# sourceMappingURL=tasks.module.js.map
+//# sourceMappingURL=tdlist.module.js.map
 
 /***/ })
 

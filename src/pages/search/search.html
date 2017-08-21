@@ -21,7 +21,7 @@
   </div>
   <!-- Show other users excluding yourself, and friends with the help of searchFilter pipe. -->
   <ion-list class="avatar-list" *ngIf="accounts && accounts.length > 0">
-    <ion-searchbar *ngIf="accounts.length != excludedIds.length" [(ngModel)]="searchUser" placeholder="Search for name or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+    <ion-searchbar *ngIf="accounts.length != excludedIds.length" [(ngModel)]="searchUser" placeholder="Search for name or email" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
     <ion-item *ngFor="let account of accounts | searchFilter: [excludedIds, searchUser]" no-lines tappable (click)="viewUser(account.$key)">
       <ion-fab middle right>
         <!-- Show appropriate buttons depending on the status of this user in relation to the current user. -->
@@ -43,7 +43,7 @@
         <img src="{{account.img}}">
       </ion-avatar>
       <h2>{{account.name}}</h2>
-      <p>@{{account.username}}</p>
+      <p>{{account.email}}</p>
     </ion-item>
   </ion-list>
 </ion-content>

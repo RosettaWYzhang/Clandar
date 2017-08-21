@@ -16,42 +16,39 @@
   <ion-list>
     <ion-item>
       <ion-icon name="bookmark" item-start style="color:orange"></ion-icon>
-      <ion-input type="text" placeholder="Title" [(ngModel)]="title"></ion-input>
+      <ion-input disabled="{{hide}}" type="text" placeholder="Title" [(ngModel)]="title"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-icon name="person" item-start style="color:green"></ion-icon>
-      <ion-label>Organizer</ion-label>
-      <ion-select [(ngModel)]="organizer">
-        <ion-option value="personal">Me</ion-option>
+      <ion-label>Club</ion-label>
+      <ion-select disabled="{{hide}}" [(ngModel)]="club">
+        <ng-container *ngFor="let club of adminedClubs">
+          <ion-option value="{{club.$key}}">{{club.name}}</ion-option>
+        </ng-container>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
       <ion-label>Start</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="startTime" [min]="minDate"></ion-datetime>
+      <ion-datetime disabled="{{hide}}" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="startTime" [min]="minDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-icon name="calendar" item-start style="color:white"></ion-icon>
       <ion-label>End</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="endTime" [min]="minDate"></ion-datetime>
+      <ion-datetime disabled="{{hide}}" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="endTime" [min]="minDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-icon name="locate" item-start style="color:LightSeaGreen "></ion-icon>
-      <ion-input type="text" placeholder="Location" [(ngModel)]="location"></ion-input>    
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="people" item-start style="color:LightPink "></ion-icon>
-        <ion-input type="text" placeholder="Members" [(ngModel)]="members"></ion-input>    
+      <ion-input disabled="{{hide}}" type="text" placeholder="Location" [(ngModel)]="location"></ion-input>    
     </ion-item>
 
     <ion-item>
       <ion-icon name="create" item-start style="color:rgb(83,184,229)"></ion-icon>
-      <ion-input type="text" placeholder="Add Note" [(ngModel)]="note"></ion-input>
+      <ion-input disabled="{{hide}}" type="text" placeholder="Add Note" [(ngModel)]="note"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -59,20 +56,49 @@
       <ion-label>
         <h2 class="titles" style="background-color:red;padding: 5px">Urgency</h2>
       </ion-label>
-      <ion-range [(ngModel)]="urgency" color="danger" min="1" max="4" step="1" snaps="true" style="margin-top:-20px"></ion-range>
+      <ion-range disabled="{{hide}}" [(ngModel)]="urgency" color="danger" min="1" max="4" step="1" snaps="true" style="margin-top:-20px"></ion-range>
     </ion-item>
 
+  </ion-list>
+  <ion-list *ngIf="hide">
+    <ion-list-header>
+      Invite Club Members
+    </ion-list-header>
+    <ion-item *ngFor="let member of members">
+      <ng-container *ngIf="member.userId != this.uid">
+        <ion-fab middle right>
+          <button color="mainColor" ion-fab mini tappable (click)="invite(member); $event.stopPropagation();" *ngIf="getStatus(member.userId,this.eventId)==0"><ion-icon name="md-add-circle" class="success"></ion-icon></button>
+          <button color="mainColor" ion-fab mini tappable (click)="removeFromInvitation(member); $event.stopPropagation();" *ngIf="getStatus(member.userId,this.eventId)==1"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>
+        </ion-fab>
+        <ion-avatar item-left>
+          <img src="{{member.img}}">
+        </ion-avatar>
+        <h2>{{member.name}}</h2>
+        <p>{{member.email}}</p>
+      </ng-container>
+    </ion-item>
   </ion-list>
 
   <ion-row>
     <ion-col text-right>
-      <button ion-button round end color="secondary" (click)="save()">Save</button>
+      <button ion-button *ngIf="!hide" round end color="secondary" (click)="save()">Continue</button>
     </ion-col>
+    <ion-col text-right>
+      <button ion-button *ngIf="hide" round end color="secondary" (click)="finish()">Done</button>
+    </ion-col>  
+    <ion-col text-right>
+      <button ion-button *ngIf="hide" round end color="secondary" (click)="goback()">Modify</button>
+    </ion-col>        
     <ion-col>
       <button ion-button round end color="light" (click)="cancel()">Cancel</button>
     </ion-col>
   </ion-row>
+
+
+
 </ion-content>
+
+
 
 <!--<ion-header>
 

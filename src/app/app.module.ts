@@ -43,6 +43,9 @@ import { ClubPage } from '../pages/club/club';
 import { ClubInfoPage } from '../pages/club-info/club-info';
 import { AddMembersPage } from '../pages/add-members/add-members';
 import { AdminModalPage } from '../pages/admin-modal/admin-modal';
+import { PopPage } from '../pages/calendar/calendar';
+import { RequestModalPage } from '../pages/request-modal/request-modal';
+import { EventInfoPage } from '../pages/event-info/event-info';
 import { Doodle } from '../pages/doodle/doodle';
 
 import { FriendPipe } from '../pipes/friend';
@@ -109,6 +112,9 @@ firebase.initializeApp(firebaseConfig);
     ClubInfoPage,
     AddMembersPage,
     AdminModalPage,
+    PopPage,
+    RequestModalPage,
+    EventInfoPage,
     FriendPipe,
     ConversationPipe,
     SearchPipe,
@@ -156,6 +162,9 @@ firebase.initializeApp(firebaseConfig);
     ClubInfoPage,
     AddMembersPage,
     AdminModalPage,
+    RequestModalPage,
+    PopPage,
+    EventInfoPage,
     Doodle
   ],
   providers: [
