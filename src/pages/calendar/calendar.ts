@@ -31,6 +31,7 @@ export class CalendarPage{
     private tasks: FirebaseListObservable<any>;
     private email: any;
     private uid: any;
+    private isAdmin = false;
     isToday: boolean;
     eventSource = [];
     viewTitle: string;
@@ -71,6 +72,11 @@ export class CalendarPage{
         console.log(this.email);
         console.log("calendarPage");
         //console.log(new Date(this.t));
+        this.dataProvider.getUser(this.uid).subscribe((user)=>{
+            if(user.adminedClubs){
+                this.isAdmin = true;
+            }
+        });
         this.loadEvents();
 
         setTimeout(()=>this.today(),100);
@@ -235,14 +241,7 @@ export class CalendarPage{
     }
     
     more(){
-        var isAdmin = false;
-        this.dataProvider.getUser(this.uid).subscribe((user)=>{
-            if(user.adminedClubs){
-                isAdmin = true;
-            }
-        });
-
-        if(isAdmin){
+        if(this.isAdmin){
             let actionSheet = this.asCtrl.create({
                 title: 'Actions',
                 buttons: [
@@ -284,24 +283,24 @@ export class CalendarPage{
             let actionSheet = this.asCtrl.create({
                 title: 'Actions',
                 buttons: [
-                    {
+                    /*{
                     text: 'Load Events',
                     handler: () => {
                         this.loadEvents();
                         console.log('Events loaded');
                     }
-                    },{
+                    },*/{
                     text: 'View My Event Requests',
                     handler: () => {
                         this.viewRequests();
                         console.log('View My Event Invitations');
                     }
-                    },{
+                    },/*{
                     text: 'View My Timeline',
                     handler: () =>{
                         console.log('Timeline displayed');
                     }
-                    },{
+                    },*/{
                     text: 'Cancel',
                     role: 'cancel',
                     handler: () => {
