@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <ion-buttons start>
-      <button ion-button icon-only (click)="cancel()">
+      <button class="back" ion-button icon-only (click)="cancel()">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
@@ -32,13 +32,13 @@
     <ion-item>
       <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
       <ion-label>Start</ion-label>
-      <ion-datetime disabled="{{hide}}" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="startTime" [min]="minDate"></ion-datetime>
+      <ion-datetime disabled="{{hide}}" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="YYYY MMM DD HH:mm" [(ngModel)]="startTime" min={{minDate}} max={{maxDate}}></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-icon name="calendar" item-start style="color:white"></ion-icon>
       <ion-label>End</ion-label>
-      <ion-datetime disabled="{{hide}}" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="endTime" [min]="minDate"></ion-datetime>
+      <ion-datetime disabled="{{hide}}" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="YYYY MMM DD HH:mm" [(ngModel)]="endTime" min={{minDate}} max={{maxDate}}></ion-datetime>
     </ion-item>
 
     <ion-item>
