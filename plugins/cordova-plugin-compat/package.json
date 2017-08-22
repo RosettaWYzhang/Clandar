@@ -2,50 +2,50 @@
   "_args": [
     [
       {
-        "raw": "cordova-plugin-compat@1.0.0",
+        "raw": "cordova-plugin-compat@1.1.0",
         "scope": null,
         "escapedName": "cordova-plugin-compat",
         "name": "cordova-plugin-compat",
-        "rawSpec": "1.0.0",
-        "spec": "1.0.0",
+        "rawSpec": "1.1.0",
+        "spec": "1.1.0",
         "type": "version"
       },
-      "C:\\Users\\YUE Baochuan\\Desktop\\Clandar-master\\Clandar\\node_modules"
+      "C:\\Users\\YUE Baochuan\\Desktop\\Clandar-master\\Clandar_0805\\Clandar\\node_modules"
     ]
   ],
-  "_from": "cordova-plugin-compat@1.0.0",
-  "_id": "cordova-plugin-compat@1.0.0",
+  "_from": "cordova-plugin-compat@1.1.0",
+  "_id": "cordova-plugin-compat@1.1.0",
   "_inCache": true,
   "_location": "/cordova-plugin-compat",
-  "_nodeVersion": "4.2.2",
+  "_nodeVersion": "6.6.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/cordova-plugin-compat-1.0.0.tgz_1459869228517_0.12971219676546752"
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-compat-1.1.0.tgz_1478304539989_0.23511901660822332"
   },
   "_npmUser": {
-    "name": "macdonst",
-    "email": "simon.macdonald@gmail.com"
+    "name": "stevegill",
+    "email": "stevengill97@gmail.com"
   },
-  "_npmVersion": "2.14.7",
+  "_npmVersion": "4.0.0",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "cordova-plugin-compat@1.0.0",
+    "raw": "cordova-plugin-compat@1.1.0",
     "scope": null,
     "escapedName": "cordova-plugin-compat",
     "name": "cordova-plugin-compat",
-    "rawSpec": "1.0.0",
-    "spec": "1.0.0",
+    "rawSpec": "1.1.0",
+    "spec": "1.1.0",
     "type": "version"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.0.0.tgz",
-  "_shasum": "54b773fa6a212fe8e60ad496bacb57aa01da4232",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.1.0.tgz",
+  "_shasum": "92bdf169feb61205323dcc96a3ff8348e37e87fc",
   "_shrinkwrap": null,
-  "_spec": "cordova-plugin-compat@1.0.0",
-  "_where": "C:\\Users\\YUE Baochuan\\Desktop\\Clandar-master\\Clandar\\node_modules",
+  "_spec": "cordova-plugin-compat@1.1.0",
+  "_where": "C:\\Users\\YUE Baochuan\\Desktop\\Clandar-master\\Clandar_0805\\Clandar\\node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },
@@ -63,8 +63,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "54b773fa6a212fe8e60ad496bacb57aa01da4232",
-    "tarball": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.0.0.tgz"
+    "shasum": "92bdf169feb61205323dcc96a3ff8348e37e87fc",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.1.0.tgz"
   },
   "engines": [
     {
@@ -72,7 +72,6 @@
       "version": ">=5.0.0"
     }
   ],
-  "gitHead": "c10a3151f1b0113ade3a7f6d5136b508ffdcfb76",
   "homepage": "http://github.com/apache/cordova-plugin-compat#readme",
   "keywords": [
     "ecosystem:cordova",
@@ -84,6 +83,10 @@
     {
       "name": "macdonst",
       "email": "simon.macdonald@gmail.com"
+    },
+    {
+      "name": "stevegill",
+      "email": "stevengill97@gmail.com"
     }
   ],
   "name": "cordova-plugin-compat",
@@ -94,5 +97,5 @@
     "url": "git://github.com/apache/cordova-plugin-compat.git"
   },
   "scripts": {},
-  "version": "1.0.0"
+  "version": "1.1.0"
 }

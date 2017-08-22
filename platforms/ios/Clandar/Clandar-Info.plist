@@ -53,8 +53,6 @@
     <string/>
     <key>NSPhotoLibraryUsageDescription</key>
     <string/>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string/>
     <key>NSMicrophoneUsageDescription</key>
     <string/>
     <key>CFBundleLocalizations</key>
@@ -66,6 +64,8 @@
       <string>it</string>
     </array>
     <key>NSCalendarsUsageDescription</key>
+    <string/>
+    <key>NSLocationWhenInUseUsageDescription</key>
     <string/>
   </dict>
 </plist>
