@@ -248,10 +248,6 @@ export class CalendarPage{
     }
     
     more(){
-<<<<<<< HEAD
-=======
-
->>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
         if(this.isAdmin){
             let actionSheet = this.asCtrl.create({
                 title: 'Actions',
@@ -295,11 +291,7 @@ export class CalendarPage{
                 title: 'Actions',
                 buttons: [
                     /*{
-<<<<<<< HEAD
-                    text: 'Load Events',
-=======
                     text: 'Reload Events',
->>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
                     handler: () => {
                         this.loadEvents();
                         console.log('Events loaded');
@@ -310,20 +302,12 @@ export class CalendarPage{
                         this.viewRequests();
                         console.log('View My Event Invitations');
                     }
-<<<<<<< HEAD
-                    },/*{
-=======
                     }/*,{
->>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
                     text: 'View My Timeline',
                     handler: () =>{
                         console.log('Timeline displayed');
                     }
-<<<<<<< HEAD
-                    },*/{
-=======
                     }*/,{
->>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
                     text: 'Cancel',
                     role: 'cancel',
                     handler: () => {
