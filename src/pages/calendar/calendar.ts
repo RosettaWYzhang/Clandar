@@ -68,7 +68,12 @@ export class CalendarPage{
           }
         });
     }
-    ionViewDidLoad() {
+    ionViewDidLoad() {    
+        this.dataProvider.getUser(this.uid).subscribe((user)=>{
+            if(user.adminedClubs){
+                this.isAdmin = true;
+            }
+        });
         console.log(this.email);
         console.log("calendarPage");
         //console.log(new Date(this.t));
@@ -83,6 +88,8 @@ export class CalendarPage{
         setTimeout(()=>this.today(),200);
         setTimeout(()=>this.today(),300);
         setTimeout(()=>this.today(),400);
+        setTimeout(()=>this.today(),500);
+        setTimeout(()=>this.today(),600);
 
         //this.today();
         //console.log(this.events);
@@ -241,6 +248,10 @@ export class CalendarPage{
     }
     
     more(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
         if(this.isAdmin){
             let actionSheet = this.asCtrl.create({
                 title: 'Actions',
@@ -284,7 +295,11 @@ export class CalendarPage{
                 title: 'Actions',
                 buttons: [
                     /*{
+<<<<<<< HEAD
                     text: 'Load Events',
+=======
+                    text: 'Reload Events',
+>>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
                     handler: () => {
                         this.loadEvents();
                         console.log('Events loaded');
@@ -295,12 +310,20 @@ export class CalendarPage{
                         this.viewRequests();
                         console.log('View My Event Invitations');
                     }
+<<<<<<< HEAD
                     },/*{
+=======
+                    }/*,{
+>>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
                     text: 'View My Timeline',
                     handler: () =>{
                         console.log('Timeline displayed');
                     }
+<<<<<<< HEAD
                     },*/{
+=======
+                    }*/,{
+>>>>>>> 5fa5c25436eafbefc22bab2d2e36b26a30ada117
                     text: 'Cancel',
                     role: 'cancel',
                     handler: () => {

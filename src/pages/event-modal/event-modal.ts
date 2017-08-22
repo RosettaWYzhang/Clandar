@@ -33,6 +33,7 @@ export class EventModalPage {
   private eventRequestsSent: any;
   private eventRequests: any;
   minDate = new Date().toISOString();
+  maxDate = "2100-12-31";
  
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
@@ -41,13 +42,15 @@ export class EventModalPage {
               public firebaseProvider: FirebaseProvider,
               public alertCtrl: AlertController,
               public viewCtrl: ViewController) {
-    this.urgency = this.defValue;
-    this.hide = false;
-    this.uid = firebase.auth().currentUser.uid;
-    this.events = afDB.list('/events');
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();
     this.startTime = preselectedDate;
     this.endTime = preselectedDate;
+    this.urgency = this.defValue;
+    this.hide = false;
+    this.note = "";
+    this.location = "";
+    this.uid = firebase.auth().currentUser.uid;
+    this.events = afDB.list('/events');
     this.urgency = 2;
     this.dataProvider.getUser(this.uid).take(1).subscribe((user)=>{
       let clubs = user.adminedClubs;
@@ -78,7 +81,32 @@ export class EventModalPage {
   }
  
   save() {
-    this.events.push({
+    if (this.title==undefined){
+      let alert = this.alertCtrl.create({
+        title: 'Name is empty',
+        subTitle: 'Please fill in the name',
+        buttons: ['Dismiss']
+      });
+      alert.present();
+    }
+    // else if (this.note==undefined){
+    //   let alert = this.alertCtrl.create({
+    //     title: 'Note is empty',
+    //     subTitle: 'Please fill in the note',
+    //     buttons: ['Dismiss']
+    //   });
+    //   alert.present();
+    // }
+    else if (this.startTime>=this.endTime){
+      let alert = this.alertCtrl.create({
+        title: 'Invalid Time',
+        subTitle: 'Start time can not exceed end time.',
+        buttons: ['Back to modify']
+      });
+      alert.present();
+    }
+    else{
+      this.events.push({
       club: this.club,
       organizer: this.uid,
       title: this.title,
@@ -121,6 +149,8 @@ export class EventModalPage {
     console.log(this.members);
     console.log(this.eventId);
     //this.viewCtrl.dismiss(this.event);
+    }
+    
   }
 
   goback(){

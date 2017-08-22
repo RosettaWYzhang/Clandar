@@ -202,7 +202,7 @@ export class TdlistPage {
       <ion-item>
         <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
         <ion-label>Due</ion-label>
-        <ion-datetime [(ngModel)]="tdue" placeholder="{{tdue}}" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
+        <ion-datetime [(ngModel)]="tdue" placeholder="{{tdue}}" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="YYYY MMM DD HH:mm"></ion-datetime>
       </ion-item>
 
       <ion-item>

@@ -34,7 +34,8 @@ export class Tasks {
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();
     this.due = preselectedDate;
     this.email = firebase.auth().currentUser.email;  
-    this.reminder = false;     
+    this.reminder = false;
+    this.note = "";     
     this.urgency = 2;       
     this.tasks = afDB.list('/tasks',{
       query:{
@@ -49,15 +50,7 @@ export class Tasks {
   }
 
   save(){
-    if (this.note==undefined){
-      let alert = this.alertCtrl.create({
-        title: 'Note is empty',
-        subTitle: 'Please fill in the note',
-        buttons: ['Dismiss']
-      });
-      alert.present();
-    }
-    else if (this.name==undefined){
+    if (this.name==undefined){
       let alert = this.alertCtrl.create({
         title: 'Name is empty',
         subTitle: 'Please fill in the name',
@@ -65,6 +58,14 @@ export class Tasks {
       });
       alert.present();
     }
+    // else if (this.note==undefined){
+    //   let alert = this.alertCtrl.create({
+    //     title: 'Note is empty',
+    //     subTitle: 'Please fill in the note',
+    //     buttons: ['Dismiss']
+    //   });
+    //   alert.present();
+    // }
     else {
       this.tasks.push({
         due: this.due,
