@@ -1,5 +1,15 @@
 page-calendar {
-    font-family:Tahoma,Helvetica,sans-serif;
+    //font-family:Tahoma,Helvetica,sans-serif;
+
+    ion-header{
+        .back{
+            color: #51CFB1;
+        }
+        ion-icon{
+            font-size: 42px;
+            margin-right: 5px;
+        }
+    }
 
     .has-header{
         .bottom-buttons{

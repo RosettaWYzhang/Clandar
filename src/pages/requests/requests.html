@@ -17,7 +17,7 @@
   <div class="empty-list" *ngIf="(friendRequests && friendRequests.length == 0) && (requestsSent && requestsSent.length == 0)">
     <h1><ion-icon name="md-filing"></ion-icon></h1>
     <p style="color:gray">No New Requests</p>
-    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>
+    <button color="mainColor" ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>
   </div>
   <!-- Show friend requests received. -->
   <ion-list class="avatar-list" *ngIf="friendRequests && friendRequests.length > 0">

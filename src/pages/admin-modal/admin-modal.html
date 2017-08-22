@@ -7,13 +7,13 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons start>
-      <button ion-button icon-only (click)="cancel()">
+      <button class="back" ion-button icon-only (click)="cancel()">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Administration Management</ion-title>
     <ion-buttons end>
-      <button ion-button tappable (click)="done()" [disabled]="admins.length < 1">Done</button>
+      <button class="back" ion-button tappable (click)="done()" [disabled]="admins.length < 1">Done</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -43,8 +43,8 @@
     <ion-searchbar [(ngModel)]="searchMember" placeholder="Search for members" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
     <ion-item *ngFor="let member of members | memberFilter:searchMember" no-lines>
       <ion-fab middle right>
-        <button ion-fab mini tappable (click)="addToAdmins(member); $event.stopPropagation();" *ngIf="!inAdmins(member)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>
-        <button ion-fab mini tappable (click)="removeFromAdmins(member); $event.stopPropagation();" *ngIf="inAdmins(member)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>
+        <button color="mainColor" ion-fab mini tappable (click)="addToAdmins(member); $event.stopPropagation();" *ngIf="!inAdmins(member)"><ion-icon name="md-add-circle" class="success"></ion-icon></button>
+        <button color="mainColor" ion-fab mini tappable (click)="removeFromAdmins(member); $event.stopPropagation();" *ngIf="inAdmins(member)"><ion-icon name="md-close-circle" class="danger"></ion-icon></button>
       </ion-fab>
       <ion-avatar item-left>
         <img src="{{memberInfo(member).img}}">

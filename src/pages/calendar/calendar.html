@@ -2,9 +2,9 @@
 
 <ion-header>
     <ion-navbar>
-        <ion-title>{{viewTitle}}</ion-title>
+        <ion-title>{{viewTitle | date: 'MMM yyyy'}}</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only (click)="more()">
+            <button class="back" ion-button icon-only (click)="more()">
                 <ion-icon name="more"></ion-icon>
             </button>
             <!--<button ion-button (click)="loadEvents()" style="font-size:16px">Load Events</button>-->
@@ -17,8 +17,8 @@
     <ion-buttons class="bottom-buttons">
         <button ion-button (click)="changeMode('month')">M</button>
         <button ion-button (click)="changeMode('week')">W</button>
-        <button ion-button (click)="changeMode('day')">D</button>
-        <button ion-button [disabled]="isToday" (click)="today()">Today</button>
+        <!--<button ion-button (click)="changeMode('day')">D</button>-->
+        <button style="float:right" ion-button [disabled]="isToday" (click)="today()">Today</button>
     </ion-buttons>
 
     <calendar [eventSource]="eventSource"

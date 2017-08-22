@@ -1,3 +1,24 @@
 page-event-info {
+    ion-header{
+        .back{
+            color: #51CFB1;
+        }
+        ion-icon{
+            font-size: 42px;
+            margin-right: 5px;
+        }
+    }
+
+    .content{
+        .title{
+            p{
+                font-size: 15px;
+            }
+        }
+
+        .info{
+            margin-bottom: -6px;
+        }
+    }
 
 }

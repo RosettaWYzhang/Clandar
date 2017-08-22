@@ -75,7 +75,7 @@
         <ng-container *ngFor="let event of Events">
           <ion-item (click)="viewEvent(event.$key)" tappable>
             <h2>{{event.title}}</h2>
-            <p>{{event.startTime}} -- {{event.endTime}}</p>
+            <p style="font-size:15px;">{{event.startTime | date: 'd MMM, EEE, HH:mm'}} - {{event.endTime | date: 'd MMM, EEE, HH:mm'}}</p>
           </ion-item>
         </ng-container>
       </ion-list>
@@ -87,7 +87,7 @@
         <ng-container *ngFor="let event of allEvents | eventFilter:searchEvent">
           <ion-item (click)="viewEvent(event.$key)" tappable>
             <h2>{{event.title}} <span *ngIf="getStatus(event)==0">(Organized By Me)</span><span *ngIf="getStatus(event)==1">(Participated)</span></h2>
-            <p>{{event.startTime}} -- {{event.endTime}}</p>
+            <p style="font-size:15px;">{{event.startTime | date: 'd MMM, EEE, HH:mm'}} - {{event.endTime | date: 'd MMM, EEE, HH:mm'}}</p>
           </ion-item>
         </ng-container>
       </ion-list>

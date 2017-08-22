@@ -27493,8 +27493,35 @@ ion-navbar.toolbar {
   }
 }
 
-page-calendar {
-  font-family: Tahoma,Helvetica,sans-serif;
+page-add-members ion-header .back {
+  color: #51CFB1;
+}
+
+page-add-members ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+page-add-members .content .empty-list {
+  text-align: center;
+}
+
+page-admin-modal ion-header .back {
+  color: #51CFB1;
+}
+
+page-admin-modal ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+page-calendar ion-header .back {
+  color: #51CFB1;
+}
+
+page-calendar ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
 }
 
 page-calendar .has-header .bottom-buttons {
@@ -27683,6 +27710,15 @@ page-club ion-footer ion-textarea {
   margin-left: 8px;
 }
 
+page-club-info ion-header .back {
+  color: #51CFB1;
+}
+
+page-club-info ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
 page-club-info .content {
   background: RGB(249, 250, 255);
 }
@@ -27760,6 +27796,23 @@ doodle-tasks .content .titles {
   color: white;
   padding: 10px 8px;
   border-radius: 8px;
+}
+
+page-event-info ion-header .back {
+  color: #51CFB1;
+}
+
+page-event-info ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+page-event-info .content .title p {
+  font-size: 15px;
+}
+
+page-event-info .content .info {
+  margin-bottom: -6px;
 }
 
 page-event-modal {
@@ -27929,6 +27982,19 @@ page-register .reg-content .reg-box {
   background: #51CFB1;
   margin: 50px 10px 10px 10px;
   padding: 20px 16px 20px 16px;
+}
+
+page-request-modal ion-header .back {
+  color: #51CFB1;
+}
+
+page-request-modal ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+page-request-modal .content .empty-list {
+  text-align: center;
 }
 
 page-requests ion-header .back {

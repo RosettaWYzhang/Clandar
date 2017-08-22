@@ -48,6 +48,7 @@ export class EventModalPage {
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();
     this.startTime = preselectedDate;
     this.endTime = preselectedDate;
+    this.urgency = 2;
     this.dataProvider.getUser(this.uid).take(1).subscribe((user)=>{
       let clubs = user.adminedClubs;
       var clubIds=[];

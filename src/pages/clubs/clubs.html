@@ -37,7 +37,7 @@
         <ion-avatar item-start>
           <img src={{club.img}}>
         </ion-avatar>
-        <h2>{{club.name}}<span *ngIf="isMember(club)">[Joined]</span></h2>
+        <h2>{{club.name}}<span *ngIf="isMember(club)" style="font-size:15px;color:gray"> [Joined]</span></h2>
       </ion-item>
       <ion-item-options side="right">
         <button (click)="details(club)" ion-button color="primary">

@@ -185,7 +185,7 @@ export class TdlistPage {
       </ion-title>
       <ion-buttons start>
         <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Cancel</span>
+          <span ion-text color="secondary" showWhen="ios">Cancel</span>
           <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
         </button>
       </ion-buttons>

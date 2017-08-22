@@ -7,7 +7,7 @@
 <ion-header>
   <ion-navbar hideBackButton="true">
     <ion-buttons>
-      <button ion-button tappable (click)="back()">Back</button>
+      <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
     </ion-buttons>
     <ion-title *ngIf="event">{{event.title}}</ion-title>
   </ion-navbar>
@@ -19,37 +19,37 @@
       <ion-list-header>
         Event Info
       </ion-list-header>
-      <ion-item no-lines>
+      <ion-item no-lines class="title">
         <ion-avatar item-left>
           <img src="https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/E.png?alt=media&token=edea099a-74a6-4a5b-8c83-559ae0e6c9b2"/>
         </ion-avatar>
         <h2 tappable (click)="setName()" *ngIf="isOrganizer()">{{event.title}}</h2>
         <h2 tappable *ngIf="!(isOrganizer())">{{event.title}}</h2>
-        <p tappable (click)="setTime()">Time: {{event.startTime}} -- {{event.endTime}}</p>
+        <p tappable (click)="setTime()">Start at: {{event.startTime | date: 'd MMM yyyy, EEE, HH:mm'}}</p>
+        <p tappable (click)="setTime()">End at: {{event.startTime | date: 'd MMM yyyy, EEE, HH:mm'}}</p>
       </ion-item>
       <ion-list-header>
         Details
       </ion-list-header>
-      <ion-item no-lines *ngIf="isOrganizer()">
+      <ion-item class="info" no-lines *ngIf="isOrganizer()">
         <p class="location" tappable (click)="setLocation()">Location:  {{event.location}}</p>
       </ion-item>
-      <ion-item no-lines *ngIf="!(isOrganizer())">
+      <ion-item class="info" no-lines *ngIf="!(isOrganizer())">
         <p class="location" tappable>Location:  {{event.location}}</p>
       </ion-item>
-      <ion-item no-lines *ngIf="isOrganizer()">
+      <ion-item class="info" no-lines *ngIf="isOrganizer()">
         <p class="note" tappable (click)="setNote()">Note:  {{event.note}}</p>
       </ion-item>
-      <ion-item no-lines *ngIf="!(isOrganizer())">
+      <ion-item class="info" no-lines *ngIf="!(isOrganizer())">
         <p class="note" tappable>Note:  {{event.note}}</p>
       </ion-item>     
-      <ion-item no-lines *ngIf="isOrganizer()">
+      <ion-item class="info" no-lines *ngIf="isOrganizer()">
         <p class="urgency" tappable (click)="setUrgency()">Urgency: {{event.urgency}}</p>
       </ion-item>
-      <ion-item no-lines *ngIf="!(isOrganizer())">
+      <ion-item class="info" no-lines *ngIf="!(isOrganizer())">
         <p class="urgency" tappable>Urgency:  {{event.urgency}}</p>
       </ion-item>       
-    </ion-list>
-    <ion-list>
+
       <ion-list-header>
         Event Members <span *ngIf="event.members&&eventRequestsSent">({{event.members.length}}/{{eventRequestsSent.length}})</span>
       </ion-list-header>

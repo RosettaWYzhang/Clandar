@@ -35,9 +35,11 @@ export class CalendarPage{
     eventSource = [];
     viewTitle: string;
     selectedDay = new Date();    
+    dd = new Date();
+    //t = this.dd.getTime()+1000*60*60*24;
     calendar = {
         mode: 'month',
-        currentDate: new Date()
+        currentDate: new Date(this.dd)
     };
 
     constructor(public navCtrl: NavController, 
@@ -68,6 +70,15 @@ export class CalendarPage{
     ionViewDidLoad() {
         console.log(this.email);
         console.log("calendarPage");
+        //console.log(new Date(this.t));
+        this.loadEvents();
+
+        setTimeout(()=>this.today(),100);
+        setTimeout(()=>this.today(),200);
+        setTimeout(()=>this.today(),300);
+        setTimeout(()=>this.today(),400);
+
+        //this.today();
         //console.log(this.events);
         /*[
             {
@@ -99,6 +110,7 @@ export class CalendarPage{
 
    today(){
        this.calendar.currentDate = new Date();
+       console.log("Today");
    }
 
    loadEvents(){

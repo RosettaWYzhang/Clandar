@@ -12,12 +12,12 @@
     <ion-title>Event Requests</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="content">
   <!-- No event requests sent or received. -->
   <div class="empty-list" *ngIf="(eventRequests && eventRequests.length == 0)">
     <h1><ion-icon name="md-filing"></ion-icon></h1>
     <p style="color:gray">No New Invitations</p>
-    <button ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>
+    <button color="mainColor" ion-button icon-left tappable (click)="back()"><ion-icon name="md-arrow-round-back"></ion-icon>Go Back</button>
   </div>
   <!-- Show event requests received. -->
   <ion-list class="avatar-list" *ngIf="eventRequests && eventRequests.length > 0">
