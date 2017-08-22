@@ -18,6 +18,7 @@ import * as firebase from 'firebase';
 })
 export class Tasks {
   minDate = new Date().toISOString();
+  maxDate = "2100-12-31";
   email:string;
   name:string;
   due:any;

@@ -246,13 +246,13 @@ export class CalendarPage{
             let actionSheet = this.asCtrl.create({
                 title: 'Actions',
                 buttons: [
-                    {
-                    text: 'Load Events',
+                    /*{
+                    text: 'Reload Events',
                     handler: () => {
                         this.loadEvents();
                         console.log('Events loaded');
                     }
-                    },{
+                    },*/{
                     text: 'View My Event Requests',
                     handler: () => {
                         this.viewRequests();

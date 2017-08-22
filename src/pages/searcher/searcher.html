@@ -57,7 +57,7 @@
     </div>
 
     <div no-border  *ngSwitchCase="'event'">
-      <ion-list *ngIf="organizedEvents">
+      <ion-list *ngIf="organizedEvents&&organizedEvents.length>0">
         <ion-list-header>
           Organized By Me
         </ion-list-header>
@@ -68,18 +68,18 @@
           </ion-item>
         </ng-container>
       </ion-list>
-      <ion-list *ngIf="events">
+      <ion-list *ngIf="events&&events.length>0">
         <ion-list-header>
           Participated Events
         </ion-list-header>
-        <ng-container *ngFor="let event of Events">
+        <ng-container *ngFor="let event of events">
           <ion-item (click)="viewEvent(event.$key)" tappable>
             <h2>{{event.title}}</h2>
             <p style="font-size:15px;">{{event.startTime | date: 'd MMM, EEE, HH:mm'}} - {{event.endTime | date: 'd MMM, EEE, HH:mm'}}</p>
           </ion-item>
         </ng-container>
       </ion-list>
-      <ion-list *ngIf="allEvents">
+      <ion-list *ngIf="allEvents&&allEvents.length>0">
         <ion-list-header>
           Event Square
         </ion-list-header>

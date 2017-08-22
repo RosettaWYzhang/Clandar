@@ -53,6 +53,7 @@ export class EventInfoPage {
 
   ionViewDidLoad() {
     this.eventId = this.navParams.get('eventId');
+    this.clubMembers = [];
     this.uid = firebase.auth().currentUser.uid;
     this.subscription = this.dataProvider.getEventByEID(this.eventId).subscribe((event)=>{
       if (event.$exists()){
@@ -82,7 +83,6 @@ export class EventInfoPage {
     });
     this.dataProvider.getClub(this.clubId).subscribe((club) => {
       this.club = club;
-      this.clubMembers = [];
       var clubMembersIds = club.members;
       if(clubMembersIds){
         for (var i=0;i<clubMembersIds.length;i++){

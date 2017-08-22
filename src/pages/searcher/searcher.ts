@@ -54,6 +54,9 @@ export class Searcher {
   ionViewDidLoad() {
     this.searchClub = "";
     this.searchEvent = "";
+    this.events = [];
+    this.allEvents = [];
+    this.organizedEvents = [];
     console.log('ionViewDidLoad Searcher');
     this.dataProvider.getClubs().subscribe((clubIds) => {
       console.log(clubIds);
@@ -127,7 +130,7 @@ export class Searcher {
   joinedEvent(event){
     if(event.members){
       for (var i=0;i<event.members.length;i++){
-        if (event.members[i].$key == this.uid){
+        if (event.members[i] == this.uid){
           return true;
         }
       }

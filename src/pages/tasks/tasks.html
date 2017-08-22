@@ -19,7 +19,7 @@
     <ion-item>
       <ion-icon name="calendar" item-start style="color:Salmon"></ion-icon>
       <ion-label>Due</ion-label>
-      <ion-datetime [(ngModel)]="due" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="DDD DD MMMM YYYY HH:mm"></ion-datetime>
+      <ion-datetime [(ngModel)]="due" displayFormat="YYYY-MM-DD HH:mm" pickerFormat="YYYY MMM DD HH:mm" min={{minDate}} max={{maxDate}}></ion-datetime>
     </ion-item>
 
     <ion-item>
