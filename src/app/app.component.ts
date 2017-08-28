@@ -42,7 +42,7 @@ import * as firebase from 'firebase';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = Testing;
+  rootPage:any = Login;
 
   constructor(platform: Platform, 
               statusBar: StatusBar, 
