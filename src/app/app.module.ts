@@ -46,6 +46,7 @@ import { AdminModalPage } from '../pages/admin-modal/admin-modal';
 import { PopPage } from '../pages/calendar/calendar';
 import { RequestModalPage } from '../pages/request-modal/request-modal';
 import { EventInfoPage } from '../pages/event-info/event-info';
+import { TimelinePage } from '../pages/timeline/timeline';
 import { Doodle } from '../pages/doodle/doodle';
 
 import { FriendPipe } from '../pipes/friend';
@@ -116,6 +117,7 @@ firebase.initializeApp(firebaseConfig);
     PopPage,
     RequestModalPage,
     EventInfoPage,
+    TimelinePage,
     FriendPipe,
     ConversationPipe,
     SearchPipe,
@@ -165,6 +167,7 @@ firebase.initializeApp(firebaseConfig);
     AddMembersPage,
     AdminModalPage,
     RequestModalPage,
+    TimelinePage,
     PopPage,
     EventInfoPage,
     Doodle

@@ -21,6 +21,7 @@ import { ContactsPage } from '../contacts/contacts';
 })
 export class SettingsPage {
   private alert: any;
+  private allow: any;
   private user: FirebaseObjectObservable<any>;
 
   constructor(public navCtrl: NavController,
@@ -31,6 +32,7 @@ export class SettingsPage {
               public loadingProvider: LoadingProvider,
               public alertCtrl: AlertController) {
     this.logoutProvider.setApp(app);
+    this.allow = false;
   }
 
   ionViewDidLoad() {
@@ -52,6 +54,12 @@ export class SettingsPage {
 
   gotoContacts(){
     this.app.getRootNav().push(ContactsPage);
+  }
+
+  change(){
+    this.dataProvider.getCurrentUser().update({
+      allow: this.allow
+    });
   }
 
   doLogout(){

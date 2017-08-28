@@ -38,12 +38,12 @@
       <ion-item>
         <button (click)='share()' ion-button full>Invite Your Friends :)</button>
       </ion-item>
-      <!--<ion-item>
-          <ion-toggle color="secondary" checked="false"></ion-toggle>
+      <ion-item>
+          <ion-toggle [(ngModel)]="allow" (ionChange)="change()" color="secondary" checked="false"></ion-toggle>
           <ion-label>
             <h6 class="titles">Allow others to view my calendar</h6>
           </ion-label>
-      </ion-item>-->
+      </ion-item>
     </ion-list>
     <ion-list>
       <ion-item>

@@ -32,6 +32,7 @@ import { AdminModalPage } from '../pages/admin-modal/admin-modal';
 import { RequestModalPage } from '../pages/request-modal/request-modal';
 import { EventInfoPage } from '../pages/event-info/event-info';
 import { PopPage } from '../pages/calendar/calendar';
+import { TimelinePage } from '../pages/timeline/timeline';
 import { Doodle } from '../pages/doodle/doodle';
 import { DataProvider } from '../providers/data/data';
 import { Firebase } from '@ionic-native/firebase';

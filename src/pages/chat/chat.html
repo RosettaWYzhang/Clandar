@@ -3,7 +3,7 @@
     <ion-buttons>
       <button class="back" ion-button tappable (click)="back()"><ion-icon name="arrow-back"></ion-icon>Back</button>
     </ion-buttons>
-    <ion-title>{{title}}</ion-title>
+    <ion-title tappable (click)="viewUser(userId)">{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content has-footer class="content">

@@ -48,6 +48,9 @@
         <p class="info">You are already friends.</p>
         <button ion-button class="primary" tappable (click)="sendMessage()">Send Messages</button>
       </div>
+      <div *ngIf="user.allow">
+        <button ion-button class="primary" tappable (click)="viewTimeline()">View Timeline</button>
+      </div>      
     </div>
   </div>
 </ion-content>

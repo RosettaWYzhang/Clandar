@@ -7,61 +7,34 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-contacts": {
-            "CONTACTS_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.ionicframework.clandar812051"
-        },
-        "cordova-plugin-fcm": {
-            "PACKAGE_NAME": "com.ionicframework.clandar812051"
-        },
-        "cordova-plugin-media-capture": {
-            "CAMERA_USAGE_DESCRIPTION": " ",
-            "MICROPHONE_USAGE_DESCRIPTION": " ",
-            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.ionicframework.clandar812051"
-        },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.ionicframework.clandar812051"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.ionicframework.clandar812051"
-        },
-        "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         },
         "cordova-plugin-camera": {
             "CAMERA_USAGE_DESCRIPTION": " ",
             "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.ionicframework.clandar812051"
-        },
-        "es6-promise-plugin": {
             "PACKAGE_NAME": "com.ionicframework.clandar812051"
         }
     }

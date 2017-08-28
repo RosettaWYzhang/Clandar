@@ -24,10 +24,17 @@ export class SearchPage {
   private requestsSent: any;
   private friendRequests: any;
   private searchUser: any;
+  private allow:any;
   // SearchPeoplePage
   // This is the page where the user can search for other users and send a friend request.
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider, public loadingProvider: LoadingProvider,
-    public alertCtrl: AlertController, public angularfire: AngularFireDatabase, public alertProvider: AlertProvider, public firebaseProvider: FirebaseProvider) { }
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public dataProvider: DataProvider, 
+              public loadingProvider: LoadingProvider,
+              public alertCtrl: AlertController, 
+              public angularfire: AngularFireDatabase, 
+              public alertProvider: AlertProvider, 
+              public firebaseProvider: FirebaseProvider) { }
 
   ionViewDidLoad() {
     // Initialize

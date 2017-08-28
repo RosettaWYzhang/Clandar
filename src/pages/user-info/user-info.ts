@@ -5,6 +5,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { ChatPage } from '../chat/chat';
 import { ImageModalPage } from '../image-modal/image-modal';
+import { TimelinePage } from '../timeline/timeline';
 import * as firebase from 'firebase';
 
 @Component({
@@ -145,6 +146,12 @@ export class UserInfoPage {
   // Open chat with this user.
   sendMessage() {
     this.navCtrl.push(ChatPage, { userId: this.userId });
+  }
+
+  viewTimeline(){
+    this.navCtrl.push(TimelinePage, {
+      userId: this.userId
+    });
   }
 
   // Check if user can be added, meaning user is not yet friends nor has sent/received any friend requests.

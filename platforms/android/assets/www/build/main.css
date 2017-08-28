@@ -27819,6 +27819,15 @@ page-event-modal {
   font-family: Tahoma,Helvetica,sans-serif;
 }
 
+page-event-modal ion-header .back {
+  color: #51CFB1;
+}
+
+page-event-modal ion-header ion-icon {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
 page-event-modal .content .titles {
   color: white;
   padding: 10px 8px;

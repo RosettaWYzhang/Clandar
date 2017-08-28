@@ -1,15 +1,13 @@
 {
+    "EventKit.framework": 1,
+    "EventKitUI.framework": 1,
+    "ImageIO.framework": 1,
+    "CoreLocation.framework": 1,
+    "AVFoundation.framework": 1,
     "AddressBook.framework": 2,
     "AddressBookUI.framework": 1,
     "libc++.tbd": 1,
     "libz.tbd": 2,
     "libsqlite3.0.tbd": 1,
-    "Security.framework": 1,
-    "ImageIO.framework": 2,
-    "CoreLocation.framework": 2,
-    "AVFoundation.framework": 2,
-    "EventKit.framework": 1,
-    "EventKitUI.framework": 1,
-    "Social.framework": 1,
-    "MessageUI.framework": 1
+    "Security.framework": 1
 }

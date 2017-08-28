@@ -43,7 +43,7 @@
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-contacts": "^2.3.1",
         "cordova-plugin-device": "1.1.4",
-        "cordova-plugin-fcm": "~2.1.2",
+        "cordova-plugin-fcm": "^2.1.2",
         "cordova-plugin-file": "^4.3.3",
         "cordova-plugin-firebase": "^0.1.23",
         "cordova-plugin-media-capture": "^1.4.3",
@@ -107,15 +107,15 @@
                 "CALENDAR_USAGE_DESCRIPTION": " "
             },
             "cordova-plugin-x-socialsharing": {},
-            "cordova-plugin-fcm": {},
             "cordova-plugin-compat": {},
             "cordova-plugin-camera": {
                 "CAMERA_USAGE_DESCRIPTION": " ",
                 "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
-            }
+            },
+            "cordova-plugin-fcm": {}
         },
         "platforms": [
-            "ios"
+            "android"
         ]
     }
 }
