@@ -84,7 +84,7 @@ export class TabsPage {
             img = user.photoURL;
             img = providerData.photoURL;
           } else {
-            img = "https://firebasestorage.googleapis.com/v0/b/clandar-2e188.appspot.com/o/profile.png?alt=media&token=22fd850b-d8bd-4926-80a4-c87b9032a938";
+            img = "assets/img/profile.png";
           }
 
           // Get email from Firebase user.

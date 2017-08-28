@@ -68,19 +68,8 @@ import { DataProvider } from '../providers/data/data';
 import { ImageProvider } from '../providers/image/image';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
-const cloudSettings: CloudSettings = {
-  'core': {
-    'app_id': 'a9078208'
-  }
-};
-
 export const firebaseConfig = {
-  apiKey: "AIzaSyAbihXWCa40DwPvVcy8rL0SYEDY4bOMOsE",
-  authDomain: "clandar-2e188.firebaseapp.com",
-  databaseURL: "https://clandar-2e188.firebaseio.com",
-  projectId: "clandar-2e188",
-  storageBucket: "clandar-2e188.appspot.com",
-  messagingSenderId: "1038439505893"
+
 };
 
 firebase.initializeApp(firebaseConfig);
